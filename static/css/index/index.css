@@ -3,75 +3,98 @@
     padding: 0;
     /* 清除元素默认的内外边距 */
     /* 一个页面只需要写一次,初始化代码 */
+  }
+
+  li {
+    list-style: none;
+    /* 清除li标签的前面的小点点 */
 }
+
+
+a {
+    text-decoration: none;
+    /* 清除a标签的下划线 */
+}
+
 body {
     background-color: #B2EBF2;
 }
 
+input::placeholder {
+    color: #757575;
+  }
+
+/* banner属性设置 */
 .banner {
-    /* banner属性设置 */
     width: 100%px;
     height: 240px;
     background-color: #00BCD4;
     position: relative;
 }
 
-.shouye {
-    width: 100px;
-    height: 50px;
-    font-size: 28px;
-    bottom: 0px;
-    margin-left: 100px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+/* 设置导航的框高与浮动样式 */
+.daohang {
     display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 50px;
+    margin-left: 8%;
+    bottom: 0px;
+    position: absolute;
 }
 
+/* 设置导航内盒子占用导航块的比例与高度 */
+.daohang div{
+    flex: 25%;
+    height: 50px;
+}
+
+/* banner里面的a标签默认属性 */
 .banner a{
-    /* banner里面的a标签默认属性 */
-    text-decoration: none;
-    color: #101010; 
-}
-
-.jiaocheng {
-    width: 100px;
-    height: 50px;
-    font-size: 28px;
-    bottom: 0px;
-    margin-left: 200px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    display: flex;
-}
-
-.yingyin {
-    width: 100px;
-    height: 50px;
-    font-size: 28px;
-    bottom: 0px;
-    margin-left: 300px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    display: flex;
-}
-
-.guanyu {
-    width: 100px;
-    height: 50px;
-    font-size: 28px;
-    bottom: 0px;
-    margin-left: 400px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    display: flex;
-}
-
-.zhuti {
     width: 100%;
-    height: 100%;
+    margin-left: 88px;
+    color: #101010;
+    display: flex;
+    height: 50px;
+    font-size: 28px;
+    align-items: center;
+    justify-content: center;
     
+}
+
+main{
+    position: relative;
+    height: 100%;
+}
+
+.search-box {
+    height: 40px;
+    width: 400px;
+    border: none;
+    top: 10px;
+    right: 10%;
+    position: absolute;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+}
+
+.put {
+    display: block;
+    height:100%;
+    width: 90%;
+    border: none;
+    color:black;
+    outline:medium; 
+    /* background-color: #00BCD4; */
+}
+
+.search-icon-box{
+    width: 10%;
+    height: 100%;
+    right: 0%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
 }
