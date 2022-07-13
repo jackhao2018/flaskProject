@@ -3,7 +3,19 @@
     padding: 0;
     /* 清除元素默认的内外边距 */
     /* 一个页面只需要写一次,初始化代码 */
+  }
+
+  li {
+    list-style: none;
+    /* 清除li标签的前面的小点点 */
 }
+
+
+a {
+    text-decoration: none;
+    /* 清除a标签的下划线 */
+}
+
 body {
     background-color: #B2EBF2;
 }
@@ -22,7 +34,7 @@ body {
     flex-direction: row;
     width: 400px;
     height: 50px;
-    margin-left: 12%;
+    margin-left: 8%;
     bottom: 0px;
     position: absolute;
 }
@@ -36,7 +48,7 @@ body {
 /* banner里面的a标签默认属性 */
 .banner a{
     width: 100%;
-    text-decoration: none;
+    margin-left: 88px;
     color: #101010;
     display: flex;
     height: 50px;
@@ -46,32 +58,34 @@ body {
     
 }
 
-/* .jiaocheng {
-    height: 50px;
-    font-size: 28px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+main{
+    position: relative;
 }
 
-.yingyin {
-    height: 50px;
-    font-size: 28px;
-    align-items: center;
-    justify-content: center;
+.search-box {
+    height: 40px;
+    width: 400px;
+    border: none;
+    top: 10px;
+    right: 10%;
+    position: absolute;
+    background-color:aliceblue;
     display: flex;
+    flex-direction: row;
 }
 
-.guanyu {
-    height: 50px;
-    font-size: 28px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-} */
+.put {
+    height:100%;
+    width: 90%;
+    border: none;
+    color:#999;
+    outline:medium; 
+}
 
-.zhuti {
-    width: 100%;
+.search-icon-box{
+    width: 40px;
     height: 100%;
-    
+    right: 10%;
+    background-color: rgba(140, 140, 250, 1);
+    position: absolute;
 }

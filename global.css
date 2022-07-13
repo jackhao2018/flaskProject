@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot'); /* IE9 Compat Modes */
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: SourceHanSansCN-Regular;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* 清除元素默认的内外边距 */
+  /* 一个页面只需要写一次,初始化代码 */
+}
+
+a {
+  color: rgb(102, 102, 255);
+}
+
+a:hover {
+  color: rgb(89, 89, 255);
+}
