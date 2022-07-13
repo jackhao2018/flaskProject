@@ -1,0 +1,52 @@
+.biaotixian {
+    align-content: center;
+    margin-top: 10px;
+    width: 90%;
+    border: 1px dashed gray
+  }
+
+.line-box{
+    width: 80%;
+    height: 100px;
+    margin-top: 15px;
+    margin-left: 10%;
+    border-style: dashed none  none;
+    border-color: #BBBBBB;
+    border-width: 1px;
+    position: absolute;
+}
+
+.filter{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-bottom: 1px dashed #BBBBBB;
+    position: relative;
+    margin: 0;
+    padding: 15px 0px 15px 0px;
+    list-style: none;
+}
+
+.filter li{
+    display: flex;
+    width: 100px;
+    border-width: 1px;
+    border-style: none solid none none;
+    border-color: #BBBBBB;
+    justify-content: center;
+}
+
+.filter li a{
+    color: black;
+}
+
+/* .filter a{
+    width: 100%;
+    margin-left: 88px;
+    color: #101010;
+    display: flex;
+    height: 50px;
+    font-size: 28px;
+    align-items: center;
+    justify-content: center;
+} */
