@@ -20,6 +20,10 @@ body {
     background-color: #B2EBF2;
 }
 
+input::placeholder {
+    color: #757575;
+  }
+
 /* banner属性设置 */
 .banner {
     width: 100%px;
@@ -60,6 +64,7 @@ body {
 
 main{
     position: relative;
+    height: 100%;
 }
 
 .search-box {
@@ -69,23 +74,27 @@ main{
     top: 10px;
     right: 10%;
     position: absolute;
-    background-color:aliceblue;
+    background-color:white;
     display: flex;
     flex-direction: row;
 }
 
 .put {
+    display: block;
     height:100%;
     width: 90%;
     border: none;
-    color:#999;
+    color:black;
     outline:medium; 
+    /* background-color: #00BCD4; */
 }
 
 .search-icon-box{
-    width: 40px;
+    width: 10%;
     height: 100%;
-    right: 10%;
-    background-color: rgba(140, 140, 250, 1);
+    right: 0%;
+    display: flex;
     position: absolute;
+    align-items: center;
+    justify-content: center;
 }
