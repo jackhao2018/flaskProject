@@ -1,10 +1,10 @@
-import jieba
-import stylecloud
+from flask import Flask
 
+app = Flask(__name__)
+app.config['ENV'] = 'development'
 
-
-
-def ciyun():
+@app.route('/')
+def world_cloud():
     with open(r'D:\测试用例数据\textfiles\test-点云.txt', 'r', encoding='utf8') as f:
         word_list = jieba.cut(f.read())
         result = " ".join(word_list)  # 分词用空格隔开
@@ -18,11 +18,3 @@ def ciyun():
         gradient='horizontal',  # 渐变色方向选了垂直方向
         icon_name='fas fa-circle',  # 蒙版选取，从Font Awesome里选
         output_name='../static/img/ciyun.png')  # 输出词云图
-
-
-def main():
-    ciyun()
-
-
-if __name__ == '__main__':
-    main()
