@@ -27,6 +27,9 @@
     list-style: none;
 }
 
+main{
+    background-color: beige;
+}
 .filter li{
     display: flex;
     width: 100px;
@@ -40,13 +43,25 @@
     color: black;
 }
 
-/* .filter a{
-    width: 100%;
-    margin-left: 88px;
-    color: #101010;
+.card-area{
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    margin-top: 129px;
     display: flex;
-    height: 50px;
-    font-size: 28px;
-    align-items: center;
-    justify-content: center;
-} */
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: absolute;
+    background-color: chartreuse;
+
+}
+
+.card{
+    height: 250px;
+    flex: 0 0 40%;
+    position: relative;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    -webkit-box-flex: 0;
+}
