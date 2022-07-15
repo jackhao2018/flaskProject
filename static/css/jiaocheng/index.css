@@ -45,7 +45,7 @@ main{
 
 .card-area{
     width: 80%;
-    height: 100%;
+    /* height: 100%; */
     margin-left: 10%;
     margin-top: 129px;
     display: flex;
@@ -57,11 +57,15 @@ main{
 
 }
 
-.card{
-    height: 250px;
-    flex: 0 0 40%;
-    position: relative;
-    border-radius: 5px;
-    background-color: cornflowerblue;
-    -webkit-box-flex: 0;
+
+@media (max-width: 1920px) {
+    .card{
+        height: 250px;
+        flex: 0 0 20%;
+        position: relative;
+        border-radius: 5px;
+        background-color: cornflowerblue;
+        -webkit-box-flex: 0;
+    }
 }
+
