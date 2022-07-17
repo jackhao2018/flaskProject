@@ -28,7 +28,7 @@
 }
 
 main{
-    background-color: beige;
+    background-color: #b2ebf2;
 }
 .filter li{
     display: flex;
@@ -50,22 +50,99 @@ main{
     margin-top: 129px;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
     overflow: hidden;
     position: absolute;
-    background-color: chartreuse;
+    background-color: #b2ebf2;
+
+}
+
+.card-img {
+    width: 100%;
+    height: 60%;
+    display: block;
+    /* overflow: hidden; */
 
 }
 
 
+/* 超过1920显示器的显示样式 */
+@media (max-width: 2760px) {
+    .card{
+        height: 350px;
+        flex: 0 0 18%;
+        position: relative;
+        border-radius: 5px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        background-color: whitesmoke;
+        -webkit-box-flex: 0;
+        overflow: hidden;
+    }
+}
+
+/* 低于或等于1920显示器的显示样式 */
 @media (max-width: 1920px) {
     .card{
         height: 250px;
-        flex: 0 0 20%;
+        flex: 0 0 23%;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        font-size: 14px;
         position: relative;
         border-radius: 5px;
-        background-color: cornflowerblue;
+        background-color: whitesmoke;
         -webkit-box-flex: 0;
     }
 }
 
+.son-tag{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    background-color: bisque;
+    align-items: center;
+}
+
+.point-1 {
+    margin-left: 5px;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #2196f3;
+}
+
+.point-2 {
+    margin-left: 15px;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #66be7a;
+}
+
+.card span {
+    display: block;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.card-title{
+    height: 20%;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    word-break: break-all;
+    align-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: bisque;
+    justify-content: flex-start;
+    color: black;
+    font-weight: bold;
+}
