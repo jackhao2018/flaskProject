@@ -3,20 +3,20 @@
     margin-top: 10px;
     width: 90%;
     border: 1px dashed gray
-  }
+}
 
-.line-box{
+.line-box {
     width: 80%;
     height: 100px;
     margin-top: 15px;
     margin-left: 10%;
-    border-style: dashed none  none;
+    border-style: dashed none none;
     border-color: #BBBBBB;
     border-width: 1px;
     position: absolute;
 }
 
-.filter{
+.filter {
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -27,10 +27,21 @@
     list-style: none;
 }
 
-main{
+main {
     background-color: #b2ebf2;
+    /* overflow: hidden; */
 }
-.filter li{
+
+main::after{
+    /* 下面这三句话一句都不能少*/
+    content:' ';
+    clear: both;
+    display: block;
+
+}
+
+    
+.filter li {
     display: flex;
     width: 100px;
     border-width: 1px;
@@ -39,11 +50,11 @@ main{
     justify-content: center;
 }
 
-.filter li a{
+.filter li a {
     color: black;
 }
 
-.card-area{
+.card-area {
     width: 80%;
     /* height: 100%; */
     margin-left: 10%;
@@ -62,14 +73,13 @@ main{
     width: 100%;
     height: 60%;
     display: block;
-    /* overflow: hidden; */
 
 }
 
 
 /* 超过1920显示器的显示样式 */
 @media (max-width: 2760px) {
-    .card{
+    .card {
         height: 350px;
         flex: 0 0 18%;
         position: relative;
@@ -85,7 +95,7 @@ main{
 
 /* 低于或等于1920显示器的显示样式 */
 @media (max-width: 1920px) {
-    .card{
+    .card {
         height: 250px;
         flex: 0 0 23%;
         margin-left: 20px;
@@ -98,13 +108,12 @@ main{
     }
 }
 
-.son-tag{
+.son-tag {
     width: 100%;
     height: 12%;
     display: flex;
     flex-direction: row;
     font-size: 20px;
-    background-color: bisque;
     align-items: center;
 }
 
@@ -132,17 +141,60 @@ main{
     margin-left: 5px;
 }
 
-.card-title{
+.card-title {
     height: 20%;
     width: 100%;
     font-size: 20px;
-    display: flex;
+    display: -webkit-box;
     word-break: break-all;
     align-content: center;
     overflow: hidden;
     text-overflow: ellipsis;
-    background-color: bisque;
     justify-content: flex-start;
+    -webkit-box-orient: vertical;
     color: black;
     font-weight: bold;
+    -webkit-line-clamp: 2;
+}
+
+.preview {
+    height: 8%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.preview img {
+    margin-left: 5px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview span {
+    margin-left: 5px;
+    display: -webkit-flex;
+    color: #bfbfbf;
+    align-items: center;
+}
+
+.line-box::after{
+    content:' ';
+    clear: both;
+    height: 0px;
+    display: block;
+}
+
+.card-area::after{
+    content:' ';
+    clear: both;
+    height: 0px;
+    display: block;}
+
+    
+.pager {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    background-color:red;
 }

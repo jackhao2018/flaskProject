@@ -17,6 +17,10 @@ body,
   overflow: hidden;
 }
 
+#root {
+  overflow-y: scroll;
+}
+
 * {
   margin: 0;
   padding: 0;
