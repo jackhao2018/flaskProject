@@ -61,7 +61,7 @@ input::placeholder {
     justify-content: center;
 }
 
-main{
+.index-main{
     position: relative;
     height: 100%;
 }

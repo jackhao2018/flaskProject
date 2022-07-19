@@ -13,7 +13,6 @@
     border-style: dashed none none;
     border-color: #BBBBBB;
     border-width: 1px;
-    position: absolute;
 }
 
 .filter {
@@ -27,20 +26,10 @@
     list-style: none;
 }
 
-main {
+.main {
     background-color: #b2ebf2;
-    /* overflow: hidden; */
 }
 
-main::after{
-    /* 下面这三句话一句都不能少*/
-    content:' ';
-    clear: both;
-    display: block;
-
-}
-
-    
 .filter li {
     display: flex;
     width: 100px;
@@ -55,20 +44,16 @@ main::after{
 }
 
 .card-area {
-    width: 80%;
-    /* height: 100%; */
-    margin-left: 10%;
-    margin-top: 129px;
     display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     overflow: hidden;
-    position: absolute;
     background-color: #b2ebf2;
-
 }
-
 .card-img {
     width: 100%;
     height: 60%;
@@ -109,9 +94,9 @@ main::after{
 }
 
 .son-tag {
+    display: flex;
     width: 100%;
     height: 12%;
-    display: flex;
     flex-direction: row;
     font-size: 20px;
     align-items: center;
@@ -177,24 +162,13 @@ main::after{
     color: #bfbfbf;
     align-items: center;
 }
-
-.line-box::after{
-    content:' ';
-    clear: both;
-    height: 0px;
-    display: block;
-}
-
-.card-area::after{
-    content:' ';
-    clear: both;
-    height: 0px;
-    display: block;}
-
     
 .pager {
     display: flex;
-    width: 100%;
+    margin-left: 50%;
+    margin-right: 200PX;
+    align-content: center;
+    width: 400PX;
     height: 30px;
     background-color:red;
 }

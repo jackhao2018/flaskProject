@@ -14,11 +14,11 @@ body,
   height: 100%;
   font-family: SourceHanSansCN-Regular;
   font-size: 14px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #root {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 * {
