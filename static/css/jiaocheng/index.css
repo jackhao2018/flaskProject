@@ -165,10 +165,33 @@
     
 .pager {
     display: flex;
-    margin-left: 50%;
-    margin-right: 200PX;
-    align-content: center;
-    width: 400PX;
-    height: 30px;
+    flex-direction: row;
+    margin-left: 40%;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 25px;
     background-color:yellowgreen;
+}
+
+.pager ul {
+    display: flex;
+    /* flex-direction: row; */
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    /* text-decoration: none; */
+    /* justify-content: center; */
+    
+}
+
+
+.pager li {
+    display: inline-block;
+    width: 25px;
+    height: 100%;
+    background-color: white;
+    /* border-radius: 3px; */
+    text-align: center;
+    align-content: center;
 }
