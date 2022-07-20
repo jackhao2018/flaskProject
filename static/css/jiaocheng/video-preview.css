@@ -1,9 +1,9 @@
-body{
+body {
     background-color: #00BCD4;
     width: 100%;
 }
 
-.reback{
+.reback-out {
     display: flex;
     flex-direction: row;
     height: 16px;
@@ -12,13 +12,26 @@ body{
     margin-top: 80px;
 }
 
-.reback img{
+.reback {
+    display: flex;
+    flex-direction: row;
+    height: 16px;
+    width: 120px;
+}
+
+.reback-icon {
+    display: block;
+    height: 16px;
+    width: 16px;
+}
+
+.reback img {
     height: 16px;
     width: 16px;
     vertical-align: middle;
 }
 
-.reback span{
+.reback span {
     display: -webkit-flex;
     height: 16px;
     margin-left: 10px;
@@ -29,17 +42,51 @@ body{
     align-items: center;
 }
 
-.play-video{
+.play-video {
     width: 100%;
     height: 50%;
     margin-top: 10px;
-    /* background-color: blue; */
 }
 
-#root video{
+#root video {
     display: flex;
     margin-left: 15%;
     height: 100%;
     width: 70%;
-    background-color: aliceblue;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.details-download {
+    display: flex;
+    width: 70%;
+    height: 35%;
+    margin-left: 15%;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: #b2ebf2;
+}
+
+.details{
+    padding-left: 10px;
+    height: 100%;
+    width: 60%;
+}
+
+.details p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.details h2{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
