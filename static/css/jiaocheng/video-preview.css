@@ -59,18 +59,20 @@ body {
 
 .details-download {
     display: flex;
-    width: 70%;
-    height: 35%;
-    margin-left: 15%;
-    margin-top: 15px;
-    border-radius: 5px;
-    background-color: #b2ebf2;
+    /* height: 35%; */
+    flex-direction: row;
+    overflow-y: auto;
 }
 
 .details{
-    padding-left: 10px;
+    display: flex;
+    width: 44%;
     height: 100%;
-    width: 60%;
+    margin-left: 15%;
+    margin-top: 15px;
+    padding-left: 1%;
+    border-radius: 5px;
+    background-color: #b2ebf2;
 }
 
 .details p{
@@ -90,3 +92,33 @@ body {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+
+.download{
+    width: 24%;
+    margin-top: 15px;
+    margin-left: 1%;
+    border-radius: 5px;
+    background-color: #b2ebf2;
+}
+
+.download-now{
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border:none;
+    border-radius: 5px;
+    background-color: #03a9f4;
+    height: 30px;
+}
+
+.download strong{
+    display: block;
+    font-size: 20px;
+    margin-block-start: 3em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 10%;
+    margin-inline-end: 0px;
+    
+}
+
