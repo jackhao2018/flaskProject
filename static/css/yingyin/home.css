@@ -1,0 +1,15 @@
+
+/* 使盒子中的img span标签垂直居中 */
+.img-title {
+    display: -webkit-flex;
+    width: 80%;
+    height: 30px;
+    margin-top: 50px;
+    margin-left: 10%;
+    align-items: center;
+    background-image: -webkit-linear-gradient(left, #00bcd4, rgba(255, 0, 0, 0))
+}
+
+.img-content{
+    
+}
