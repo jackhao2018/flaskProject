@@ -36,3 +36,8 @@ a:hover {
   color: red;
 }
 
+a {
+  text-decoration: none;
+  /* 清除a标签的下划线 */
+}
+
