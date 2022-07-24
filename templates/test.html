@@ -1,19 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<style>
+    #dv{
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+    }
+</style>
 <body>
-<div name="margin的框" style="border:black 10px dashed; height:500px; width:500px; background:pink; text-align: center;display: flex; justify-content:center">
-    这里是外边距,设置外边距50px
-    <div name="pading范围" style="width:400px; height:400px; background:yellow; ">
-    
-    </div>
-    
-</div>
-<div style="width:100px; height:100px; background:green; padding:10px;">
-    我是填充
-</div>
+    <input type="button" value="隐藏" id="btn"/>
+    <!--<input type="button" value="显示" id="btn1"/>-->
+    <div id="dv"></div>
+    <script>
+        function my(id){
+            return document.getElementById(id);
+        }
+        //第一种方法
+        /*my("btn").onclick=function(){
+            my("dv").style.display="none";
+        }
+        my("btn1").onclick=function(){
+            my("dv").style.display="block";
+        }*/
+        //第二种方法
+        my("btn").onclick=function(){
+            if (this.value =="隐藏") {
+                my("dv").style.display="none";
+                this.value="显示";
+            }
+             else if(this.value =="显示"){
+                my("dv").style.display="block";
+                this.value="隐藏";
+            }
+        }
+    </script>
 </body>
-</html>

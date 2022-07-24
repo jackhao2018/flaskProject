@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../global.css" type="text/css">
     <link rel="stylesheet" href="../../static/css/yingyin/img-details.css" type="text/css">
-    <!-- <link rel="stylesheet" href="../../static/css/jiaocheng/video-preview.css" type="text/css"> -->
     <title>图片详情</title>
 </head>
 
@@ -49,35 +48,175 @@
             </div>
         </div>
         <div id="picture-list" class="picture-list">
-            <img src="../../static/img/common/thumbnail-list.png" alt="图片显示样式切换" class="show-img">
-            <div id="separate" class="separate"></div>
+            <img id="img" src="../../static/img/common/double-list.png" alt="图片显示样式切换" class="show-img"
+                onclick=change_pic()>
+            <div id="separate" class="separate"><input id="all-select" type="checkbox" name="box"
+                    style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                <ul style="width: 100%;">
+                    <li>全选</li>
+                    <li style="margin-left: 10%;">文件名</li>
+                    <li style="margin-left: 40%;">文件大小</li>
+                    <li style="margin-left: 28%;">文件格式</li>
+                </ul>
+            </div>
             <div id="content" class="content">
-                <img src="../../static/img/test-img/不知道.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/不记得.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/不记得阿里阿斯蒂芬.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/佛里达.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/冬.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/合集.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/夏.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/春.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/秋.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/不知道.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/不记得.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/不记得阿里阿斯蒂芬.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/佛里达.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/冬.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/合集.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/春.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/秋.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/不知道.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/不记得.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/不记得阿里阿斯蒂芬.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/佛里达.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/冬.jpg" alt="测试用图">
-                <img src="../../static/img/test-img/合集.jpg" alt="测试用图">
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/不知道.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/不记得.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/不记得阿里阿斯蒂芬.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/佛里达.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/冬.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/合集.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/夏.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/春.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/不知道.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/不记得.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/不记得阿里阿斯蒂芬.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/佛里达.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/冬.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/合集.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/夏.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+                <div id="img-box" class="img-box">
+                    <img src="../../static/img/test-img/春.jpg" alt="测试用图">
+                    <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
+                        <input id="box" type="checkbox" name="box">
+                    </div>
+                </div>
+            </div>
+            <div id="list-content" class="list-content" style="display: none;">
+                <ul>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box">
+                        <span>莎莎手绘01</span>
+                        <span>425.6kb</span>
+                        <span>2022-06-24</span>
+                        <span>下载</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+    <script>
+        var all = document.querySelector('#all-select');
+        var sports = document.querySelector('#content').querySelectorAll('input');
+
+        // 给全选按钮绑定点击事件
+        all.onclick = function () {
+            console.log(all.checked);
+            for (var i = 0; i < sports.length; i++) {
+                sports[i].checked = all.checked;
+            }
+        }
+
+        // 给每个小复选框绑定点击事件
+        for (var i = 0; i < sports.length; i++) {
+            sports[i].onclick = function () {
+                // 控制全选按钮是否选中
+                var flag = true;
+                // 每次点击一个小框，都检查是否所有复选框都被选中
+                for (var i = 0; i < sports.length; i++) {
+                    if (!sports[i].checked) {
+                        flag = false;
+                        break; // 只要有一个小复选框没有被选中，全选按钮就没被选中，可跳出循环，下面小复选框不用再判断
+                    }
+                }
+                all.checked = flag;
+            }
+        }
+    </script>
+    <script>
+        function change_pic() {
+            var imgObj = document.getElementById("img");
+            if (imgObj.getAttribute("src", 2) == "../../static/img/common/list.png") {
+                imgObj.src = "../../static/img/common/double-list.png";
+                document.getElementById("content").style.display = "flex";
+                document.getElementById("list-content").style.display = "none";
+
+            } else {
+                imgObj.src = "../../static/img/common/list.png";
+                document.getElementById("content").style.display = "none";
+                document.getElementById("list-content").style.display = "block";
+            }
+        }
+    </script>
+    <script>
+
+    </script>
 </body>
+
 
 </html>
