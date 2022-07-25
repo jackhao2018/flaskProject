@@ -53,13 +53,15 @@
             <div id="separate" class="separate"><input id="all-select" type="checkbox" name="box"
                     style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
                 <ul style="width: 100%;">
-                    <li>全选</li>
-                    <li style="margin-left: 10%;">文件名</li>
-                    <li style="margin-left: 40%;">文件大小</li>
-                    <li style="margin-left: 28%;">文件格式</li>
+                    <li id="img-info" class="img-info">
+                        <span style="margin-left: 10px; width: 57%;text-align: left; padding-left: 20px;">全选</span>
+                        <span style="width: 7%;">大小</span>
+                        <span style="width: 15%;">上传时间</span>
+                        <span style="width: 10%; margin-left: 7%;">操作</span>
+                    </li>
                 </ul>
             </div>
-            <div id="content" class="content">
+            <div id="content" class="content" style="display: flex;">
                 <div id="img-box" class="img-box">
                     <img src="../../static/img/test-img/不知道.jpg" alt="测试用图">
                     <div class="checkbox" style="position:absolute;top:0;right:0;z-index:1000;padding-right:33px;">
@@ -160,25 +162,168 @@
             <div id="list-content" class="list-content" style="display: none;">
                 <ul>
                     <li id="img-info" class="img-info">
-                        <input id="box" type="checkbox" name="box">
-                        <span>莎莎手绘01</span>
-                        <span>425.6kb</span>
-                        <span>2022-06-24</span>
-                        <span>下载</span>
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 10px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘01</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">425.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-24</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘之春天带炸</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">42.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-25</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘啥地方阿斯蒂芬sadf</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">400.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-11</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘0第三方萨法s1</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">25.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-27</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 10px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘01</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">425.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-24</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘之春天带炸</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">42.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-25</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘啥地方阿斯蒂芬sadf</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">400.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-11</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘0第三方萨法s1</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">25.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-27</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li><li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 10px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘01</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">425.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-24</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘之春天带炸</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">42.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-25</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘啥地方阿斯蒂芬sadf</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">400.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-11</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘0第三方萨法s1</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">25.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-27</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li><li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 10px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘01</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">425.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-24</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘之春天带炸</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">42.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-25</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘啥地方阿斯蒂芬sadf</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">400.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-11</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘0第三方萨法s1</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">25.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-27</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li><li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 10px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘01</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">425.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-24</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘之春天带炸</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">42.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-25</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘啥地方阿斯蒂芬sadf</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">400.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-11</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
+                    </li>
+                    <li id="img-info" class="img-info">
+                        <input id="box" type="checkbox" name="box"  style="width: 20px; height:20px; margin-top: 5px; margin-left: 10px;" value="0">
+                        <strong style="color: black; margin-left: 10px; width: 65%;" ><span style=" text-align: left; padding-left: 20px;">莎莎手绘0第三方萨法s1</span></strong>
+                        <span style="width: 10%; color: #adb6b6;">25.6kb</span>
+                        <span style="width: 15%; color: #adb6b6;">2022-06-27</span>
+                        <span style="width: 10%; margin-left: 8%;"><a href="">下载</a></span>
                     </li>
                 </ul>
             </div>
+            <div id="count" class="count"><span>已加载全部文件，总计678989个。</span></div>
+            
         </div>
     </div>
     <script>
         var all = document.querySelector('#all-select');
         var sports = document.querySelector('#content').querySelectorAll('input');
+        var list_sports = document.querySelector('#list-content').querySelectorAll('input');
+        var content = document.getElementById("content").style.display;
+        console.log(content);
+
 
         // 给全选按钮绑定点击事件
         all.onclick = function () {
             console.log(all.checked);
             for (var i = 0; i < sports.length; i++) {
                 sports[i].checked = all.checked;
+            }
+        }
+
+        all.onclick = function () {
+            console.log(all.checked);
+            for (var i = 0; i < list_sports.length; i++) {
+                list_sports[i].checked = all.checked;
             }
         }
 
@@ -190,6 +335,21 @@
                 // 每次点击一个小框，都检查是否所有复选框都被选中
                 for (var i = 0; i < sports.length; i++) {
                     if (!sports[i].checked) {
+                        flag = false;
+                        break; // 只要有一个小复选框没有被选中，全选按钮就没被选中，可跳出循环，下面小复选框不用再判断
+                    }
+                }
+                all.checked = flag;
+            }
+        }
+
+        for (var i = 0; i < list_sports.length; i++) {
+            list_sports[i].onclick = function () {
+                // 控制全选按钮是否选中
+                var flag = true;
+                // 每次点击一个小框，都检查是否所有复选框都被选中
+                for (var i = 0; i < list_sports.length; i++) {
+                    if (!list_sports[i].checked) {
                         flag = false;
                         break; // 只要有一个小复选框没有被选中，全选按钮就没被选中，可跳出循环，下面小复选框不用再判断
                     }
@@ -212,9 +372,6 @@
                 document.getElementById("list-content").style.display = "block";
             }
         }
-    </script>
-    <script>
-
     </script>
 </body>
 
