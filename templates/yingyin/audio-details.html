@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../../static/css/yingyin/audio-details.css" type="text/css">
     <title>音频详情</title>
 </head>
+
 <body>
     <a href="../yingyin/home.html" class="reback-out" style="margin-top: 100px;">
         <img src="../../static/img/common/reback.png" alt="返回箭头">
@@ -23,8 +25,10 @@
             </audio>
         </div>
         <div id="lyrics" class="lyrics">
-            <div id="title" class="title"><h2>You Know Wha</h2></div>
-            
+            <div id="title" class="title">
+                <h2>You Know Wha</h2>
+            </div>
+
             <span>sdfjsakjfdjasdlkjf a </span>
             <span>sdfjsakjfdjasdlkjf a </span>
             <span>sdfjsakjfdjasdlkjf a </span>
@@ -38,12 +42,39 @@
             <span>阿斯蒂芬卡死了快递费可结案时 a </span>
         </div>
     </div>
+    <div id="download" class="download">
+        <ul>
+            <li><button class="download-now"><img src="../../static/img/common/download.png" alt="下载icon">直接下载</button>
+            </li>
+            <li>
+                <div style="font-size: 0;"><button
+                        style="border: none; color: #757575 ;border-radius: 5px 0 0 5px; margin-left: 10%; height: 30px; width: 40%;">点击下载</button>
+                    <button
+                        style="border: none; color: #757575 ;border-radius: 0 5px 5px 0; height: 30px; width: 40%;">密码</button>
+                </div>
+            </li>
+            <li>
+                <div style="font-size: 0;"><button
+                        style="border: none; color: #757575 ;border-radius: 5px 0 0 5px; margin-left: 10%; height: 30px; width: 40%;">点击下载</button>
+                    <button
+                        style="border: none; color: #757575 ;border-radius: 0 5px 5px 0; height: 30px; width: 40%;">密码</button>
+                </div>
+            </li>
+            <li>
+                <div style="font-size: 0;"><button
+                        style="border: none; color: #757575 ;border-radius: 5px 0 0 5px; margin-left: 10%; height: 30px; width: 40%;">点击下载</button>
+                    <button
+                        style="border: none; color: #757575 ;border-radius: 0 5px 5px 0; height: 30px; width: 40%;">密码</button>
+                </div>
+            </li>
+        </ul>
+    </div>
     <script>
         window.onload = () => {
             let music = document.querySelector('#music');
             let title_cover = document.querySelector('#title-cover');
-            // 为音乐按钮图标加一个点击事件，用来控制播放与否。
 
+            // 为音乐按钮图标加一个点击事件，用来控制播放与否。
             title_cover.addEventListener('click', () => {
                 if (music.paused) {
                     music.play();
@@ -55,17 +86,14 @@
             });
 
             music.addEventListener('play', () => {
-                console.log('通过播放器控制')
-                console.log('播放歌曲')
                 title_cover.style.animation = 'playing infinite linear 6s';
             });
 
             music.addEventListener('pause', () => {
-                console.log('通过播放器控制')
-                console.log('播放歌曲')
                 title_cover.style.animation = 'none';
             });
         }
     </script>
 </body>
+
 </html>

@@ -32,19 +32,19 @@ span{
 .main{
     display: flex;
     flex-direction: row;
-    height: 65%;
+    height: 45%;
     width: 80%;
     margin-left: 10%;
     margin-top: 10px;
-    background-color: burlywood;
+    /* background-color: burlywood; */
 }
 
 .audio-img{
     display: flex;
     flex-flow: row wrap;
     width: 50%;
-    height: 75%;
-    background-color: antiquewhite;
+    height: 100%;
+    /* background-color: antiquewhite; */
 }
 
 .img-frame{
@@ -88,11 +88,9 @@ span{
 }
 
 .lyrics{
-    
+    height: 100%;
     width: 50%;
     font-size: 14px;
-    /* align-content: center;
-    justify-content: center; */
 }
 
 .title{
@@ -101,15 +99,46 @@ span{
     width: 100%;
     height: 120px;
     justify-content: center;
-      /* align-items: center; */
-    background-color: blueviolet;
-    
-
-    
+    /* background-color: blueviolet;    */
 }
 
 .lyrics h2{
-    /* display: block; */
     position: absolute;
     bottom: 0;
+}
+
+.download{
+    /* display: flex;
+    flex-direction: row; */
+    width: 80%;
+    height: 40px;
+    background-color: bisque;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+ /* {
+    
+    /*  // 使用伪类元素占据单位，不影响页面 */
+    
+
+
+.download ul {
+    display: block;
+    /* justify-content: space-between;
+    flex-wrap: wrap;
+    text-decoration: none;   */
+    width: 100%;
+    height: 100%;
+}
+
+.download li {
+    /* margin-top: 10px; */
+    width: 100px;
+    height: 100%;
+    float: left;
+}
+
+.download>div:nth-child(4){
+    margin-right: 0;
 }
