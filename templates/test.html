@@ -1,35 +1,61 @@
-<style>
-    #dv{
-        width: 100px;
-        height: 100px;
-        background-color: royalblue;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .music_ctrl {
+            /* background: url("../static/img/ciyun.png"); */
+            /* background-size: 30px 30px; */
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 50%;
+            /*animation: playing infinite linear 2s;*/
+        }
+        
+        @keyframes playing {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        </style>
+</head>
 <body>
-    <input type="button" value="隐藏" id="btn"/>
-    <!--<input type="button" value="显示" id="btn1"/>-->
-    <div id="dv"></div>
-    <script>
-        function my(id){
-            return document.getElementById(id);
-        }
-        //第一种方法
-        /*my("btn").onclick=function(){
-            my("dv").style.display="none";
-        }
-        my("btn1").onclick=function(){
-            my("dv").style.display="block";
-        }*/
-        //第二种方法
-        my("btn").onclick=function(){
-            if (this.value =="隐藏") {
-                my("dv").style.display="none";
-                this.value="显示";
+    <img id="music_ctrl" src="../static/img/test-img/冬.jpg" alt="" class="music_ctrl">
+    <span id="music_ctrl"></span>
+    <audio id="music"
+       loop
+       controls
+       src="../static/audio/You Know What.mp3">
+    您的浏览器不支持播放
+</audio>
+
+<script>
+    window.onload = () => {
+        let music = document.querySelector('#music');
+        let music_ctrl = document.querySelector('#music_ctrl');
+        // 为音乐按钮图标加一个点击事件，用来控制播放与否。
+        music_ctrl.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                music_ctrl.style.animation = 'playing infinite linear 2s';
+            } else {
+                music.pause();
+                music_ctrl.style.animation = 'none';
             }
-             else if(this.value =="显示"){
-                my("dv").style.display="block";
-                this.value="隐藏";
-            }
-        }
-    </script>
+        });
+    }
+</script>
 </body>
+</html>
+
+

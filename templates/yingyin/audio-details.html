@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../global.css" type="text/css">
-    <!-- <link rel="stylesheet" href="../../static/css/yingyin/img-details.css" type="text/css"> -->
     <link rel="stylesheet" href="../../static/css/yingyin/audio-details.css" type="text/css">
     <title>音频详情</title>
 </head>
@@ -17,14 +16,14 @@
     <div id="main" class="main">
         <div id="audio-img" class="audio-img">
             <div id="img-frame" class="img-frame">
-                <img src="../../static/img/test-img/佛里达.jpg" alt="" class="title-cover">
+                <img id="title-cover" src="../../static/img/test-img/佛里达.jpg" alt="" class="title-cover">
                 <img src="../../static/img/common/网易云图标.png" alt="" class="wangyiyun">
             </div>
-            <audio controls src="../../static/audio/You Know What.mp3" autoplay="autoplay" loop>
+            <audio id="music" controls src="../../static/audio/You Know What.mp3" autoplay="autoplay" loop onclick="">
             </audio>
         </div>
         <div id="lyrics" class="lyrics">
-            <div id="title" class="title"><h2>You Know WhatYou Know WhatYou Know What</h2></div>
+            <div id="title" class="title"><h2>You Know Wha</h2></div>
             
             <span>sdfjsakjfdjasdlkjf a </span>
             <span>sdfjsakjfdjasdlkjf a </span>
@@ -39,5 +38,34 @@
             <span>阿斯蒂芬卡死了快递费可结案时 a </span>
         </div>
     </div>
+    <script>
+        window.onload = () => {
+            let music = document.querySelector('#music');
+            let title_cover = document.querySelector('#title-cover');
+            // 为音乐按钮图标加一个点击事件，用来控制播放与否。
+
+            title_cover.addEventListener('click', () => {
+                if (music.paused) {
+                    music.play();
+                    title_cover.style.animation = 'playing infinite linear 6s';
+                } else {
+                    music.pause();
+                    title_cover.style.animation = 'none';
+                }
+            });
+
+            music.addEventListener('play', () => {
+                console.log('通过播放器控制')
+                console.log('播放歌曲')
+                title_cover.style.animation = 'playing infinite linear 6s';
+            });
+
+            music.addEventListener('pause', () => {
+                console.log('通过播放器控制')
+                console.log('播放歌曲')
+                title_cover.style.animation = 'none';
+            });
+        }
+    </script>
 </body>
 </html>

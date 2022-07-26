@@ -59,6 +59,7 @@ span{
     display: block;
     margin-left: auto;
     z-index: 2;
+    pointer-events: none;
 }
 
 .title-cover{
@@ -75,6 +76,15 @@ span{
 .audio-img audio{
     width: 500px;
     margin-left: auto;
+}
+/* 旋转动画设置 */
+@keyframes playing {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .lyrics{
