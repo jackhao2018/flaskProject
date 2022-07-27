@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../../static/css/yingyin/audio-details.css" type="text/css">
     <title>音频详情</title>
 </head>
-
 <body>
     <a href="../yingyin/home.html" class="reback-out" style="margin-top: 100px;">
         <img src="../../static/img/common/reback.png" alt="返回箭头">
@@ -21,19 +20,19 @@
                 <img id="title-cover" src="../../static/img/test-img/佛里达.jpg" alt="" class="title-cover">
                 <img src="../../static/img/common/网易云图标.png" alt="" class="wangyiyun">
             </div>
-            <audio id="music" controls src="../../static/audio/Infinity - Jaymes Young-(DJMaza).mp3" autoplay="autoplay" loop onclick="">
+            <audio id="music" controls src="../../static/audio/Infinity - Jaymes Young-(DJMaza).mp3" autoplay="autoplay"
+                loop onclick="">
             </audio>
         </div>
         <div id="lyrics" class="lyrics">
             <div id="title" class="title">
                 <h2>infinity</h2>
             </div>
-            <div id="mask" class="mask"></div>
             <div id="lrc-area" class="lrc-area">
+                <div id="mask" class="mask"></div>
                 <ul id="musicUl" class="musicUl">
                 </ul>
             </div>
-            
         </div>
     </div>
     <div id="download" class="download">
@@ -42,17 +41,20 @@
             </li>
             <li>
                 <div><button style="border-radius: 20px 0 0 20px">阿里云盘</button>
-                    <button style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
+                    <button
+                        style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
                 </div>
             </li>
             <li>
                 <div><button style="border-radius: 20px 0 0 20px">百度网盘</button>
-                    <button style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
+                    <button
+                        style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
                 </div>
             </li>
             <li>
                 <div><button style="border-radius: 20px 0 0 20px">夸克网盘</button>
-                    <button style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
+                    <button
+                        style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
                 </div>
             </li>
         </ul>
@@ -82,20 +84,16 @@
             });
         }
     </script>
-
     <script>
-        function musicPlay(ele){
-    let musicArea = document.getElementById('lyrics');
-    let music =document.getElementById('music');
-    let musicUl =document.getElementById('musicUl');
-    let musicll =document.getElementById('musicll');
-    let a = 250;//歌词容器到高，随便改,但最好和你自己写到那个div一样高；
-    let b = 40;//li的高度，无特殊要求；
-    let c ='../static/audio/You Know What.mp3'//歌曲目录，只能放一个哈！
-    // ele.appendChild(musicArea).appendChild(music); musicArea.appendChild(musicUl);
-    // musicStyle();
-
-    let lrc = `[length:03:57.77]
+        function musicPlay(ele) {
+            let musicArea = document.getElementById('lyrics');
+            let music = document.getElementById('music');
+            let musicUl = document.getElementById('musicUl');
+            let musicll = document.getElementById('musicll');
+            let a = 250;//歌词容器到高，随便改,但最好和你自己写到那个div一样高；
+            let b = 40;//li的高度，无特殊要求；
+            let c = '../static/audio/You Know What.mp3'//歌曲目录，只能放一个哈！
+            let lrc = `[length:03:57.77]
 [re:www.megalobiz.com/lrc/maker]
 [ve:v1.2.3]
 [00:15.05]Baby this love, I'll never let it die
@@ -130,76 +128,76 @@
 [02:59.32]'Cause I love you for infinity
 [03:04.09]I love you for infinity`
 
-    function split(){//把lrc歌词分割成数组，
-       let split_1 =lrc.split('\n');
-       let length = split_1.length;
-       for (let i = 0; i < length; i++) {
-           let lrcArr = split_1[i];
-           split_1[i] = change(lrcArr);
-       function change(str){
-           let lrc = str.split(']');
-           let timer =lrc[0].replace('[','');
-           let str_music =lrc[1];
-           let time_split =timer.split(':');
-           let s = +time_split[1];
-           let min = +time_split[0];
-           return{
-               time:min*60 + s ,
-               lrc :str_music//分割好到歌词和时间
-           }
-       }
-   }
-   return split_1
-   }
-   let lrcArr = split();//至此歌词处理完了。
-   createLi();
-   function createLi(){//根据歌词数组创建li
-       let len = lrcArr.length;
-       for (let i = 0; i < len; i++) {
-             let lrc_li  = lrcArr[i];
-             let musicll  = document.createElement('li');
-             musicll.innerText =lrc_li.lrc;
-             musicll.style.height = b + 'px'
-             musicll.style.textAlign ='center'
-             musicll.style.width='100%'
-             musicll.style.padding = '0';
-             musicll.style.color = '#212121'
-            musicll.style.zIndex = '-1'
-             musicUl.appendChild(musicll);
-       }
-   }
-   function setCurrentLi(){
-       let time = music.currentTime;
-       for ( i = 0; i < lrcArr.length; i++) {
-           let play = lrcArr[i];
-           if (time -play.time <= 0) {
-                return i;
-           }
-       }return -1;
-   }
-   function current(){//设置top，让其滚动
-       let li = setCurrentLi();
-       let divHeight = a;
-       let liHeight =b;
-       let top  = liHeight*li - divHeight / 2 +liHeight / 2;
-       if (top < 0) {
-           top = 0;
-       }
-    //    
-       musicUl.style.marginTop = -top + 'px';
-       let playLi =musicUl.querySelector('.play')
-       if (playLi) {
-           playLi.className = '';		
-       }
-       if(li>=0){
-           musicUl.children[li-1].className ='play'
-       
-   }}
-   music.ontimeupdate = current;
-   }
+            function split() {//把lrc歌词分割成数组，
+                let split_1 = lrc.split('\n');
+                let length = split_1.length;
+                for (let i = 0; i < length; i++) {
+                    let lrcArr = split_1[i];
+                    split_1[i] = change(lrcArr);
+                    function change(str) {
+                        let lrc = str.split(']');
+                        let timer = lrc[0].replace('[', '');
+                        let str_music = lrc[1];
+                        let time_split = timer.split(':');
+                        let s = +time_split[1];
+                        let min = +time_split[0];
+                        return {
+                            time: min * 60 + s,
+                            lrc: str_music//分割好到歌词和时间
+                        }
+                    }
+                }
+                return split_1
+            }
+            let lrcArr = split();//至此歌词处理完了。
+            createLi();
+            function createLi() {//根据歌词数组创建li
+                let len = lrcArr.length;
+                for (let i = 0; i < len; i++) {
+                    let lrc_li = lrcArr[i];
+                    let musicll = document.createElement('li');
+                    musicll.innerText = lrc_li.lrc;
+                    musicll.style.height = b + 'px'
+                    musicll.style.textAlign = 'center'
+                    musicll.style.width = '100%'
+                    musicll.style.padding = '0';
+                    musicll.style.color = '#212121'
+                    musicll.style.zIndex = '-1'
+                    musicUl.appendChild(musicll);
+                }
+            }
+            function setCurrentLi() {
+                let time = music.currentTime;
+                for (i = 0; i < lrcArr.length; i++) {
+                    let play = lrcArr[i];
+                    if (time - play.time <= 0) {
+                        return i;
+                    }
+                } return -1;
+            }
+            function current() {//设置top，让其滚动
+                let li = setCurrentLi();
+                let divHeight = a;
+                let liHeight = b;
+                let top = liHeight * li - divHeight / 2 + liHeight / 2;
+                if (top < 0) {
+                    top = 0;
+                }
+                //    
+                musicUl.style.marginTop = -top + 'px';
+                let playLi = musicUl.querySelector('.play')
+                if (playLi) {
+                    playLi.className = '';
+                }
+                if (li >= 0) {
+                    musicUl.children[li - 1].className = 'play'
 
-   let ele =document.getElementById('music');
-   musicPlay(ele);
+                }
+            }
+            music.ontimeupdate = current;
+        }
+        let ele = document.getElementById('music');
+        musicPlay(ele);
     </script>
 </body>
 
