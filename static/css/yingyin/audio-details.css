@@ -93,6 +93,8 @@ span {
     height: 100%;
     width: 50%;
     font-size: 14px;
+    overflow: hidden;
+    opacity: 1;
 }
 
 .title {
@@ -101,15 +103,35 @@ span {
     width: 100%;
     height: 120px;
     justify-content: center;
-    background-color:liner-gradient( #ffffff00, #0097a7);
-    z-index: 100;
-    /* background-color: blueviolet;    */
+    z-index: 999;
+
 }
 
 .lyrics h2 {
     position: absolute;
     bottom: 0;
 }
+
+.mask {
+    height: 50px;
+    width: 100%;
+    z-index: 999;
+    /* background: linear-gradient(red, #ffffff00); */
+    opacity: 1;
+    /* #0097a7 */
+}
+
+.lrc-area{
+    width: 100%;
+    height: calc(100%-150px);
+    /* background-color: chartreuse; */
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* .musicUl{
+    
+} */
 
 .download {
     width: 80%;
@@ -130,9 +152,10 @@ span {
     width: 100%;
     height: 100%;
 }
-ul div{
+
+ul div {
     height: 40px;
-} 
+}
 
 /* 控制盒子是否可以变形 */
 .download li {
@@ -153,17 +176,22 @@ ul div{
     height: 40px;
 }
 
-li div{
+li div {
     /* margin-left: 10%; */
     display: flex;
     flex-direction: row;
 }
 
-li>div>button{
+li>div>button {
     font-size: 14px;
     display: block;
     border: none;
     color: #757575;
-    height: 40px; 
+    height: 40px;
     width: 50%;
+}
+
+.play {
+    background-color: #00000000;
+    font-size: 20px;
 }
