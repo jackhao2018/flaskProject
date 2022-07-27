@@ -42,7 +42,8 @@ span {
 }
 
 .main video{
-    height: 100%;
+    max-height: 100%;;
+    /* min-height: 460px; */
 }
 
 .footer{
@@ -53,5 +54,49 @@ span {
     margin-top: 10px;
     margin-left: 10%;
     border-radius: 5px;
-    background-color: #b2ebf2;
 }
+
+.video-info{
+    height: 100%;
+    width: 74%;
+    border-radius: 5px;
+    overflow: auto;
+    background-color:  #b2ebf2;
+}
+
+.download{
+    height: 100%;
+    width: 25%;
+    margin-left: 1%;
+    border-radius: 5px;
+    overflow: auto;
+    background-color:  #b2ebf2;
+}
+
+.download-now {
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #03a9f4;
+    height: 30px;
+}
+
+.download span{
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    color: #28a9f3;
+}
+.download button{
+    border: none;
+    height: 30px; 
+    width: 40%;
+    color: #000000;
+    border-color: darkgrey;
+    border-width: 1px; 
+}
+
