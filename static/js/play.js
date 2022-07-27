@@ -1,93 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../global.css" type="text/css">
-    <link rel="stylesheet" href="../../static/css/yingyin/audio-details.css" type="text/css">
-    <title>音频详情</title>
-</head>
-
-<body>
-    <a href="../yingyin/home.html" class="reback-out" style="margin-top: 100px;">
-        <img src="../../static/img/common/reback.png" alt="返回箭头">
-        <span>返回上一页</span>
-    </a>
-    <div id="main" class="main">
-        <div id="audio-img" class="audio-img">
-            <div id="img-frame" class="img-frame">
-                <img id="title-cover" src="../../static/img/test-img/佛里达.jpg" alt="" class="title-cover">
-                <img src="../../static/img/common/网易云图标.png" alt="" class="wangyiyun">
-            </div>
-            <audio id="music" controls src="../../static/audio/You Know What.mp3" autoplay="autoplay" loop onclick="">
-            </audio>
-        </div>
-        <div id="lyrics" class="lyrics">
-            <div id="title" class="title">
-                <h2>You Know Wha</h2>
-            </div>
-            <ul id="musicUl"></ul>
-        </div>
-    </div>
-    <div id="download" class="download">
-        <ul>
-            <li><button class="download-now"><img src="../../static/img/common/download.png" alt="下载icon">直接下载</button>
-            </li>
-            <li>
-                <div><button style="border-radius: 20px 0 0 20px">阿里云盘</button>
-                    <button style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
-                </div>
-            </li>
-            <li>
-                <div><button style="border-radius: 20px 0 0 20px">百度网盘</button>
-                    <button style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
-                </div>
-            </li>
-            <li>
-                <div><button style="border-radius: 20px 0 0 20px">夸克网盘</button>
-                    <button style="border-radius: 0 20px 20px 0; border-style: none none none solid; border-color: white; border-width: 1px;">密码</button>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <script>
-        window.onload = () => {
-            let music = document.querySelector('#music');
-            let title_cover = document.querySelector('#title-cover');
-
-            // 为音乐按钮图标加一个点击事件，用来控制播放与否。
-            title_cover.addEventListener('click', () => {
-                if (music.paused) {
-                    music.play();
-                    title_cover.style.animation = 'playing infinite linear 6s';
-                } else {
-                    music.pause();
-                    title_cover.style.animation = 'none';
-                }
-            });
-
-            music.addEventListener('play', () => {
-                title_cover.style.animation = 'playing infinite linear 6s';
-            });
-
-            music.addEventListener('pause', () => {
-                title_cover.style.animation = 'none';
-            });
-        }
-    </script>
-
-    <script>
-        function musicPlay(ele){
-    // let musicArea = document.createElement('div');
-    let music =document.getElementById('music');
-    let musicUl =document.getElementById('musicUl');
-    let a = 500;//歌词容器到高，随便改,但最好和你自己写到那个div一样高；
+function musicPlay(ele){
+    let musicArea = document.createElement('div');
+    let music =document.createElement('audio');
+    let musicUl =document.createElement('ul');
+    let a = 400;//歌词容器到高，随便改,但最好和你自己写到那个div一样高；
     let b = 35;//li的高度，无特殊要求；
     let c ='../static/audio/You Know What.mp3'//歌曲目录，只能放一个哈！
-    // ele.appendChild(musicArea).appendChild(music); musicArea.appendChild(musicUl);
-    // musicStyle();
+    ele.appendChild(musicArea).appendChild(music); musicArea.appendChild(musicUl);
+    musicStyle();
 
     let lrc = `[ti:对面的女孩看过来]
     [ar:任贤齐]
@@ -136,6 +55,23 @@
     [02:53.91]
     [02:57.94]（唉！算了，回家吧！）`
 
+    // function musicStyle(){//控件css样式；	
+    //     music.autoplay =true;
+    //     music.src =c;	
+    //     music.controls =true;
+    //     music.loop =true;
+    //     music.style.outline ='none'; 
+    //     music.style.width ='100%';
+    //     musicArea.style.width ='100%';
+    //     musicArea.style.height ='100%';
+    //     musicArea.style.overflow = 'hidden'
+    //     // musicArea.style.outline ='3px solid'
+    //     musicUl.style.listStyle ='none'; 
+    //     musicUl.style.width ='100%'
+    //     musicUl.style.padding  ='0';
+    //     musicUl.style.transition = '0.3'
+    // }
+    //把歌词变成[{time,lrc},{time,lrc}...]的样子，不然没法用的
     function split(){//把lrc歌词分割成数组，
        let split_1 =lrc.split('\n');
        let length = split_1.length;
@@ -204,10 +140,4 @@
    }}
    music.ontimeupdate = current;
    }
-
-   let ele =document.getElementById('music');
-   musicPlay(ele);
-    </script>
-</body>
-
-</html>
+   
