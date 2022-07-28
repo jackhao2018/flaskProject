@@ -22,7 +22,7 @@
         <div id="video-info" class="video-info">
             <span id="title" class="title">
                 <h4>选集</h4>
-                <img src="../../static/img/common/double-list.png" alt="视图显示视频集数">
+                <img id="img-icon" src="../../static/img/common/double-list.png" alt="视图显示视频集数" onclick=changeImg()>
             </span>
             <div id="video-content" class="video-content">
                 <div>1</div>
@@ -114,10 +114,100 @@
                 <div>21</div>
                 <div>22</div> -->
             </div>
-            <span id="title" class="title">
+            <div id="list-video-content" class="list-video-content" style="display: none;">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <!-- <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div> -->
+            </div>
+            <span id="title1" class="title">
                 <h4>视频简介</h4>
             </span>
-            <p>Particles Bounce Logo Reveal是一款非常棒的Premiere Pro模板，带有干净，色彩鲜艳，富有创意的动画标识。它非常易于使用，您只需将徽标添加到占位符，更改文本并点击渲染即可。它可以是一个引人注目的标志，用于开始或结束您的项目。使用这个简短而充满活力的PP模板给您的观众留下深刻印象。</p>
+            <p id="info">Particles Bounce Logo Reveal是一款非常棒的Premiere Pro模板，带有干净，色彩鲜艳，富有创意的动画标识。它非常易于使用，您只需将徽标添加到占位符，更改文本并点击渲染即可。它可以是一个引人注目的标志，用于开始或结束您的项目。使用这个简短而充满活力的PP模板给您的观众留下深刻印象。</p>
         </div>
         <div id="download" class="download">
             <button class="download-now" style="width: 80%;color: white;"><img src="../../static/img/common/download.png"
@@ -137,5 +227,33 @@
 
         </div>
     </div>
+    <script>
+
+        var videoContent = document.getElementById("video-content")
+        var listVideoContent = document.getElementById("list-video-content")
+        var title = document.getElementById("title1")
+        var info = document.getElementById("info")
+    
+
+        function changeImg() {
+            var img = document.getElementById("img-icon")
+            if (img.getAttribute("src", 2) == "../../static/img/common/list.png"){
+                console.log("当前是列表模式，将切换至视图模式")
+                img.src = "../../static/img/common/double-list.png";
+                videoContent.style.display= 'flex';
+                title.style.display= 'flex';
+                info.style.display= 'block';
+                listVideoContent.style.display = 'none'
+
+            }
+            else{
+                img.src = "../../static/img/common/list.png";
+                videoContent.style.display= 'none';
+                title.style.display= 'none';
+                info.style.display= 'none';
+                listVideoContent.style.display = 'flex'
+            }
+        }
+    </script>
 </body>
 </html>

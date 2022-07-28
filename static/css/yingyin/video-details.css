@@ -14,7 +14,6 @@ span {
     height: 20px;
     width: 160px;
     margin-left: 10%;
-    margin-top: 70px;
 }
 
 .reback-out span {
@@ -102,6 +101,34 @@ h4{
     margin-left: 30px;
 }
 
+.list-video-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content:flex-start;
+    width: 96%;
+    height: 80%;
+    overflow-x: scroll;
+    margin-left: 30px;
+}
+
+.list-video-content>div{
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+
+/* .list-video-content::-webkit-scrollbar {
+    width: 31px;
+    height: 31px;
+    background-color: transparent;
+  } */
+
 /* 隐藏滚动条 */
 .video-content::-webkit-scrollbar {
     width: 0;
@@ -136,6 +163,12 @@ p{
     overflow: auto;
     background-color:  #b2ebf2;
 }
+
+.download::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
 
 .download-now {
     display: block;
