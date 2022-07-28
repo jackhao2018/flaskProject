@@ -179,13 +179,6 @@ span{
     overflow-y: auto;
 }
 
-/* 隐藏滚动条
-.list-content::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background-color: transparent;
-  } */
-
 .list-content ul{
     width: 100%;
     height: 100%;
@@ -213,7 +206,6 @@ span{
     position: relative;
     height: 4%;
     width: 100%;
-    /* background-color: #0097a9; */
 }
 
 .count span{
