@@ -49,7 +49,7 @@
     margin-left: 10%;
     margin-top: 10px;
     flex-direction: row;
-    justify-content: space-around;
+    align-content:flex-start;
     flex-wrap: wrap;
     overflow: hidden;
     background-color: #b2ebf2;

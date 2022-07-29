@@ -131,3 +131,20 @@ button{
     border-radius: 5px;
     background-color: #3b2518;
 }
+
+.box{
+    display:flex;
+    margin-top:8%;
+    align-items:center;
+  }
+  .line{
+    width: 30%;
+    border-top:1px solid #000;
+  }
+
+  .line:first-child{
+    margin-left: 15%;
+  }
+  .text{
+    margin:0 10px;
+  }
