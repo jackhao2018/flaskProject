@@ -1,0 +1,33 @@
+#daohang{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 50px;
+    background-color: beige;
+    margin-top: 15%;
+    margin-left: 10%;
+
+    align-items: center;
+}
+
+#daohang li{
+    text-align: right;
+    /* margin-left: auto; */
+    display: block;
+    width: 100px;
+    height: 50px;
+}
+
+/* 盒子中的a标签水平垂直居中 */
+#daohang a{
+    display: block;
+    width: 100%;
+    color: #101010;
+    line-height: 50px;
+    font-size: 28px;
+    text-align: center;
+}
+
+a:hover {
+    color: red;
+  }

@@ -123,11 +123,6 @@ h4{
     line-height: 30px;
 }
 
-/* .list-video-content::-webkit-scrollbar {
-    width: 31px;
-    height: 31px;
-    background-color: transparent;
-  } */
 
 /* 隐藏滚动条 */
 .video-content::-webkit-scrollbar {
