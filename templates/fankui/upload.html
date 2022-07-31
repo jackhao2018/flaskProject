@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../global.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/fankui/upload.css" type="text/css">
+    <title>文件上传</title>
+</head>
+
+<body>
+    <a href="../fankui/home.html" class="reback-out" style="margin-top: 100px;">
+        <img src="../../static/img/common/reback.png" alt="返回箭头">
+        <span>返回上一页</span>
+    </a>
+    <div id="main" class="main">
+        <div id="content" class="content">
+
+            <div id="file-type" class="file-type">
+                <span>文件类型：</span>
+                <label><input type="radio" name="file-type" value="img" checked="checked" />&nbsp;图片</label>
+                <label><input type="radio" name="file-type" value="audio" />&nbsp;音频</label>
+                <label><input type="radio" name="file-type" value="video" />&nbsp;视频</label>
+            </div>
+            <div id="info">
+                <span>图片简介：</span>
+                <!-- <input type="text"> -->
+                <textarea name="info" id="img-info" placeholder="图片描述信息" maxlength="150"></textarea>
+                <span>图片上传：</span>
+                <div id="upload-img" class="upload-img">
+                    <img id="img_file" src="../../static/img/common/add_icon.png" alt="添加图片ICON" οnchange=showImg()>
+                </div>
+            </div>
+        </div>
+        <script>
+            function showImg(){
+            var file = document.getElementById('img_file').files[0];
+            var re = new FileReader();
+            re.readAsDataURL(file);
+            re.onload = function(re){
+                document.getElementById('img_id').src=re.target.result;
+            }
+        }
+        </script>
+</body>
+
+</html>
