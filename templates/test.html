@@ -1,47 +1,31 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<style type="text/css">
-				img{
-					width: 100%;
-					height: 100%;
-				}
-		</style>
-	</head>
-	<body>
-		<div class="input-file-box">
-			<span>点击上传图片</span>
-			<input type="file" name="" id="uploadfile" multiple>
-		</div>
-		<div id="img-box" style="width: 200px;height: 100px;"></div>
-	</body>
-	<script type="text/javascript">
-		window.onload = function() {
-			var input = document.getElementById("uploadfile");
-			var div;
-			// 当用户上传时触发事件
-			input.onchange = function() {
-				readFile(this);
-			}
-			//处理图片并添加都dom中的函数
-			var readFile = function(obj) {
-				// 获取input里面的文件组
-				var fileList = obj.files;
-				//对文件组进行遍历，可以到控制台打印出fileList去看看
-				for (var i = 0; i < fileList.length; i++) {
-					var reader = new FileReader();
-					reader.readAsDataURL(fileList[i]);
-					// 当文件读取成功时执行的函数
-					reader.onload = function(e) {
-						div = document.createElement('div');
-						div.innerHTML = '<img src="' + this.result + '" />';
-						document.getElementById("img-box").appendChild(div);
-					}
-				}
-			}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS样式:点击图片上传文件</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		/*定义图像以及大小*/
+		.imageFileInput{
+			width: 200px;
+			height: 200px;
+			/* position: absolute; */
+			background-color: red; /*这里可以换成图片路径（background-image：../img/....）注意图片路径*/
 		}
-	</script>
+		
+		/*定义上传*/
+		.fileInput{
+			height: 100%;
+			/* position: absolute; */
+			right: 0;
+			top: 0;
+			opacity: 0;
+		}</style>
+</head>
+<body>
+<div class="imageFileInput">
+    <input class="fileInput" type="file" id="" name="" multiple>文件长传
+</div>
+</body>
 </html>
-

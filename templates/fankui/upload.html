@@ -17,33 +17,64 @@
     </a>
     <div id="main" class="main">
         <div id="content" class="content">
-
             <div id="file-type" class="file-type">
                 <span>文件类型：</span>
                 <label><input type="radio" name="file-type" value="img" checked="checked" />&nbsp;图片</label>
                 <label><input type="radio" name="file-type" value="audio" />&nbsp;音频</label>
                 <label><input type="radio" name="file-type" value="video" />&nbsp;视频</label>
             </div>
-            <div id="info">
+            <div id="info" style="display: none;">
                 <span>图片简介：</span>
                 <!-- <input type="text"> -->
                 <textarea name="info" id="img-info" placeholder="图片描述信息" maxlength="150"></textarea>
                 <span>图片上传：</span>
                 <div id="upload-img" class="upload-img">
-                    <img id="img_file" src="../../static/img/common/add_icon.png" alt="添加图片ICON" οnchange=showImg()>
+                    <input type="file" name="" id="uploadfile" multiple>
+                    <!-- 暂时用input替代试试 -->
+                    <!-- <img id="img_file" src="../../static/img/common/add_icon.png" alt="添加图片ICON" οnchange=showImg()> -->
+                </div>
+                <div id="img-box"></div>
+            </div>
+            <div id="audio-info" class="audio-info">
+                <span>音频文件：</span>
+                <div id="audio-upload" class="audio-upload">
+                    <img src="../../static/img/common/folder.png" alt="文件夹上传icon">
+                    <span>点击或将文件拖拽到这里上传</span>
+                    <span>支持扩展名：.mp3 .mav .acc ...</span>
                 </div>
             </div>
+            <button>确定</button>
         </div>
-        <script>
-            function showImg(){
-            var file = document.getElementById('img_file').files[0];
-            var re = new FileReader();
-            re.readAsDataURL(file);
-            re.onload = function(re){
-                document.getElementById('img_id').src=re.target.result;
+        
+        <script type="text/javascript">
+            window.onload = function() {
+                var input = document.getElementById("uploadfile");
+                var div;
+                // 当用户上传时触发事件
+                input.onchange = function() {
+                    readFile(this);
+                }
+                //处理图片并添加都dom中的函数
+                var readFile = function(obj) {
+                    // 获取input里面的文件组
+                    var fileList = obj.files;
+                    //对文件组进行遍历，可以到控制台打印出fileList去看看
+                    for (var i = 0; i < fileList.length; i++) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(fileList[i]);
+                        // 当文件读取成功时执行的函数
+                        reader.onload = function(e) {
+                            console.log("文件路径是：" + this.result)
+                            div = document.createElement('div');
+                            // div.style.marginTop=10
+                            div.innerHTML = '<img src="' + this.result + '" style="width:100px; height:100px; display:block; object-fit:contain" />';
+                            document.getElementById("img-box").appendChild(div);
+                        }
+                    }
+                }
             }
-        }
         </script>
+    </div>
 </body>
 
 </html>
