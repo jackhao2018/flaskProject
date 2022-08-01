@@ -63,7 +63,8 @@ body {
     margin-left: 10%;
 }
 
-#info,.audio-info > span{
+#info span,
+.audio-info span{
     display: block;
     width: 100%;
     margin-top: 8%;
@@ -79,9 +80,11 @@ body {
     margin-top: 25px;
     margin-left: 10%;
     border-radius: 4px;
-    background-color: darkgray;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAFAFA;
 }
-.audio-upload img{
+.audio-upload>img{
     display: block;
     width: 32px;
     height: 32px;
@@ -90,8 +93,11 @@ body {
 .audio-upload span{
     display: block;
     text-align: center;
-    align-items: center;
-    justify-content: center;
+}
+
+.audio-upload>span:nth-child(3){
+    color: #b4a198;
+    font-size: 10px;
 }
 
 
