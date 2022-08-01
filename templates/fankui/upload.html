@@ -43,7 +43,7 @@
                     <span style="margin-top: 15px;">点击或将文件拖拽到这里上传</span>
                     <span>支持扩展名：.mp3 .mav .acc ...</span>
                 </div>
-                <div id="img-box"></div>
+                <div id="audio-box"></div>
             </div>
             <button>确定</button>
         </div>
@@ -78,7 +78,7 @@
         }
     </script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     window.onload = function () {
         var audioInput = document.getElementById("audio-input");
 
@@ -100,12 +100,12 @@
                     console.log("文件路径是：" + this.result)
                     div = document.createElement('div');
                     div.innerHTML = '<img src="' + this.result + '" style="width:100px; height:100px; display:block; object-fit:contain" />';
-                    document.getElementById("img-box").appendChild(div);
+                    document.getElementById("audio-box").appendChild(div);
                 }
             }
         }
     }
-</script> -->
+</script>
     <script type="text/javascript">
         var imgInfo = document.getElementById("info")
         var audioInfo = document.getElementById("audio-info")
