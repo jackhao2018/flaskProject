@@ -1,29 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>CSS样式:点击图片上传文件</title>
-    <!-- 引入样式 -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		/*定义图像以及大小*/
-		.imageFileInput{
-			width: 200px;
-			height: 200px;
-			background-color: red; /*这里可以换成图片路径（background-image：../img/....）注意图片路径*/
+		.uploadImage {
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			width: 90px;
+			height: 90px;
+			background: url("../点击上传.png") no-repeat;
+			background-size: cover;
+			text-align: center;
+			cursor: pointer;
 		}
-		
-		/*定义上传*/
-		.fileInput{
+
+		.uploadImage p {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 10px;
+			font-size: 14px;
+			color: #999999;
+		}
+
+		.uploadImage input#file {
+			width: 100%;
 			height: 100%;
+			opacity: 0;
+			cursor: pointer;
+		}
+
+		.preview {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 10px;
+			width: 90px;
+			height: 90px;
+			background: #E1E6ED;
+			text-align: center;
+		}
+
+		.preview img {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+		}
+
+		.preview img[src=""] {
+			opacity: 0;
+			filter: Alpha(0);
+			/* 兼容IE8-9 */
+		}
+
+		.preview img:not([src]) {
+			opacity: 0;
+			filter: Alpha(0);
+			/* 兼容IE8-9 */
+		}
+
+		.preview .word {
+			position: absolute;
+			left: 0;
 			right: 0;
 			top: 0;
-			opacity: 0;
-		}</style>
+			line-height: 90px;
+			font-size: 14px;
+			color: #999999;
+			z-index: 0;
+		}
+	</style>
+	<title>测试</title>
 </head>
 <body>
-<div class="imageFileInput">
-    <input class="fileInput" type="file" id="" name="" multiple>文件长传
-</div>
+	<div class="pic">
+		<div class="uploadImage">
+			<input type="file" value="上传文件" id="file" accept="image/png, image/jpeg, image/gif, image/jpg" multiple />
+			<p>点击上传</p>
+		</div>
+		<div id="audio-box"></div>
+		<div class="preview">
+			<img src="" id="look1">
+			<p class="word">图片1</p>
+		</div>
+		<div class="preview">
+			<img src="" id="look2">
+			<p class="word">图片2</p>
+		</div>
+	</div>
+	<script>
+		var hasUploadedOne = false;// 已上传过1张图片
+		var hasUploadedTwo = false;// 已上传过2张图片
+
+		//获取到预览框
+		var imgObjPreview1 = document.getElementById("look1");
+		var imgObjPreview2 = document.getElementById("look2");
+
+		// document.getElementById('file').onchange = function(){
+		// 	var docObj = this;
+		// 	console.log(docObj.result)
+		// 	// div = document.createElement('div');
+		// 	// div.innerHTML = '<img src="' + docObj.result + '" style="width:100px; height:100px; display:block; object-fit:contain" />';
+		// 	// document.getElementById("img-box").appendChild(div);
+		// }
+
+		document.getElementById('file').onchange = function () {
+			// 若还没完成2张图片的上传
+			if (!hasUploadedTwo) {
+				//获取到file的文件
+				var docObj = this;
+
+				console.log(docObj.files.length)
+
+				//获取到文件名和类型（非IE，可一次上传1张或多张）
+				if (docObj.files && docObj.files[0]) {
+					// 一次上传了>=2张图片（只有前两张会真的上传上去）
+					if (docObj.files.length >= 2) {
+						imgObjPreview1.src = window.URL.createObjectURL(docObj.files[0]);
+						imgObjPreview2.src = window.URL.createObjectURL(docObj.files[1]);
+						hasUploadedTwo = true;
+					}
+					//一次只上传了1张照片
+					else {
+						// 这是上传的第一张照片
+						if (!hasUploadedOne) {
+							imgObjPreview1.src = window.URL.createObjectURL(docObj.files[0]);
+							hasUploadedOne = true;
+						}
+						// 这是上传的第二张照片
+						else {
+							imgObjPreview2.src = window.URL.createObjectURL(docObj.files[0]);
+							hasUploadedTwo = true;
+						}
+					}
+
+				}
+				//IE（只能一次上传1张）
+				else {
+					//使用滤镜
+					docObj.select();
+					var imgSrc = document.selection.createRange().text;
+					// 这是上传的第一张照片
+					if (!hasUploadedOne) {
+						imgObjPreview1.src = imgSrc;
+						hasUploadedOne = true;
+					}
+					// 这是上传的第二张照片
+					else {
+						imgObjPreview2.src = imgSrc;
+						hasUploadedTwo = true;
+					}
+					document.selection.empty();
+				}
+				return true;
+			}
+		}
+
+
+	</script>
 </body>
+
 </html>

@@ -48,43 +48,13 @@
             <button>确定</button>
         </div>
     </div>
-
-    <script type="text/javascript">
-        window.onload = function () {
-            var input = document.getElementById("uploadfile");
-            var div;
-            // 当用户上传时触发事件
-            input.onchange = function () {
-                readFile(this);
-            }
-
-            //处理图片并添加都dom中的函数
-            var readFile = function (obj) {
-                // 获取input里面的文件组
-                var fileList = obj.files;
-                //对文件组进行遍历，可以到控制台打印出fileList去看看
-                for (var i = 0; i < fileList.length; i++) {
-                    var reader = new FileReader();
-                    reader.readAsDataURL(fileList[i]);
-                    // 当文件读取成功时执行的函数
-                    reader.onload = function (e) {
-                        console.log("文件路径是：" + this.result)
-                        div = document.createElement('div');
-                        div.innerHTML = '<img src="' + this.result + '" style="width:100px; height:100px; display:block; object-fit:contain" />';
-                        document.getElementById("img-box").appendChild(div);
-                    }
-                }
-            }
-        }
-    </script>
-
 <script type="text/javascript">
     window.onload = function () {
         var audioInput = document.getElementById("audio-input");
-
         var div;
         // 当用户上传时触发事件
         audioInput.onchange = function () {
+            console.log("触发音频上传")
             readFile(this);
         }
         //处理图片并添加都dom中的函数
@@ -106,31 +76,63 @@
         }
     }
 </script>
-    <script type="text/javascript">
-        var imgInfo = document.getElementById("info")
-        var audioInfo = document.getElementById("audio-info")
-        // var vedioInfo = document.getElementById("vedio-info")
-        document.getElementById("file-type").addEventListener("click", function (e) {
-            if (e.target.tagName == "INPUT") {
-                console.log("radiovalue", e.target.value)
-                var variable = e.target.value
-                if (variable == 'img') {
-                    imgInfo.style.display = 'block'
-                    audioInfo.style.display = 'none'
-                    // vedioInfo.style.display == 'none'
-                } else if (variable == 'audio') {
-                    imgInfo.style.display = 'none'
-                    audioInfo.style.display = 'block'
-                    // vedioInfo.style.display == 'none'
+<script type="text/javascript">
+    
+    window.onload = function () {
+        var input = document.getElementById("uploadfile");
+        var audioInput = document.getElementById("audio-input");
+        var div;
+        // 当用户上传时触发事件
+
+        input.onchange = function () {
+            console.log("出发图片上传")
+            readFile(this);
+        }
+        //处理图片并添加都dom中的函数
+        var readFile = function (obj) {
+            // 获取input里面的文件组
+            var fileList = obj.files;
+            //对文件组进行遍历，可以到控制台打印出fileList去看看
+            for (var i = 0; i < fileList.length; i++) {
+                var reader = new FileReader();
+                reader.readAsDataURL(fileList[i]);
+                // 当文件读取成功时执行的函数
+                reader.onload = function (e) {
+                    console.log("文件路径是：" + this.result)
+                    div = document.createElement('div');
+                    div.innerHTML = '<img src="' + this.result + '" style="width:100px; height:100px; display:block; object-fit:contain" />';
+                    document.getElementById("img-box").appendChild(div);
                 }
-                // else{
-                //     imgInfo.style.display == 'none'
-                //     audioInfo.style.display == 'none'
-                //     // vedioInfo.style.display == 'block'
-                // }
             }
-        })
-    </script>
+        }
+    }
+</script>
+<script type="text/javascript">
+    var imgInfo = document.getElementById("info")
+    var audioInfo = document.getElementById("audio-info")
+    // var vedioInfo = document.getElementById("vedio-info")
+    document.getElementById("file-type").addEventListener("click", function (e) {
+        if (e.target.tagName == "INPUT") {
+            console.log("radiovalue", e.target.value)
+            var variable = e.target.value
+            if (variable == 'img') {
+                imgInfo.style.display = 'block'
+                audioInfo.style.display = 'none'
+                // vedioInfo.style.display == 'none'
+                
+            } else if (variable == 'audio') {
+                imgInfo.style.display = 'none'
+                audioInfo.style.display = 'block'
+                // vedioInfo.style.display == 'none'
+            }
+            // else{
+            //     imgInfo.style.display == 'none'
+            //     audioInfo.style.display == 'none'
+            //     // vedioInfo.style.display == 'block'
+            // }
+        }
+    })
+</script>
 </body>
 
 </html>
