@@ -77,6 +77,7 @@
 	</style>
 	<title>测试</title>
 </head>
+
 <body>
 	<div class="pic">
 		<div class="uploadImage">
@@ -104,9 +105,9 @@
 		// document.getElementById('file').onchange = function(){
 		// 	var docObj = this;
 		// 	console.log(docObj.result)
-		// 	// div = document.createElement('div');
-		// 	// div.innerHTML = '<img src="' + docObj.result + '" style="width:100px; height:100px; display:block; object-fit:contain" />';
-		// 	// document.getElementById("img-box").appendChild(div);
+		// div = document.createElement('div');
+		// div.innerHTML = '<img src="' + docObj.result + '" style="width:100px; height:100px; display:block; object-fit:contain" />';
+		// document.getElementById("img-box").appendChild(div);
 		// }
 
 		document.getElementById('file').onchange = function () {
@@ -115,49 +116,61 @@
 				//获取到file的文件
 				var docObj = this;
 
-				console.log(docObj.files.length)
-
+				console.log('上传文件数：' + docObj.files.length)
+				for (let index = 0; index < docObj.files.length; index++) {
+					console.log(window.URL.createObjectURL(docObj.files[index]))
+					// div = document.createElement('div');
+					var img = document.createElement('img');
+					img.style.width = '100px';
+					img.style.height = '100px';
+					img.style.display = 'block';
+					img.style.objectFit = 'contain';
+					img.style.id = 'img-id';
+					img.src = window.URL.createObjectURL(docObj.files[index]);
+					document.getElementById("audio-box").appendChild(img);
+				}
 				//获取到文件名和类型（非IE，可一次上传1张或多张）
-				if (docObj.files && docObj.files[0]) {
-					// 一次上传了>=2张图片（只有前两张会真的上传上去）
-					if (docObj.files.length >= 2) {
-						imgObjPreview1.src = window.URL.createObjectURL(docObj.files[0]);
-						imgObjPreview2.src = window.URL.createObjectURL(docObj.files[1]);
-						hasUploadedTwo = true;
-					}
-					//一次只上传了1张照片
-					else {
-						// 这是上传的第一张照片
-						if (!hasUploadedOne) {
-							imgObjPreview1.src = window.URL.createObjectURL(docObj.files[0]);
-							hasUploadedOne = true;
-						}
-						// 这是上传的第二张照片
-						else {
-							imgObjPreview2.src = window.URL.createObjectURL(docObj.files[0]);
-							hasUploadedTwo = true;
-						}
-					}
+				// if (docObj.files && docObj.files[0]) {
+				// 	// 一次上传了>=2张图片（只有前两张会真的上传上去）
+				// 	if (docObj.files.length >= 2) {
+				// 		console.log('地址是：' + window.URL.createObjectURL(docObj.files[0]))
+				// 		imgObjPreview1.src = window.URL.createObjectURL(docObj.files[0]);
+				// 		imgObjPreview2.src = window.URL.createObjectURL(docObj.files[1]);
+				// 		hasUploadedTwo = true;
+				// 	}
+				// 	//一次只上传了1张照片
+				// 	else {
+				// 		// 这是上传的第一张照片
+				// 		if (!hasUploadedOne) {
+				// 			imgObjPreview1.src = window.URL.createObjectURL(docObj.files[0]);
+				// 			hasUploadedOne = true;
+				// 		}
+				// 		// 这是上传的第二张照片
+				// 		else {
+				// 			imgObjPreview2.src = window.URL.createObjectURL(docObj.files[0]);
+				// 			hasUploadedTwo = true;
+				// 		}
+				// 	}
 
-				}
-				//IE（只能一次上传1张）
-				else {
-					//使用滤镜
-					docObj.select();
-					var imgSrc = document.selection.createRange().text;
-					// 这是上传的第一张照片
-					if (!hasUploadedOne) {
-						imgObjPreview1.src = imgSrc;
-						hasUploadedOne = true;
-					}
-					// 这是上传的第二张照片
-					else {
-						imgObjPreview2.src = imgSrc;
-						hasUploadedTwo = true;
-					}
-					document.selection.empty();
-				}
-				return true;
+				// }
+				// //IE（只能一次上传1张）
+				// else {
+				// 	//使用滤镜
+				// 	docObj.select();
+				// 	var imgSrc = document.selection.createRange().text;
+				// 	// 这是上传的第一张照片
+				// 	if (!hasUploadedOne) {
+				// 		imgObjPreview1.src = imgSrc;
+				// 		hasUploadedOne = true;
+				// 	}
+				// 	// 这是上传的第二张照片
+				// 	else {
+				// 		imgObjPreview2.src = imgSrc;
+				// 		hasUploadedTwo = true;
+				// 	}
+				// 	document.selection.empty();
+				// }
+				// return true;
 			}
 		}
 
