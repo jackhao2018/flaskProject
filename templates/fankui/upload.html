@@ -15,6 +15,7 @@
         <img src="../../static/img/common/reback.png" alt="返回箭头">
         <span>返回上一页</span>
     </a>
+    <form action="/api/test.py" method="post"></form>
     <div id="main" class="main">
         <div id="content" class="content">
             <div id="file-type" class="file-type">
@@ -30,7 +31,7 @@
                 <span>图片上传：</span>
                 <div id="upload-img" class="upload-img">
                     <!-- accept="image/png, image/jpeg, image/gif, image/jpg" -->
-                    <input type="file" name="" id="uploadfile"  multiple>
+                    <input type="file" name="" id="uploadfile" multiple>
                     <!-- 暂时用input替代试试 -->
                     <!-- <img id="img_file" src="../../static/img/common/add_icon.png" alt="添加图片ICON" οnchange=showImg()> -->
                 </div>
@@ -57,10 +58,10 @@
                         <input id="video-input" class="fileInput" accept="video/mp4" type="file" multiple>
                     </div>
                 </div>
-                <div id="video-box"></div>
             </div>
-            <button>确定</button>
+            <input id="submit-button" type="submit" value="提交">
         </div>
+        </form>
     </div>
     <script type="text/javascript">
         document.getElementById('uploadfile').onchange = function () {
@@ -106,20 +107,30 @@
 
             // 遍历上传文件逐个给img标签赋值
             for (let index = 0; index < docObj.files.length; index++) {
-
                 // 创建一个img标签用于存放图片
-                var img = document.createElement('img');
-                img.style.width = '100px';
-                img.style.height = '100px';
-                img.style.display = 'block';
-                img.style.objectFit = 'contain';
-                img.style.id = 'img-id';
-                img.src = window.URL.createObjectURL(docObj.files[index]);
-                document.getElementById("video-box").appendChild(img);
+                uploadvideo2(window.URL.createObjectURL(docObj.files[index]))
             }
-        }
+        };
+        function uploadvideo2(url) {
+            let that = this
+            let videoElenment = document.createElement('video');//创建一个视频控件
+            videoElenment.style.width = '100px'
+            videoElenment.style.height = '100px'
+            videoElenment.src = url;//控件视频地址
+            videoElenment.autoplay = true;//是否自动播放
+            videoElenment.addEventListener("canplay", function () {//监听播放
+                let canvas = document.createElement('canvas');//创建一个画板
+                canvas.width = videoElenment.videoWidth;//画板宽
+                canvas.height = videoElenment.videoHeight;//画板的高
+                //通过画板的drawImage属性对图片进行处理
+                canvas.getContext('2d').drawImage(videoElenment, 0, 0, canvas.width, canvas.height);
+                //处理完毕通过toDataURL属性转为图片格式拿去base64图片路径
+                let imgs = canvas.toDataURL('image/png')
+                console.log(imgs)//视频第一帧图片路径
+                document.getElementById("video-upload").appendChild(videoElenment);
+            })
+        };
     </script>
-    
     <script type="text/javascript">
         var imgInfo = document.getElementById("info")
         var audioInfo = document.getElementById("audio-info")
