@@ -1,5 +1,6 @@
 /* 使盒子中的img span标签垂直居中 */
 .img-title {
+    position: relative;
     display: -webkit-flex;
     width: 80%;
     height: 30px;
@@ -7,6 +8,17 @@
     margin-left: 10%;
     align-items: center;
     background-image: -webkit-linear-gradient(left, #00bcd4, #ffffff00)
+}
+
+.img-title a,
+.mucis-title a,
+.video-title a{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    right: 3%;
 }
 
 .img-content,
@@ -22,6 +34,7 @@
 
 .mucis-title,
 .video-title {
+    position: relative;
     display: -webkit-flex;
     width: 80%;
     height: 30px;
