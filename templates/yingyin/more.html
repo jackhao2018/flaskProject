@@ -26,7 +26,9 @@
                 <span>点击上传</span>
             </a>
         </div>
-        <div id="main" class="main"></div>
+        <div id="main" class="main">
+            
+        </div>
         <div id="pager" name="pager" class="pager">
             <ul>
                 <li id="left-arrow"><a href=""><img src="../../static/img/common/L-arrow.png" alt="左箭头"></a></li>
@@ -43,7 +45,7 @@
     </div>
 
     <script>
-        var num = 8
+        var num = 35
         function createBox(type, box_num) {
             if(type=='img'){
                 for (let index = 0; index < box_num; index++) {
@@ -51,6 +53,7 @@
                     img.style.display = 'block'
                     img.style.width = '200px'
                     img.style.height = '200px'
+                    img.style.marginBottom = '10px'
                     img.style.backgroundColor = '#bbbbbb6c'
                     img.src = '../../static/img/2233娘.jpg'
                     img.style.objectFit = 'contain'
