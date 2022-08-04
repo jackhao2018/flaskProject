@@ -38,13 +38,18 @@
                 <div id="img-box"></div>
             </div>
             <div id="audio-info" class="audio-info" style="display: none;">
+                <span style="margin-bottom: 20px;">音频封面：</span>
+                <div id="audio-cover" class="audio-cover">
+                    <img id="img_file" src="../../static/img/common/add_icon.png" alt="添加图片ICON">
+                    <input id="audio-img-input" class="fileInput" accept="image/png, image/jpeg, image/gif, image/jpg" type="file" multiple>
+                </div>
                 <span>音频文件：</span>
                 <div id="audio-upload" class="audio-upload">
                     <div class="audio-click"><img src="../../static/img/common/folder.png" alt="文件夹上传icon">
                         <span style="margin-top: 15px;">点击或将文件拖拽到这里上传</span>
                         <span>支持扩展名：.mp3 .mav .acc ...</span>
                     </div>
-                    <input id="audio-input" class="fileInput" type="file" multiple>
+                    <input id="audio-input" class="fileInput" type="file" accept=".mp3, .mkv, .wma" multiple>
                 </div>
                 <div id="audio-box"></div>
             </div>
@@ -80,6 +85,25 @@
             }
         }
     </script>
+<script type="text/javascript">
+    document.getElementById('audio-img-input').onchange = function () {
+        var docObj = this;
+        console.log('上传文件数：' + docObj.files.length)
+        for (let index = 0; index < docObj.files.length; index++) {
+            console.log(window.URL.createObjectURL(docObj.files[index]))
+            var img = document.createElement('img');
+            img.style.width = '100px';
+            img.style.height = '100px';
+            img.style.display = 'block';
+            img.style.position = 'absolute'
+            img.style.left = '120px'
+            img.style.objectFit = 'contain';
+            img.id = 'img-id';
+            img.src = window.URL.createObjectURL(docObj.files[index]);
+            document.getElementById("audio-cover").appendChild(img);
+        }
+    }
+</script>
     <script type="text/javascript">
         document.getElementById('audio-input').onchange = function () {
             // 获取上传文件信息

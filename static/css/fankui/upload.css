@@ -109,7 +109,8 @@ body {
     background-color: #FAFAFA;
 }
 
-.video-click{
+.video-click,
+.audio-cover{
     display: flex;
     position: relative;
     width: 100px;
@@ -119,7 +120,8 @@ body {
     background-color: #FAFAFA;
 }
 
-.audio-click>img{
+.audio-click>img,
+.audio-cover img{
     display: block;
     width: 32px;
     height: 32px;
