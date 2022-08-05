@@ -1,97 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SimplePagination</title>
+  <style>
+    .pagination {
+  margin-top: 18px;
+  font-size: 0;
+  text-align: center; }
+  .pagination .page-li {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none; }
+    .pagination .page-li:hover {
+      cursor: pointer;
+      background-color: #EAEAEA; }
+    .pagination .page-li.page-active {
+      cursor: default;
+      color: #fff;
+      border-color: #555555;
+      background-color: #555555; }
+    .pagination .page-li.number-ellipsis {
+      border: none;
+      cursor: default; }
+      .pagination .page-li.number-ellipsis:hover {
+        background-color: #fff; }
+  .pagination .page-number {
+    width: 38px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #EAEAEA;
+    text-align: center; }
+  .pagination .page-prev {
+    padding: 8px 14px;
+    margin-right: 8px;
+    border: 1px solid #EAEAEA; }
+    .pagination .page-prev.no-prev {
+      color: #c6c6c6; }
+      .pagination .page-prev.no-prev:hover {
+        cursor: default;
+        background-color: #fff; }
+  .pagination .page-next {
+    padding: 8px 14px;
+    margin-left: 8px;
+    border: 1px solid #EAEAEA; }
+    .pagination .page-next.no-next {
+      color: #c6c6c6; }
+      .pagination .page-next.no-next:hover {
+        cursor: default;
+        background-color: #fff; }
+  .pagination .number-ellipsis {
+    display: inline-block;
+    font-size: 15px;
+    padding: 8px 14px; }
+    .pagination .number-ellipsis.page-hidden {
+      display: none; }
+#page-go {
+  margin-top: 10px;
+  text-align: center;
+}
+  </style>
+  <!-- <link rel="stylesheet" href="./style.css"> -->
 </head>
-
 <body>
-    <div class="center" style="width:404px;margin:100px auto;">
-        <div id="file" style="width: 404px;height: 150px;text-align: center;padding-top: 30px;margin: center;background-color: rgb(232, 221, 203);">
-            <input type="file" name="ver" id="fileInput" />
-            <button class="upload" onclick="uploadFile()">上传</button>
-            <!-- 进度条 -->
-            <div class="progress" style="position: relative;top: 30px;width: 300px;height: 25px;line-height: 25px;margin:auto;text-align: center;border: 2px solid rgb(3, 101, 100);">
-                <span class="percent" style="position: relative; z-index:100;">上传进度：0%</span>
-                <span class="probg" style="position: absolute;left: 0;top: 0;height: 25px;background-color: rgb(28, 170, 221);width: 0px;"></span>
-            </div>
-        </div>
-
-        <div class="feedback" style="width: 396px;height: 30px;line-height: 30px;padding:4px;margin-top:20px;background-color: thistle;">服务端回信：</div>
-    </div>
-
-    <script>
-        let fileInput = document.getElementById("fileInput");
-        let uploadbtn = document.querySelector(".upload");
-        let progress = document.querySelector(".progress");
-        let probg = document.querySelector(".probg");
-        let percentInfo = document.querySelector(".percent");
-        let feedback = document.querySelector(".feedback");
-
-
-        // 文件上传进度
-        let percent = 0;
-
-		fileInput.onchange = function(e){
-			console.log('e是些什么啊?' + e.lengthComputable)
-			if (e.lengthComputable) {
-                // 获取百分制的进度
-                percent = Math.round(e.loaded / e.total * 100);
-                // 长度根据进度条的总长度等比例扩大
-                probg.style.width = progress.clientWidth / 100 * percent + "px";
-                // 进度数值按百分制来
-                percentInfo.innerHTML = "上传进度：" + percent + "%";
-            }
-		}
-        function progressFunction(e) {
-            if (e.lengthComputable) {
-                // 获取百分制的进度
-                percent = Math.round(e.loaded / e.total * 100);
-                // 长度根据进度条的总长度等比例扩大
-                probg.style.width = progress.clientWidth / 100 * percent + "px";
-                // 进度数值按百分制来
-                percentInfo.innerHTML = "上传进度：" + percent + "%";
-            }
-        }
-
-        // 上传成功
-        function success(e) {
-            console.log("成功" + e.currentTarget.responseText);
-            feedback.innerHTML = "服务端回信：" + e.currentTarget.responseText;
-        }
-
-        // 上传失败
-        function fail(e) {
-            console.log("服务端回信：" + e);
-        }
-
-        // 文件上传
-        function uploadFile() {
-            let file = fileInput.files[0];
-
-            if (!file) {
-                alert("请选择文件！");
-                return;
-            }
-
-            // 用FormData传输
-            let fd = new FormData();
-            fd.append("file", file);
-
-            // 文件上传并获取进度
-            let xhr = new XMLHttpRequest();
-            xhr.open("post", "http://127.0.0.1:3000/", true);
-
-            xhr.upload.onprogress = progressFunction;
-            xhr.onload = success;
-            xhr.onerror = fail;
-
-            xhr.send(fd);
-        }
-    </script>
+  <div class="box"></div>
+  <form action="" id="page-go">
+    <!-- <input type="text" id="page-num"> -->
+    <!-- <input type="submit" id="goto" value="Go"> -->
+  </form>
 </body>
-
+<script src='./test.js'></script>
+<script>
+  const slp = new SimplePagination(1)
+  slp.init({
+    container: '.box',
+    maxShowBtnCount: 3,
+    onPageChange: state => {console.log('pagination change:', state.pageNumber)}
+  })
+  document.getElementById('page-go').addEventListener('submit', e => {
+    e.preventDefault()
+    slp.gotoPage(+document.getElementById('page-num').value)
+  })
+</script>
 </html>
