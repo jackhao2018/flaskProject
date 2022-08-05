@@ -28,8 +28,9 @@
         </div>
         <div id="main" class="main">
             <div id="content" class="content">
+                <a href="">
                 <img src="../../static/img/2233娘.jpg" alt="" >
-                <span>这是2233娘视频</span>
+                <span>这是2233娘视频</span></a>
             </div>
         </div>
         <div id="pager" name="pager" class="pager">
@@ -55,10 +56,9 @@
             if (type == 'img'){
                 for (let index = 0; index < box_num; index++) {
                     var clone_div = div.cloneNode(true)
-                    console.log(clone_div.firstElementChild.src)
-                    clone_div.firstElementChild.src = '../../static/img/ciyun.png'
-                    console.log(clone_div.lastElementChild.value)
-                    clone_div.lastElementChild.innerText = 'mlgh'
+                    console.log(clone_div.firstElementChild.firstElementChild.src)
+                    clone_div.firstElementChild.firstElementChild.src = '../../static/img/ciyun.png'
+                    clone_div.firstElementChild.lastElementChild.innerText = 'mlgh'
                     document.getElementById('main').appendChild(clone_div)
                 }
             }
