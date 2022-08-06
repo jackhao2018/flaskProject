@@ -1,5 +1,5 @@
 body {
-    background-color: #00BCD4;
+    /* background-color: #00BCD4; */
     width: 100%;
 }
 
@@ -15,6 +15,7 @@ body {
 .reback {
     display: flex;
     flex-direction: row;
+    filter: brightness(0);
     height: 20px;
     width: 120px;
 }
@@ -36,9 +37,10 @@ body {
     height: 20px;
     margin-left: 10px;
     padding-left: 5px;
+    font-size: 16px;
     border-style: none none none solid;
-    border-color: darkgray;
-    border-width: 1px;
+    border-color: black;
+    border-width: 2px;
     align-items: center;
 }
 
@@ -71,7 +73,7 @@ body {
     margin-top: 15px;
     padding-left: 1%;
     border-radius: 5px;
-    background-color: #b2ebf2;
+    background-color: #E1E4E5;
 }
 
 .details p {
@@ -97,7 +99,7 @@ body {
     margin-top: 15px;
     margin-left: 1%;
     border-radius: 5px;
-    background-color: #b2ebf2;
+    background-color: #E1E4E5;
 }
 
 .download-now {
@@ -140,7 +142,7 @@ body {
     height: 100%;
     align-items:center; 
     display: -webkit-flex;
-    background-color: #ffffff;
+    background-color: #E1E4E5;
     justify-content:space-between
 }
 

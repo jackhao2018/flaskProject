@@ -1,5 +1,5 @@
 body {
-    background-color: #B2EBF2;
+    background-color: #ffffff;
 }
 
 input::placeholder {
@@ -8,10 +8,12 @@ input::placeholder {
 
 /* banner属性设置 */
 .banner {
+    position: relative;
     width: 100%;
     height: 240px;
     background-color: #00BCD4;
-    position: relative;
+    background-image: url('../../img/common/bannan2.jpg');
+    background-size:cover;
 }
 
 /* 设置导航的框高与浮动样式 */
@@ -35,14 +37,15 @@ input::placeholder {
 .banner a{
     display: block;
     width: 100%;
-    color: #101010;
+    color: #00a1d6;
     line-height: 50px;
     font-size: 28px;
     text-align: center;
+    /* background-color:#75757550; */
 }
 
 a:hover {
-    color: red;
+    color: #fc8bab;
   }
 
 .index-main{

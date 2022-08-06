@@ -26,10 +26,6 @@
     list-style: none;
 }
 
-.main {
-    background-color: #b2ebf2;
-}
-
 .filter li {
     display: flex;
     width: 100px;
@@ -52,7 +48,6 @@
     align-content:flex-start;
     flex-wrap: wrap;
     overflow: hidden;
-    background-color: #b2ebf2;
 }
 
 .card-img {
