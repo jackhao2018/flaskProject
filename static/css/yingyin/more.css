@@ -16,13 +16,36 @@
     display: flex;
     width: 200px;
     justify-content: space-around;
-}
-
-.title-box a{
     color: rgba(0, 0, 0, 0.603);
     font-weight: bold;
     font-size: 16px;
 }
+
+.title-box:first-child{
+		border-radius: 5px;
+		/*这里显示的内容为title属性对应的值*/
+		content: attr(title);
+        cursor:pointer;
+		z-index: 2;
+}
+.title-box:nth-child(2){
+    border-radius: 5px;
+    /*这里显示的内容为title属性对应的值*/
+    content: attr(title);
+    z-index: 2;
+}
+.title-box:last-child{
+    border-radius: 5px;
+    /*这里显示的内容为title属性对应的值*/
+    content: attr(title);
+    z-index: 2;
+}
+
+/* .title-box a{
+    color: rgba(0, 0, 0, 0.603);
+    font-weight: bold;
+    font-size: 16px;
+} */
 
 .click-upload {
     position: absolute;

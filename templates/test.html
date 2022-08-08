@@ -1,91 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>SimplePagination</title>
-  <style>
-    .pagination {
-  margin-top: 18px;
-  font-size: 0;
-  text-align: center; }
-  .pagination .page-li {
-    display: inline-block;
-    font-size: 15px;
-    line-height: 1;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none; }
-    .pagination .page-li:hover {
-      cursor: pointer;
-      background-color: #EAEAEA; }
-    .pagination .page-li.page-active {
-      cursor: default;
-      color: #fff;
-      border-color: #555555;
-      background-color: #555555; }
-    .pagination .page-li.number-ellipsis {
-      border: none;
-      cursor: default; }
-      .pagination .page-li.number-ellipsis:hover {
-        background-color: #fff; }
-  .pagination .page-number {
-    width: 38px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border: 1px solid #EAEAEA;
-    text-align: center; }
-  .pagination .page-prev {
-    padding: 8px 14px;
-    margin-right: 8px;
-    border: 1px solid #EAEAEA; }
-    .pagination .page-prev.no-prev {
-      color: #c6c6c6; }
-      .pagination .page-prev.no-prev:hover {
-        cursor: default;
-        background-color: #fff; }
-  .pagination .page-next {
-    padding: 8px 14px;
-    margin-left: 8px;
-    border: 1px solid #EAEAEA; }
-    .pagination .page-next.no-next {
-      color: #c6c6c6; }
-      .pagination .page-next.no-next:hover {
-        cursor: default;
-        background-color: #fff; }
-  .pagination .number-ellipsis {
-    display: inline-block;
-    font-size: 15px;
-    padding: 8px 14px; }
-    .pagination .number-ellipsis.page-hidden {
-      display: none; }
-#page-go {
-  margin-top: 10px;
-  text-align: center;
-}
-  </style>
-  <!-- <link rel="stylesheet" href="./style.css"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <style>
+	tbody tr p:hover:after {
+		position: absolute;
+		left: 15px;
+		top: 5px;
+		padding: 5px;
+		background-color: #0095ff;
+		border-radius: 5px;
+		color: #fff;
+		/*这里显示的内容为title属性对应的值*/
+		content: attr(title);
+		z-index: 2;
+		width: 120px;
+	}
+    </style>
 </head>
 <body>
-  <div class="box"></div>
-  <form action="" id="page-go">
-    <!-- <input type="text" id="page-num"> -->
-    <!-- <input type="submit" id="goto" value="Go"> -->
-  </form>
+	<tr>
+		<p><a href="#" class="Hyperlink" title="超链接1">超链接·1</a></p>
+		<p><input href="#" class="Hyperlink" title="your contents">输入框</input></p>
+	</tr>
 </body>
-<script src='./test.js'></script>
-<script>
-  const slp = new SimplePagination(1)
-  slp.init({
-    container: '.box',
-    maxShowBtnCount: 3,
-    onPageChange: state => {console.log('pagination change:', state.pageNumber)}
-  })
-  document.getElementById('page-go').addEventListener('submit', e => {
-    e.preventDefault()
-    slp.gotoPage(+document.getElementById('page-num').value)
-  })
-</script>
 </html>
