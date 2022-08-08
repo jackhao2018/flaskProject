@@ -20,17 +20,34 @@
             </ul>
         </div>
         <div id="nav" class="nav">
-            <img src="../../static/img/common/picture.png" alt="图片icon" style="height: 32px; width:32px; padding-left: 3%;">&nbsp; 图片
-            <a href="./upload.html">
+            <ul id="title-box" class="title-box">
+                <li id="picture"><span><a href="">图片</a></span></li>
+                <li id="audio"><span><a href="">音频</a></span></li>
+                <li id="video"><span><a href="">视频</a></span></li>
+            </ul>
+            <!-- <img src="../../static/img/common/picture.png" alt="图片icon" style="height: 32px; width:32px; padding-left: 3%;">&nbsp; 图片 -->
+            <a href="./upload.html" class="click-upload">
                 <img src="../../static/img/common/upload-cloud.png" alt="云上传icon"  style="height: 32px; width:32px;">
                 <span>点击上传</span>
             </a>
         </div>
         <div id="main" class="main">
-            <div id="content" class="content">
+            <div id="img-content" class="content">
                 <a href="">
                 <img src="../../static/img/2233娘.jpg" alt="" >
                 <span>这是2233娘视频</span></a>
+            </div>
+            <div id="audio-content" class="content" style="display: none;">
+                音频显示
+                <!-- <a href="">
+                <img src="../../static/img/2233娘.jpg" alt="" >
+                <span>这是2233娘视频</span></a> -->
+            </div>
+            <div id="audio-content" class="content" style="display: none;">
+                视频显示
+                <!-- <a href="">
+                <img src="../../static/img/2233娘.jpg" alt="" >
+                <span>这是2233娘视频</span></a> -->
             </div>
         </div>
         <div id="pager" name="pager" class="pager">
@@ -48,10 +65,9 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         var num = 14
         var div = document.getElementById('content')
-        // var dataList = {(), (), ()}
         function cloneDiv(type, box_num) {
             if (type == 'img'){
                 for (let index = 0; index < box_num; index++) {
@@ -64,6 +80,54 @@
             }
         }
         cloneDiv('img', num)
+    </script> -->
+    <script>
+        var picture = document.getElementById('picture')
+        var audio = document.getElementById('audio')
+        var video = document.getElementById('video')
+
+        var picture_box = document.getElementById('img-content')
+        var audio_box = document.getElementById('audio-content')
+        var video_box = document.getElementById('video-content')
+
+        // console.log('图片点击信息：' + picture.onclick())
+
+        document.getElementById("title-box").addEventListener("click", function (e) {
+            if (e.target.tagName == "LI") {
+                console.log("radiovalue", e.target.value)
+                var variable = e.target.value
+                if (variable == 'img') {
+                    picture_box.style.display = 'block'
+                    audio_box.style.display = 'none'
+                    video_box.style.display = 'none'
+
+                } else if (variable == 'audio') {
+                    imgInfo.style.display = 'none'
+                    audioInfo.style.display = 'block'
+                    videoInfo.style.display = 'none'
+                }
+                else {
+                    imgInfo.style.display = 'none'
+                    audioInfo.style.display = 'none'
+                    videoInfo.style.display = 'block'
+                }
+            }
+        })
+
+        // picture.addEventListener('click', function(){
+        //     console.log('点击的是图片，显示全部图片信息')
+        //     picture_box.style.display = 'block'
+        //     audio_box.style.display = 'none'
+        //     video_box.style.display = 'none'
+        // }) 
+
+        // audio.addEventListener('click', function(){
+        //     console.log('点击的是音频，显示全部音频信息')
+        //     picture_box.style.display = 'none'
+        //     audio_box.style.display = 'block'
+        //     video_box.style.display = 'none'
+        // }) 
+
     </script>
 </body>
 </html>

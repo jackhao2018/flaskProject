@@ -4,18 +4,35 @@
     width: 100%;
     height: 50px;
     align-items: center;
-    /* justify-content: center; */
-    background-color: #bbbbbb6c;
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: #BBBBBB;
+    justify-content: center;
+    align-items: center ;
+    /* background-color: #bbbbbb6c; */
 }
 
-.nav a {
+.title-box{
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.title-box a{
+    color: rgba(0, 0, 0, 0.603);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.click-upload {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    font-size: 16px;
     right: 5%;
-    color: black;
+    color: #FB7299;
 }
 
 .main{
