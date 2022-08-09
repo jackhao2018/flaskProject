@@ -31,12 +31,7 @@
             </a>
         </div>
         <div id="main" class="main">
-            <div id="img-content" class="content">
-                <a href="">
-                <img src="../../static/img/2233娘.jpg" alt="" >
-                <span>这是2233娘视频</span></a>
-            </div>
-            <div id="audio-content" class="audio-content" style="display: none;">
+            <div id="img-content" class="img-content">
                 <a href="">
                 <img src="../../static/img/2233娘.jpg" alt="" >
                 <span id="title">这是2233娘视频这是2233娘视频这是2233娘视频这是2233娘视频这是</span></a>
@@ -45,11 +40,23 @@
                     <!-- <img src="../../static/img/common/preview.png" alt="预览ICON">&nbsp;88 -->
                 </div>
             </div>
-            <div id="video-content" class="content" style="display: none;">
-                视频显示
-                <!-- <a href="">
+            <div id="audio-content" class="audio-content" style="display: none;">
+                <a href="./audio-details.html">
                 <img src="../../static/img/2233娘.jpg" alt="" >
-                <span>这是2233娘视频</span></a> -->
+                <span id="title">这是2233娘视频这是2233娘视频这是2233娘视频这是2233娘视频这是</span></a>
+                <div id="others" class="others">
+                    <span>上传时间：2022-08-08</span>
+                    <!-- <img src="../../static/img/common/preview.png" alt="预览ICON">&nbsp;88 -->
+                </div>
+            </div>
+            <div id="video-content" class="video-content" style="display: none;">
+                <a href="./video-details.html">
+                    <video src="../../static/vedio/点云工具3维图缩放优化.mp4" controls></video>
+                    <span id="title">这是2233娘视频这是2233娘视频这是2233娘视频这是2233娘视频这是</span></a>
+                    <div id="others" class="others">
+                        <span>上传时间：2022-08-08</span>
+                        <!-- <img src="../../static/img/common/preview.png" alt="预览ICON">&nbsp;88 -->
+                    </div>
             </div>
         </div>
         <div id="pager" name="pager" class="pager">
@@ -72,6 +79,7 @@
         var img_div = document.getElementById('img-content')
         var audio_div = document.getElementById('audio-content')
         var video_div = document.getElementById('video-content')
+
         function cloneDiv(type, box_num) {
             if (type == 'img'){
                 for (let index = 0; index < box_num; index++) {
@@ -88,16 +96,25 @@
                     console.log(clone_div.firstElementChild.firstElementChild.src)
                     clone_div.style.display = 'block'
                     // ../../static/img/test-img/冬.jpg
-                    clone_div.firstElementChild.firstElementChild.src = '../../static/img/2233娘.jpg'
+                    clone_div.firstElementChild.firstElementChild.src = '../../static/img/test-img/冬.jpg'
                     clone_div.firstElementChild.lastElementChild.innerText = 'mlgh'
                     document.getElementById('main').appendChild(clone_div)
                 }
             }
             else if(type == 'video'){
                 console.log('复制视频盒子')
+                for (let index = 0; index < box_num; index++) {
+                
+                var clone_div = video_div.cloneNode(true)
+                console.log(clone_div.firstElementChild.firstElementChild.src)
+                clone_div.style.display = 'block'
+                clone_div.firstElementChild.firstElementChild.src = '../../static/vedio/点云工具3维图缩放优化.mp4'
+                clone_div.firstElementChild.lastElementChild.innerText = 'mlgh'
+                document.getElementById('main').appendChild(clone_div)
             }
         }
-        cloneDiv('audio', num)
+        }
+        cloneDiv('img', num)
     </script>
     <script>
         var picture = document.getElementById('picture')

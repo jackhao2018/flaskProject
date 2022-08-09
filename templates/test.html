@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>flex弹性布局</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 	<style>
-		.container {
-			display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    min-height: 60%;
-    justify-content: space-between;
-    /* max-height: 80%; */
-    margin-top: 15px;
-    margin-left: 5%;
+		li {
+			list-style: none;
 		}
-		.container:after{
-			content:'';
-			/*这个宽度和子元素宽度一致*/
-			width: 480px;
-			height: 0;
-			display: block;
+
+		.dabox {
+			margin: 100px auto;
 		}
-		.box {
-			width: 480px;
+
+		.dabox>li {
+			cursor: pointer;
+			margin: 50px;
+			width: 100px;
 			height: 100px;
-			background-color: red;
-			margin-bottom: 10px;
+			background: #F77C7F;
+		}
+
+		.dabox>li.no {
+			background: #41B468;
 		}
 	</style>
 </head>
-<body>
-	<div class="container">
-		<div class="box">1</div>
-		<div class="box">2</div>
-		<div class="box">3</div>
-		<div class="box">3</div>
-		<div class="box">3</div>
-		<div class="box">3</div>
-		<div class="box">3</div>
-		<div class="box">3</div>
-		<div class="box">3</div>
-		<div class="box">3</div>
-		<div class="box">3</div>
-	</div>
-</body>
-</html>
 
+<body>
+	<ul class="dabox" id="dabox">
+		<li class="no" int="1"></li>
+		<li int="2"></li>
+		<li int="3"></li>
+	</ul>
+	<script>
+		window.onload = function () {
+			var li = document.getElementById("dabox").getElementsByTagName("li");
+			for (var i = 0; i < li.length; i++)i
+			li[i].onclick = function(){
+				var shu = this.getAttribute("int"); 
+				for (var j = 0; j < li.length; j++) {
+					if (li[j].className == "no") { li[j].className = ""; }
+				}
+				li[shu - 1].className = "no";
+				/ /
+			}
+		}
+	</script>
+</body>
+
+</html>
