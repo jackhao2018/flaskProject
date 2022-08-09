@@ -42,7 +42,7 @@
                 <span id="title">这是2233娘视频这是2233娘视频这是2233娘视频这是2233娘视频这是</span></a>
                 <div id="others" class="others">
                     <span>上传时间：2022-08-08</span>
-                    <img src="../../static/img/common/preview.png" alt="预览ICON">&nbsp;88
+                    <!-- <img src="../../static/img/common/preview.png" alt="预览ICON">&nbsp;88 -->
                 </div>
             </div>
             <div id="video-content" class="content" style="display: none;">
@@ -68,7 +68,7 @@
     </div>
 
     <script>
-        var num = 14
+        var num = 12
         var img_div = document.getElementById('img-content')
         var audio_div = document.getElementById('audio-content')
         var video_div = document.getElementById('video-content')
@@ -83,12 +83,21 @@
                 }
             }else if(type == 'audio'){
                 console.log('复制音频盒子')
+                for (let index = 0; index < box_num; index++) {
+                    var clone_div = audio_div.cloneNode(true)
+                    console.log(clone_div.firstElementChild.firstElementChild.src)
+                    clone_div.style.display = 'block'
+                    // ../../static/img/test-img/冬.jpg
+                    clone_div.firstElementChild.firstElementChild.src = '../../static/img/2233娘.jpg'
+                    clone_div.firstElementChild.lastElementChild.innerText = 'mlgh'
+                    document.getElementById('main').appendChild(clone_div)
+                }
             }
             else if(type == 'video'){
                 console.log('复制视频盒子')
             }
         }
-        cloneDiv('img', num)
+        cloneDiv('audio', num)
     </script>
     <script>
         var picture = document.getElementById('picture')

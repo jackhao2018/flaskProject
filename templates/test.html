@@ -1,28 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <style>
-	tbody tr p:hover:after {
-		position: absolute;
-		left: 15px;
-		top: 5px;
-		padding: 5px;
-		background-color: #0095ff;
-		border-radius: 5px;
-		color: #fff;
-		/*这里显示的内容为title属性对应的值*/
-		content: attr(title);
-		z-index: 2;
-		width: 120px;
-	}
-    </style>
+	<meta charset="UTF-8">
+	<title>flex弹性布局</title>
+	<style>
+		.container {
+			display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    min-height: 60%;
+    justify-content: space-between;
+    /* max-height: 80%; */
+    margin-top: 15px;
+    margin-left: 5%;
+		}
+		.container:after{
+			content:'';
+			/*这个宽度和子元素宽度一致*/
+			width: 480px;
+			height: 0;
+			display: block;
+		}
+		.box {
+			width: 480px;
+			height: 100px;
+			background-color: red;
+			margin-bottom: 10px;
+		}
+	</style>
 </head>
 <body>
-	<tr>
-		<p><a href="#" class="Hyperlink" title="超链接1">超链接·1</a></p>
-		<p><input href="#" class="Hyperlink" title="your contents">输入框</input></p>
-	</tr>
+	<div class="container">
+		<div class="box">1</div>
+		<div class="box">2</div>
+		<div class="box">3</div>
+		<div class="box">3</div>
+		<div class="box">3</div>
+		<div class="box">3</div>
+		<div class="box">3</div>
+		<div class="box">3</div>
+		<div class="box">3</div>
+		<div class="box">3</div>
+		<div class="box">3</div>
+	</div>
 </body>
 </html>
+
