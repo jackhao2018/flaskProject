@@ -14,7 +14,6 @@ body,
   height: 100%;
   font-family: SourceHanSansCN-Regular;
   font-size: 14px;
-  /* overflow: hidden; */
 }
 
 #root {
@@ -24,8 +23,6 @@ body,
 * {
   margin: 0;
   padding: 0;
-  /* 清除元素默认的内外边距 */
-  /* 一个页面只需要写一次,初始化代码 */
 }
 
 a {
