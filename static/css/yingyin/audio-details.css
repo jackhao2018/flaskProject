@@ -1,8 +1,8 @@
-body {
+/* body {
     background-color: #0097a7;
     width: 100%;
 
-}
+} */
 
 span {
     font-size: 18px;
@@ -17,6 +17,11 @@ span {
     margin-top: 70px;
 }
 
+/* 白色图标显示黑色 */
+.reback-out img {
+    filter: brightness(0);
+}
+
 .reback-out span {
     display: -webkit-flex;
     height: 20px;
@@ -24,9 +29,9 @@ span {
     padding-left: 12px;
     line-height: 20px;
     font-size: 20px;
-    color: white;
+    color: black;
     border-style: none none none solid;
-    border-color: white;
+    border-color: black;
 }
 
 .main {
@@ -57,6 +62,8 @@ span {
     display: block;
     margin-left: auto;
     pointer-events: none;
+    background-color: #d1578177;
+    border-radius: 50%;
 }
 
 .title-cover {
@@ -72,6 +79,7 @@ span {
 .audio-img audio {
     width: 500px;
     margin-left: auto;
+    margin-top: 25px;
 }
 
 /* 旋转动画设置 */
@@ -104,21 +112,21 @@ span {
 
 .lyrics h2 {
     position: absolute;
-    bottom: 0;
+    top: 50%;
 }
 
 /* 页面增加遮罩的方式 */
 .mask {
     height: 80px;
     width: 100%;
-    background: linear-gradient(#0097a7, #0096a75d);
+    background: linear-gradient(#ffffff, #ffffffd1);
     opacity: 0.9;
 }
 
 .lrc-area {
     width: 100%;
-    height: calc(100%-120px);
-    margin-top: 20px;
+    height: calc(100% - 120px);
+    margin-top: 25px;
     overflow: hidden;
 }
 
@@ -161,7 +169,7 @@ ul div {
     border: none;
     border-radius: 20px;
     color: white;
-    background-color: #03a9f4;
+    background-color: #00a1d6;
     height: 40px;
 }
 

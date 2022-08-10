@@ -1,7 +1,7 @@
-body {
+/* body {
     background-color: rgb(178, 235, 242);
     width: 100%;
-}
+} */
 
 .reback-out {
     display: inline-flex;
@@ -12,6 +12,11 @@ body {
     margin-top: 70px;
 }
 
+/* 白色图标显示黑色 */
+.reback-out img {
+    filter: brightness(0);
+}
+
 .reback-out span {
     display: -webkit-flex;
     height: 20px;
@@ -19,9 +24,9 @@ body {
     padding-left: 12px;
     line-height: 20px;
     font-size: 20px;
-    color: white;
+    color: black;
     border-style: none none none solid;
-    border-color: white;
+    border-color: black;
 }
 
 .main {
@@ -39,6 +44,8 @@ body {
     width: 600px;
     height: 90%;
     background-color: white;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .file-type{

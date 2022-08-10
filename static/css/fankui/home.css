@@ -2,6 +2,10 @@
     position: relative;
 }
 
+a{
+    color: #00a1d6; 
+}
+
 .main{
     position: relative;
     display: flex;
@@ -37,15 +41,14 @@
 #daohang a{
     display: block;
     width: 100%;
-    color: #101010;
     line-height: 50px;
     font-size: 28px;
     text-align: center;
 }
 
-a:hover {
-    color: red;
-  }
+#daohang>a:hover {
+    color: #fc8bab;
+}
 
 .img{
     width: 35%;

@@ -21,14 +21,6 @@
     font-size: 16px;
 }
 
-/* 
-.title-box li{
-
-    background: #ff0;
-    color: #fff;
-
-} */
-
 /* 修改鼠标覆盖的样式，以及hover时显示的提示文字 */
 .title-box:first-child {
     border-radius: 5px;
@@ -91,6 +83,7 @@ span:hover {
     /* background-color: #00aeec; */
 }
 
+.img-content a,
 .audio-content a,
 .video-content a {
     display: block;

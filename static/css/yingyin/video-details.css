@@ -1,8 +1,8 @@
-body {
+/* body {
     background-color: #0097a7;
     width: 100%;
 
-}
+} */
 
 span {
     font-size: 18px;
@@ -16,6 +16,11 @@ span {
     margin-left: 10%;
 }
 
+/* 白色图标显示黑色 */
+.reback-out img {
+    filter: brightness(0);
+}
+
 .reback-out span {
     display: -webkit-flex;
     height: 20px;
@@ -23,9 +28,9 @@ span {
     padding-left: 12px;
     line-height: 20px;
     font-size: 20px;
-    color: white;
+    color: black;
     border-style: none none none solid;
-    border-color: white;
+    border-color: black;
 }
 
 .main{
@@ -60,7 +65,10 @@ span {
     width: 74%;
     border-radius: 5px;
     overflow: auto;
-    background-color:  #b2ebf2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #acb6c1;
+    /* background-color:  #b2ebf2; */
 }
 
 .title{
@@ -99,6 +107,8 @@ h4{
     height: 40%;
     overflow: scroll;
     margin-left: 30px;
+    border-radius: 8px;
+    background-color: #00a0d654;
 }
 
 .list-video-content{
@@ -117,7 +127,7 @@ h4{
     height: 30px;
     margin-left: 10px;
     margin-top: 10px;
-    background-color: white;
+    background-color: #00a0d654;
     border-radius: 5px;
     text-align: center;
     line-height: 30px;
@@ -156,7 +166,10 @@ p{
     margin-left: 1%;
     border-radius: 5px;
     overflow: auto;
-    background-color:  #b2ebf2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #acb6c1;
+    /* background-color:  #b2ebf2; */
 }
 
 .download::-webkit-scrollbar {
@@ -172,7 +185,7 @@ p{
     margin-top: 40px;
     border: none;
     border-radius: 5px;
-    background-color: #03a9f4;
+    background-color:  #00a1d6;
     height: 30px;
 }
 

@@ -1,19 +1,24 @@
-body {
+/* body {
     background-color: #0097a7;
     width: 100%;
-}
+} */
 
-span{
+span {
     font-size: 18px;
 }
 
 .reback-out {
     display: inline-flex;
     flex-direction: row;
-    height:20px;
+    height: 20px;
     width: 160px;
     margin-left: 10%;
     margin-top: 70px;
+}
+
+/* 白色图标显示黑色 */
+.reback-out img {
+    filter: brightness(0);
 }
 
 .reback-out span {
@@ -22,23 +27,22 @@ span{
     margin-left: 10px;
     padding-left: 12px;
     line-height: 20px;
-    color: white;
+    color: black;
     font-size: 20px;
     border-style: none none none solid;
-    border-color: white;
+    border-color: black;
     border-width: 1px;
 }
 
-.main{
+.main {
     display: flex;
     height: 70%;
     width: 80%;
     margin-top: 10px;
     margin-left: 10%;
-    background-color: #0097a7;
 }
 
-.details{
+.details {
     position: relative;
     overflow-y: auto;
     width: 25%;
@@ -55,7 +59,7 @@ span{
     margin-inline-end: 0px;
 }
 
-.download{
+.download {
     width: 100%;
     position: absolute;
     margin-bottom: 0px;
@@ -74,21 +78,23 @@ span{
     height: 30px;
 }
 
-.download span{
+.download span {
     display: block;
     margin-left: 20px;
     margin-bottom: 4px;
 }
 
-.picture-list{
+.picture-list {
     position: relative;
     width: 73%;
     margin-left: 2%;
     border-radius: 5px;
-    background-color: #ffffff;
+    border-style: solid solid solid solid;
+    border-width: 1px;
+    border-color: #eeeaea;
 }
 
-.show-img{
+.show-img {
     display: block;
     width: 32px;
     height: 32px;
@@ -101,9 +107,9 @@ span{
 .show-img:hover {
     filter: none;
     opacity: 1;
-    }
+}
 
-.separate{
+.separate {
     display: flex;
     width: 96%;
     height: 30px;
@@ -112,7 +118,7 @@ span{
     background-color: #eeeaea;
 }
 
-.separate  li{
+.separate li {
     display: flex;
     flex-direction: row;
     height: 30px;
@@ -120,7 +126,7 @@ span{
     border-color: #acb6c1;
 }
 
-.separate span{
+.separate span {
     display: block;
     line-height: 30px;
     text-align: center;
@@ -128,15 +134,14 @@ span{
     color: #adafb5;
 }
 
-
-.content{
+.content {
     display: flex;
     margin-top: 10px;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-left: 2%;
     width: 96%;
-    height:  calc(100% - 140px);
+    height: calc(100% - 140px);
     overflow-y: auto;
 }
 
@@ -145,46 +150,46 @@ span{
     width: 0;
     height: 0;
     background-color: transparent;
-  }
+}
 
-.img-box{
+.img-box {
     position: relative;
     height: 200px;
-    margin: 0 5px 5px 0; 
-    margin-left: 2%; 
+    margin: 0 5px 5px 0;
+    margin-left: 2%;
     object-fit: contain;
     object-position: 50% 50%;
-    width: 30%;  
+    width: 30%;
 }
 
-.content img{
+.content img {
     height: 200px;
-    margin: 0 5px 5px 0; 
-    margin-left: 2%; 
-    object-fit:contain;
+    margin: 0 5px 5px 0;
+    margin-left: 2%;
+    object-fit: contain;
     object-position: 50% 50%;
-    width: 100%;   
+    width: 100%;
 }
 
-.content input{
+.content input {
     width: 20px;
     height: 20px;
 }
 
-.list-content{
+.list-content {
     margin-top: 10px;
     margin-left: 2%;
     width: 96%;
-    height:  calc(100% - 140px);
+    height: calc(100% - 140px);
     overflow-y: auto;
 }
 
-.list-content ul{
+.list-content ul {
     width: 100%;
     height: 100%;
 }
 
-.list-content  li{
+.list-content li {
     display: flex;
     flex-direction: row;
     height: 40px;
@@ -195,20 +200,20 @@ span{
     border-color: #acb6c1;
 }
 
-.list-content span{
+.list-content span {
     display: block;
     line-height: 40px;
     text-align: center;
     font-size: 14px;
 }
 
-.count{
+.count {
     position: relative;
     height: 4%;
     width: 100%;
 }
 
-.count span{
+.count span {
     display: block;
     position: absolute;
     font-size: 10px;

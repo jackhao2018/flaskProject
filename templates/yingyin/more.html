@@ -32,12 +32,11 @@
         </div>
         <div id="main" class="main">
             <div id="img-content" class="img-content">
-                <a href="">
+                <a href="./img-details.html">
                 <img src="../../static/img/2233娘.jpg" alt="" >
-                <span id="title">这是2233娘视频这是2233娘视频这是2233娘视频这是2233娘视频这是</span></a>
+                <span id="title">这是2233娘图片</span></a>
                 <div id="others" class="others">
                     <span>上传时间：2022-08-08</span>
-                    <!-- <img src="../../static/img/common/preview.png" alt="预览ICON">&nbsp;88 -->
                 </div>
             </div>
             <div id="audio-content" class="audio-content" style="display: none;">
@@ -85,6 +84,7 @@
                 for (let index = 0; index < box_num; index++) {
                     var clone_div = img_div.cloneNode(true)
                     console.log(clone_div.firstElementChild.firstElementChild.src)
+                    clone_div.style.display = 'block'
                     clone_div.firstElementChild.firstElementChild.src = '../../static/img/ciyun.png'
                     clone_div.firstElementChild.lastElementChild.innerText = 'mlgh'
                     document.getElementById('main').appendChild(clone_div)
