@@ -27,11 +27,11 @@
                     </div>
                 </div>
                 <div id="show" class="show">
-                    <div id="show-video">
-                        展示視頻
+                    <div id="show-video" class="show-video" >
+                        <video class="show-video" src="../static/vedio/点云工具3维图缩放优化.mp4" controls></video>
                     </div>
-                    <div>
-                        展示圖片
+                    <div id="show-picture" class="show-picture"  onLoad='creatImg()' onResize="creatImg()" >
+                        
                     </div>
                 </div>
                 
@@ -39,5 +39,21 @@
             <!-- 调研词云图生成和弧形文字书写 -->
         </main>
     </div>
+    <script>
+        var fatherDiv = document.getElementById("show-picture")
+        console.log('父盒子宽度的1/3是：' + 0.3 * fatherDiv.offsetWidth)
+        console.log('父盒子高度是：' + fatherDiv.offsetHeight)
+
+        var creatImg = function(params) {
+            for (let index = 1; index < 4; index++) {
+                img_index = document.createElement('img');
+                img_index.style.width = 0.3 * fatherDiv.offsetWidth + 'px';
+                img_index.style.height = fatherDiv.offsetHeight + 'px';
+                img_index.src = '../static/img/2233娘.jpg'
+                fatherDiv.appendChild(img_index)
+            }
+        }
+        
+    </script>
 </body>
 </html>
