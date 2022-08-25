@@ -2,109 +2,112 @@
 <html>
 <meta charset="utf-8">
 <style>
-	.mouseOut {
-		background: #708090;
-		color: #FFFAFA;
-	}
+ .mouseOut {
+  background: #708090;
+  color: #FFFAFA;
+ }
 
-	.mouseOver {
-		background: #FFFAFA;
-		color: #000000;
-	}
+ .mouseOver {
+  background: #FFFAFA;
+  color: #000000;
+ }
 </style>
 
 <head>
-	<title>自动搜索</title>
+ <title>自动搜索</title>
 </head>
 
 <body>
-	自动搜索框 <input type="text" id="input" onkeyup="find()">
-	<div style="position:absolute;" id="popup">
-		<table id="table" border="0" cellspacing="0" cellpadding="0">
-			<tbody id="table_body"></tbody>
-		</table>
-	</div>
-	<script>
+ 自动搜索框 <input type="text" id="input" onkeyup="find()">
+ <div style="position:absolute;" id="popup">
+  <table id="table" border="0" cellspacing="0" cellpadding="0">
+   <tbody id="table_body"></tbody>
+  </table>
+ </div>
+ <script>
 
-		function set(arr) {
+  function set(arr) {
 
-			var size = arr.length;
-			setOffsets();
+   var size = arr.length;
+   setOffsets();
 
-			var row, cell, txtNode;
-			for (var i = 0; i < size; i++) {
-				var nextNode = arr[i];
-				row = document.createElement("tr");
-				cell = document.createElement("td");
+   var row, cell, txtNode;
+   for (var i = 0; i < size; i++) {
+    var nextNode = arr[i];
+    row = document.createElement("tr");
+    cell = document.createElement("td");
+	TableBody = document.createElement("table");
 
-				cell.onmouseout = function () { this.className = 'mouseOver'; };
-				cell.onmouseover = function () { this.className = 'mouseOut'; };//鼠标悬停或离开选项时颜色变化
-				cell.setAttribute("bgcolor", "#FFFAFA");
-				cell.setAttribute("border", "0");
-				cell.onclick = function () { populate(this); };  //鼠标点击选项给输入框赋值
+    cell.onmouseout = function () { this.className = 'mouseOver'; };
+    cell.onmouseover = function () { this.className = 'mouseOut'; };//鼠标悬停或离开选项时颜色变化
+    cell.setAttribute("bgcolor", "#FFFAFA");
+    cell.setAttribute("border", "0");
+    cell.onclick = function () { populate(this); };  //鼠标点击选项给输入框赋值
 
-				txtNode = document.createTextNode(nextNode);
-				cell.appendChild(txtNode);
-				row.appendChild(cell);
-				TableBody.appendChild(row);
-			}
-		}
+    txtNode = document.createTextNode(nextNode);
+    cell.appendChild(txtNode);
+    row.appendChild(cell);
+    TableBody.appendChild(row);
+   }
+  }
 
-		function setOffsets() {
-			var end = inputField.offsetWidth;
-			var left = calculateOffsetLeft(inputField);
-			var top = calculateOffsetTop(inputField) + inputField.offsetHeight;
+  function setOffsets() {
+   var end = inputField.offsetWidth;
+   var left = calculateOffsetLeft(inputField);
+   var top = calculateOffsetTop(inputField) + inputField.offsetHeight;
+   completeDiv = document.createElement("div");
+   Table = document.createElement("table");
 
-			completeDiv.style.border = "black 1px solid";
-			completeDiv.style.left = left + "px";
-			completeDiv.style.top = top + "px";
-			Table.style.width = end + "px";
-		}
+   completeDiv.style.border = "black 1px solid";
+   completeDiv.style.left = left + "px";
+   completeDiv.style.top = top + "px";
+   Table.style.width = end + "px";
+  }
 
-		function calculateOffsetLeft(field) {
-			return calculateOffset(field, "offsetLeft");
-		}
+  function calculateOffsetLeft(field) {
+   return calculateOffset(field, "offsetLeft");
+  }
 
-		function calculateOffsetTop(field) {
-			return calculateOffset(field, "offsetTop");
-		}
+  function calculateOffsetTop(field) {
+   return calculateOffset(field, "offsetTop");
+  }
 
-		function calculateOffset(field, attr) {
-			var offset = 0;
-			while (field) {
-				offset += field[attr];
-				field = field.offsetParent;
-			}
-			return offset;
-		}
+  function calculateOffset(field, attr) {
+   var offset = 0;
+   while (field) {
+    offset += field[attr];
+    field = field.offsetParent;
+   }
+   return offset;
+  }
 
-		function clear() {
-			if (TableBody) {
-				var ind = TableBody.childNodes.length;
-				for (var i = ind - 1; i >= 0; i--) {
-					TableBody.removeChild(TableBody.childNodes[i]);
-				}
-				completeDiv.style.border = "none";
-			}
-		}
+  function clear() {
+   if (TableBody) {
+    var ind = TableBody.childNodes.length;
+    for (var i = ind - 1; i >= 0; i--) {
+     TableBody.removeChild(TableBody.childNodes[i]);
+    }
+    completeDiv.style.border = "none";
+   }
+  }
 
-		function find() {
+  function find() {
 
-			inputField = document.getElementById("input");
+   inputField = document.getElementById("input");
 
-			var data = ['a', '1234a', 'sdfwe', 'fqasf']
+   var data = ['a', '1234a', 'sdfwe', 'fqasf']
 
-			var arr = []
+   var arr = []
 
-			for (var i = 0; i < data.length; i++) {
-				if ((data[i]).indexOf(inputField.value) >= 0) {
-					arr.push(data[i]);
-				}
-			}
-			set(arr);
-		}
+   for (var i = 0; i < data.length; i++) {
+    if ((data[i]).indexOf(inputField.value) >= 0) {
+     arr.push(data[i]);
+    }
+   }
+   set(arr);
+  }
 
-	</script>
+ </script>
 </body>
 
 </html>
