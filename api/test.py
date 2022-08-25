@@ -5,7 +5,7 @@ import stylecloud
 
 
 def ciyun():
-    with open(r'D:\测试用例数据\textfiles\test-点云.txt', 'r', encoding='utf8') as f:
+    with open(r'E:\Program Files (x86)\SogouInput\11.6.0.5419\crash\errorlog.txt', 'r', encoding='utf8') as f:
         word_list = jieba.cut(f.read())
         result = " ".join(word_list)  # 分词用空格隔开
 

@@ -4,7 +4,7 @@ body {
 
 input::placeholder {
     color: #757575;
-  }
+}
 
 /* banner属性设置 */
 .banner {
@@ -13,7 +13,7 @@ input::placeholder {
     height: 240px;
     background-color: #00BCD4;
     background-image: url('../../img/common/bannan2.jpg');
-    background-size:cover;
+    background-size: cover;
 }
 
 /* 设置导航的框高与浮动样式 */
@@ -27,14 +27,14 @@ input::placeholder {
     position: absolute;
 }
 
-.banner li{
+.banner li {
     display: block;
     width: 100%;
     height: 50px;
 }
 
 /* 盒子中的a标签水平垂直居中 */
-.banner a{
+.banner a {
     display: block;
     width: 100%;
     color: #00a1d6;
@@ -46,14 +46,14 @@ input::placeholder {
 
 a:hover {
     color: #fc8bab;
-  }
+}
 
-.main{
+.main {
     height: 100%;
     background-color: #f4f5f7;
 }
 
-.contain{
+.contain {
     width: 80%;
     /* height: 100%; */
     margin-left: auto;
@@ -61,7 +61,7 @@ a:hover {
     background-color: #ffffff;
 }
 
-.search{
+.search {
     position: relative;
     height: 50px;
     width: 100%;
@@ -78,20 +78,20 @@ a:hover {
     top: 10px;
     right: 5%;
     overflow: hidden;
-    background-color:#F2F3F4;
+    background-color: #F2F3F4;
 }
 
 .put {
     display: block;
-    height:100%;
+    height: 100%;
     width: 90%;
     border: none;
-    color:black;
-    outline:medium; 
-    background-color:#F2F3F4;
+    color: black;
+    outline: medium;
+    background-color: #F2F3F4;
 }
 
-.search-icon-box{
+.search-icon-box {
     width: 10%;
     height: 100%;
     right: 0%;
@@ -103,14 +103,33 @@ a:hover {
 }
 
 /* icon顯示黑色*/
-.search-icon-box img{
+.search-icon-box img {
     filter: brightness(0);
 }
 
-.show{
-    display: flex;
+.show {
     width: 60%;
-    height: 630px;
-    background-color: #40c5f1;
-    padding-top: 270px;
+    padding-top: 200px;
+}
+
+.show-video {
+    display: flex;
+    width: 100%;
+    /* background-color: black; */
+}
+
+.show-video video {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.show-picture{
+    display: flex;
+    width: 80%;
+    height: 250px;
+    margin-top: 20px;
+    margin-left: 10%;
+    justify-content: space-between;
+    /* background-color: #fc8bab; */
 }
