@@ -1,0 +1,14 @@
+WARNING 2022-08-10 13:00:11,052 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-10 13:00:11,055 _internal.py _log no.224:  * Debugger PIN: 110-383-171
+INFO 2022-08-10 13:00:19,254 app.py index no.11: 进入首页
+INFO 2022-08-10 13:00:19,257 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:00:19] "GET / HTTP/1.1" 200 -
+INFO 2022-08-10 13:00:19,289 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:00:19] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-10 13:00:19,332 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:00:19] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-10 13:00:19,365 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:00:19] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-10 13:00:19,383 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:00:19] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-10 13:01:12,310 app.py index no.11: 进入首页
+INFO 2022-08-10 13:01:12,311 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:01:12] "GET / HTTP/1.1" 200 -
+INFO 2022-08-10 13:01:12,353 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:01:12] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-10 13:01:12,355 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:01:12] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-10 13:01:12,414 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:01:12] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-10 13:01:12,437 _internal.py _log no.224: 127.0.0.1 - - [10/Aug/2022 13:01:12] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
