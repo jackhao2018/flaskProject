@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li{margin: 0; padding: 0;width:100%;}
+        </style>
+</head>
+<body>
+    <input type="text" name="word" size="20" id="word" onkeyup="checkword()" style="border:1px solid #666666;width:200px;height:25px;">
+    <div style="position: absolute; width: 200px; height: 100px; z-index: 1; left: 10px; top: 40px;border:1px solid #666666;display:none;" id="showmenu"></div>
+    <script language="javascript" type="text/javascript">
+        function checkword()
+        {
+           var wordvalue=document.getElementById("word").value.toLowerCase();
+           var alltxt="all|big|cut|car\|daph8|eeg|egg|eat|fuck|fuck you|fix|good|hand|hidden|ill|jack|jad|kevin|long|man|number|oio|part|pp|quit|QQ|rest|reg|set|submit|time|tag|uuzo|view|windows|want|xy|xun|young|yuyu|z|David|David|哈哈|";//这里就是你所想要匹配的字符，可惜只能用于小型的论坛
+           var alltxtpp=alltxt.toLowerCase();
+           var alltxt_xiang=alltxt.split("|");
+           var alltxt_xiang1=alltxtpp.split("|");
+           var inhtml="<ul>"
+           var isyou=0;
+           for (i=0;i<alltxt_xiang1.length;i++)
+           {
+               if (alltxt_xiang1[i].substr(0,wordvalue.length)==wordvalue)
+               {
+                   inhtml=inhtml+"<li onclick=\"document.getElementById('word').value=this.innerHTML;document.getElementById('showmenu').style.display='none';\" onmouseover=\"this.style.backgroundColor='#666666'\" onmouseout=\"this.style.backgroundColor=''\">"+alltxt_xiang[i]+"</li>";
+                   isyou=1;
+               }
+           }
+           inhtml=inhtml+"</ul>";
+           if (isyou==1)
+           {
+               document.getElementById("showmenu").innerHTML=inhtml;
+               document.getElementById("showmenu").style.display="";
+           }
+           else
+           {
+               document.getElementById("showmenu").innerHTML="";
+               document.getElementById("showmenu").style.display="none";
+           }
+           if (wordvalue=="")
+           {
+               document.getElementById("showmenu").innerHTML="";
+               document.getElementById("showmenu").style.display="none";
+           }
+        }
+        </script>
+        
+</body>
+</html>
+
+    

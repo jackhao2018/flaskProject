@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--#include file="/saleweb/npage/public_title_name.html" -->
+</head>
+<body>
+<div class="c-row pdt-l pdb-l">
+    <div class="col-4">
+        <div class="c-form-item">
+            <p class="c-form-name">模板名称</p>
+            <div class="c-form-info">
+                <input type="text" name="tempName" id="tempName"  list="batch_list" autocomplete="off" placeholder="请输入" class="c-input"/>
+                <datalist id="batch_list">
+                </datalist>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12" style="text-align: center; padding: 10px;">
+    <div class="c-form-item">
+        <button class="c-btn-l" οnclick="qryseDiscountTempList(1)">查询</button>
+        <button class="c-btn-l" type="reset" id="btn_reset">重置</button>
+        <button class="c-btn-l" οnclick="addDiscountTempMsg()">新建</button>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="../static/js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+	});
+</script>
+
+<script>
+    $(document).ready(function () {
+    queryList();
+});
+ 
+function queryList() {
+    var seDiscountTempMsg=[{NAME: "测试一", STATE_DATE: "20191115104955", STATE: "1", TEMP_ID: "104955011000001"},
+        {NAME: "专线一", STATE_DATE: "20191115104918", STATE: "0", TEMP_ID: "104918011000000"},
+        {NAME: "5G一", STATE_DATE: "20191114174557", STATE: "0", TEMP_ID: "174558011470000"}];
+    var add_options;
+    for(var i=0;i<seDiscountTempMsg.length;i++) {
+        add_options += '<option value="' + seDiscountTempMsg[i].NAME + '">'+ seDiscountTempMsg[i].NAME + '</option>';
+    }
+    $("datalist#batch_list").append(add_options);
+}
+</script>
