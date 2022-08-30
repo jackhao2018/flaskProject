@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../global.css" type="text/css">
-    <link rel="stylesheet" href="../static/css/index/index.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/index/index.css">
     <title>首页</title>
 </head>
 <body>
@@ -19,12 +19,14 @@
         <main class="main">
             <div id="contain" class="contain">
                 <div id="search" class="search">
+                    <form method="get" action="{{ url_for(api/page/home/index.search) }}">
                     <div name="search-box" id="search-box" class="search-box">
                         <input type="text" name="put" placeholder="    请输入您要搜索的内容" value="" id="put" class="put">
-                        <div name="search-icon-box" id="search-icon-box" class="search-icon-box">
+                        <button name="search-icon-box" id="search-icon-box" class="search-icon-box" type="submit">
                             <img src="../static/img/common/search.png" alt="搜索图标">
-                        </div>
+                        </button>
                     </div>
+                    </form>
                 </div>
                 <div id="show" class="show">
                     <div id="show-video" class="show-video" >

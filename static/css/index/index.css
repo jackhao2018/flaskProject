@@ -92,10 +92,11 @@ a:hover {
 }
 
 .search-icon-box {
+    display: flex;
     width: 10%;
     height: 100%;
     right: 0%;
-    display: flex;
+    border: none;
     position: absolute;
     align-items: center;
     justify-content: center;

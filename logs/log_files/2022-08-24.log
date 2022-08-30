@@ -1,0 +1,537 @@
+INFO 2022-08-24 20:57:10,142 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 20:57:10,142 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 20:57:10,143 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 20:57:10,717 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 20:57:10,720 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:31:04,718 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\config.py', reloading
+INFO 2022-08-24 21:31:04,794 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:31:05,363 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:31:05,366 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:36:32,517 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:36:32,517 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:37:04,647 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8888
+INFO 2022-08-24 21:37:04,647 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:37:04,648 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:37:05,197 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:37:05,200 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:37:20,613 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:37:20,614 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:37:20,614 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:37:21,164 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:37:21,166 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:37:30,376 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:37:30,418 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:37:30,753 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "GET /static/css/index/index.css HTTP/1.1" 200 -
+INFO 2022-08-24 21:37:30,770 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "GET /static/img/common/bannan2.jpg HTTP/1.1" 200 -
+INFO 2022-08-24 21:37:30,839 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:37:30,839 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "GET /static/img/common/search.png HTTP/1.1" 200 -
+INFO 2022-08-24 21:37:30,905 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:37:30,907 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:37:30,916 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:37:30,921 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:30] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:37:31,797 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:31] "GET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1" 200 -
+INFO 2022-08-24 21:37:42,221 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:42] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:37:42,248 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:42] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:37:42,249 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:42] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:37:42,300 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:42] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:37:42,306 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:42] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:37:43,317 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:37:55,134 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:55] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:37:55,160 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:55] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:37:55,161 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:55] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:37:55,227 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:55] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:37:55,239 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:55] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:37:56,249 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:37:56] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:41:59,647 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:41:59,647 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:41:59,648 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:42:00,206 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:42:00,209 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:42:39,619 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:39] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:42:39,646 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:39] "[33mGET /balglo.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:42:39,982 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:39] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:42:39,998 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:39] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:42:40,069 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:40] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:42:40,069 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:40] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:42:40,111 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:40] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:42:40,153 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:40] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:42:40,197 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:40] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:42:40,203 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:40] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:42:41,003 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:42:41] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:45:47,273 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:45:47,274 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:45:47,274 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:45:47,830 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:45:47,832 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:45:55,260 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:55] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:45:55,293 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:55] "[33mGET /balglo.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:45:55,635 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:55] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:45:55,651 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:55] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:45:55,722 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:55] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:45:55,722 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:55] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:45:55,750 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:55] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:45:55,786 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:55] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:45:56,656 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:45:56] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:46:50,666 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:46:50,666 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:46:50,667 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:46:51,232 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:46:51,234 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:46:56,271 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:46:56] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO 2022-08-24 21:46:56,584 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:46:56] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO 2022-08-24 21:46:56,584 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:46:56] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO 2022-08-24 21:46:56,628 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:46:56] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO 2022-08-24 21:46:56,653 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:46:56] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:47:18,867 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:47:18,868 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:47:18,868 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:47:19,430 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:47:19,433 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:47:24,467 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:47:24,491 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "[33mGET /balglo.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:47:24,811 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:47:24,827 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:47:24,905 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:47:24,905 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:47:24,940 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:47:24,945 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:47:24,968 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:24] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:47:25,832 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:47:25] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:48:03,732 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:03] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:48:03,761 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:03] "[33mGET /balglo.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:48:03,763 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:03] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:48:03,828 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:03] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:48:03,840 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:03] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:48:03,845 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:03] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:48:03,849 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:03] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:48:04,855 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:04] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:48:10,204 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:48:10,204 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:48:10,205 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:48:10,776 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:48:10,779 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:48:15,105 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:15] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:48:15,130 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:15] "[33mGET /balglo.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:48:15,384 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:15] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:48:15,400 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:15] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:48:15,444 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:15] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:48:16,405 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:48:16] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:48:53,948 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:48:53,948 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:48:53,949 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:48:54,513 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:48:54,516 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:49:02,541 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:02] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:49:02,568 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:02] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:49:02,910 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:02] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:02,926 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:02] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:02,993 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:02] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:02,993 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:02] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:49:03,023 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:03] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:49:03,054 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:03] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:49:03,059 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:03] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:49:03,931 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:03] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:49:17,606 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:17] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:49:17,636 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:17] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:49:17,637 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:17] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:17,704 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:17] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:17,716 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:17] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:18,726 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:18] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:49:26,420 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:26] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:49:26,443 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:26] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:49:26,444 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:26] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:26,487 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:26] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:26,499 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:26] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:49:27,508 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:49:27] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:51:22,347 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:51:22,347 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:51:22,348 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:51:22,918 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:51:22,920 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:51:28,935 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:51:28] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO 2022-08-24 21:51:29,259 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:51:29] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:51:29,260 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:51:29] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:51:29,285 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:51:29] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:51:29,309 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:51:29] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:52:11,852 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:52:11,852 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:52:11,854 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:52:12,405 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:52:12,408 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:52:21,036 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:21] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO 2022-08-24 21:52:21,356 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:21] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:52:21,356 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:21] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:52:21,380 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:21] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:52:21,403 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:21] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:52:27,050 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO 2022-08-24 21:52:27,074 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:27] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:52:27,083 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:27] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:52:27,137 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:52:27,154 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:52:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:54:02,089 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:54:02,090 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:54:02,091 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:54:02,662 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:54:02,665 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:54:10,325 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:54:10] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO 2022-08-24 21:54:10,644 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:54:10] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:54:10,644 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:54:10] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:54:10,659 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:54:10] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:54:10,693 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:54:10] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:56:02,220 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\api\\page\\home\\index.py', reloading
+INFO 2022-08-24 21:56:02,345 _internal.py _log no.224:  * Restarting with stat
+INFO 2022-08-24 21:58:41,885 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:58:41,885 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:58:41,885 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:58:42,441 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:58:42,444 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:58:50,338 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:58:50] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:58:50,645 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:58:50] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:58:50,707 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:58:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:58:50,713 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:58:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:58:50,771 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:58:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:58:50,775 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:58:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:58:50,797 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:58:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:58:51,471 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:58:51] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:59:11,601 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:59:11,601 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:59:11,602 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:59:12,154 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:59:12,156 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:59:16,107 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:16] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:59:16,137 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:16] "[33mGET /static/global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:59:16,394 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:16] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:59:16,410 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:16] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:59:16,447 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:16] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:59:17,415 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:17] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:59:45,370 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 21:59:45,370 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 21:59:45,371 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 21:59:45,927 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 21:59:45,930 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 21:59:50,124 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 21:59:50,153 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "[33mGET /static/global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 21:59:50,482 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:59:50,497 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:59:50,561 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:59:50,562 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 21:59:50,590 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:59:50,595 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:59:50,625 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:50] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 21:59:51,504 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 21:59:51] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:01:41,397 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:41] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:01:41,423 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:41] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:01:41,424 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:41] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:01:41,490 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:41] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:01:41,503 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:41] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:01:41,507 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:41] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:01:41,512 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:41] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:01:42,513 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:42] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:01:53,474 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:53] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:01:53,506 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:53] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:01:53,507 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:53] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:01:54,596 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:01:54] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:02:00,560 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:02:00] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:02:00,583 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:02:00] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:02:00,584 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:02:00] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:02:00,630 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:02:00] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:02:00,642 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:02:00] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:02:01,656 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:02:01] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:05:01,484 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\app.py', reloading
+INFO 2022-08-24 22:05:01,611 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 22:05:02,164 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 22:05:02,167 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 22:05:10,758 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:10] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:05:10,789 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:10] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:05:10,791 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:10] "[33mGET /static/css/index/index.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:05:10,851 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:10] "[33mGET /static/img/common/search.png HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:05:10,867 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:10] "[33mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:05:11,872 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:11] "[33mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:05:11,876 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:11] "[33mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:05:33,722 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\app.py', reloading
+INFO 2022-08-24 22:05:33,819 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 22:05:34,374 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 22:05:34,376 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 22:05:39,299 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:05:39,325 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:05:39,655 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "GET /static/css/index/index.css HTTP/1.1" 200 -
+INFO 2022-08-24 22:05:39,670 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "GET /static/img/common/bannan2.jpg HTTP/1.1" 200 -
+INFO 2022-08-24 22:05:39,732 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "GET /static/img/common/search.png HTTP/1.1" 200 -
+INFO 2022-08-24 22:05:39,732 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:05:39,762 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:05:39,821 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:05:39,826 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:39] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:05:40,677 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:05:40] "GET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1" 200 -
+INFO 2022-08-24 22:07:03,106 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 22:07:03,106 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 22:07:03,107 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 22:07:03,676 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 22:07:03,679 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 22:07:07,355 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:07:07,385 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:07:07,738 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:07:07,754 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:07:07,809 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:07,809 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:07:07,814 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:07,842 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:07,860 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:07] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:08,758 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:08] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:36,085 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 22:07:36,085 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 22:07:36,086 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 22:07:36,645 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 22:07:36,647 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 22:07:46,189 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:07:46,214 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "[33mGET /global.css HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:07:46,552 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:07:46,568 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:07:46,636 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:07:46,636 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:46,640 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:46,675 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:46,699 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:46] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:07:47,572 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:07:47] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:08:26,396 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:26] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:08:26,421 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:26] "GET /static/css/global.css HTTP/1.1" 200 -
+INFO 2022-08-24 22:08:26,421 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:26] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:08:26,486 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:26] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:08:26,499 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:26] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:08:26,504 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:26] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:08:26,508 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:26] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:08:27,508 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:27] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:08:58,140 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:58] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:08:58,170 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:58] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:08:58,170 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:58] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:08:58,244 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:58] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:08:58,249 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:58] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:08:58,254 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:58] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:08:59,263 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:59] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:08:59,549 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:08:59] "[33mGET /jiaocheng/index.html HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:09:07,422 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:07] "[33mGET /templates/yingyin/home.html HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:09:09,348 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:09] "[33mGET /fankui/home.html HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:09:12,932 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:12] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:09:12,958 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:12] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:09:12,958 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:12] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:09:13,008 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:13] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:09:13,016 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:13] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:09:14,022 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:14] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:09:14,024 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:09:14] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:10:00,463 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:00] "[33mGET /fankui/home.html HTTP/1.1[0m" 404 -
+INFO 2022-08-24 22:10:40,125 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:40] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:10:41,151 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:41] "[36mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:10:41,701 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:41] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:10:41,726 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:41] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:10:41,726 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:41] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:10:41,772 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:41] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:10:41,786 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:41] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:10:43,413 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:43] "GET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1" 200 -
+INFO 2022-08-24 22:10:43,419 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:10:43,421 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:10:43,422 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:10:43,423 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:10:43,424 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:10:43,425 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:10:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:16:12,301 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:12] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:16:12,327 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:12] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:16:12,327 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:12] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:16:12,393 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:12] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:16:12,397 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:12] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:16:12,422 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:12] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:16:13,418 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:13] "GET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1" 200 -
+INFO 2022-08-24 22:16:16,866 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:16] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:16:16,895 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:16] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:16:16,897 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:16] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:16:16,938 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:16] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:16:16,950 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:16] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 22:16:18,847 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:16:18] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:02,932 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\static\\config.py', reloading
+INFO 2022-08-24 22:26:03,049 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 22:26:03,607 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 22:26:03,610 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 22:26:05,315 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 22:26:05,315 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 22:26:05,316 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 22:26:05,875 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 22:26:05,878 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 22:26:12,718 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:12] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 22:26:13,212 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "GET /static/css/global.css HTTP/1.1" 200 -
+INFO 2022-08-24 22:26:13,212 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "GET /static/css/index/index.css HTTP/1.1" 200 -
+INFO 2022-08-24 22:26:13,228 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "GET /static/img/common/bannan2.jpg HTTP/1.1" 200 -
+INFO 2022-08-24 22:26:13,238 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "GET /static/img/common/search.png HTTP/1.1" 200 -
+INFO 2022-08-24 22:26:13,239 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:13,280 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:13,317 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:13,331 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:13,336 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:13,345 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:13,355 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:13,360 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:13,388 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:13] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 22:26:14,233 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 22:26:14] "GET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1" 200 -
+INFO 2022-08-24 22:39:43,995 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\app.py', reloading
+INFO 2022-08-24 22:39:44,118 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 22:39:44,682 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 22:39:44,685 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:01:11,812 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:01:11] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:01:11,812 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:01:11] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:21,443 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:21] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 23:02:21,476 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:21] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:21,485 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:21] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:21,565 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:21] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:21,577 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:21] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:21,585 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:21] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:02:21,592 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:21] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:02:21,612 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:21] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:02:22,595 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:22] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:02:44,926 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:44] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 23:02:44,954 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:44] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:44,954 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:44] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:45,037 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:45] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:45,051 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:45] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:02:46,067 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:02:46] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:03:41,230 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:41] "GET / HTTP/1.1" 200 -
+INFO 2022-08-24 23:03:41,256 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:41] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:41,256 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:41] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:41,336 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:41] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:41,348 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:41] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:41,356 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:41] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:03:42,360 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:42] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:03:44,696 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:44] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:03:44,858 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:44] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:03:44,897 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:44] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:44,898 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:44] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:44,962 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:44] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:44,983 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:44] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:44,988 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:44] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:03:45,951 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:45] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:03:45,998 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:45] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:03:46,001 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:46] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:03:46,446 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:46] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:03:46,470 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:46] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:46,470 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:46] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:46,560 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:46] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:47,593 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:47] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:03:48,099 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:48] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:03:48,124 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:48] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:48,125 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:48] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:48,207 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:48] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:03:49,226 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:03:49] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:04:26,233 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:26] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:04:26,260 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:26] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:04:26,261 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:26] "GET /static/css/index/index.css HTTP/1.1" 200 -
+INFO 2022-08-24 23:04:26,343 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:26] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:04:26,356 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:26] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:04:26,360 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:26] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:04:27,373 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:27] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:04:42,080 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:42] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:04:42,105 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:42] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:04:42,106 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:42] "GET /static/css/index/index.css HTTP/1.1" 200 -
+INFO 2022-08-24 23:04:42,196 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:42] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:04:42,203 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:42] "[36mGET /static/img/common/bannan2.jpg HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:04:43,220 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:04:43,230 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:04:43] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:06:25,832 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:25] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:06:25,862 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:25] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:06:25,862 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:25] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:06:25,953 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:25] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:06:25,963 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:25] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:06:26,022 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:26] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:06:26,060 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:26] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:06:26,971 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:26] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:06:27,294 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:27] "GET /?put=&search-icon-box= HTTP/1.1" 200 -
+INFO 2022-08-24 23:06:27,321 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:27] "[36mGET /static/css/global.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:06:27,322 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:27] "[36mGET /static/css/index/index.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:06:27,413 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:27] "[36mGET /static/img/common/search.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:06:28,430 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:06:28] "[35m[1mGET /static/vedio/点云工具3维图缩放优化.mp4 HTTP/1.1[0m" 206 -
+INFO 2022-08-24 23:10:07,340 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\api\\page\\home\\index.py', reloading
+INFO 2022-08-24 23:10:07,466 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:10:08,014 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:10:08,017 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:21:57,262 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\api\\page\\home\\index.py', reloading
+INFO 2022-08-24 23:21:57,347 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:21:57,921 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:21:57,923 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:38:10,294 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 23:38:10,294 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 23:38:10,295 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:38:10,858 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:38:10,861 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:39:09,552 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\api\\page\\home\\index.py', reloading
+INFO 2022-08-24 23:39:09,637 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:39:10,196 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:39:10,199 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:41:46,928 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:41:46] "[35m[1mGET /?put=&search-icon-box= HTTP/1.1[0m" 500 -
+INFO 2022-08-24 23:41:47,267 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:41:47] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:41:47,267 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:41:47] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:41:47,284 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:41:47] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:41:47,313 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:41:47] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:42:51,453 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 23:42:51,453 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 23:42:51,454 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:42:52,000 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:42:52,003 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:42:56,138 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:42:56] "[35m[1mGET /?put=&search-icon-box= HTTP/1.1[0m" 500 -
+INFO 2022-08-24 23:42:56,454 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:42:56] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:42:56,455 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:42:56] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:42:56,471 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:42:56] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:42:56,522 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:42:56] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:45:05,789 _internal.py _log no.224:  * Detected change in 'D:\\PycharmProjects\\flaskProject\\app.py', reloading
+INFO 2022-08-24 23:45:05,896 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:45:06,461 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:45:06,464 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:45:08,980 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 23:45:08,981 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 23:45:08,981 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:45:09,551 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:45:09,554 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:45:16,211 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:45:16] "[35m[1mGET /?put=&search-icon-box= HTTP/1.1[0m" 500 -
+INFO 2022-08-24 23:45:16,528 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:45:16] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:45:16,529 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:45:16] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:45:16,544 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:45:16] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:45:16,588 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:45:16] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:46:42,415 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 23:46:42,415 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 23:46:42,416 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:46:43,022 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:46:43,025 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:46:47,715 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:46:47] "[35m[1mGET /?put=&search-icon-box= HTTP/1.1[0m" 500 -
+INFO 2022-08-24 23:46:48,042 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:46:48] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:46:48,042 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:46:48] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:46:48,057 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:46:48] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:46:48,094 _internal.py _log no.224: 127.0.0.1 - - [24/Aug/2022 23:46:48] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO 2022-08-24 23:50:50,050 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 23:50:50,050 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 23:50:50,051 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:50:50,594 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:50:50,596 _internal.py _log no.224:  * Debugger PIN: 688-444-793
+INFO 2022-08-24 23:53:48,826 _internal.py _log no.224: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2022-08-24 23:53:48,826 _internal.py _log no.224: [33mPress CTRL+C to quit[0m
+INFO 2022-08-24 23:53:48,827 _internal.py _log no.224:  * Restarting with stat
+WARNING 2022-08-24 23:53:49,390 _internal.py _log no.224:  * Debugger is active!
+INFO 2022-08-24 23:53:49,392 _internal.py _log no.224:  * Debugger PIN: 688-444-793
