@@ -8,7 +8,7 @@ DEBUG = True
 
 SECRET_KEY = "sdfsadfs123123rfj12334343553345"
 
-SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_TRACK_MODIFICATIONS = True
 # static_folder
 
 STATIC_FOLDER = "./static"
@@ -19,7 +19,6 @@ PORT = '3306'
 DATABASE = 'Bzhan'
 USERNAME = 'root'
 PASSWORD = 'haoge666'
-DB_URI = 'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(USERNAME, PASSWORD , HOSTNAME, PORT, DATABASE)
-SQLALCHEMY_TRACK_MODIFICATIONS = True
+DB_URI = 'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(USERNAME, PASSWORD, HOSTNAME, PORT, DATABASE)
 SQLALCHEMY_DATABASE_URI = DB_URI
 

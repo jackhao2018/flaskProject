@@ -1,25 +1,35 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-import config
-from logs.base_log import log
-from flask import render_template
+from config import config
+from exts import db
 from api.page.home.index import bp as home_bp
 from flask_migrate import Migrate
+
+
 app = Flask(__name__)
+
 app.config.from_object(config)
+
+
+db.init_app(app)
+migrate = Migrate(app, db)
+
+
 app.register_blueprint(home_bp)
 
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-# @app.route('/ceshi')
-# def test():
-#     # 写一个测试代码来验证是否连接成功
-#     engine = db.get_engine()
-#     with engine.connect() as conn:
-#         result = conn.execute("select 1")
-#         print(result.fetchone())
-#     return 'Hello World! '
+# 出现山下文报错时用到
+with app.app_context():
+    # from models.fansmodels import FansDetailsModel
+    db.init_app(app)
+    db.create_all()
+@app.route('/111')
+def hello_world():
+    # db = SQLAlchemy(app)
+    engine = db.get_engine()
+    with engine.connect() as coon:
+        result = coon.execute("select 1")
+        print(result.fetchone())
+    return "hello world"
 
 
 if __name__ == '__main__':
