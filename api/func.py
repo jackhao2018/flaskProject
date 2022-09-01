@@ -8,7 +8,7 @@ from exts import db
 
 def get_fans_info(vmid, cookie, pn):
     url = "https://api.bilibili.com/x/relation/followers?vmid={}&pn={}&ps=50&order=desc&order_type=attention&jsonp=jsonp&callback=__jp14"
-    log.info(f'vmid信息：{vmid}, 页码信息：{pn}, cookie数据：{cookie}')
+    # log.info(f'vmid信息：{vmid}, 页码信息：{pn}, cookie数据：{cookie}')
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0',
         'Accept': '*/*',
@@ -33,7 +33,7 @@ def get_fans_info(vmid, cookie, pn):
             break
 
     json_result = json.loads(response.text[7: -1])  # 返回json格式
-    log.info(f'当页粉丝结果：{json_result}')
+
     if len(json_result['data']['list']) >= 1:
         return json_result['data']['list'], json_result['data']['total']
     else:

@@ -20,10 +20,10 @@ app.register_blueprint(guanyu_bp)
 
 
 # 出现山下文报错时用到
-with app.app_context():
-    # from models.fansmodels import FansDetailsModel
-    db.init_app(app)
-    db.create_all()
+# with app.app_context():
+#     # from models.fansmodels import FansDetailsModel
+#     db.init_app(app)
+#     db.create_all()
 
 @app.route('/111')
 def hello_world():

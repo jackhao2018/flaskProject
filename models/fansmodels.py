@@ -16,8 +16,6 @@ class ImgInfoModel(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     img_url = db.Column(db.String(100), nullable=False)
 
-db.drop_all()
-db.create_all()
 
 if __name__ == '__main__':
     db.create_all()
