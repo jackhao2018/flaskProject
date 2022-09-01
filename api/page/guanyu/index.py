@@ -12,19 +12,24 @@ bp = Blueprint("guanyu", __name__, url_prefix="/about")
 def all_fans():
     pass
 
+
 @bp.route("/upgrade_fans", methods=['POST'])
 def upgrade_fans():
     vmid = request.form.get("vmid")
     cookie = request.form.get("cookie")
     fans_list = []
+    fans = []
     pn = 1
     while True:
         result = get_fans_info(vmid, cookie, pn)
 
-        if len(result['data']['list']) >= 1:
+        if result['code'] == 0:
             log.info('*' * 90 + f'第{pn}页' + "*" * 90)
 
             for user_detail in result['data']['list']:
+                # fans.append(
+                #     [user_detail['uname'], time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(user_detail['mtime'])),
+                #      viplevel(user_detail['vip']['vipType']), user_detail['sign']])
                 fans_list.append(user_detail['uname'])
                 fans_info = FansDetailsModel(fans_name=user_detail['uname'],
                                              mtime=time.strftime("%Y-%m-%d %H:%M:%S",
@@ -37,5 +42,7 @@ def upgrade_fans():
             break
         time.sleep(5)  # 一秒翻页等待
         pn += 1
+    print(fans)
     db.session.commit()
-    return jsonify({"fans_list": fans_list, "total": result['data']['total']})
+    return jsonify(
+        {"fans_list": fans_list, "total": result['data']['total'] if result['code'] == 0 else result['message']})
