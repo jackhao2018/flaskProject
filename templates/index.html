@@ -19,7 +19,7 @@
         <main class="main">
             <div id="contain" class="contain">
                 <div id="search" class="search">
-                    <form method="get" action="{{ url_for(api/page/home/index.search) }}">
+                    <form method="get" action="{{ url_for('index.index') }}">
                     <div name="search-box" id="search-box" class="search-box">
                         <input type="text" name="put" placeholder="    请输入您要搜索的内容" value="" id="put" class="put">
                         <button name="search-icon-box" id="search-icon-box" class="search-icon-box" type="submit">

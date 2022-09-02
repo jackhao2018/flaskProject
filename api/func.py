@@ -31,11 +31,7 @@ def get_fans_info(vmid, cookie, pn):
         if i + 1 == len(proxy):
             print("IP 全部失效")
             break
-
     json_result = json.loads(response.text[7: -1])  # 返回json格式
-
-    print(json_result)
-
     return json_result
 
 

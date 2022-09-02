@@ -6,9 +6,9 @@ from config.base_config import BASE_DIR
 
 bp = Blueprint('index', __name__, url_prefix="/")
 
-@bp.route('')
+@bp.route('asdf ')
 def world_cloud():
-    with open(f'{BASE_DIR}/static/test.txt', 'r', encoding='utf8') as f:
+    with open(rf'{BASE_DIR}\static\test.txt', 'r', encoding='utf8') as f:
         word_list = jieba.cut(f.read())
         result = " ".join(word_list)  # 分词用空格隔开
 
@@ -22,6 +22,11 @@ def world_cloud():
         icon_name='fas fa-circle',  # 蒙版选取，从Font Awesome里选
         output_name=f'{BASE_DIR}/static/img/ciyun.png')  # 输出词云图
     return render_template('index.html', data='45')
+
+@bp.route('')
+def index():
+
+    return render_template('index.html')
 
 @bp.route("/search")
 def search():
