@@ -34,10 +34,10 @@ def get_fans_info(vmid, cookie, pn):
 
     json_result = json.loads(response.text[7: -1])  # 返回json格式
 
-    if len(json_result['data']['list']) >= 1:
-        return json_result['data']['list'], json_result['data']['total']
-    else:
-        return '已经翻页到最后一页了。 总计：{}位粉丝，加油 UP！！！'.format(json_result['data']['total']), json_result['data']['total']
+    print(json_result)
+
+    return json_result
+
 
 def viplevel(vip):
     if vip == 0:
@@ -48,46 +48,11 @@ def viplevel(vip):
         vip_name = '年度大会员'
     return vip_name
 
-def insert_fans(up_mid, fans_mid, uname, sign, viptype, mtime):
-    cursor = db.cursor()
-    sql = 'INSERT INTO fans(up_id,fans_id,fans_name, sign, viplevel, mtime) values(%s, %s, %s, %s, %s, %s)'
-    val = (up_mid, fans_mid, uname, sign, viptype, mtime)
-    try:
-        cursor.execute(sql, val)
-        db.commit()
-    except Exception as e:
-        print(e)
-        db.rollback()
-    db.close()
 
-def get_fans_daily(vmid, cookie, pn=1):
-    fans_list = []
-    while True:
-        result, total = get_fans_info(vmid, pn, cookie)
 
-        if type(result) is list:
-            log.info('*' * 90 + f'第{pn}页' + "*" * 90)
-
-            for user_detail in result:
-                # print(user_detail)
-                # time.sleep(3)  # 每个用户之间间隔一秒查询
-                # user_detail = get_user_details(info['mid'])
-                # fans_list.append(user_detail['uname']) 账户等级：{}, 性别：{},,
-                # print(
-                #     "粉丝昵称：{}, 关注时间：{},  会员类型：{}, 头像是：{}, \n签名：{}\n".format(
-                #         user_detail['uname'], time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(user_detail['mtime'])),
-                #         # user_detail["data"]['level'], user_detail["data"]['sex'],
-                #         viplevel(user_detail['vip']['vipType']), user_detail['face'], user_detail['sign']))
-
-                insert_fans(vmid, user_detail['mid'], user_detail['uname'], 'NULL' if len(user_detail['sign']) == 0 else user_detail['sign'], viplevel(user_detail['vip']['vipType']), time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(user_detail['mtime'])))
-                log.info(vmid, user_detail['mid'], user_detail['uname'], user_detail['sign'], user_detail['vip']['vipType'], time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(user_detail['mtime'])))
-        else:
-            print(result, end='\n\n')
-            break
-        time.sleep(5)  # 一秒翻页等待
-        pn += 1
-    return fans_list
 
 
 if __name__ == '__main__':
-    get_fans_daily(484311775, 1, _COOKIE)
+    # get_fans_daily()
+    cookie = "buvid3=DBD668BD-25FE-44E0-924B-BD27F8F66A95167638infoc; rpdid=|(k||Rll~uRR0J'uYkY~))uJl; LIVE_BUVID=AUTO6216271189171918; fingerprint_s=dd7da81eeb5e05a8b23ae39658191bb6; video_page_version=v_old_home_18; i-wanna-go-back=-1; blackside_state=0; buvid_fp_plain=undefined; b_ut=5; buvid4=DE900CFE-CD72-6125-C014-32E1E420CA4149283-022012422-p7UKSeFfDyU6EfOCtKxgtg==; nostalgia_conf=-1; CURRENT_BLACKGAP=0; is-2022-channel=1; hit-dyn-v2=1; DedeUserID=484311775; DedeUserID__ckMd5=652915bb543cfc25; buvid_fp=75a15e6c5e984180986f6c22ee2a26c8; _uuid=91A99282-17C7-48A6-8AC1-37AFE399FC1D12402infoc; CURRENT_QUALITY=112; _gid=GA1.2.2014338220.1661783608; fingerprint3=1aa28ac302c33f8268a5508c632a9686; fingerprint=f8a5e65ee0b66037d31a2c84154308ce; CURRENT_FNVAL=4048; PVID=1; SESSDATA=257b51b9,1677512661,f3e1c*81; bili_jct=213b8260f89ec6b8fd4c1a70142670be; sid=8cfjqmli; _ga=GA1.1.1336735845.1650892533; bp_video_offset_484311775=700588180607336499; _ga_34B604LFFQ=GS1.1.1661960660.7.1.1661960666.54.0.0; b_lsid=CE8C4674_182F993C861"
+    print(get_fans_info(484311775, cookie, 6))

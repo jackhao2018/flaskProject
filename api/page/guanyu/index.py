@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 from api.func import get_fans_info, viplevel
 from logs.base_log import log
 from models.fansmodels import FansDetailsModel
@@ -7,50 +7,42 @@ from exts import db
 
 bp = Blueprint("guanyu", __name__, url_prefix="/about")
 
+
 @bp.route("/fans")
 def all_fans():
     pass
 
 
-# def insert_fans(up_mid, fans_mid, uname, sign, viptype, mtime):
-#     cursor = db.cursor()
-#     sql = 'INSERT INTO fans(up_id,fans_id,fans_name, sign, viplevel, mtime) values(%s, %s, %s, %s, %s, %s)'
-#     val = (up_mid, fans_mid, uname, sign, viptype, mtime)
-#     try:
-#         cursor.execute(sql, val)
-#         db.commit()
-#     except Exception as e:
-#         print(e)
-#         db.rollback()
-#     db.close()
-
 @bp.route("/upgrade_fans", methods=['POST'])
 def upgrade_fans():
     vmid = request.form.get("vmid")
     cookie = request.form.get("cookie")
+    fans_list = []
+    fans = []
     pn = 1
     while True:
-        result, total = get_fans_info(vmid, cookie, pn)
-        log.debug(result)
+        result = get_fans_info(vmid, cookie, pn)
 
-        if type(result) is list:
+        if result['code'] == 0:
             log.info('*' * 90 + f'第{pn}页' + "*" * 90)
 
-            for user_detail in result:
-
+            for user_detail in result['data']['list']:
+                # fans.append(
+                #     [user_detail['uname'], time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(user_detail['mtime'])),
+                #      viplevel(user_detail['vip']['vipType']), user_detail['sign']])
+                fans_list.append(user_detail['uname'])
                 fans_info = FansDetailsModel(fans_name=user_detail['uname'],
-                                             mtime=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(user_detail['mtime'])),
+                                             mtime=time.strftime("%Y-%m-%d %H:%M:%S",
+                                                                 time.localtime(user_detail['mtime'])),
                                              vip_type=viplevel(user_detail['vip']['vipType']),
                                              sign=user_detail['sign'])
 
-                log.info(vmid, user_detail['mid'], user_detail['uname'], user_detail['sign'],
-                         user_detail['vip']['vipType'],
-                         time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(user_detail['mtime'])))
                 db.session.add(fans_info)
         else:
-            log.info(result, end='\n\n')
             break
         time.sleep(5)  # 一秒翻页等待
         pn += 1
-
+    print(fans)
     db.session.commit()
+    return jsonify(
+        {"fans_list": fans_list, "total": result['data']['total'] if result['code'] == 0 else result['message']})
