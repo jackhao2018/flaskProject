@@ -49,9 +49,6 @@ def viplevel(vip):
     return vip_name
 
 
-
-
-
 if __name__ == '__main__':
     # get_fans_daily()
     cookie = "buvid3=DBD668BD-25FE-44E0-924B-BD27F8F66A95167638infoc; rpdid=|(k||Rll~uRR0J'uYkY~))uJl; LIVE_BUVID=AUTO6216271189171918; fingerprint_s=dd7da81eeb5e05a8b23ae39658191bb6; video_page_version=v_old_home_18; i-wanna-go-back=-1; blackside_state=0; buvid_fp_plain=undefined; b_ut=5; buvid4=DE900CFE-CD72-6125-C014-32E1E420CA4149283-022012422-p7UKSeFfDyU6EfOCtKxgtg==; nostalgia_conf=-1; CURRENT_BLACKGAP=0; is-2022-channel=1; hit-dyn-v2=1; DedeUserID=484311775; DedeUserID__ckMd5=652915bb543cfc25; buvid_fp=75a15e6c5e984180986f6c22ee2a26c8; _uuid=91A99282-17C7-48A6-8AC1-37AFE399FC1D12402infoc; CURRENT_QUALITY=112; _gid=GA1.2.2014338220.1661783608; fingerprint3=1aa28ac302c33f8268a5508c632a9686; fingerprint=f8a5e65ee0b66037d31a2c84154308ce; CURRENT_FNVAL=4048; PVID=1; SESSDATA=257b51b9,1677512661,f3e1c*81; bili_jct=213b8260f89ec6b8fd4c1a70142670be; sid=8cfjqmli; _ga=GA1.1.1336735845.1650892533; bp_video_offset_484311775=700588180607336499; _ga_34B604LFFQ=GS1.1.1661960660.7.1.1661960666.54.0.0; b_lsid=CE8C4674_182F993C861"
