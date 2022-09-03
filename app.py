@@ -2,7 +2,7 @@ from flask import Flask
 from config import config
 from exts import db
 from api.page.home.index import bp as home_bp
-from api.page.guanyu.index import bp as guanyu_bp
+from api.page.guanyu.about import bp as guanyu_bp
 from flask_migrate import Migrate
 
 

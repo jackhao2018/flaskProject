@@ -9,7 +9,6 @@ DEBUG = True
 SECRET_KEY = "sdfsadfs123123rfj12334343553345"
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-# static_folder
 
 STATIC_FOLDER = "./static"
 

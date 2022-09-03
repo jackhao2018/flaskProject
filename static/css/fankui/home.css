@@ -1,5 +1,6 @@
 #root{
     position: relative;
+    background-color: #f4f5f7;
 }
 
 a{
@@ -11,10 +12,12 @@ a{
     display: flex;
     flex-direction: row;
     height: 60%;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 9%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
     align-items: flex-end;
+    /* background-color: #ffffff; */
+    /* overflow: hidden; */
 }
 
 #daohang{
@@ -118,7 +121,7 @@ input::placeholder {
     display: block;
     border: none;
     outline:medium;
-    background-color:  #c9c8c8;
+    background-color:  #f4f5f7;
     
 }
 
@@ -140,12 +143,12 @@ button{
     align-items:center;
   }
   .line{
-    width: 30%;
+    width: 35%;
     border-top:1px solid #000;
   }
 
   .line:first-child{
-    margin-left: 15%;
+    margin-left: 10%;
   }
   .text{
     margin:0 10px;

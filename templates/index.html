@@ -13,13 +13,13 @@
                 <li><a href="">首页</a></li>
                 <li><a href="/jiaocheng/index.html">教程</a></li>
                 <li><a href="../templates/yingyin/home.html">影音</a></li>
-                <li><a href="./fankui/home.html">关于</a></li>
+                <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
             </ul>
         </div>
         <main class="main">
             <div id="contain" class="contain">
                 <div id="search" class="search">
-                    <form method="get" action="{{ url_for('index.index') }}">
+                    <form method="get" action="{{ url_for('home.index') }}">
                     <div name="search-box" id="search-box" class="search-box">
                         <input type="text" name="put" placeholder="    请输入您要搜索的内容" value="" id="put" class="put">
                         <button name="search-icon-box" id="search-icon-box" class="search-icon-box" type="submit">

@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 from api.func import get_fans_info, viplevel
 from logs.base_log import log
 from models.fansmodels import FansDetailsModel
@@ -13,8 +13,8 @@ def all_fans():
     fans_name_list = []
     result = FansDetailsModel.query.all()
     for fans in result:
-        fans_name_list.append(fans.fans_name)
-    return jsonify({"code": 200, "fans_name_list": fans_name_list})
+        fans_name_list.append(fans.to_dict())
+    return jsonify({"code": "200", "fans_name_list": fans_name_list})
 
 
 # TODO：这里暂时采用的是清库再插入数据的方式，后面需要优化采用比对新旧列表懒删除的方式
@@ -47,3 +47,9 @@ def upgrade_fans():
     db.session.commit()
     return jsonify(
         {"fans_list": fans_list, "total": result['data']['total']})
+
+
+@bp.route("")
+def about():
+
+    return render_template('/fankui/home.html')

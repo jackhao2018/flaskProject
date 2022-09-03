@@ -4,7 +4,7 @@ from flask import Blueprint, request, render_template
 from stylecloud import stylecloud
 from config.base_config import BASE_DIR
 
-bp = Blueprint('index', __name__, url_prefix="/")
+bp = Blueprint('home', __name__, url_prefix="/")
 
 @bp.route('asdf ')
 def world_cloud():

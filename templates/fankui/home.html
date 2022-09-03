@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,31 +10,74 @@
     <link rel="stylesheet" href="../../static/css/fankui/home.css" type="text/css">
     <title>反馈</title>
 </head>
+
 <body>
     <div id="root">
         <div id="main" class="main">
             <ul name="daohang" id="daohang">
-                <li><a href="../index.html">首页</a></li>
+                <li><a href="{{ url_for('home.index') }}">首页</a></li>
                 <li><a href="../jiaocheng/index.html">教程</a></li>
                 <li><a href="../yingyin/home.html">影音</a></li>
-                <li><a href="../fankui/home.html">关于</a></li>
+                <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
             </ul>
             <img id="img" class="img" src="../../static/img/2233娘.jpg" alt="2233娘">
             <div id="feedback" class="feedback">
                 <h2>意见反馈</h2>
                 <span>有关资源需求，网站设计等等，欢迎联系我！！！</span>
-                <input id="username" type="text" placeholder="昵称，建议使用B站用户名">
-                <div id="submit" class="submit"><textarea id="msg" name="" id="" cols="30" rows="12" placeholder="请留言。。。"></textarea>
-            <button>提交</button></div>
-                
+                <!-- oninput="a()" -->
+                <input id="username" type="text" placeholder="昵称，建议使用B站用户名" list="batch_list" onclick="b()">
+                <datalist id="batch_list"></datalist>
+                <div id="submit" class="submit"><textarea id="msg" name="" id="" cols="30" rows="12"
+                        placeholder="请留言。。。"></textarea>
+                    <button>提交</button>
+                </div>
+
             </div>
             <img id="cat-img" class="cat-img" src="../../static/img/common/卡通猫.png" alt="装饰卡通猫">
         </div>
         <div class="box">
             <span class="line"></span>
-            <span class="text"> &nbsp;生&nbsp; 活&nbsp; 其&nbsp;  实&nbsp; 可&nbsp; 以 &nbsp; 很&nbsp; 简&nbsp; 单&nbsp; </span>
+            <span class="text"> &nbsp;生&nbsp; 活&nbsp; 其&nbsp; 实&nbsp; 可&nbsp; 以 &nbsp; 很&nbsp; 简&nbsp; 单&nbsp; </span>
             <span class="line"></span>
         </div>
     </div>
 </body>
+<script type="text/javascript" src="../static/js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+    $(function () {
+    });
+</script>
+
+<script>
+    //  TODO:每次点击都会触发，这是个不太聪明的bug
+
+    var a = function(){
+        const httpRequest = new XMLHttpRequest();
+        const Url = 'http://127.0.0.1:8888/about/fans';
+        httpRequest.open("GET", Url, true);
+        httpRequest.send();
+
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var data = httpRequest.responseText;//获取到json字符串，还需解析
+                var jsondata = eval('(' + data + ')')
+
+                var add_options;
+
+                for (var i = 0; i < jsondata.fans_name_list.length; i++) {
+                    console.log(jsondata.fans_name_list[i])
+                    add_options += '<option value="' + jsondata.fans_name_list[i].fans_name + '">' + jsondata.fans_name_list[i].fans_name + '</option>';
+                }
+                $("datalist#batch_list").append(add_options);
+            }
+
+        }
+    }
+
+    function b() {
+        a();
+        document.getElementById("#username").onclick = '';
+    }
+</script>
+
 </html>
