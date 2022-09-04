@@ -16,8 +16,6 @@ a{
     margin-left: 10%;
     margin-top: 10%;
     align-items: flex-end;
-    /* background-color: #ffffff; */
-    /* overflow: hidden; */
 }
 
 #daohang{
@@ -102,8 +100,20 @@ h2{
     border: none;
     border-radius: 5px;
     outline:medium; 
-    /* box-shadow: 0 5px 10px 0px rgb(100, 100, 100); */
 }
+
+.fans-info{
+    width: 60%;
+    margin-left: 25%;
+
+}
+
+.fans-info span{
+    margin-left: 0px;
+    font-size: 10px;
+    color: #b6b3b3;
+}
+
 
 input::placeholder {
     color: #757575;

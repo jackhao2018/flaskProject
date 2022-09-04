@@ -21,18 +21,25 @@
                 <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
             </ul>
             <img id="img" class="img" src="../../static/img/2233娘.jpg" alt="2233娘">
-            <div id="feedback" class="feedback">
-                <h2>意见反馈</h2>
-                <span>有关资源需求，网站设计等等，欢迎联系我！！！</span>
-                <!-- oninput="a()" -->
-                <input id="username" type="text" placeholder="昵称，建议使用B站用户名" list="batch_list" onclick="b()">
-                <datalist id="batch_list"></datalist>
-                <div id="submit" class="submit"><textarea id="msg" name="" id="" cols="30" rows="12"
-                        placeholder="请留言。。。"></textarea>
-                    <button>提交</button>
-                </div>
 
+            <div id="feedback" class="feedback">
+                <form action="{{ url_for('guanyu.feedbacks') }}" method="POST">
+                    <h2>意见反馈</h2>
+                    <span>有关资源需求，网站设计等等，欢迎联系我！！！</span>
+                    <input id="username" name="username" type="text" placeholder="昵称，建议使用B站用户名" list="batch_list">
+                    <datalist id="batch_list"></datalist>
+                    <div class="fans-info" style="display: none;">
+                        <span id="mtime">关注时间：</span>
+                        <span id="viptype">会员类型：</span>
+                        <span id="sign">个性签名：</span>
+                    </div>
+                    <div id="submit" class="submit"><textarea id="msg" name="opinion" id="" cols="30" rows="12"
+                            placeholder="请留言。。。"></textarea>
+                        <button type="submit">提交</button>
+                    </div>
+                </form>
             </div>
+
             <img id="cat-img" class="cat-img" src="../../static/img/common/卡通猫.png" alt="装饰卡通猫">
         </div>
         <div class="box">
@@ -41,43 +48,54 @@
             <span class="line"></span>
         </div>
     </div>
-</body>
-<script type="text/javascript" src="../static/js/jquery-3.6.0.js"></script>
-<script type="text/javascript">
-    $(function () {
-    });
-</script>
 
-<script>
-    //  TODO:每次点击都会触发，这是个不太聪明的bug
+    <script type="text/javascript" src="../static/js/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+        });
+    </script>
 
-    var a = function(){
-        const httpRequest = new XMLHttpRequest();
-        const Url = 'http://127.0.0.1:8888/about/fans';
-        httpRequest.open("GET", Url, true);
-        httpRequest.send();
+    <script type='text/javascript'>
 
-        httpRequest.onreadystatechange = function () {
-            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-                var data = httpRequest.responseText;//获取到json字符串，还需解析
-                var jsondata = eval('(' + data + ')')
+        var jsondata = '123';
 
-                var add_options;
+        window.onload = function () {
+            const httpRequest = new XMLHttpRequest();
+            const Url = 'http://127.0.0.1:8888/about/fans';
+            httpRequest.open("GET", Url, true);
+            httpRequest.send();
 
-                for (var i = 0; i < jsondata.fans_name_list.length; i++) {
-                    console.log(jsondata.fans_name_list[i])
-                    add_options += '<option value="' + jsondata.fans_name_list[i].fans_name + '">' + jsondata.fans_name_list[i].fans_name + '</option>';
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                    //获取到json字符串，还需解析
+                    jsondata = eval('(' + httpRequest.responseText + ')');
+
+                    var add_options;
+
+                    for (var i = 0; i < jsondata.fans_name_list.length; i++) {
+                        add_options += '<option value="' + jsondata.fans_name_list[i].fans_name + '">' + jsondata.fans_name_list[i].fans_name + '</option>';
+                    }
+                    $("datalist#batch_list").append(add_options);
+
+                    //TODO: 获取粉丝关注时间的功能后面再做
+                    // console.log('这是全局变量' + jsondata);
+
+                    // var input_value = document.getElementById('#username')
+
+                    // for (var i = 0; i < jsondata.fans_name_list.length; i++) {
+                    //     if (jsondata.fans_name_list[i].fans_name == input_value.value) {
+                    //         console.log('粉丝输入，显示粉丝相关信息')
+                    //         document.getElementById("mtime").innerText = jsondata.fans_name_list[i].mtime;
+                    //         document.getElementById("viptype").innerText = jsondata.fans_name_list[i].vip_type;
+                    //         document.getElementById("sign").innerText = jsondata.fans_name_list[i].sign;
+                    //     }
+                    // }
+
                 }
-                $("datalist#batch_list").append(add_options);
             }
-
         }
-    }
 
-    function b() {
-        a();
-        document.getElementById("#username").onclick = '';
-    }
-</script>
+    </script>
+</body>
 
 </html>

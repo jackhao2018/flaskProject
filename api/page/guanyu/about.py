@@ -1,9 +1,10 @@
 from flask import Blueprint, request, jsonify, render_template
 from api.func import get_fans_info, viplevel
 from logs.base_log import log
-from models.fansmodels import FansDetailsModel
+from models.fansmodels import FansDetailsModel, FeedbackModel
 import time
 from exts import db
+from forms.about import FeedbackForm
 
 bp = Blueprint("guanyu", __name__, url_prefix="/about")
 
@@ -45,11 +46,35 @@ def upgrade_fans():
         time.sleep(5)  # 一秒翻页等待
         pn += 1
     db.session.commit()
-    return jsonify(
-        {"fans_list": fans_list, "total": result['data']['total']})
+    return jsonify({"fans_list": fans_list, "total": result['data']['total']})
 
 
-@bp.route("")
+@bp.route("/")
 def about():
 
     return render_template('/fankui/home.html')
+
+
+@bp.route('feedback', methods=['POST'])
+def feedbacks():
+    # print(f'这是请求过来的数据：{request.form}')
+    form_data = FeedbackForm(request.form)
+
+    fans_name_list = []
+    result = FansDetailsModel.query.all()
+
+    for fans in result:
+        fans_name_list.append(fans.to_dict()['fans_name'])
+
+    if form_data.validate():
+        username = form_data.username.data
+        opinion = form_data.opinion.data
+        fans = 1 if username in fans_name_list else 0
+
+        opinions = FeedbackModel(username=username, opinion=opinion, fans=fans)
+
+        db.session.add(opinions)
+
+        db.session.commit()
+    return jsonify({"code": 200, "msg": "提交成功！"})
+
