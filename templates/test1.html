@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <!--#include file="/saleweb/npage/public_title_name.html" -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+<style>
+	.mark {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 300px;
+  line-height: 0.88rem;
+  width: 400px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  /* border-radius: 0.1rem; */
+}
+</style>
 <body>
-<div class="c-row pdt-l pdb-l">
-    <div class="col-4">
-        <div class="c-form-item">
-            <p class="c-form-name">模板名称</p>
-            <div class="c-form-info">
-                <input type="text" name="tempName" id="tempName"  list="batch_list" autocomplete="off" placeholder="请输入" class="c-input"/>
-                <datalist id="batch_list">
-                </datalist>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-12" style="text-align: center; padding: 10px;">
-    <div class="c-form-item">
-        <button class="c-btn-l" οnclick="qryseDiscountTempList(1)">查询</button>
-        <button class="c-btn-l" type="reset" id="btn_reset">重置</button>
-        <button class="c-btn-l" οnclick="addDiscountTempMsg()">新建</button>
-    </div>
-</div>
+	<input type="button" name="" id="" onclick="myalert('提交成功')">点我
 </body>
-</html>
 <script type="text/javascript" src="../static/js/jquery-3.6.0.js"></script>
-<script type="text/javascript">
-	$(function(){
-	});
-</script>
-
 <script>
-    $(document).ready(function () {
-    queryList();
-});
- 
-function queryList() {
-    var seDiscountTempMsg=[{NAME: "测试一"},
-        {NAME: "专线一"},
-        {NAME: "5G一"}];
-    var add_options;
-    for(var i=0;i<seDiscountTempMsg.length;i++) {
-        add_options += '<option value="' + seDiscountTempMsg[i].NAME + '">'+ seDiscountTempMsg[i].NAME + '</option>';
-    }
-    $("datalist#batch_list").append(add_options);
+	function myalert(str) {
+  var div = '<div class="mark"></div>';
+  $('body').append(div)
+  $('.mark').html(str);
+  $('.mark').show();
+  setTimeout(function() {
+    $('.mark').hide();
+    $('.mark').remove();
+  }, 2000000)
 }
 </script>
+</html>
