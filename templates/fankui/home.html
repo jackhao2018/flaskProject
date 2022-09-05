@@ -35,7 +35,7 @@
                     </div>
                     <div id="submit" class="submit"><textarea id="msg" name="opinion" id="" cols="30" rows="12"
                             placeholder="请留言。。。"></textarea>
-                        <button type="submit">提交</button>
+                        <button id="submitButton" type="button" >提交</button>
                     </div>
                 </form>
             </div>
@@ -94,6 +94,40 @@
                 }
             }
         }
+
+    </script>
+
+    <script>
+        // TODO: 新增一个弹窗在中间的对话框，对话框点击确定后再发送请求（有必要么？）
+        // function comfirm_info() {
+        //     value = window.confirm("请确认是否提交")
+        //     document.write(value);
+        // }
+        // function myPopup(myURL, title, myWidth, myHeight) {
+        //     var left = (screen.width - myWidth) / 2;
+        //     var top = (screen.height - myHeight) / 4;
+        //     var myWindow = window.open(myURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + myWidth + ', height=' + myHeight + ', top=' + top + ', left=' + left);
+        //  }
+
+        $(function() {
+            $("#submitButton").click(function() {
+                tipsWindown("标题：风景", "text :" + 请确认是否提交, "640", "480", "true", "", "true");
+            });
+            /*
+            function tipsWindown(title, content, width, height, drag, time, showbg, cssName) 
+            title: 窗口标题
+            content:  内容(可选内容为){ text | id | img | url | iframe }
+            width: 内容宽度
+            height: 内容高度
+            drag:  是否可以拖动(ture为是,false为否)
+            time: 自动关闭等待的时间，为空是则不自动关闭
+            showbg: [可选参数]设置是否显示遮罩层(0为不显示,1为显示)
+            cssName:  [可选参数]附加class名称
+            */
+        });
+        //  function comfirm_info() { window.open ("page.html", "newwindow", "height=100, width=400, toolbar= no, menubar=no, scrollbars=no, resizable=no, location=no, status=no") 
+//写成一行 
+
 
     </script>
 </body>
