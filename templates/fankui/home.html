@@ -16,18 +16,17 @@
         <div id="main" class="main">
             <ul name="daohang" id="daohang">
                 <li><a href="{{ url_for('home.index') }}">首页</a></li>
-                <li><a href="../jiaocheng/index.html">教程</a></li>
-                <li><a href="../yingyin/home.html">影音</a></li>
+                <li><a href="{{ url_for('jiaocheng.index') }}">教程</a></li>
+                <li><a href="{{ url_for('yingyin.index') }}">影音</a></li>
                 <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
             </ul>
             <img id="img" class="img" src="../../static/img/2233娘.jpg" alt="2233娘">
-
             <div id="feedback" class="feedback">
-                <form action="{{ url_for('guanyu.feedbacks') }}" method="POST">
+                <form id="feedbackForm" method="POST" onsubmit="javascript:return subfun();">
                     <h2>意见反馈</h2>
                     <span>有关资源需求，网站设计等等，欢迎联系我！！！</span>
-                    <input id="username" name="username" type="text" placeholder="昵称，建议使用B站用户名" list="batch_list">
-                    <datalist id="batch_list"></datalist>
+                    <input id="username" name="username" type="text" placeholder="昵称，建议使用B站用户名" list="batch_list" >
+                    <datalist id="batch_list" ></datalist>
                     <div class="fans-info" style="display: none;">
                         <span id="mtime">关注时间：</span>
                         <span id="viptype">会员类型：</span>
@@ -35,7 +34,7 @@
                     </div>
                     <div id="submit" class="submit"><textarea id="msg" name="opinion" id="" cols="30" rows="12"
                             placeholder="请留言。。。"></textarea>
-                        <button id="submitButton" type="button" >提交</button>
+                        <button id="submitButton" type="submit">提交</button>
                     </div>
                 </form>
             </div>
@@ -51,8 +50,7 @@
 
     <script type="text/javascript" src="../static/js/jquery-3.6.0.js"></script>
     <script type="text/javascript">
-        $(function () {
-        });
+        
     </script>
 
     <script type='text/javascript'>
@@ -94,42 +92,24 @@
                 }
             }
         }
-        //啊实打实
-
     </script>
 
     <script>
-        // TODO: 新增一个弹窗在中间的对话框，对话框点击确定后再发送请求（有必要么？）
-        // function comfirm_info() {
-        //     value = window.confirm("请确认是否提交")
-        //     document.write(value);
-        // }
-        // function myPopup(myURL, title, myWidth, myHeight) {
-        //     var left = (screen.width - myWidth) / 2;
-        //     var top = (screen.height - myHeight) / 4;
-        //     var myWindow = window.open(myURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + myWidth + ', height=' + myHeight + ', top=' + top + ', left=' + left);
-        //  }
-
-        $(function() {
-            $("#submitButton").click(function() {
-                tipsWindown("标题：风景", "text :" + 请确认是否提交, "640", "480", "true", "", "true");
+        // TODO: 新增一个弹窗在中间的对话框，对话框点击确定后再发送请求（有必要么？)
+        function subfun() {
+            $.ajax({
+                url : "http://127.0.0.1:8888/about/feedback",
+                type : "POST",
+                data : $( '#feedbackForm').serialize(),
+                success : function(data) {
+                    alert(data.msg)
+                },
+                error : function(data) {
+                    alert(data.msg)
+                }
             });
-            /*
-            function tipsWindown(title, content, width, height, drag, time, showbg, cssName) 
-            title: 窗口标题
-            content:  内容(可选内容为){ text | id | img | url | iframe }
-            width: 内容宽度
-            height: 内容高度
-            drag:  是否可以拖动(ture为是,false为否)
-            time: 自动关闭等待的时间，为空是则不自动关闭
-            showbg: [可选参数]设置是否显示遮罩层(0为不显示,1为显示)
-            cssName:  [可选参数]附加class名称
-            */
-        });
-        //  function comfirm_info() { window.open ("page.html", "newwindow", "height=100, width=400, toolbar= no, menubar=no, scrollbars=no, resizable=no, location=no, status=no") 
-//写成一行 
-
-
+            return false;
+        }
     </script>
 </body>
 

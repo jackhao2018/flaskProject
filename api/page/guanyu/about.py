@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, render_template
+from flask import Blueprint, request, jsonify, render_template, redirect, url_for
 from api.func import get_fans_info, viplevel
 from logs.base_log import log
 from models.fansmodels import FansDetailsModel, FeedbackModel
@@ -76,5 +76,7 @@ def feedbacks():
         db.session.add(opinions)
 
         db.session.commit()
-    return jsonify({"code": 200, "msg": "提交成功！"})
+        return jsonify({'code': 200, 'msg': '提交成功！'})
+    else:
+        return jsonify({'code': 500, 'msg': '用户名/反馈意见不能为空！'})
 

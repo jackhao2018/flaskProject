@@ -14,10 +14,10 @@
     <div id="root">
         <div name="banner" id="banner" class="banner">
             <ul name="daohang" id="daohang" class="daohang">
-                <li><a href="../index.html">首页</a></li>
-                <li><a href="../jiaocheng/index.html">教程</a></li>
-                <li><a href="../yingyin/home.html">影音</a></li>
-                <li><a href="../fankui/home.html">关于</a></li>
+                <li><a href="{{ url_for('home.index') }}">首页</a></li>
+                <li><a href="{{ url_for('jiaocheng.index') }}">教程</a></li>
+                <li><a href="{{ url_for('yingyin.index') }}">影音</a></li>
+                <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
             </ul>
         </div>
         <main id="main" class="main">
