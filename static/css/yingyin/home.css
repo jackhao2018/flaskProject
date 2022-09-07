@@ -4,7 +4,7 @@
     display: -webkit-flex;
     width: 80%;
     height: 30px;
-    margin-top: 50px;
+    padding-top: 50px;
     margin-left: 10%;
     align-items: center;
     /* background-image: -webkit-linear-gradient(left, #00bcd4, #ffffff00) */
@@ -17,7 +17,6 @@
     position: absolute;
     border-radius: 5px;
     color: #fc8bab;
-    /* background-color: bisque; */
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -48,7 +47,7 @@
     display: -webkit-flex;
     width: 80%;
     height: 30px;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left: 10%;
     align-items: center;
     /* 使用渐进色 */
@@ -69,28 +68,21 @@
     height: 100%;
 }
 
+.single-content div{
+    padding-top: 8px;
+    vertical-align:middle;
+    color: black;  
+}
+
 .single-content img,
 video {
+    object-fit: fill;
     display: block;
     width: 100%;
-    height: 88%;
+    height: 80%;
     background-color: black;
 }
 
-.single-content span {
-    display: flex;
-    width: 100%;
-    height: 14%;
-    color: black;
-    font-size: 14px;
-    line-height: 12%;
-    align-items: center;
-    overflow: hidden;
-    white-space: nowrap;
-    font-weight: bold;
-    /* background-color: rgb(252, 252, 236); */
-}
-
-.single-content span:hover {
+.single-content div:hover {
     color: #00aeec;
   }

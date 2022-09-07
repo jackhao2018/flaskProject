@@ -59,7 +59,7 @@
 
         window.onload = function () {
             const httpRequest = new XMLHttpRequest();
-            const Url = 'http://127.0.0.1:8888/about/fans';
+            const Url = window.location.origin + '/about/fans';
             httpRequest.open("GET", Url, true);
             httpRequest.send();
 
