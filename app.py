@@ -16,7 +16,7 @@ db.init_app(app)
 
 migrate = Migrate(app, db)
 
-
+#再试一次
 app.register_blueprint(home_bp)
 app.register_blueprint(guanyu_bp)
 app.register_blueprint(jiaocheng_bp)
