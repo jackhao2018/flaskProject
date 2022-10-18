@@ -1,4 +1,3 @@
-
 from exts import db
 
 
@@ -24,6 +23,7 @@ class FeedbackModel(db.Model):
     username = db.Column(db.String(100), nullable=False)
     opinion = db.Column(db.String(1000), nullable=False)
     fans = db.Column(db.Integer)
+    submission_time = db.Column(db.DateTime)
 
     def to_dict(self):
         return {i.name: getattr(self, i.name) for i in self.__table__.columns}

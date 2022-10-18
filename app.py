@@ -5,7 +5,8 @@ from api.page.home.index import bp as home_bp
 from api.page.guanyu.about import bp as guanyu_bp
 from api.page.jiaocheng.index import bp as jiaocheng_bp
 from api.page.yingyin.index import bp as yingyin_bp
-from flask_migrate import Migrate
+from flask_migrate import Migrate, MigrateCommand
+# from flask_script import Manager
 from models.fansmodels import FansDetailsModel, FeedbackModel
 
 app = Flask(__name__)
@@ -16,7 +17,11 @@ db.init_app(app)
 
 migrate = Migrate(app, db)
 
-# 再试一次
+# manager = Manager(app)
+
+# manager.add_command('db', MigrateCommand)
+
+#
 app.register_blueprint(home_bp)
 app.register_blueprint(guanyu_bp)
 app.register_blueprint(jiaocheng_bp)

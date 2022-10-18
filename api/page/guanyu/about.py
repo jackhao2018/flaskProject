@@ -1,3 +1,5 @@
+import datetime
+
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for
 from api.func import get_fans_info, viplevel
 from logs.base_log import log
@@ -71,7 +73,7 @@ def feedbacks():
         opinion = form_data.opinion.data
         fans = 1 if username in fans_name_list else 0
 
-        opinions = FeedbackModel(username=username, opinion=opinion, fans=fans)
+        opinions = FeedbackModel(username=username, opinion=opinion, fans=fans, submission_time=datetime.datetime.now())
 
         db.session.add(opinions)
 
