@@ -126,5 +126,43 @@
             </div>
         </main>
     </div>
+    <script type='text/javascript'>
+
+        window.onload = function () {
+            const httpRequest = new XMLHttpRequest();
+            const Url = window.location.origin + '/media/img_info';
+            httpRequest.open("GET", Url, true);
+            httpRequest.send();
+
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                    //获取到json字符串，还需解析
+                    jsondata = eval('(' + httpRequest.responseText + ')');
+                    console.log(jsondata)
+                    var add_options;
+
+                    // for (var i = 0; i < jsondata.fans_name_list.length; i++) {
+                    //     add_options += '<option value="' + jsondata.fans_name_list[i].fans_name + '">' + jsondata.fans_name_list[i].fans_name + '</option>';
+                    // }
+                    // $("datalist#batch_list").append(add_options);
+
+                    //TODO: 获取粉丝关注时间的功能后面再做
+                    // console.log('这是全局变量' + jsondata);
+
+                    // var input_value = document.getElementById('#username')
+
+                    // for (var i = 0; i < jsondata.fans_name_list.length; i++) {
+                    //     if (jsondata.fans_name_list[i].fans_name == input_value.value) {
+                    //         console.log('粉丝输入，显示粉丝相关信息')
+                    //         document.getElementById("mtime").innerText = jsondata.fans_name_list[i].mtime;
+                    //         document.getElementById("viptype").innerText = jsondata.fans_name_list[i].vip_type;
+                    //         document.getElementById("sign").innerText = jsondata.fans_name_list[i].sign;
+                    //     }
+                    // }
+
+                }
+            }
+        }
+    </script>
 </body>
 </html>

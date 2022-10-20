@@ -14,8 +14,6 @@ def index():
 def get_img_info():
     """获取图片媒体信息"""
     result = MediaModel.query.all()
-    list = [dict(i) for i in result]
-    print(list)
-    return list
-    # return json.dumps(result)
-    # return jsonify({"code": "200", "img_info_list": result})
+    img_info_list = [dict(i) for i in result]
+
+    return jsonify({"code": "200", "img_info_list": img_info_list})
