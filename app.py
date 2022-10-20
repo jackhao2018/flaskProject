@@ -8,6 +8,7 @@ from api.page.yingyin.index import bp as yingyin_bp
 from flask_migrate import Migrate, MigrateCommand
 # from flask_script import Manager
 from models.fansmodels import FansDetailsModel, FeedbackModel
+from models.mediamodels import MediaModel
 
 app = Flask(__name__)
 
@@ -21,7 +22,7 @@ migrate = Migrate(app, db)
 
 # manager.add_command('db', MigrateCommand)
 
-#
+
 app.register_blueprint(home_bp)
 app.register_blueprint(guanyu_bp)
 app.register_blueprint(jiaocheng_bp)
@@ -38,10 +39,10 @@ def hello_world():
         print(result.fetchone())
     return "hello world"
 
+#新增表时打开
 # with app.app_context():
 #
-#
-#     # db.init_app(app)
+#     db.init_app(app)
 #     db.create_all()
 
 

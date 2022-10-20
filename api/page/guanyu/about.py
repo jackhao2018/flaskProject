@@ -1,5 +1,4 @@
 import datetime
-
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for
 from api.func import get_fans_info, viplevel
 from logs.base_log import log
