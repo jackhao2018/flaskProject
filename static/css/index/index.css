@@ -157,3 +157,18 @@ a:hover {
     color:#fc8bab;
     line-height: 20px;
 }
+
+pre{
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+}
+
+p{
+    color: #4d4d4d;
+    font-weight: 400;
+    line-height: 24px!important;
+    margin: 0 0 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
