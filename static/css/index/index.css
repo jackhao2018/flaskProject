@@ -41,7 +41,6 @@ input::placeholder {
     line-height: 50px;
     font-size: 28px;
     text-align: center;
-    /* background-color:#75757550; */
 }
 
 a:hover {
@@ -133,4 +132,28 @@ a:hover {
     margin-left: 10%;
     justify-content: space-between;
     /* background-color: #fc8bab; */
+}
+
+.footer{
+    width: 100%;
+    height: 80px;
+    background-color: #757575;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color:#f4f5f7;
+}
+
+.footer a {
+    color: #ffffff;
+    line-height: 50px;
+    font-size: 14px;
+    text-align: center; 
+}
+
+.footer span a{
+    font-size: 20px;
+    color:#fc8bab;
+    line-height: 20px;
 }

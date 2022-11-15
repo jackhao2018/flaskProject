@@ -6,7 +6,7 @@ from config.base_config import BASE_DIR
 
 bp = Blueprint('home', __name__, url_prefix="/")
 
-@bp.route('asdf ')
+@bp.route('')
 def world_cloud():
     with open(rf'{BASE_DIR}\static\test.txt', 'r', encoding='utf8') as f:
         word_list = jieba.cut(f.read())

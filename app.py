@@ -5,7 +5,7 @@ from api.page.home.index import bp as home_bp
 from api.page.guanyu.about import bp as guanyu_bp
 from api.page.jiaocheng.index import bp as jiaocheng_bp
 from api.page.yingyin.index import bp as yingyin_bp
-from flask_migrate import Migrate, MigrateCommand
+from flask_migrate import Migrate
 # from flask_script import Manager
 from models.fansmodels import FansDetailsModel, FeedbackModel
 from models.mediamodels import MediaModel

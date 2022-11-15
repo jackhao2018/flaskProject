@@ -11,14 +11,14 @@
         <div name="banner" id="banner" class="banner">
             <ul name="daohang" id="daohang" class="daohang">
                 <li><a href="{{ url_for('home.index') }}">首页</a></li>
-                <li><a href="{{ url_for('jiaocheng.index') }}">教程</a></li>
-                <li><a href="{{ url_for('yingyin.index') }}">影音</a></li>
+                <!-- <li><a href="{{ url_for('jiaocheng.index') }}">教程</a></li>
+                <li><a href="{{ url_for('yingyin.index') }}">影音</a></li> -->
                 <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
             </ul>
         </div>
         <main class="main">
             <div id="contain" class="contain">
-                <div id="search" class="search">
+                <!-- <div id="search" class="search">
                     <form method="get" action="{{ url_for('home.index') }}">
                     <div name="search-box" id="search-box" class="search-box">
                         <input type="text" name="put" placeholder="    请输入您要搜索的内容" value="" id="put" class="put">
@@ -27,10 +27,11 @@
                         </button>
                     </div>
                     </form>
-                </div>
+                </div> -->
                 <div id="show" class="show">
+                    <span style="display:block; font-size: 20px;">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 点云标注工具使用展示</span>
                     <div id="show-video" class="show-video" >
-                        <video class="show-video" src="../static/vedio/点云工具3维图缩放优化.mp4" controls></video>
+                        <video class="show-video" src="../static/vedio/点云工具3维图缩放优化.mp4" controls>点云标注工具使用展示</video>
                     </div>
                     <div id="show-picture" class="show-picture"  onLoad='creatImg()' onResize="creatImg()" >
                         
@@ -39,6 +40,10 @@
                 
             </div>
             <!-- 调研词云图生成和弧形文字书写 -->
+            <div id="footer" class="footer">
+                <a href="https://beian.miit.gov.cn"><span>粤ICP备2021019114号</span></a>
+                <span style="display: block;">Designed and developed by bilibili UP <a href="https://space.bilibili.com/484311775?spm_id_from=333.999.0.0">生活の真相</a></span>
+            </div>
         </main>
     </div>
     <script>
