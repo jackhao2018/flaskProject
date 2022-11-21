@@ -1,5 +1,4 @@
 import os
-# from config.loadyamldata import loadyaml
 
 current = os.path.abspath(__file__)
 
@@ -26,7 +25,8 @@ class ConfigYaml:
 
     # 初始yaml读取配置文件
     def __init__(self):
-        self.config = loadyaml(get_config_file())
+        # self.config = loadyaml(get_config_file())
+        pass
 
     def get_conf_url(self):
         return self.config["BASE"]["test"]["url"]

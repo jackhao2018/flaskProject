@@ -98,7 +98,7 @@
         // TODO: 新增一个弹窗在中间的对话框，对话框点击确定后再发送请求（有必要么？)
         function subfun() {
             $.ajax({
-                url : "http://127.0.0.1:8888/about/feedback",
+                url : window.location.origin + "/about/feedback",
                 type : "POST",
                 data : $( '#feedbackForm').serialize(),
                 success : function(data) {
