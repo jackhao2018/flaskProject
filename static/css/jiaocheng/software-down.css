@@ -1,0 +1,12 @@
+.focusbox{
+    text-align: center;
+    background-color: #384047;
+    color: #eee;
+    padding: 45px 0;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    box-sizing: border-box;
+    font-size: 28px;
+    font-weight: bold;
+}
