@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +11,12 @@
     <link rel="stylesheet" href="../../static/css/jiaocheng/software-down.css" type="text/css">
     <title>教程</title>
 </head>
+
 <body>
     <div id="root">
         <div name="banner" id="banner" class="banner">
-            <a href="{{ url_for('home.index') }}"><img src="../static/img/common/透明logo.png" alt="网站logo" class="logo"></a>
+            <a href="{{ url_for('home.index') }}"><img src="../static/img/common/透明logo.png" alt="网站logo"
+                    class="logo"></a>
             <ul name="daohang" id="daohang" class="daohang">
                 <li><a href="{{ url_for('home.index') }}">首页</a></li>
                 <li><a href="{{ url_for('jiaocheng.index') }}">软件</a></li>
@@ -22,11 +25,25 @@
             </ul>
         </div>
         <main id="main" class="main">
-            <div id="focusbox" class="focusbox">xxx下载</div>
-            
+            <div id="focusbox" class="focusbox">{{ downloadTp.type}}</div>
+            <div id="contain" class="contain">
+                <div id="details" class="details">
+                    <div id="icon"><img src="../../static/img/software-icon/Adobe_Premiere_Pro.png" alt="软件ICON">
+                        <div id="software-name">
+                            <h2>软件名称</h2>更新时间：
+                        </div>
+                    </div>
+                    <div >
+
+                    </div>
+                </div>
+            </div>
         </main>
         <div id="footer" class="footer">Copyright ©xxxxxxx. | 本站内所有涉及的下载软件均收集于互联网，如果侵犯了你的权益，请联系我们及时删除。 </div>
     </div>
 </body>
+<script>
+
+</script>
 
 </html>

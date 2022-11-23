@@ -8,8 +8,13 @@ def index():
 
     return render_template('/jiaocheng/index.html')
 
-@bp.route("/")
-def index():
+@bp.route("/pr")
+def prdownload():
 
-    return render_template('/jiaocheng/index.html')
+    return render_template('/jiaocheng/software-download.html', downloadTp={"type": "PR下载"})
+
+@bp.route("/ps")
+def psdownload():
+
+    return render_template('/jiaocheng/software-download.html', downloadTp={"type": "PS下载"})
 
