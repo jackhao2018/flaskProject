@@ -8,3 +8,8 @@ def index():
 
     return render_template('/jiaocheng/index.html')
 
+@bp.route("/")
+def index():
+
+    return render_template('/jiaocheng/index.html')
+
