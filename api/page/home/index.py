@@ -28,6 +28,11 @@ def index():
 
     return render_template('index.html')
 
+@bp.route('/aliyun')
+def zhibo():
+
+    return render_template('aliyunplay.html')
+
 @bp.route("/search")
 def search():
     # /search?q=xxx
