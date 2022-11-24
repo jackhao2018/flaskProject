@@ -153,7 +153,7 @@ a:hover {
 
 .footer a {
     color: #ffffff;
-    line-height: 50px;
+    line-height: 20px;
     font-size: 14px;
     text-align: center; 
 }
@@ -161,10 +161,10 @@ a:hover {
 .footer span a{
     font-size: 20px;
     color:#fc8bab;
-    line-height: 20px;
+    line-height: 55px;
 }
 
-pre{
+/* pre{
     display: block;
     font-family: monospace;
     white-space: pre;
@@ -177,4 +177,4 @@ p{
     margin: 0 0 16px;
     overflow-x: auto;
     overflow-y: hidden;
-}
+} */
