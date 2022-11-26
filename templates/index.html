@@ -27,7 +27,7 @@
         </div>
         <main class="main">
             <div id="contain" class="contain">
-                <div class="prism-player" id="player-con"></div>
+                <div class="prism-player" id="J_prismPlayer"></div>
             </div>
             <!-- 调研词云图生成和弧形文字书写 -->
             <div id="footer" class="footer">
@@ -37,7 +37,22 @@
             </div>
         </main>
     </div>
-        <script>
+    <script>
+        var player = new Aliplayer({
+            id: 'J_prismPlayer',
+            source: 'artc://qianye-bzhan.top/live/live?auth_key=1669420306-0-0-09ddaaad234496fc1041b3734a71a800',//播放地址，使用超低延时直播（RTS）地址，协议是artc://。
+            // rtsFallbackSource: '<your play URL>',//（可选）RTS的降级地址（如HLS地址或FLV地址）。
+            isLive: true,//是否为直播播放。
+            // rtsVersion: 'x.x.x', //可以手动指定RTS SDK的版本。
+        },function(player){
+            console.log('The player is created.')
+        });
+        //当RTS降级时触发，参数reason为降级的原因，fallbackUrl为降级到的地址。
+        player.on('rtsFallback', function(event) {
+            console.log(' EVENT rtsFallback', event.paramData);
+        })
+        </script>
+        <!-- <script>
             let playsource = ''
             //定义一个函数判断是手机端还是pc端
             function isMobile() {
@@ -53,7 +68,7 @@
                 playsource = 'http://qianye-bzhan.top/app/stream.m3u8?auth_key=1669328279-0-0-4b3cefb43a5ef4da041a9376ca5f652d'
 
             } else {
-                playsource = 'rtmp://qianye-bzhan.top/app/stream?auth_key=1669342758-0-0-e699f24cf7b800f217e98d03743f731b'
+                playsource = 'artc://qianye-bzhan.top/live/live?auth_key=1669420306-0-0-09ddaaad234496fc1041b3734a71a800'
 
             }
 
@@ -75,7 +90,7 @@
                 console.log("The player is created");
             }
             );
-        </script>
+        </script> -->
 </body>
 
 </html>
