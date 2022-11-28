@@ -56,9 +56,16 @@ a:hover {
 .main {
     height: 100%;
     background-color: #f4f5f7;
+    padding-top: 20PX;
 }
 
 .contain {
+    display:flex;
+    border-radius: 5px;
+    /* 内容水平居中 */
+    justify-content:center; 
+    /* 内容垂直居中 */
+    /* align-items:center;  */
     width: 80%;
     /* height: 100%; */
     margin-left: auto;
@@ -141,6 +148,8 @@ a:hover {
 }
 
 .footer{
+    position: fixed;
+    bottom:0;
     width: 100%;
     height: 80px;
     background-color: #757575;
@@ -164,17 +173,195 @@ a:hover {
     line-height: 55px;
 }
 
-/* pre{
-    display: block;
-    font-family: monospace;
-    white-space: pre;
+
+/* 播放Btn */
+.prism-player .prism-play-btn {
+    width: 90px;
+    height: 90px;
+    background: url("//gw.alicdn.com/tps/TB1YuE3KFXXXXaAXFXXXXXXXXXX-256-512.png") no-repeat -2px -2px;
+  }
+
+
+/* 全屏Btn */
+.prism-player .prism-fullscreen-btn {
+	width: 24px;
+	height: 24px;
+	background: url(../../img/player/全屏.png) no-repeat;
+	background-size: contain
 }
 
-p{
-    color: #4d4d4d;
-    font-weight: 400;
-    line-height: 24px!important;
-    margin: 0 0 16px;
-    overflow-x: auto;
-    overflow-y: hidden;
-} */
+.prism-player .prism-fullscreen-btn:hover {
+	cursor: pointer
+}
+
+.prism-player .prism-fullscreen-btn.fullscreen {
+	background: url(../../img/player/全屏.png) no-repeat;
+	background-size: contain
+}
+
+.prism-player .prism-fullscreen-btn.fullscreen:hover {
+	animation: hoverAnimationScale 1s 1;
+	-moz-animation: hoverAnimationScale 1s 1;
+	-webkit-animation: hoverAnimationScale 1s 1;
+	-o-animation: hoverAnimationScale 1s 1;
+	cursor: pointer
+}
+
+/* 音量Btn */
+.prism-player .prism-volume {
+	position: relative
+}
+
+.prism-player .prism-volume .volume-icon {
+	width: 28px;
+	height: 28px;
+	background: url(../../img/player/音量.png);
+	background-size: contain
+}
+
+.prism-player .prism-volume .volume-icon .long-horizontal {
+	width: 3px;
+	background: #ebecec;
+	height: 18px;
+	position: absolute;
+	right: 5px;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%)
+}
+
+.prism-player .prism-volume .volume-icon .short-horizontal {
+	width: 3px;
+	background: #ebecec;
+	height: 8px;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%)
+}
+
+.prism-player .prism-volume .volume-icon:hover {
+	-ms-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	background-size: contain;
+	cursor: pointer
+}
+
+.prism-player .prism-volume .mute .long-horizontal {
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	height: 12px;
+	top: 10px;
+	left: 22px
+}
+
+.prism-player .prism-volume .mute .short-horizontal {
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	height: 12px;
+	top: 10px;
+	left: 22px
+}
+
+.prism-player .prism-volume-control {
+	position: absolute;
+	bottom: 44px;
+	display: none;
+	background: rgba(60,60,60,.95);
+	box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
+	width: 32px;
+	height: 130px;
+	z-index: 10000
+}
+
+.prism-player .prism-volume-control .volume-control-icon {
+	width: 32px;
+	height: 32px;
+	background: url(../../img/player/音量.png) no-repeat;
+	background-size: contain
+}
+
+.prism-player .prism-volume-control .volume-control-icon:hover {
+	cursor: pointer;
+	background: url(../../img/player/音量.png) no-repeat;
+	background-size: contain
+}
+
+.prism-player .prism-volume-control .volume-control-icon.mute {
+	background: url(../../img/player/静音.png) no-repeat;
+	background-size: contain
+}
+
+.prism-player .prism-volume-control .volume-control-icon.mute:hover {
+	background: url(../../img/player/静音.png) no-repeat;
+	background-size: contain;
+	cursor: pointer
+}
+
+.prism-player .prism-volume-control:hover {
+	cursor: pointer
+}
+
+.prism-player .prism-volume-control .volume-control-icon {
+	position: absolute;
+	bottom: 6px;
+	left: 8px;
+	width: 26px;
+	height: 26px
+}
+
+.prism-player .prism-volume-control .volume-range {
+	position: absolute;
+	left: 14px;
+	bottom: 10px;
+	border-radius: 1px;
+	background: #6c6262;
+	box-shadow: inset 1px 1px 1px 0 rgba(0,0,0,.06);
+	width: 4px;
+	height: 100px
+}
+
+.prism-player .prism-volume-control .volume-value {
+	width: 100%;
+	height: 0%;
+	background: #30adf2;
+	position: absolute;
+	border-radius: 1px;
+	bottom: 0
+}
+
+.prism-player .prism-volume-control .volume-cursor {
+	position: absolute;
+	bottom: 0;
+	background: #fff;
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	left: -6px
+}
+
+.prism-player .prism-volume-control .volume-cursor:hover {
+	background: #00c1de
+}
+
+@keyframes hoverVolumeAnimation {
+	0% {
+		opacity: 1
+	}
+
+	50% {
+		opacity: 0
+	}
+
+	100% {
+		opacity: 1
+	}
+}
+
+.volume-hover-animation {
+	animation: hoverVolumeAnimation .3s 1;
+	-moz-animation: hoverVolumeAnimation .3s 1;
+	-webkit-animation: hoverVolumeAnimation .3s 1;
+	-o-animation: hoverVolumeAnimation .3s 1
+}

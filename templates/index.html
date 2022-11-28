@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer-min.css" />
+    <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer.css" />
     <link rel="stylesheet" href="../static/css/global.css">
     <link rel="stylesheet" href="../static/css/index/index.css">
-    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer-min.css" />
-    <script type="text/javascript" charset="utf-8"
-        src="https://g.alicdn.com/de/prismplayer/2.13.2/aliplayer-min.js"></script>
+    
     <title>首页</title>
 </head>
 
@@ -20,14 +20,15 @@
                     class="logo"></a>
             <ul name="daohang" id="daohang" class="daohang">
                 <li><a href="{{ url_for('home.index') }}">首页</a></li>
-                <!-- <li><a href="{{ url_for('jiaocheng.index') }}">软件</a></li>
-                <li><a href="{{ url_for('yingyin.index') }}">影音</a></li> -->
+                <li><a href="{{ url_for('jiaocheng.index') }}">软件</a></li>
+                <!-- <li><a href="{{ url_for('yingyin.index') }}">影音</a></li> -->
                 <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
             </ul>
         </div>
         <main class="main">
             <div id="contain" class="contain">
-                <div class="prism-player" id="J_prismPlayer"></div>
+                <div class="prism-player" id="J_prismPlayer" style=" border-radius: 5px;"></div>
+                <!-- <div ></div> -->
             </div>
             <!-- 调研词云图生成和弧形文字书写 -->
             <div id="footer" class="footer">
@@ -37,13 +38,22 @@
             </div>
         </main>
     </div>
+    <script type="text/javascript" charset="utf-8"src="https://g.alicdn.com/de/prismplayer/2.13.2/aliplayer-min.js"></script>
     <script>
         var player = new Aliplayer({
             id: 'J_prismPlayer',
-            source: 'artc://qianye-bzhan.top/live/live?auth_key=1669420306-0-0-09ddaaad234496fc1041b3734a71a800',//播放地址，使用超低延时直播（RTS）地址，协议是artc://。
+            source: 'artc://qianye-bzhan.top/live/live?auth_key=1669590311-0-0-6eca6816c11fe51d0f9ee00a8688f064',//播放地址，使用超低延时直播（RTS）地址，协议是artc://。
             // rtsFallbackSource: '<your play URL>',//（可选）RTS的降级地址（如HLS地址或FLV地址）。
             isLive: true,//是否为直播播放。
+            autoplay: false,
             // rtsVersion: 'x.x.x', //可以手动指定RTS SDK的版本。
+            width: "960px",
+            height: "540px",
+            showBuffer:"../static/img/common/2233娘.jpg",
+            definition: 'FD,SD,HD,OD',
+            defaultDefinition: 'FD',
+            loadDataTimeout: '10',
+            cover: "../static/img/player/cover.png"
         },function(player){
             console.log('The player is created.')
         });
@@ -52,45 +62,6 @@
             console.log(' EVENT rtsFallback', event.paramData);
         })
         </script>
-        <!-- <script>
-            let playsource = ''
-            //定义一个函数判断是手机端还是pc端
-            function isMobile() {
-                if (window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
-                    return true; // 移动端
-                } else {
-                    return false; // PC端
-                }
-            }
-            //    判断后的操作
-            // 判断true跳转到这个主页
-            if (isMobile()) {
-                playsource = 'http://qianye-bzhan.top/app/stream.m3u8?auth_key=1669328279-0-0-4b3cefb43a5ef4da041a9376ca5f652d'
-
-            } else {
-                playsource = 'artc://qianye-bzhan.top/live/live?auth_key=1669420306-0-0-09ddaaad234496fc1041b3734a71a800'
-
-            }
-
-            console.log('当前的playsource是：' + playsource)
-
-            var player = new Aliplayer({
-                "id": "player-con",
-                "source": playsource,
-                "width": "100%",
-                "height": "500px",
-                "autoplay": true,
-                "isLive": true,
-                "rePlay": false,
-                "playsinline": true,
-                "preload": true,
-                "controlBarVisibility": "hover",
-                "useH5Prism": true
-            }, function (player) {
-                console.log("The player is created");
-            }
-            );
-        </script> -->
 </body>
 
 </html>
