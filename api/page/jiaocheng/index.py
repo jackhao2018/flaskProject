@@ -18,3 +18,13 @@ def psdownload():
 
     return render_template('/jiaocheng/software-download.html', downloadTp={"type": "PS下载"})
 
+@bp.route("/ae")
+def aedownload():
+
+    return render_template('/jiaocheng/software-download.html', downloadTp={"type": "AE下载"})
+
+@bp.route("/c4d")
+def c4ddownload():
+
+    return render_template('/jiaocheng/software-download.html', downloadTp={"type": "C4D下载"})
+

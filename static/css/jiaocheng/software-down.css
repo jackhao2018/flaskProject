@@ -1,3 +1,9 @@
+.main {
+    /* height: 100%; */
+    background-color: #f4f5f7;
+    padding-top: 0px;
+}
+
 .focusbox{
     text-align: center;
     background-color: #384047;
@@ -9,6 +15,19 @@
     box-sizing: border-box;
     font-size: 28px;
     font-weight: bold;
+}
+
+.uploads{
+    /* writing-mode:vertical-lr; */
+    line-height: 80px;
+    text-align: center;
+    justify-items: center;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    /* margin: 0 auto;   */
+    font-size: 21px;
+    background-color: hotpink
 }
 
 .contain{
@@ -38,6 +57,13 @@
     object-fit: fill;
 }
 
+#mid{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 10%;
+}
+
 #software-name{
     position: relative;
     margin-left: 25px;
@@ -63,11 +89,12 @@
 }
 
 .download {
+    height: 100%;
     width: 24%;
-    margin-top: 15px;
+    margin-top: 20px;
     padding-top: 5px;
     padding-bottom: 25px;
-    margin-left: 10%;
+    margin-left: 20px;
     border-radius: 5px;
     background-color: #E1E4E5;
 }
@@ -94,10 +121,10 @@
 }
 
 .software-details{
-    margin-left: 10%;
+    /* margin-left: 10%; */
     padding-left: 25px;
     margin-top: 20px;
-    width: 60%;
+    width: 80%;
     background-color: #ffffff;
 }
 
@@ -140,13 +167,4 @@
     list-style: disc;
     text-align: -webkit-match-parent;
     margin-bottom: 5px;
-}
-
-::marker {
-    unicode-bidi: isolate;
-    font-variant-numeric: tabular-nums;
-    text-transform: none;
-    text-indent: 0px !important;
-    text-align: start !important;
-    text-align-last: start !important;
 }
