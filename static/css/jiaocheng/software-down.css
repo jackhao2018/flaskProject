@@ -24,6 +24,16 @@
     z-index  : 88;
     left:0px;
 }
+
+#wrap a{
+    font-size: larger;
+    color: #ffffff;
+}
+
+#wrap a:hover{
+    color: #fc8bab;
+}
+
 .uploads{
     display: table-cell;
     word-break:keep-all;
@@ -33,8 +43,9 @@
     border-radius: 0 40px 40px 0;
     width: 60px;
     font-size: 21px;
-    background-color: hotpink
+    background-color:#384047
 }
+
 
 .contain{
     width: 80%;

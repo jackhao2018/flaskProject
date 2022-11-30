@@ -27,4 +27,8 @@ def aedownload():
 def c4ddownload():
 
     return render_template('/jiaocheng/software-download.html', downloadTp={"type": "C4D下载"})
+@bp.route("/upload")
+def software_upload():
+
+    return render_template('/jiaocheng/software-upload.html')
 
