@@ -17,15 +17,21 @@
     font-weight: bold;
 }
 
-.uploads{
-    /* writing-mode:vertical-lr; */
-    line-height: 80px;
-    text-align: center;
-    justify-items: center;
-    border-radius: 50%;
+#wrap{
     height: 80px;
-    width: 80px;
-    /* margin: 0 auto;   */
+    display: table;
+    position : fixed;
+    z-index  : 88;
+    left:0px;
+}
+.uploads{
+    display: table-cell;
+    word-break:keep-all;
+    /* word-wrap:break-word; */
+    text-align: center;
+    vertical-align:middle;
+    border-radius: 0 40px 40px 0;
+    width: 60px;
     font-size: 21px;
     background-color: hotpink
 }
