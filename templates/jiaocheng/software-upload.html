@@ -8,30 +8,8 @@
     <link rel="stylesheet" href="../static/css/index/index.css">
     <link rel="stylesheet" href="../static/css/jiaocheng/software-upload.css">
     <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
-    <style>
-        #editor—wrapper {
-            margin-left: 5%;
-            border: 1px solid #ccc;
-            z-index: 100;
-            /* 按需定义 */
-            /* height: 300px; */
-        }
-
-        #toolbar-container {
-            border-bottom: 1px solid #ccc;
-        }
-
-        #editor-container {
-            height: 200px;
-        }
-
-        #editor-container2 {
-            height: 200px;
-        }
-    </style>
     <title>软件上传</title>
 </head>
-
 <body>
     <div id="root">
         <div name="banner" id="banner" class="banner">
@@ -57,8 +35,6 @@
                     <div class="wrapInpu wrapSoftwareDesc"><textarea id="softwareDesc" class="softwareDesc"
                             name="简介"></textarea></div>
                 </div>
-
-                <div class="basic-info"><span>软件信息</span> </div>
                 <div id="warp" class="wrap">
                     <div id="software-title"><span>软件大小:</span></div>
                     <div class="wrapInput"><input id="software-name" class="software-input" type="text"
@@ -75,70 +51,93 @@
                             placeholder="请输入软件名称" maxlength="50" value></div>
                 </div>
 
+                <div class="basic-info"><span>网盘信息</span> </div>
+                <div id="cloud-wrap" class="cloudWarp">
+                    <div id="cloud-contain" class="cloudContain">
+                        <h3>百度网盘</h3>
+                        <div><span>链接：</span></div>
+                        <div><input type="text" class="software-input"></div>
+                        <div><span>密码：</span></div>
+                        <div><input type="text" class="software-input"></div>
+                    </div>
+                    <div id="cloud-contain" class="cloudContain">
+                        <h3>阿里云盘</h3>
+                        <div><span>链接：</span></div>
+                        <div><input type="text" class="software-input"></div>
+                        <div><span>密码：</span></div>
+                        <div><input type="text" class="software-input"></div>
+                    </div>
+                    <div id="cloud-contain" class="cloudContain">
+                        <h3>夸克网盘</h3>
+                        <div><span>链接：</span></div>
+                        <div><input type="text" class="software-input"></div>
+                        <div><span>密码：</span></div>
+                        <div><input type="text" class="software-input"></div>
+                    </div>
+                </div>
                 <div class="basic-info"><span>安装教程</span> </div>
                 <div id="editor—wrapper">
-                    <div id="toolbar-container"><!-- 工具栏 --></div>
-                    <div id="editor-container"><!-- 编辑器 --></div>
+                    <div id="toolbar-container">
+                        <!-- 工具栏 -->
+                    </div>
+                    <div id="editor-container">
+                        <!-- 编辑器 -->
+                    </div>
                 </div>
                 <div class="basic-info"><span>功能特色</span> </div>
                 <div id="editor—wrapper">
                     <div id="toolbar-container2"></div>
                     <div id="editor-container2"></div>
                 </div>
-                <div id="confirm">
-                    <button type="button" class="ant-btn ant-btn-primary ant-btn-background-ghost">
-                        <span>重置</span>
-                    </button>
-                    <button>
-                        <span>确认</span>
-                    </button>
+                <div id="confirm" class="confirm">
+                    <div><button type="reset" class="reset">重 置</button></div>
+                    <div><button type="submit" class="submit reset">提 交</button></div>
                 </div>
             </form>
-
         </main>
     </div>
     <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
     <script>
-    const { createEditor, createToolbar } = window.wangEditor
-    
-    const editorConfig = {
-        placeholder: 'Type here...',
-        onChange(editor) {
-          const html = editor.getHtml()
-          console.log('editor content', html)
-          // 也可以同步到 <textarea>
+        const { createEditor, createToolbar } = window.wangEditor
+
+        const editorConfig = {
+            placeholder: 'Type here...',
+            onChange(editor) {
+                const html = editor.getHtml()
+                console.log('editor content', html)
+                // 也可以同步到 <textarea>
+            }
         }
-    }
-    
-    const editor = createEditor({
-        selector: '#editor-container',
-        html: '<p><br></p>',
-        config: editorConfig,
-        mode: 'default', // or 'simple'
-    })
 
-    const editor2 = createEditor({
-        selector: '#editor-container2',
-        html: '<p><br></p>',
-        config: editorConfig,
-        mode: 'default', // or 'simple'
-    })
-    
-    const toolbarConfig = {}
-    
-    const toolbar = createToolbar({
-        editor,
-        selector: '#toolbar-container',
-        config: toolbarConfig,
-        mode: 'default', // or 'simple'
-    })
+        const editor = createEditor({
+            selector: '#editor-container',
+            html: '<p><br></p>',
+            config: editorConfig,
+            mode: 'default', // or 'simple'
+        })
 
-    const toolbar2 = createToolbar({
-        editor,
-        selector: '#toolbar-container2',
-        config: toolbarConfig,
-        mode: 'default', // or 'simple'
-    })
+        const editor2 = createEditor({
+            selector: '#editor-container2',
+            html: '<p><br></p>',
+            config: editorConfig,
+            mode: 'default', // or 'simple'
+        })
+
+        const toolbarConfig = {}
+
+        const toolbar = createToolbar({
+            editor,
+            selector: '#toolbar-container',
+            config: toolbarConfig,
+            mode: 'default', // or 'simple'
+        })
+
+        const toolbar2 = createToolbar({
+            editor,
+            selector: '#toolbar-container2',
+            config: toolbarConfig,
+            mode: 'default', // or 'simple'
+        })
     </script>
 </body>
 
