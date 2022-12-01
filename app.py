@@ -9,6 +9,7 @@ from flask_migrate import Migrate
 # from flask_script import Manager
 from models.fansmodels import FansDetailsModel, FeedbackModel
 from models.mediamodels import MediaModel
+from models.softwaremodels import SoftwareModel
 
 app = Flask(__name__)
 
@@ -40,10 +41,10 @@ def hello_world():
     return "hello world"
 
 #新增表时打开
-# with app.app_context():
-#
-#     db.init_app(app)
-#     db.create_all()
+with app.app_context():
+
+    db.init_app(app)
+    db.create_all()
 
 
 if __name__ == '__main__':

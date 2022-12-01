@@ -27,9 +27,15 @@ def aedownload():
 def c4ddownload():
 
     return render_template('/jiaocheng/software-download.html', downloadTp={"type": "C4D下载"})
-@bp.route("/upload")
+@bp.route("/upload", methods=['GET', 'POST'])
 def software_upload():
 
-    return render_template('/jiaocheng/software-upload.html')
+    if request.method == 'GET':
+        return render_template('/jiaocheng/software-upload.html')
+
+    if request.method == 'POST':
+        data = request.form
+        print(data)
+        return jsonify({'数据信息': data})
 
 

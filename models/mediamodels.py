@@ -9,7 +9,7 @@ class MediaModel(db.Model):
     type = db.Column(db.Integer)
 
     def keys(self):
-        return ('id', 'title','mtime', 'addr', 'type')
+        return 'id', 'title','mtime', 'addr', 'type'
 
     def __getitem__(self, item):
         return getattr(self, item)
