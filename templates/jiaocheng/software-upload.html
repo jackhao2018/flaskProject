@@ -9,6 +9,7 @@
     <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
     <title>软件上传</title>
 </head>
+
 <body>
     <div id="root">
         <div name="banner" id="banner" class="banner">
@@ -55,40 +56,47 @@
                     <div id="cloud-contain" class="cloudContain">
                         <h3>百度网盘</h3>
                         <div><span>链接：</span></div>
-                        <div><input type="text" name="baiduLink" class="software-input" placeholder="请输入百度网盘连接地址" maxlength="200" value></div>
+                        <div><input type="text" name="baiduLink" class="software-input" placeholder="请输入百度网盘连接地址"
+                                maxlength="200" value></div>
                         <div><span>密码：</span></div>
-                        <div><input type="text" name="baiduLinkPwd" class="software-input" placeholder="请输入百度网盘密码" maxlength="10" value></div>
+                        <div><input type="text" name="baiduLinkPwd" class="software-input" placeholder="请输入百度网盘密码"
+                                maxlength="10" value></div>
                     </div>
                     <div id="cloud-contain" class="cloudContain">
                         <h3>阿里云盘</h3>
                         <div><span>链接：</span></div>
-                        <div><input type="text" name="aliyunLink" class="software-input" placeholder="请输入阿里云盘连接地址" maxlength="200" value></div>
+                        <div><input type="text" name="aliyunLink" class="software-input" placeholder="请输入阿里云盘连接地址"
+                                maxlength="200" value></div>
                         <div><span>密码：</span></div>
-                        <div><input type="text" name="aliyunLinkPwd" class="software-input" placeholder="请输入阿里云盘密码" maxlength="10" value></div>
+                        <div><input type="text" name="aliyunLinkPwd" class="software-input" placeholder="请输入阿里云盘密码"
+                                maxlength="10" value></div>
                     </div>
                     <div id="cloud-contain" class="cloudContain">
                         <h3>夸克网盘</h3>
                         <div><span>链接：</span></div>
-                        <div><input type="text" name="kuakeLink" class="software-input" placeholder="请输入夸克网盘连接地址" maxlength="200" value></div>
+                        <div><input type="text" name="kuakeLink" class="software-input" placeholder="请输入夸克网盘连接地址"
+                                maxlength="200" value></div>
                         <div><span>密码：</span></div>
-                        <div><input type="text" name="kuakeLinkPwd" class="software-input" placeholder="请输入夸克网盘密码" maxlength="10" value></div>
+                        <div><input type="text" name="kuakeLinkPwd" class="software-input" placeholder="请输入夸克网盘密码"
+                                maxlength="10" value></div>
                     </div>
                 </div>
                 <div class="basic-info"><span>安装教程</span> </div>
                 <div id="editor—wrapper">
-                    <div id="toolbar-container">
-                        <!-- 工具栏 -->
-                    </div>
-                    <div id="editor-container" name="install">
-                        <!-- 编辑器 -->
-                    </div>
+
+                    <div id="editor-toolbar-1" style="border-bottom: 1px solid #ccc;"></div>
+                    <div id="editor-text-area-1" style="height: 400px;"></div>
+
+                    <div id="content-view-1" class="editor-content-view"></div>
                 </div>
                 <div class="basic-info"><span>功能特色</span> </div>
                 <div id="editor—wrapper" name="feature">
-                    <div id="toolbar-container2"></div>
-                    <div>
-                        <textarea style="display: none"  name="feature" id="editor-container2"></textarea>
-                    </div>
+                    <div id="editor-toolbar-2" style="border-bottom: 1px solid #ccc;"></div>
+                    <div id="editor-text-area-2" style="height: 400px;"></div>
+                    <div id="content-view-2" class="editor-content-view"></div>
+
+                    <textarea style="display: none" name="feature" id="editor-container2"></textarea>
+
                 </div>
                 <div id="confirm" class="confirm">
                     <div><button type="reset" class="reset">重 置</button></div>
@@ -98,46 +106,61 @@
         </main>
     </div>
     <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+    <script src="../../static/js/jquery-3.6.0.js"></script>
     <script>
-        const { createEditor, createToolbar, createEditor2, createToolbar2 } = window.wangEditor
+        const E = window.wangEditor
 
-        const editorConfig = {
-            placeholder: 'Type here...',
-            onChange(editor) {
-                const html = editor.getHtml()
-                console.log('editor content', html)
-                // 也可以同步到 <textarea>
-            }
-        }
+        // 切换语言
+        const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
+        E.i18nChangeLanguage(LANG)
 
-        const editor = createEditor({
-            selector: '#editor-container',
-            html: '<p><br></p>',
-            config: editorConfig,
-            mode: 'default', // or 'simple'
+        // 第一个编辑器
+        const editor1 = E.createEditor({
+            selector: '#editor-text-area-1',
+            config: {
+                placeholder: 'Type here...',
+                autoFocus: false,
+                MENU_CONF: {
+                    uploadImage: {
+                        fieldName: 'your-file-name1',
+                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+                    }
+                },
+                onChange(editor) {
+                    document.getElementById('content-view-1').innerHTML = editor.getHtml()
+                }
+            },
+            html: '<p>editor1</p><p><br></p>'
+        })
+        const toolbar1 = E.createToolbar({
+            editor: editor1,
+            selector: '#editor-toolbar-1',
+            config: {}
         })
 
-        const editor2 = createEditor2({
-            selector: '#editor-container2',
-            html: '<p><br></p>',
-            config: editorConfig,
-            mode: 'default', // or 'simple'
+        // 第二个编辑器
+        const editor2 = E.createEditor({
+            selector: '#editor-text-area-2',
+            config: {
+                placeholder: 'Type here...',
+                autoFocus: false,
+                MENU_CONF: {
+                    uploadImage: {
+                        fieldName: 'your-file-name2',
+                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+                    }
+                },
+                onChange(editor) {
+                    document.getElementById('content-view-2').innerHTML = editor.getHtml()
+                }
+            },
+            html: '<p>editor2</p><p><br></p>',
+            mode: 'simple'
         })
-
-        const toolbarConfig = {}
-
-        const toolbar = createToolbar({
-            editor,
-            selector: '#toolbar-container',
-            config: toolbarConfig,
-            mode: 'default', // or 'simple'
-        })
-
-        const toolbar2 = createToolbar2({
-            editor,
-            selector: '#toolbar-container2',
-            config: toolbarConfig,
-            mode: 'default', // or 'simple'
+        const toolbar2 = E.createToolbar({
+            editor: editor2,
+            selector: '#editor-toolbar-2',
+            config: {}
         })
     </script>
 </body>
