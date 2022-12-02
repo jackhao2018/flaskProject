@@ -32,7 +32,7 @@
                 </div>
                 <div id="warp" class="wrap">
                     <div id="software-title"><span>软件介绍:</span></div>
-                    <div class="wrapInpu wrapSoftwareDesc"><textarea id="softwareDesc" class="softwareDesc"
+                    <div class="wrapInpu wrapSoftwareDesc"><textarea id="softwareDesc" class="softwareDesc" placeholder="请输入软件介绍"
                             name="details"></textarea></div>
                 </div>
                 <div id="warp" class="wrap">
@@ -83,19 +83,17 @@
                 </div>
                 <div class="basic-info"><span>安装教程</span> </div>
                 <div id="editor—wrapper">
-
                     <div id="editor-toolbar-1" style="border-bottom: 1px solid #ccc;"></div>
-                    <div id="editor-text-area-1" style="height: 400px;"></div>
-
+                    <div id="editor-text-area-1" style="height: 200px;"></div>
                     <div id="content-view-1" class="editor-content-view"></div>
+                    <input style="display: none" name="install" id="editor-container1" value>
                 </div>
                 <div class="basic-info"><span>功能特色</span> </div>
                 <div id="editor—wrapper" name="feature">
                     <div id="editor-toolbar-2" style="border-bottom: 1px solid #ccc;"></div>
-                    <div id="editor-text-area-2" style="height: 400px;"></div>
+                    <div id="editor-text-area-2" style="height: 200px;"></div>
                     <div id="content-view-2" class="editor-content-view"></div>
-
-                    <textarea style="display: none" name="feature" id="editor-container2"></textarea>
+                    <input style="display: none" name="features" id="editor-container2" value>
 
                 </div>
                 <div id="confirm" class="confirm">
@@ -109,6 +107,8 @@
     <script src="../../static/js/jquery-3.6.0.js"></script>
     <script>
         const E = window.wangEditor
+        const installTextarea = document.getElementById('editor-container1')
+        const featureTextarea = document.getElementById('editor-container2')
 
         // 切换语言
         const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
@@ -118,7 +118,7 @@
         const editor1 = E.createEditor({
             selector: '#editor-text-area-1',
             config: {
-                placeholder: 'Type here...',
+                placeholder: '这里输入安装方式...',
                 autoFocus: false,
                 MENU_CONF: {
                     uploadImage: {
@@ -127,10 +127,10 @@
                     }
                 },
                 onChange(editor) {
-                    document.getElementById('content-view-1').innerHTML = editor.getHtml()
+                    installTextarea.value = editor.getHtml()
                 }
             },
-            html: '<p>editor1</p><p><br></p>'
+            // html: '<p>editor1</p><p><br></p>'
         })
         const toolbar1 = E.createToolbar({
             editor: editor1,
@@ -142,7 +142,7 @@
         const editor2 = E.createEditor({
             selector: '#editor-text-area-2',
             config: {
-                placeholder: 'Type here...',
+                placeholder: '这里输入功能特色...',
                 autoFocus: false,
                 MENU_CONF: {
                     uploadImage: {
@@ -151,10 +151,10 @@
                     }
                 },
                 onChange(editor) {
-                    document.getElementById('content-view-2').innerHTML = editor.getHtml()
+                    featureTextarea.value = editor.getHtml()
                 }
             },
-            html: '<p>editor2</p><p><br></p>',
+            // html: '<p>editor2</p><p><br></p>',
             mode: 'simple'
         })
         const toolbar2 = E.createToolbar({
