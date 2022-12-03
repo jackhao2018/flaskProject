@@ -1,4 +1,7 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for
+from models.softwaremodels import SoftwareModel
+import datetime
+from exts import db
 
 
 bp = Blueprint("jiaocheng", __name__, url_prefix="/jiaocheng")
@@ -10,11 +13,13 @@ def index():
 
 @bp.route("/pr")
 def prdownload():
-
-    return render_template('/jiaocheng/software-download.html', downloadTp={"type": "PR下载"})
+    result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'Adobe_Premiere_Pro' + '%')).first()
+    return render_template('/jiaocheng/software-download.html', result={"downloadTP": "PR下载", 'data': result.to_dict()})
 
 @bp.route("/ps")
 def psdownload():
+    data = SoftwareModel.query.all()
+    result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'photoshop' + '%')).all()
 
     return render_template('/jiaocheng/software-download.html', downloadTp={"type": "PS下载"})
 
@@ -35,7 +40,16 @@ def software_upload():
 
     if request.method == 'POST':
         data = request.form
-        print(data)
-        return jsonify({'数据信息': data})
+        software_info = SoftwareModel(softName=data['softName'], softDesc=data['details'],softSize=data['softSize'],
+                                 issue=data['issue'], copyright=data['copyright'], baiduLink=data['baiduLink'],
+                                 baiduLinkPwd=data['baiduLinkPwd'], aliyunLink=data['aliyunLink'],
+                                 aliyunLinkPwd=data['aliyunLinkPwd'], kuakeLink=data['kuakeLink'],
+                                 kuakeLinkPwd=data['kuakeLinkPwd'], install=data['install'], feature=data['features'],
+                                 mtime=datetime.datetime.now())
+
+        db.session.add(software_info)
+
+        db.session.commit()
+        return jsonify({"code": "200", "softwareInfo": data})
 
 

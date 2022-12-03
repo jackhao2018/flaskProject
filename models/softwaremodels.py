@@ -1,4 +1,5 @@
 from exts import db
+from sqlalchemy.dialects.mysql import LONGTEXT
 
 
 class SoftwareModel(db.Model):
@@ -8,15 +9,15 @@ class SoftwareModel(db.Model):
     softDesc = db.Column(db.String(1000))
     softSize = db.Column(db.String(10))
     issue = db.Column(db.String(10))
-    copyright = db.Column(db.String(10))
+    copyright = db.Column(db.String(100))
     baiduLink = db.Column(db.String(200))
     baiduLinkPwd = db.Column(db.String(10))
     aliyunLink = db.Column(db.String(200))
     aliyunLinkPwd = db.Column(db.String(10))
     kuakeLink = db.Column(db.String(200))
     kuakeLinkPwd = db.Column(db.String(200))
-    install = db.Column(db.Text)
-    feature = db.Column(db.Text)
+    install = db.Column(LONGTEXT)
+    feature = db.Column(LONGTEXT)
     mtime = db.Column(db.DateTime)
 
     def keys(self):
