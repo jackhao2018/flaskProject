@@ -27,14 +27,14 @@
         <main id="main" class="main">
             <div id="focusbox" class="focusbox">{{ result.downloadTP}}</div>
 
-            <div id="wrap">
+            <!-- <div id="wrap">
                 <a href="{{  url_for('jiaocheng.software_upload') }}" id="uploads" class="uploads">
                     <div>软件 上传</div>
                 </a>
-            </div>
+            </div> -->
             <div id="contain" class="contain">
                 <div id="details" class="details">
-                    <div id="icon"><img src="../../static/img/software-icon/Adobe_Premiere_Pro.png" alt="软件ICON">
+                    <div id="icon"><img src="{{ result.data.softURL }}" alt="软件ICON">
                         <div id="software-name">
                             <h2>软件名称: {{ result.data.softName }}</h2>
                             <p>更新时间：{{ result.data.mtime }}</p>
@@ -50,7 +50,7 @@
                     <h2>软件信息</h2>
                     <p>
                         <span style="color: #ff9900;"><strong>软件大小：</strong></span>{{ result.data.softSize }}<br>
-                        <strong><span style="color: #ff9900;">软件语言：</span></strong>简体中文<br>
+                        <strong><span style="color: #ff9900;">软件语言：</span></strong>{{ result.data.softLanguage }}<br>
                         <span style="color: #ff9900;"><strong>制作发行：</strong></span>{{ result.data.issue }}<br>
                         <strong><span style="color: #ff9900;">版权声明：</span></strong>{{ result.data.copyright }}
                     </p>

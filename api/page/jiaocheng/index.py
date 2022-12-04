@@ -9,7 +9,18 @@ bp = Blueprint("jiaocheng", __name__, url_prefix="/jiaocheng")
 @bp.route("/")
 def index():
 
-    return render_template('/jiaocheng/index.html')
+    result = SoftwareModel.query.all()
+    software_list = []
+    software_dict = {'name': '', 'url': ''}
+
+    for software in result:
+        software_dict['name'] = software['softName']
+        software_dict['url'] = software['softURL']
+        software_list.append(software_dict)
+
+    print(software_list)
+
+    return render_template('/jiaocheng/index.html', result={'softwarInfo': software_list, 'total': len(result)})
 
 @bp.route("/pr")
 def prdownload():
@@ -41,7 +52,7 @@ def software_upload():
     if request.method == 'POST':
         data = request.form
         software_info = SoftwareModel(softName=data['softName'], softDesc=data['details'],softSize=data['softSize'],
-                                 issue=data['issue'], copyright=data['copyright'], baiduLink=data['baiduLink'],
+                                 softLanguage=data['softwareLanguage'], issue=data['issue'], copyright=data['copyright'], baiduLink=data['baiduLink'],
                                  baiduLinkPwd=data['baiduLinkPwd'], aliyunLink=data['aliyunLink'],
                                  aliyunLinkPwd=data['aliyunLinkPwd'], kuakeLink=data['kuakeLink'],
                                  kuakeLinkPwd=data['kuakeLinkPwd'], install=data['install'], feature=data['features'],

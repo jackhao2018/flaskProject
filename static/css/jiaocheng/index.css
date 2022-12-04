@@ -42,6 +42,7 @@
 .card-area {
     display: flex;
     width: 80%;
+    height: 100%;
     margin-left: 10%;
     margin-top: 10px;
     flex-direction: row;
@@ -51,10 +52,22 @@
 }
 
 .card-img {
-    width: 100%;
-    height: 60%;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
     display: block;
 
+
+}
+
+.imgwrap{
+    display: flex;
+    width: 280px;
+    height: 80%;
+    border-radius: 10px;
+    background-color: #8ed2fc2d;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -76,6 +89,19 @@
 
 /* 低于或等于1920显示器的显示样式 */
 @media (max-width: 1920px) {
+
+    .card-area {
+        display: flex;
+        width: 80%;
+        height: 500px;
+        margin-left: 10%;
+        margin-top: 10px;
+        flex-direction: row;
+        align-content:flex-start;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
     .card {
         height: 250px;
         flex: 0 0 23%;
@@ -125,7 +151,7 @@
 .card-title {
     height: 20%;
     width: 100%;
-    font-size: 20px;
+    font-size: 15px;
     display: -webkit-box;
     word-break: break-all;
     align-content: center;
@@ -133,8 +159,8 @@
     text-overflow: ellipsis;
     justify-content: flex-start;
     -webkit-box-orient: vertical;
-    color: black;
-    font-weight: bold;
+    color: #546677;
+    font-weight: 700;
     -webkit-line-clamp: 2;
 }
 
@@ -159,32 +185,36 @@
     align-items: center;
 }
 
-.pager {
-    margin-left: 40%;
-    width: 20%;
-    height: 32px;
-}
-
-.pager ul {
-    display: flex;
-    /* flex-direction: row; */
+#pagewrap{
     width: 100%;
-    height: 100%;
-    justify-content: space-between;
-}
-
-.pager img{
-    vertical-align: middle;
-}
-
-.pager li {
-    display: block;
-    list-style: none;
-    width: 32px;
-    background-color: white;
-    text-align: center;
+    display: flex;
     justify-content: center;
-    line-height:32px;
+    align-items: center;
+}
+
+.paging{
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+.paging div{
+    border: 1px solid rgb(211, 211, 211);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.paging div.disable{
+    color: #fff;
+    cursor: not-allowed;
+    background-color: rgb(211, 211, 211);
+}
+.paging div.active{
+    border: none;
+    background-color: rgb(78, 216, 250);
+    color: #fff;
 }
 
 .footer{

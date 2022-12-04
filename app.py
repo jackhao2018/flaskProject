@@ -6,6 +6,7 @@ from api.page.guanyu.about import bp as guanyu_bp
 from api.page.jiaocheng.index import bp as jiaocheng_bp
 from api.page.yingyin.index import bp as yingyin_bp
 from flask_migrate import Migrate
+from models.autoUpdataTable import auto_alter_tables
 # from flask_script import Manager
 from models.fansmodels import FansDetailsModel, FeedbackModel
 from models.mediamodels import MediaModel
@@ -40,11 +41,14 @@ def hello_world():
         print(result.fetchone())
     return "hello world"
 
+
 #新增表时打开
 with app.app_context():
 
     db.init_app(app)
     db.create_all()
+
+auto_alter_tables(app)
 
 
 if __name__ == '__main__':
