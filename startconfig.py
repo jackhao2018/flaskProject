@@ -28,7 +28,7 @@ pidfile='./gunicore.pid'
 loglevel='debug'
 
 # 设置访问日志
-accesslog='log/gunicorn.log'
+accesslog='logs/log_files/gunicorn.log'
 
 # 设置问题记录日志
-errorlog='log/gunicorn.err.log'
+errorlog='logs/log_files/gunicorn.err.log'
