@@ -29,9 +29,9 @@ a {
   color: rgb(102, 102, 255);
 }
 
-a:hover {
+/* a:hover {
   color: red;
-}
+} */
 
 a {
   text-decoration: none;

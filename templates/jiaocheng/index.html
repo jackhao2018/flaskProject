@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
     <link rel="stylesheet" href="../../static/css/global.css" type="text/css">
+    <!-- <link rel="stylesheet" href="../../static/css/nav.css" type="text/css"> -->
     <link rel="stylesheet" href="../../static/css/index/index.css" type="text/css">
     <link rel="stylesheet" href="../../static/css/jiaocheng/index.css" type="text/css">
     <title>生活の真相资源网</title>
@@ -15,14 +16,27 @@
 <body>
     <div id="root">
         <div name="banner" id="banner" class="banner">
-            <a href="{{ url_for('home.index') }}"><img src="../static/img/common/透明logo.png" alt="网站logo"
-                    class="logo"></a>
-            <ul name="daohang" id="daohang" class="daohang">
-                <li><a href="{{ url_for('home.index') }}">首页</a></li>
-                <li><a href="{{ url_for('jiaocheng.index') }}">软件</a></li>
-                <!--<li><a href="{{ url_for('yingyin.index') }}">影音</a></li> -->
-                <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
-            </ul>
+            <div class="nav_menu w">
+                <div class="menu_item">
+                    <div class="home">首页</div>
+                    <a class="web_home" href="{{ url_for('home.index') }}"><div >首页/直播</div></a>
+                    
+                </div>
+                <div class="menu_item">
+                    <div class="home">软件</div>
+                    <a  class="web_home" href="{{ url_for('jiaocheng.index') }}"><div >软件/教程</div></a>
+                </div>
+                <div class="menu_item">
+                    <div class="home">影音</div>
+                    <a class="web_home" href="{{ url_for('yingyin.index') }}"  class="web_home"><div>音视频</div></a>
+                </div>
+                <div class="menu_item">
+                    <div class="home">关于</div>
+                    <a class="web_home" href="{{ url_for('guanyu.about') }}"><div>意见反馈</div></a>
+                </div>
+            </div>
+            <!-- <a href="{{ url_for('home.index') }}"><img src="../static/img/common/透明logo.png" alt="网站logo"
+                    class="logo"></a> -->
         </div>
         <main id="main" class="main">
             <div name="line-box" id="line-box" class="line-box">
@@ -82,6 +96,8 @@
         <div id="footer" class="footer">Copyright ©爱分享. | 本站内所有涉及的下载软件均收集于互联网，如果侵犯了你的权益，请联系我及时删除。 </div>
     </div>
     <script src="../../static/js/page.js"></script>
+    <script src="../../static/js/jquery-3.6.0.js"></script>
+    <script src="../../static/js/navscript.js" type="text/javascript"></script>
     <script>
         let paging = new Paging({ total: 1 });
     </script>

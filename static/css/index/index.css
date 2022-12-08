@@ -1,5 +1,5 @@
 body {
-    background-color: #ffffff;
+    background-color: #f4f5f7;
 }
 
 input::placeholder {
@@ -11,8 +11,8 @@ input::placeholder {
     position: relative;
     width: 100%;
     height: 240px;
-    background-color: #00BCD4;
-    background-image: url('../../img/common/banner.jpg');
+    background-color: #6ba8e563;
+    /* background-image: url('../../img/common/banner.jpg'); */
     background-size: cover;
 }
 
@@ -22,8 +22,72 @@ input::placeholder {
     top: 20%;
 }
 
+/* 导航样式 */
+.w {
+	position: absolute;
+    bottom: 0px;
+    width: 800px;
+    /* margin: 140px auto; */
+}
+.nav_menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    /* background-color: #4caf50; */
+    /* border: 1px solid #ccc; */
+    padding-top: 10px;
+	padding-left: 20px;
+	padding-bottom: 5px;
+    color: #fff;
+    
+}
+.menu_item {
+    position: relative;
+    flex: 1;
+    height: 100%;
+	font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    /* margin: 0 5px; */
+}
+.menu_item:hover {
+    cursor: pointer;
+    transform: rotateX(90deg);
+}
+
+.menu_item a{
+	text-decoration:none;
+	color:#333;
+	font-size: 24px;
+}
+
+.home, .web_home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	/* padding: 10px; */
+	border-radius: 15px;
+    perspective: 300px;
+}
+.home {
+    background-color: #80c2f2;
+    z-index: 11;
+    transform: translateZ(25px);
+}
+
+.web_home {
+    background-color: #4ed8fa;
+    transform: translateY(25px) rotateX(-90deg);
+}
+
+
 /* 设置导航的框高与浮动样式 */
-.daohang {
+/* .daohang {
     display: flex;
     flex-direction: row;
     width: 400px;
@@ -31,27 +95,27 @@ input::placeholder {
     margin-left: 8%;
     bottom: 0px;
     position: absolute;
-}
+} */
 
-.banner li {
+/* .banner li {
     display: block;
     width: 100%;
     height: 50px;
-}
+} */
 
 /* 盒子中的a标签水平垂直居中 */
-.banner a {
+/* .banner a {
     display: block;
     width: 100%;
     color: #00a1d6;
     line-height: 50px;
     font-size: 28px;
     text-align: center;
-}
+} */
 
-a:hover {
+/* a:hover {
     color: #fc8bab;
-}
+} */
 
 .main {
     /* height: 100%; */

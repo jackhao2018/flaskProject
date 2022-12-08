@@ -1,101 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .mask{
-	display:none;
-	position:absolute;
-	z-index:10;
-	left:0;
-	top:0;
-	width:100%;
-	height:100%;
-	background:#666;
-	opacity:0.5;
-	-moz-opacity:0.5;
-	filter:alpha(opacity=50)
-}
-/*弹出框样式*/
-.box{
-	z-index:999;
-	display:none;
-	position:absolute;
-	width:340px;
-	height:180px;
-	line-height:180px;
-	border:solid 1px #999;
-	border-radius:5px;
-	background-color:#fff;
-	box-shadow:0 0 0 1px #00aff0;
-	text-align:center;
-}
-/*按钮样式*/
-input{
-	background:#eee;
-	display:block;
-	width:100px;
-	height:30px;
-	line-height:30px;
-	border-radius:10px;
-	outline:none;
-	position:absolute;
-	top:50%;
-	left:50%;
-	margin-top:-15px;
-	margin-left:-50px;
-	cursor:pointer;
-	font-size:16px;
-}
-    </style>
-    <style>
-        ul,li{margin: 0; padding: 0;width:100%;}
-        </style>
+<meta charset="UTF-8">
+<title>jQuery粘性滑块导航（响应式）</title>
+<link rel="stylesheet" href="../static/css/nav.css">
 </head>
 <body>
-    <input type="text" name="word" size="20" id="word" onkeyup="checkword()" style="border:1px solid #666666;width:200px;height:25px;">
-    <div style="position: absolute; width: 200px; height: 100px; z-index: 1; left: 10px; top: 40px;border:1px solid #666666;display:none;" id="showmenu"></div>
-    <script language="javascript" type="text/javascript">
-        function checkword()
-        {
-           var wordvalue=document.getElementById("word").value.toLowerCase();
-           var alltxt="all|big|cut|car\|daph8|eeg|egg|eat|fuck|fuck you|fix|good|hand|hidden|ill|jack|jad|kevin|long|man|number|oio|part|pp|quit|QQ|rest|reg|set|submit|time|tag|uuzo|view|windows|want|xy|xun|young|yuyu|z|David|David|哈哈|";//这里就是你所想要匹配的字符，可惜只能用于小型的论坛
-           var alltxtpp=alltxt.toLowerCase();
-           var alltxt_xiang=alltxt.split("|");
-           var alltxt_xiang1=alltxtpp.split("|");
-           var inhtml="<ul>"
-           var isyou=0;
-           for (i=0;i<alltxt_xiang1.length;i++)
-           {
-               if (alltxt_xiang1[i].substr(0,wordvalue.length)==wordvalue)
-               {
-                   inhtml=inhtml+"<li onclick=\"document.getElementById('word').value=this.innerHTML;document.getElementById('showmenu').style.display='none';\" onmouseover=\"this.style.backgroundColor='#666666'\" onmouseout=\"this.style.backgroundColor=''\">"+alltxt_xiang[i]+"</li>";
-                   isyou=1;
-               }
-           }
-           inhtml=inhtml+"</ul>";
-           if (isyou==1)
-           {
-               document.getElementById("showmenu").innerHTML=inhtml;
-               document.getElementById("showmenu").style.display="";
-           }
-           else
-           {
-               document.getElementById("showmenu").innerHTML="";
-               document.getElementById("showmenu").style.display="none";
-           }
-           if (wordvalue=="")
-           {
-               document.getElementById("showmenu").innerHTML="";
-               document.getElementById("showmenu").style.display="none";
-           }
-        }
-        </script>
-        
+<section class="et-hero-tabs">
+  <h1>粘性滑块导航</h1>
+  <h3>滑动内容与粘性选项卡导航</h3>
+  <div class="et-hero-tabs-container"> <a class="et-hero-tab" href="#tab-es6">ES6</a> <a class="et-hero-tab" href="#tab-flexbox">Flexbox</a> <a class="et-hero-tab" href="#tab-react">React</a> <a class="et-hero-tab" href="#tab-angular">Angular</a> <a class="et-hero-tab" href="#tab-other">Other</a> <span class="et-hero-tab-slider"></span> </div>
+</section>
+
+<!-- Main -->
+<main class="et-main">
+  <section class="et-slide" id="tab-es6">
+    <h1>ES6</h1>
+    <h3>something about es6</h3>
+  </section>
+  <section class="et-slide" id="tab-flexbox">
+    <h1>Flexbox</h1>
+    <h3>something about flexbox</h3>
+  </section>
+  <section class="et-slide" id="tab-react">
+    <h1>React</h1>
+    <h3>something about react</h3>
+  </section>
+  <section class="et-slide" id="tab-angular">
+    <h1>Angular</h1>
+    <h3>something about angular</h3>
+  </section>
+  <section class="et-slide" id="tab-other">
+    <h1>Other</h1>
+    <h3>something about other</h3>
+  </section>
+</main>
+	
+<script src="../static/js/jquery-3.6.0.js"></script> 
+</script><script  src="../static/js/navscript.js"></script>
+	
 </body>
 </html>
-
-    
