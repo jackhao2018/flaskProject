@@ -16,8 +16,8 @@
         <div id="main" class="main">
             <ul name="daohang" id="daohang">
                 <li><a href="{{ url_for('home.index') }}">首页</a></li>
-                <!-- <li><a href="{{ url_for('jiaocheng.index') }}">教程</a></li>
-                <li><a href="{{ url_for('yingyin.index') }}">影音</a></li> -->
+                <li><a href="{{ url_for('jiaocheng.index') }}">软件</a></li>
+                <!--<li><a href="{{ url_for('yingyin.index') }}">影音</a></li> -->
                 <li><a href="{{ url_for('guanyu.about') }}">关于</a></li>
             </ul>
             <img id="img" class="img" src="../../static/img/2233娘.jpg" alt="2233娘">
@@ -49,10 +49,7 @@
     </div>
 
     <script type="text/javascript" src="../static/js/jquery-3.6.0.js"></script>
-    <script type="text/javascript">
-        
-    </script>
-
+    <script type="text/javascript" src="../static/js/img.js"></script>
     <script type='text/javascript'>
 
         var jsondata = '123';
@@ -93,7 +90,6 @@
             }
         }
     </script>
-
     <script>
         // TODO: 新增一个弹窗在中间的对话框，对话框点击确定后再发送请求（有必要么？)
         function subfun() {
