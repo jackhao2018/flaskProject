@@ -24,12 +24,16 @@ input::placeholder {
 
 /* 导航样式 */
 
-.nav_menu, menuitem, .home, .web_home, .menu_item a div{
+.nav_menu, menuitem, .home, .web_home{
     box-sizing:content-box;
     margin: 0px;
     padding: 0px;
     font-size: 24px;
 }
+.menu_item a div{
+    font-size: 16px;
+}
+
 .w {
 	position: absolute;
     bottom: 0px;

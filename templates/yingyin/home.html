@@ -14,29 +14,7 @@
 
 <body>
     <div id="root">
-        <div name="banner" id="banner" class="banner">
-            <div class="nav_menu w">
-                <div class="menu_item">
-                    <div class="home">首页</div>
-                    <a class="web_home" href="{{ url_for('home.index') }}"><div >首页/直播</div></a>
-                    
-                </div>
-                <div class="menu_item">
-                    <div class="home">软件</div>
-                    <a  class="web_home" href="{{ url_for('jiaocheng.index') }}"><div >软件/教程</div></a>
-                </div>
-                <div class="menu_item">
-                    <div class="home">影音</div>
-                    <a class="web_home" href="{{ url_for('yingyin.index') }}"  class="web_home"><div>音视频</div></a>
-                </div>
-                <div class="menu_item">
-                    <div class="home">关于</div>
-                    <a class="web_home" href="{{ url_for('guanyu.about') }}"><div>意见反馈</div></a>
-                </div>
-            </div>
-            <a href="{{ url_for('home.index') }}"><img src="../static/img/common/透明logo.png" alt="网站logo"
-                    class="logo"></a>
-        </div>
+        {% include 'banner.html' %}
         <main id="main" class="main">
             <div class="img-title"><img src="../../static/img/common/picture.png" alt="图片icon"
                     style=" width: 32px; height:32px; margin-left: 5px;"><span>&nbsp; 图片</span>

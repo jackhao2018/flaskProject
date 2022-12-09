@@ -15,29 +15,9 @@
 
 <body>
     <div id="root">
-        <div name="banner" id="banner" class="banner">
-            <div class="nav_menu w">
-                <div class="menu_item">
-                    <div class="home">首页</div>
-                    <a class="web_home" href="{{ url_for('home.index') }}"><div >首页/直播</div></a>
-                    
-                </div>
-                <div class="menu_item">
-                    <div class="home">软件</div>
-                    <a  class="web_home" href="{{ url_for('jiaocheng.index') }}"><div >软件/教程</div></a>
-                </div>
-                <div class="menu_item">
-                    <div class="home">影音</div>
-                    <a class="web_home" href="{{ url_for('yingyin.index') }}"  class="web_home"><div>音视频</div></a>
-                </div>
-                <div class="menu_item">
-                    <div class="home">关于</div>
-                    <a class="web_home" href="{{ url_for('guanyu.about') }}"><div>意见反馈</div></a>
-                </div>
-            </div>
-            </div>
-            <a href="{{ url_for('home.index') }}"><img src="../static/img/common/透明logo.png" alt="网站logo"
-                    class="logo"></a>
+        
+        {% include 'banner.html' %}
+
         <main id="main" class="main">
             <div id="focusbox" class="focusbox">{{ result.downloadTP}}</div>
 
@@ -117,40 +97,50 @@
     </script>
     <script>
         function copyText() {
-        var text = document.getElementById("pwd").innerText;
-        var pwd = text.substring(text.indexOf('：')+1)
-        console.log(pwd)
-        if (navigator.clipboard) {
-            // clipboard api 复制
-            navigator.clipboard.writeText(pwd);
-            alert("复制成功")
-        } 
-    }
+            var text = document.getElementById("pwd").innerText;
+            var pwd = text.substring(text.indexOf('：') + 1)
+            console.log(pwd)
+            if (navigator.clipboard) {
+                // clipboard api 复制
+                navigator.clipboard.writeText(pwd);
+                alert("复制成功")
+            }
+        }
     </script>
     <script>
         function copyText1() {
-        var text = document.getElementById("pwd1").innerText;
-        var pwd = text.substring(text.indexOf('：')+1)
-        console.log(pwd)
-        if (navigator.clipboard) {
-            // clipboard api 复制
-            navigator.clipboard.writeText(pwd);
-            alert("复制成功")
-        } 
-    }
+            var text = document.getElementById("pwd1").innerText;
+            var pwd = text.substring(text.indexOf('：') + 1)
+            console.log(pwd)
+            if (navigator.clipboard) {
+                // clipboard api 复制
+                navigator.clipboard.writeText(pwd);
+                alert("复制成功")
+            }
+        }
     </script>
     <script>
         function copyText2() {
-        var text = document.getElementById("pwd2").innerText;
-        var pwd = text.substring(text.indexOf('：')+1)
-        console.log(pwd)
-        if (navigator.clipboard) {
-            // clipboard api 复制
-            navigator.clipboard.writeText(pwd);
-            alert("复制成功")
-        } 
-    }
+            var text = document.getElementById("pwd2").innerText;
+            var pwd = text.substring(text.indexOf('：') + 1)
+            console.log(pwd)
+            if (navigator.clipboard) {
+                // clipboard api 复制
+                navigator.clipboard.writeText(pwd);
+                alert("复制成功")
+            }
+        }
     </script>
+    <!-- <script>
+        $(function() {
+            /*公共部分
+             * 导航栏
+             * footer CopyRight
+             */
+            $(".headerpage").load("banner.html");
+            $(".footerpage").load("footer.html");
+        });
+    </script> -->
 </body>
 
 </html>
