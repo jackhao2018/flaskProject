@@ -23,8 +23,8 @@
         <div name="banner" id="banner" class="banner">
             <div class="nav_menu w">
                 <div class="menu_item">
-                    <div class="home"  style="box-sizing: content-box; font-size: 24px;">首页</div>
-                    <a class="web_home"  href="{{ url_for('home.index') }}">
+                    <div class="home" style="box-sizing: content-box; font-size: 24px;">首页</div>
+                    <a class="web_home" href="{{ url_for('home.index') }}">
                         <div>首页/直播</div>
                     </a>
 
@@ -48,77 +48,74 @@
                     </a>
                 </div>
             </div>
-            <!-- <a href="{{ url_for('home.index') }}"><img src="../static/img/common/透明logo.png" alt="网站logo"
-                    class="logo"></a> -->
+            <a href="{{ url_for('home.index') }}"><img src="../static/img/common/透明logo.png" alt="网站logo"
+                    class="logo"></a>
         </div>
         <main class="main">
             <div id="contain" class="contain">
                 <div class="prism-player" id="J_prismPlayer" style=" border-radius: 5px;"></div>
-                <!-- <div ></div> -->
             </div>
-            <!-- 调研词云图生成和弧形文字书写 -->
-            <div id="footer" class="footer">
-                <span style="display: block;">Designed and developed by bilibili UP <a
-                        href="https://space.bilibili.com/484311775?spm_id_from=333.999.0.0">生活の真相</a></span>
-                <a href="https://beian.miit.gov.cn"><span>粤ICP备2021019114号</span></a>
+            <div class="product-section product-features">
+                <div class="product-title">花滑赛事·2022-2023赛季</div>
+                <div class="product-wrapper">
+                    <div class="product-body swiper-container">
+                        <ul class="features-slide swiper-wrapper">
+                            <li class="features-item swiper-slide">
+                                <h3>2017-01-30</h3>
+                                <i></i> <a class="features-info">
+                                    <p class="features-info-i"></p>
+                                    <p class="features-info-s"> 支持通过VPC与弹性云服务器进行混合组网 </p>
+                                </a>
+                            </li>
+                            <li class="features-item swiper-slide">
+                                <h3>2017-03-30</h3>
+                                <i></i> <a class="features-info">
+                                    <p class="features-info-i"></p>
+                                    <p class="features-info-s"> 支持云硬盘在线挂载、卸载，弹性扩容 </p>
+                                </a>
+                            </li>
+                            <li class="features-item swiper-slide">
+                                <h3>2017-07-30</h3>
+                                <i></i> <a class="features-info">
+                                    <p class="features-info-i"></p>
+                                    <p class="features-info-s"> 支持裸金属服务器自动化发放 </p>
+                                </a>
+                            </li>
+                            <li class="features-item swiper-slide">
+                                <h3>2017-11-30</h3>
+                                <i></i> <a class="features-info">
+                                    <p class="features-info-i"></p>
+                                    <p class="features-info-s"> 支持私有镜像，支撑企业业务部署 </p>
+                                </a>
+                            </li>
+                            <li class="features-item swiper-slide">
+                                <h3>2018-08-30</h3>
+                                <i></i> <a class="features-info">
+                                    <p class="features-info-i"></p>
+                                    <p class="features-info-s">支持VMware和XenServer等第三方虚拟化</p>
+                                </a>
+                            </li>
+                            <li class="features-item swiper-slide dark">
+                                <h3>即将到来</h3>
+                                <i></i> <a class="features-info">
+                                    <p class="features-info-i"></p>
+                                    <p class="features-info-s"> 本地硬盘自定义RAID等功能 </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next swiper-button-disabled"></div>
+                </div>
             </div>
         </main>
-        <div class="product-section product-features">
-            <div class="product-title">花滑賽事</div>
-            <div class="product-wrapper">
-                <div class="product-body swiper-container">
-                    <ul class="features-slide swiper-wrapper">
-                        <li class="features-item swiper-slide">
-                            <h3>2017-01-30</h3>
-                            <i></i> <a class="features-info">
-                                <p class="features-info-i"></p>
-                                <p class="features-info-s"> 支持通过VPC与弹性云服务器进行混合组网 </p>
-                            </a>
-                        </li>
-                        <li class="features-item swiper-slide">
-                            <h3>2017-03-30</h3>
-                            <i></i> <a class="features-info">
-                                <p class="features-info-i"></p>
-                                <p class="features-info-s"> 支持云硬盘在线挂载、卸载，弹性扩容 </p>
-                            </a>
-                        </li>
-                        <li class="features-item swiper-slide">
-                            <h3>2017-07-30</h3>
-                            <i></i> <a class="features-info">
-                                <p class="features-info-i"></p>
-                                <p class="features-info-s"> 支持裸金属服务器自动化发放 </p>
-                            </a>
-                        </li>
-                        <li class="features-item swiper-slide">
-                            <h3>2017-11-30</h3>
-                            <i></i> <a class="features-info">
-                                <p class="features-info-i"></p>
-                                <p class="features-info-s"> 支持私有镜像，支撑企业业务部署 </p>
-                            </a>
-                        </li>
-                        <li class="features-item swiper-slide">
-                            <h3>2018-08-30</h3>
-                            <i></i> <a class="features-info">
-                                <p class="features-info-i"></p>
-                                <p class="features-info-s">支持VMware和XenServer等第三方虚拟化</p>
-                            </a>
-                        </li>
-                        <li class="features-item swiper-slide dark">
-                            <h3>即将到来</h3>
-                            <i></i> <a class="features-info">
-                                <p class="features-info-i"></p>
-                                <p class="features-info-s"> 本地硬盘自定义RAID等功能 </p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next swiper-button-disabled"></div>
-            </div>
+        <div id="footer" class="footer">
+            <span style="display: block;">Designed and developed by bilibili UP <a
+                    href="https://space.bilibili.com/484311775?spm_id_from=333.999.0.0">生活の真相</a></span>
+            <a href="https://beian.miit.gov.cn"><span>粤ICP备2021019114号</span></a>
         </div>
     </div>
-    <script type="text/javascript" charset="utf-8"
-        src="https://g.alicdn.com/de/prismplayer/2.13.2/aliplayer-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.13.2/aliplayer-min.js"></script>
     <script>
         var player = new Aliplayer({
             id: 'J_prismPlayer',

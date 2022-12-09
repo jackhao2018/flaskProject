@@ -23,9 +23,10 @@ ul {
 	position: relative;
 	background: url(../../img/timeline/productBase-features-bag.jpg) no-repeat;
 	background-size: cover;
-	margin-top: 50px;
-    /* width: 80%; */
-    /* margin-left: 10%; */
+	margin-top: 10px;
+	border-radius: 10px;
+    width: 80%;
+    margin-left: 10%;
     height: 300px;
 }
 .product-title {

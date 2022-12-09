@@ -23,6 +23,13 @@ input::placeholder {
 }
 
 /* 导航样式 */
+
+.nav_menu, menuitem, .home, .web_home, .menu_item a div{
+    box-sizing:content-box;
+    margin: 0px;
+    padding: 0px;
+    font-size: 24px;
+}
 .w {
 	position: absolute;
     bottom: 0px;
@@ -84,38 +91,6 @@ input::placeholder {
     background-color: #4ed8fa;
     transform: translateY(25px) rotateX(-90deg);
 }
-
-
-/* 设置导航的框高与浮动样式 */
-/* .daohang {
-    display: flex;
-    flex-direction: row;
-    width: 400px;
-    height: 50px;
-    margin-left: 8%;
-    bottom: 0px;
-    position: absolute;
-} */
-
-/* .banner li {
-    display: block;
-    width: 100%;
-    height: 50px;
-} */
-
-/* 盒子中的a标签水平垂直居中 */
-/* .banner a {
-    display: block;
-    width: 100%;
-    color: #00a1d6;
-    line-height: 50px;
-    font-size: 28px;
-    text-align: center;
-} */
-
-/* a:hover {
-    color: #fc8bab;
-} */
 
 .main {
     /* height: 100%; */
@@ -179,7 +154,7 @@ input::placeholder {
     background-color: #40c5f1;
 }
 
-/* icon顯示黑色*/
+/* icon显示黑色*/
 .search-icon-box img {
     filter: brightness(0);
 }
@@ -212,7 +187,7 @@ input::placeholder {
 }
 
 .footer{
-    position: fixed;
+    /* position: fixed; */
     bottom:0;
     width: 100%;
     height: 80px;
