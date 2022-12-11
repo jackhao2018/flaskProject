@@ -11,6 +11,9 @@ from models.autoUpdataTable import auto_alter_tables
 from models.fansmodels import FansDetailsModel, FeedbackModel
 from models.mediamodels import MediaModel
 from models.softwaremodels import SoftwareModel
+from models.schedulemodels import SchedulesModel
+from models.figureSkatingmodels import FigureSkatingModel
+from models.updatemodels import UpdateModel
 
 app = Flask(__name__)
 

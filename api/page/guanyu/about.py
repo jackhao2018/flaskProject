@@ -1,11 +1,14 @@
 import datetime
-from flask import Blueprint, request, jsonify, render_template, redirect, url_for
+import os
+from flask import Blueprint, request, jsonify, render_template, redirect, url_for, json
 from api.func import get_fans_info, viplevel
 from logs.base_log import log
 from models.fansmodels import FansDetailsModel, FeedbackModel
 import time
 from exts import db
 from forms.about import FeedbackForm
+from models.softwaremodels import SoftwareModel
+from models.updatemodels import UpdateModel, UpdateChildrenModel
 
 bp = Blueprint("guanyu", __name__, url_prefix="/about")
 
@@ -80,4 +83,52 @@ def feedbacks():
         return jsonify({'code': 200, 'msg': '提交成功！'})
     else:
         return jsonify({'code': 500, 'msg': '用户名/反馈意见不能为空！'})
+
+@bp.route("/upload")
+def upload():
+
+    if request.method == 'GET':
+        return render_template('/fankui/upload.html')
+
+
+@bp.route("/software_upload")
+def soft_upload():
+
+    if request.method == 'GET':
+        return render_template('/fankui/softupload.html')
+
+    # if request.method == 'POST':
+    #     data = request.form
+    #     software_info = SoftwareModel(softName=data['softName'], softDesc=data['details'],softSize=data['softSize'],
+    #                              softLanguage=data['softwareLanguage'], issue=data['issue'], copyright=data['copyright'], baiduLink=data['baiduLink'],
+    #                              baiduLinkPwd=data['baiduLinkPwd'], aliyunLink=data['aliyunLink'],
+    #                              aliyunLinkPwd=data['aliyunLinkPwd'], kuakeLink=data['kuakeLink'],
+    #                              kuakeLinkPwd=data['kuakeLinkPwd'], install=data['install'], feature=data['features'],
+    #                              mtime=datetime.datetime.now())
+    #
+    #     db.session.add(software_info)
+    #
+    #     db.session.commit()
+    #     return jsonify({"code": "200", "softwareInfo": data})
+
+
+@bp.route("/json")
+def upload_conf():
+    if request.method == 'GET':
+        menuinfo = UpdateModel.query.all()
+        menulist = []
+        childrenmunulist = []
+
+        for menu in menuinfo:
+            menulist.append(menu.to_dict())
+        print(menulist)
+
+        childrenmunu = UpdateChildrenModel.query.all()
+        for children in childrenmunu:
+            childrenmunulist.append(children.to_dict())
+
+        print(childrenmunulist)
+
+        return jsonify({'menuInfo': menulist, 'childrenmunulist': childrenmunulist})
+
 

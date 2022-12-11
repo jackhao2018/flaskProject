@@ -7,71 +7,52 @@
         content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer-min.css" />
     <link rel="icon" type="image/x-icon" href="../static/img/weblogo.ico" />
-    <!-- <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer.css" /> -->
     <link rel="stylesheet" href="../static/css/index/index.css">
     <link rel="stylesheet" href="../static/css/global.css">
     <link rel="stylesheet" type="text/css" href="../static/css/timeline/style.css" />
-    <!--swiper框架样式-->
     <link rel="stylesheet" type="text/css" href="../static/css/timeline/swiper-3.4.2.min.css" />
-
-
     <title>生活の真相资源网</title>
 </head>
-
 <body>
     <div id="root">
         {% include 'banner.html' %}
         <main class="main">
             <div id="contain" class="contain">
-                <div class="prism-player" id="J_prismPlayer" style=" border-radius: 5px;"></div>
+                <div class="prism-player" id="J_prismPlayer"></div>
+                <div class="tabbox">
+                    <div class="tab">
+                        <a href="javascript:;" class="on">赛程</a>
+                        <a href="javascript:;">赛事规则</a>
+                    </div>
+                    <div id="schedules" hidden="hidden">{{ result.schedule }}</div>
+                    <div id="rules" hidden="hidden">{{ result.rules }}</div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <div id="schedule"></div>
+                            </li>
+                            <li>
+                                <div id="rule"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="product-section product-features">
                 <div class="product-title">花滑赛事·2022-2023赛季</div>
                 <div class="product-wrapper">
+                    <!-- <div id="schedule_list" hidden>{{ result.schedule_list }}</div> -->
                     <div class="product-body swiper-container">
                         <ul class="features-slide swiper-wrapper">
-                            <li class="features-item swiper-slide">
-                                <h3>2017-01-30</h3>
+                            {% for schedule in result.schedule_list %}
+                            <li id="single-schedule" class="features-item swiper-slide">
+                                <h3>{{ schedule.mtime }}</h3>
                                 <i></i> <a class="features-info">
                                     <p class="features-info-i"></p>
-                                    <p class="features-info-s"> 支持通过VPC与弹性云服务器进行混合组网 </p>
-                                </a>
+                                    <p id=title class="features-info-s"> {{ schedule.title }} </p>
+                                </a>                  
                             </li>
-                            <li class="features-item swiper-slide">
-                                <h3>2017-03-30</h3>
-                                <i></i> <a class="features-info">
-                                    <p class="features-info-i"></p>
-                                    <p class="features-info-s"> 支持云硬盘在线挂载、卸载，弹性扩容 </p>
-                                </a>
-                            </li>
-                            <li class="features-item swiper-slide">
-                                <h3>2017-07-30</h3>
-                                <i></i> <a class="features-info">
-                                    <p class="features-info-i"></p>
-                                    <p class="features-info-s"> 支持裸金属服务器自动化发放 </p>
-                                </a>
-                            </li>
-                            <li class="features-item swiper-slide">
-                                <h3>2017-11-30</h3>
-                                <i></i> <a class="features-info">
-                                    <p class="features-info-i"></p>
-                                    <p class="features-info-s"> 支持私有镜像，支撑企业业务部署 </p>
-                                </a>
-                            </li>
-                            <li class="features-item swiper-slide">
-                                <h3>2018-08-30</h3>
-                                <i></i> <a class="features-info">
-                                    <p class="features-info-i"></p>
-                                    <p class="features-info-s">支持VMware和XenServer等第三方虚拟化</p>
-                                </a>
-                            </li>
-                            <li class="features-item swiper-slide dark">
-                                <h3>即将到来</h3>
-                                <i></i> <a class="features-info">
-                                    <p class="features-info-i"></p>
-                                    <p class="features-info-s"> 本地硬盘自定义RAID等功能 </p>
-                                </a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="swiper-button-prev"></div>
@@ -85,11 +66,12 @@
             <a href="https://beian.miit.gov.cn"><span>粤ICP备2021019114号</span></a>
         </div>
     </div>
-    <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.13.2/aliplayer-min.js"></script>
+    <script type="text/javascript" charset="utf-8"
+        src="https://g.alicdn.com/de/prismplayer/2.13.2/aliplayer-min.js"></script>
     <script>
         var player = new Aliplayer({
             id: 'J_prismPlayer',
-            source: 'artc://qianye-bzhan.top/live/live?auth_key=1670058684-0-0-8415ed937849b9e829f7be3922864bfc',//播放地址，使用超低延时直播（RTS）地址，协议是artc://。
+            source: 'artc://qianye-bzhan.top/live/live?auth_key=1670590313-0-0-73c470aec277961ee6d84b28cc7ae05a',//播放地址，使用超低延时直播（RTS）地址，协议是artc://。
             // rtsFallbackSource: '<your play URL>',//（可选）RTS的降级地址（如HLS地址或FLV地址）。
             isLive: true,//是否为直播播放。
             autoplay: false,
@@ -122,6 +104,51 @@
                 nextButton: ".swiper-button-next"
             })
         })
+    </script>
+    <script>
+        $(function () {
+            $('.tabbox .content ul').width(500 * $('.tabbox .content li').length + 'px');
+            $(".tabbox .tab a").mouseover(function () {
+                $(this).addClass('on').siblings().removeClass('on');
+                var index = $(this).index();
+                number = index;
+                var distance = -500 * index;
+                $('.tabbox .content ul').stop().animate({
+                    left: distance
+                });
+            });
+
+            var auto = 1;  //等于1则自动切换，其他任意数字则不自动切换
+            if (auto == 1) {
+                var number = 0;
+                var maxNumber = $('.tabbox .tab a').length;
+                function autotab() {
+                    number++;
+                    number == maxNumber ? number = 0 : number;
+                    $('.tabbox .tab a:eq(' + number + ')').addClass('on').siblings().removeClass('on');
+                    var distance = -500 * number;
+                    $('.tabbox .content ul').stop().animate({
+                        left: distance
+                    });
+                }
+                var tabChange = setInterval(autotab, 3000);
+                //鼠标悬停暂停切换
+                $('.tabbox').mouseover(function () {
+                    clearInterval(tabChange);
+                });
+                $('.tabbox').mouseout(function () {
+                    tabChange = setInterval(autotab, 3000);
+                });
+            }
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#schedule").html($("#schedules").text());
+        });
+        $(function () {
+            $("#rule").html($("#rules").text());
+        });
     </script>
 </body>
 

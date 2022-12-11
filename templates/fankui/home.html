@@ -113,6 +113,20 @@
             }
         }
     </script>
+
+    <script type="text/javascript">
+        var time=0;  
+        var btn = document.getElementById("cat-img");
+        btn.addEventListener('click', function () {
+            time++;
+            if(time>=10){
+                // alert('点击超过10次，将跳转到数据上传页面。')
+                window.location.href= window.location.origin + '/about/upload'; 
+            }
+        }, false)
+
+    </script>
+
     <script>
         // TODO: 新增一个弹窗在中间的对话框，对话框点击确定后再发送请求（有必要么？)
         function subfun() {

@@ -43,24 +43,5 @@ def aedownload():
 def c4ddownload():
 
     return render_template('/jiaocheng/software-download.html', downloadTp={"type": "C4D下载"})
-@bp.route("/upload", methods=['GET', 'POST'])
-def software_upload():
-
-    if request.method == 'GET':
-        return render_template('/jiaocheng/software-upload.html')
-
-    if request.method == 'POST':
-        data = request.form
-        software_info = SoftwareModel(softName=data['softName'], softDesc=data['details'],softSize=data['softSize'],
-                                 softLanguage=data['softwareLanguage'], issue=data['issue'], copyright=data['copyright'], baiduLink=data['baiduLink'],
-                                 baiduLinkPwd=data['baiduLinkPwd'], aliyunLink=data['aliyunLink'],
-                                 aliyunLinkPwd=data['aliyunLinkPwd'], kuakeLink=data['kuakeLink'],
-                                 kuakeLinkPwd=data['kuakeLinkPwd'], install=data['install'], feature=data['features'],
-                                 mtime=datetime.datetime.now())
-
-        db.session.add(software_info)
-
-        db.session.commit()
-        return jsonify({"code": "200", "softwareInfo": data})
 
 
