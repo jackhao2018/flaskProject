@@ -80,24 +80,33 @@ function showSideMenu(res) {
 	function menuclick(){
 		console.log('被点击了')
 	}
-	
-	// const softUpload = document.getElementById("softUpload");
-	// const pluginUpload = document.getElementById("pluginUpload");
-	// const competition = document.getElementById("competition");
-	
-	// softUpload.addEventListener('click', menuclick, false);
-	// pluginUpload.addEventListener('click', menuclick, false);
-	// competition.addEventListener('click', menuclick, false);
 
 	$(document).click(function (e) {
         var v_id = e.target.id;
         if (v_id=='softUpload'){
 			console.log('跳转到' + v_id + '页面')
+			$('#softwareupload').css("display", "block")
+			$('#pluginformUpload').css("display", "none")
+			$('#scheduleupload').css("display", "none")
+			$('#schedule_rule').css("display", "none")
+
 		}else if(v_id=='pluginUpload'){
 			console.log('跳转到' + v_id + '页面')
-		}
-		else if(v_id=='competition'){
+			$('#pluginformUpload').css("display", "block")
+			$('#softwareupload').css("display", "none")
+			$('#scheduleupload').css("display", "none")
+			$('#schedule_rule').css("display", "none")
+		}else if(v_id=='competition'){
 			console.log('跳转到' + v_id + '页面')
+			$('#scheduleupload').css("display", "block")
+			$('#softwareupload').css("display", "none")
+			$('#pluginformUpload').css("display", "none")
+			$('#schedule_rule').css("display", "none")
+		}else if(v_id=='rules'){
+			$('#schedule_rule').css("display", "block")
+			$('#scheduleupload').css("display", "none")
+			$('#softwareupload').css("display", "none")
+			$('#pluginformUpload').css("display", "none")
 		}
     });
 }

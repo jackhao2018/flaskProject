@@ -9,6 +9,7 @@ from exts import db
 from forms.about import FeedbackForm
 from models.softwaremodels import SoftwareModel
 from models.updatemodels import UpdateModel, UpdateChildrenModel
+from models.schedulemodels import SchedulesModel
 
 bp = Blueprint("guanyu", __name__, url_prefix="/about")
 
@@ -91,25 +92,37 @@ def upload():
         return render_template('/fankui/upload.html')
 
 
-@bp.route("/software_upload")
+@bp.route("/software_upload", methods=['GET', 'POST'])
 def soft_upload():
 
     if request.method == 'GET':
         return render_template('/fankui/softupload.html')
 
-    # if request.method == 'POST':
-    #     data = request.form
-    #     software_info = SoftwareModel(softName=data['softName'], softDesc=data['details'],softSize=data['softSize'],
-    #                              softLanguage=data['softwareLanguage'], issue=data['issue'], copyright=data['copyright'], baiduLink=data['baiduLink'],
-    #                              baiduLinkPwd=data['baiduLinkPwd'], aliyunLink=data['aliyunLink'],
-    #                              aliyunLinkPwd=data['aliyunLinkPwd'], kuakeLink=data['kuakeLink'],
-    #                              kuakeLinkPwd=data['kuakeLinkPwd'], install=data['install'], feature=data['features'],
-    #                              mtime=datetime.datetime.now())
-    #
-    #     db.session.add(software_info)
-    #
-    #     db.session.commit()
-    #     return jsonify({"code": "200", "softwareInfo": data})
+    if request.method == 'POST':
+        data = request.form
+        software_info = SoftwareModel(softName=data['softName'], softDesc=data['details'],softSize=data['softSize'],
+                                 softLanguage=data['softwareLanguage'], issue=data['issue'], copyright=data['copyright'], baiduLink=data['baiduLink'],
+                                 baiduLinkPwd=data['baiduLinkPwd'], aliyunLink=data['aliyunLink'],
+                                 aliyunLinkPwd=data['aliyunLinkPwd'], kuakeLink=data['kuakeLink'],
+                                 kuakeLinkPwd=data['kuakeLinkPwd'], install=data['install'], feature=data['features'],
+                                 mtime=datetime.datetime.now())
+
+        db.session.add(software_info)
+
+        db.session.commit()
+        return jsonify({"code": "200", "softwareInfo": data})
+
+@bp.route('schedule', methods=['GET', 'POST'])
+def schedule_upload():
+
+    if request.method == 'POST':
+        data = request.form
+        schedule = SchedulesModel(title=data['competitionName'], mtime=data['starttime'], endtime=data['endtime'])
+
+        db.session.add(schedule)
+
+        db.session.commit()
+        return jsonify({"code": "200", "scheduleInfo": data})
 
 
 @bp.route("/json")
@@ -121,13 +134,11 @@ def upload_conf():
 
         for menu in menuinfo:
             menulist.append(menu.to_dict())
-        print(menulist)
 
         childrenmunu = UpdateChildrenModel.query.all()
+
         for children in childrenmunu:
             childrenmunulist.append(children.to_dict())
-
-        print(childrenmunulist)
 
         return jsonify({'menuInfo': menulist, 'childrenmunulist': childrenmunulist})
 

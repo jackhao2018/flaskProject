@@ -5,10 +5,11 @@ class SchedulesModel(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(100), nullable=False)
     mtime = db.Column(db.Date)
+    endtime = db.Column(db.Date)
 
     @property
     def keys(self):
-        return 'id', 'title', 'mtime'
+        return 'id', 'title', 'mtime', 'endtime'
 
     def __getitem__(self, item):
         return getattr(self, item)
