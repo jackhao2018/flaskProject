@@ -1,17 +1,18 @@
-.main{
-    margin-left: 20%;
-    width: 50%;
-    background-color: #ffffff;
+.format{
+    width: 100%;
+    height: 900px;
+    padding: 20px 0px 0px 20px;
+    /* background-color: aqua; */
 }
 
 .basic-info{
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    width: 100%;
+    /* margin-top: 10px; */
+    width: 90%;
     height: 30px;
     margin-bottom: 32px;
-    padding: 0 20px;
+    padding: 0px 0px 0px 20px;
     color: rgba(0, 0, 0, 0.85);
     font-weight: 500;
     font-size: 14px;
@@ -25,29 +26,42 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 5%;
     margin-top: 20px;
 }
 
+#box{
+    display: flex;
+    width: 90%;
+    height: 32px;
+    padding-left: 20px;
+    /* background-color: #00a1d6; */
+}
+
+#box-info{
+    display: flex;
+    flex: 1;
+}
+
+
 .wrapInput{
-    margin-left: 10px;
-    width: 300%;
+    margin-right: 100px;
+    width:150px;
 }
 
 .wrap span{
     display:block; 
-    width: 150px; 
+    padding-left: 10px;
+    width: 100px; 
     float:left; 
-    text-align:right;
-    font-size: 14px;
+    text-align:left;
+    font-size: 20px;
 }
 
 .software-input{
-    
-    border: 1px solid  #d9d9d9;
-    line-height: 22px;
-    padding: 4px;
-    width: 100%;
+    height: 100%;
+    border: 0px solid  #d9d9d9;
+    line-height: 28px;
+    width: 250px;
     border-radius: 2px;
 }
 
@@ -57,8 +71,8 @@ input:focus {
   }
 
 .wrapSoftwareDesc{
-    margin-left: 10px;
     width: 100%;
+    height: 440px;
 }
 
 .softwareDesc{
@@ -106,10 +120,11 @@ textarea:focus {
     background: rgba(6, 127, 240, 0);
   }
 
+
 /* 网盘信息样式 */
 .cloudWarp{
     display: flex;
-    width: 100%;
+    width: 90%;
     padding-left: 20px;
 }
 
@@ -124,14 +139,16 @@ textarea:focus {
 
 .cloudContain div{
     padding-left: 5%;
+    font-size: 18px;
 }
 
 .cloudContain input{
     width: 80%;
+    height: 26px;
     margin-bottom: 10px;
 }
 
-h3{
+h2{
     display: block;
     text-align: center;
     background-color: #00a0d6a2;

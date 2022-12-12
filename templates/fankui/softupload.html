@@ -1,164 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
-    <link rel="stylesheet" href="../static/css/global.css">
-    <link rel="stylesheet" href="../static/css/index/index.css">
-    <link rel="stylesheet" href="../static/css/jiaocheng/software-upload.css">
-    <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
-    <title>生活の真相资源网</title>
-</head>
-<body>
-    <div id="root">
-        {% include 'banner.html' %}
-        <main id="main" class="main">
-            <form action=" {{ url_for('guanyu.soft_upload') }}" method="post" class="format">
-                <div class="basic-info"><span>软件基础信息</span> </div>
-                <div id="warp" class="wrap">
-                    <div id="software-title"><span>软件名称:</span></div>
-                    <div class="wrapInput"><input id="software-name" name="softName" class="software-input" type="text"
-                            placeholder="请输入软件名称" maxlength="50" value></div>
-                </div>
-                <div id="warp" class="wrap">
-                    <div id="software-title"><span>软件介绍:</span></div>
-                    <div class="wrapInpu wrapSoftwareDesc"><textarea id="softwareDesc" class="softwareDesc" placeholder="请输入软件介绍"
-                            name="details"></textarea></div>
-                </div>
-                <div id="warp" class="wrap">
-                    <div id="software-title"><span>软件大小:</span></div>
-                    <div class="wrapInput"><input id="software-name" name="softSize" class="software-input" type="text"
-                            placeholder="请输入软件大小" maxlength="10" value></div>
-                </div>
-                <div id="warp" class="wrap">
-                    <div id="software-title"><span>软件语言:</span></div>
-                    <div class="wrapInput"><input id="software-language" name="softwareLanguage" class="software-input" type="text"
-                            placeholder="请输入软件语言" maxlength="20" value></div>
-                </div>
-                <div id="warp" class="wrap">
-                    <div id="software-title"><span>制作发行:</span></div>
-                    <div class="wrapInput"><input id="software-name" name="issue" class="software-input" type="text"
-                            placeholder="请输入制作发行方" maxlength="20" value></div>
-                </div>
-                <div id="warp" class="wrap">
-                    <div id="software-title"><span>版权申明:</span></div>
-                    <div class="wrapInput"><input id="software-name" name="copyright" class="software-input" type="text"
-                            placeholder="请输入版权详情" maxlength="100" value></div>
-                </div>
-
-                <div class="basic-info"><span>网盘信息</span> </div>
-                <div id="cloud-wrap" class="cloudWarp">
-                    <div id="cloud-contain" class="cloudContain">
-                        <h3>百度网盘</h3>
-                        <div><span>链接：</span></div>
-                        <div><input type="text" name="baiduLink" class="software-input" placeholder="请输入百度网盘连接地址"
-                                maxlength="200" value></div>
-                        <div><span>密码：</span></div>
-                        <div><input type="text" name="baiduLinkPwd" class="software-input" placeholder="请输入百度网盘密码"
-                                maxlength="10" value></div>
-                    </div>
-                    <div id="cloud-contain" class="cloudContain">
-                        <h3>阿里云盘</h3>
-                        <div><span>链接：</span></div>
-                        <div><input type="text" name="aliyunLink" class="software-input" placeholder="请输入阿里云盘连接地址"
-                                maxlength="200" value></div>
-                        <div><span>密码：</span></div>
-                        <div><input type="text" name="aliyunLinkPwd" class="software-input" placeholder="请输入阿里云盘密码"
-                                maxlength="10" value></div>
-                    </div>
-                    <div id="cloud-contain" class="cloudContain">
-                        <h3>夸克网盘</h3>
-                        <div><span>链接：</span></div>
-                        <div><input type="text" name="kuakeLink" class="software-input" placeholder="请输入夸克网盘连接地址"
-                                maxlength="200" value></div>
-                        <div><span>密码：</span></div>
-                        <div><input type="text" name="kuakeLinkPwd" class="software-input" placeholder="请输入夸克网盘密码"
-                                maxlength="10" value></div>
-                    </div>
-                </div>
-                <div class="basic-info"><span>安装教程</span> </div>
-                <div id="editor—wrapper">
-                    <div id="editor-toolbar-1" style="border-bottom: 1px solid #ccc;"></div>
-                    <div id="editor-text-area-1" style="height: 200px;"></div>
-                    <div id="content-view-1" class="editor-content-view"></div>
-                    <input style="display: none" name="install" id="editor-container1" value>
-                </div>
-                <div class="basic-info"><span>功能特色</span> </div>
-                <div id="editor—wrapper" name="feature">
-                    <div id="editor-toolbar-2" style="border-bottom: 1px solid #ccc;"></div>
-                    <div id="editor-text-area-2" style="height: 200px;"></div>
-                    <div id="content-view-2" class="editor-content-view"></div>
-                    <input style="display: none" name="features" id="editor-container2" value>
-
-                </div>
-                <div id="confirm" class="confirm">
-                    <div><button type="reset" class="reset">重 置</button></div>
-                    <div><button type="submit" class="submit reset">提 交</button></div>
-                </div>
-            </form>
-        </main>
+<form action=" {{ url_for('guanyu.soft_upload') }}" method="post" class="format">
+    <div class="basic-info"><span>软件基础信息</span> </div>
+    <div id="warp" class="wrap">
+        <div id="box">
+            <div id="box-info">
+                <div id="software-title"><span>软件名称:</span></div>
+                <div class="wrapInput"><input id="software-name" name="softName" class="software-input" type="text"
+                        placeholder="  请输入软件名称" maxlength="50" value></div>
+            </div>
+            <div id="box-info">
+                <div id="software-title"><span>软件大小:</span></div>
+                <div class="wrapInput"><input id="software-name" name="softSize" class="software-input" type="text"
+                        placeholder="  请输入软件大小" maxlength="10" value></div>
+            </div>
+            <div id="box-info">
+                <div id="software-title"><span>软件语言:</span></div>
+                <div class="wrapInput"><input id="software-language" name="softwareLanguage" class="software-input"
+                        type="text" placeholder="  请输入软件语言" maxlength="20" value></div>
+            </div>
+        </div>
     </div>
-    <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
-    <script src="../../static/js/jquery-3.6.0.js"></script>
-    <script>
-        const E = window.wangEditor
-        const installTextarea = document.getElementById('editor-container1')
-        const featureTextarea = document.getElementById('editor-container2')
+    <div id="warp" class="wrap">
+        <div id="box">
+            <div id="box-info">
+                <div id="software-title"><span>制作发行:</span></div>
+                <div class="wrapInput"><input id="software-name" name="issue" class="software-input" type="text"
+                        placeholder="  请输入制作发行方" maxlength="20" value></div>
+            </div>
+            <div id="box-info">
+                <div id="software-title"><span>版权申明:</span></div>
+                <div class="wrapInput"><input id="software-name" name="copyright" class="software-input" type="text"
+                        placeholder="  请输入版权详情" maxlength="100" value></div>
+            </div>
+            <div id="box-info"></div>
+        </div>
+    </div>
+    <div id="warp" class="wrap">
+        <div id="box">
+            <div id="software-title"><span>软件介绍:</span></div>
+            <div class="wrapInpu wrapSoftwareDesc"><textarea id="softwareDesc" class="softwareDesc"
+                    placeholder="请输入软件介绍" name="details" style="height: 60px;"></textarea></div>
+        </div>
+    </div>
+    <div class="basic-info" style="margin-top: 80px;"><span>网盘信息</span> </div>
+    <div id="cloud-wrap" class="cloudWarp">
+        <div id="cloud-contain" class="cloudContain">
+            <h2>百度网盘</h2>
+            <div><span>链接：</span></div>
+            <div><input type="text" name="baiduLink" class="software-input" placeholder="请输入百度网盘连接地址" maxlength="200"
+                    value></div>
+            <div><span>密码：</span></div>
+            <div><input type="text" name="baiduLinkPwd" class="software-input" placeholder="请输入百度网盘密码" maxlength="10"
+                    value></div>
+        </div>
+        <div id="cloud-contain" class="cloudContain">
+            <h2>阿里云盘</h2>
+            <div><span>链接：</span></div>
+            <div><input type="text" name="aliyunLink" class="software-input" placeholder="请输入阿里云盘连接地址" maxlength="200"
+                    value></div>
+            <div><span>密码：</span></div>
+            <div><input type="text" name="aliyunLinkPwd" class="software-input" placeholder="请输入阿里云盘密码" maxlength="10"
+                    value></div>
+        </div>
+        <div id="cloud-contain" class="cloudContain">
+            <h2>夸克网盘</h2>
+            <div><span>链接：</span></div>
+            <div><input type="text" name="kuakeLink" class="software-input" placeholder="请输入夸克网盘连接地址" maxlength="200"
+                    value></div>
+            <div><span>密码：</span></div>
+            <div><input type="text" name="kuakeLinkPwd" class="software-input" placeholder="请输入夸克网盘密码" maxlength="10"
+                    value></div>
+        </div>
+    </div>
 
-        // 切换语言
-        const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
-        E.i18nChangeLanguage(LANG)
-
-        // 第一个编辑器
-        const editor1 = E.createEditor({
-            selector: '#editor-text-area-1',
-            config: {
-                placeholder: '这里输入安装方式...',
-                autoFocus: false,
-                MENU_CONF: {
-                    uploadImage: {
-                        fieldName: 'your-file-name1',
-                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
-                    }
-                },
-                onChange(editor) {
-                    installTextarea.value = editor.getHtml()
-                }
-            },
-            // html: '<p>editor1</p><p><br></p>'
-        })
-        const toolbar1 = E.createToolbar({
-            editor: editor1,
-            selector: '#editor-toolbar-1',
-            config: {}
-        })
-
-        // 第二个编辑器
-        const editor2 = E.createEditor({
-            selector: '#editor-text-area-2',
-            config: {
-                placeholder: '这里输入功能特色...',
-                autoFocus: false,
-                MENU_CONF: {
-                    uploadImage: {
-                        fieldName: 'your-file-name2',
-                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
-                    }
-                },
-                onChange(editor) {
-                    featureTextarea.value = editor.getHtml()
-                }
-            },
-            // html: '<p>editor2</p><p><br></p>',
-            mode: 'simple'
-        })
-        const toolbar2 = E.createToolbar({
-            editor: editor2,
-            selector: '#editor-toolbar-2',
-            config: {}
-        })
-    </script>
-</body>
-
-</html>
+</form>
