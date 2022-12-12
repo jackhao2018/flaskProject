@@ -1,306 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>生活的真相资源网</title>
-        <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
-		<link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
-		<link rel="stylesheet" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
-		<link rel="stylesheet" href="../../static/css/fankui/custom.min.css" />
-        <link rel="stylesheet" href="../../static/css/jiaocheng/software-upload.css">
-        <link rel="stylesheet" href="../../static/css/fankui/double-data.css">
-        <link rel="stylesheet" href="../../static/css/index/index.css" type="text/css">
-        <link rel="stylesheet" href="../static/css/index/index.css">
-        <link rel="stylesheet" href="../static/css/jiaocheng/software-upload.css">
-        <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
-	</head>
-	<style type="text/css">
-		body,html{
-            display: table;
-			width: 100%;
-			height: 100%;
-		}
+<head>
+    <meta charset="utf-8">
+    <title>生活の真相资源网</title>
+    <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/index/index.css">
+    <link rel="stylesheet" href="../static/css/jiaocheng/software-upload.css">
+    <link rel="stylesheet" href="../../static/css/fankui/upload.css">
+    <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+</head>
 
-        .nav-md{
-            display: table;
-			width: 100%;
-			height: 100%;
-        }
-		.contentLeft {
-            display: table-cell;
-			width: 15%;
-			height: 100%;
-			background:black;
-			opacity: 0.7;
-		}
-		
-		.contentRight {
-            display: table-cell;
-			width: 85%;
-		}
-		
-	</style>
-
-	<body >
-        {% include 'banner.html' %}
-        <div class="nav-md">
-            <div class="contentLeft">
-                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                        <ul class="nav side-menu" id="navmenu"></ul>
-                </div>
-            </div>
-            <div class="contentRight">
-                <div class="right_col" role="main" id="rightContent">
-                    <main id="main" class="main">
-                        <form id="softwareupload" action=" {{ url_for('guanyu.soft_upload') }}" method="post" class="format">
-                            <div class="basic-info"><span>软件基础信息</span> </div>
-                            <div id="warp" class="wrap">
-                                <div id="software-title"><span>软件名称:</span></div>
-                                <div class="wrapInput"><input id="software-name" name="softName" class="software-input" type="text"
-                                        placeholder="请输入软件名称" maxlength="50" value></div>
-                            </div>
-                            <div id="warp" class="wrap">
-                                <div id="software-title"><span>软件介绍:</span></div>
-                                <div class="wrapInpu wrapSoftwareDesc"><textarea id="softwareDesc" class="softwareDesc" placeholder="请输入软件介绍"
-                                        name="details"></textarea></div>
-                            </div>
-                            <div id="warp" class="wrap">
-                                <div id="software-title"><span>软件大小:</span></div>
-                                <div class="wrapInput"><input id="software-name" name="softSize" class="software-input" type="text"
-                                        placeholder="请输入软件大小" maxlength="10" value></div>
-                            </div>
-                            <div id="warp" class="wrap">
-                                <div id="software-title"><span>软件语言:</span></div>
-                                <div class="wrapInput"><input id="software-language" name="softwareLanguage" class="software-input" type="text"
-                                        placeholder="请输入软件语言" maxlength="20" value></div>
-                            </div>
-                            <div id="warp" class="wrap">
-                                <div id="software-title"><span>制作发行:</span></div>
-                                <div class="wrapInput"><input id="software-name" name="issue" class="software-input" type="text"
-                                        placeholder="请输入制作发行方" maxlength="20" value></div>
-                            </div>
-                            <div id="warp" class="wrap">
-                                <div id="software-title"><span>版权申明:</span></div>
-                                <div class="wrapInput"><input id="software-name" name="copyright" class="software-input" type="text"
-                                        placeholder="请输入版权详情" maxlength="100" value></div>
-                            </div>
-            
-                            <div class="basic-info"><span>网盘信息</span> </div>
-                            <div id="cloud-wrap" class="cloudWarp">
-                                <div id="cloud-contain" class="cloudContain">
-                                    <h3>百度网盘</h3>
-                                    <div><span>链接：</span></div>
-                                    <div><input type="text" name="baiduLink" class="software-input" placeholder="请输入百度网盘连接地址"
-                                            maxlength="200" value></div>
-                                    <div><span>密码：</span></div>
-                                    <div><input type="text" name="baiduLinkPwd" class="software-input" placeholder="请输入百度网盘密码"
-                                            maxlength="10" value></div>
-                                </div>
-                                <div id="cloud-contain" class="cloudContain">
-                                    <h3>阿里云盘</h3>
-                                    <div><span>链接：</span></div>
-                                    <div><input type="text" name="aliyunLink" class="software-input" placeholder="请输入阿里云盘连接地址"
-                                            maxlength="200" value></div>
-                                    <div><span>密码：</span></div>
-                                    <div><input type="text" name="aliyunLinkPwd" class="software-input" placeholder="请输入阿里云盘密码"
-                                            maxlength="10" value></div>
-                                </div>
-                                <div id="cloud-contain" class="cloudContain">
-                                    <h3>夸克网盘</h3>
-                                    <div><span>链接：</span></div>
-                                    <div><input type="text" name="kuakeLink" class="software-input" placeholder="请输入夸克网盘连接地址"
-                                            maxlength="200" value></div>
-                                    <div><span>密码：</span></div>
-                                    <div><input type="text" name="kuakeLinkPwd" class="software-input" placeholder="请输入夸克网盘密码"
-                                            maxlength="10" value></div>
-                                </div>
-                            </div>
-                            <div class="basic-info"><span>安装教程</span> </div>
-                            <div id="editor—wrapper">
-                                <div id="editor-toolbar-1" style="border-bottom: 1px solid #ccc;"></div>
-                                <div id="editor-text-area-1" style="height: 200px;"></div>
-                                <div id="content-view-1" class="editor-content-view"></div>
-                                <input style="display: none" name="install" id="editor-container1" value>
-                            </div>
-                            <div class="basic-info"><span>功能特色</span> </div>
-                            <div id="editor—wrapper" name="feature">
-                                <div id="editor-toolbar-2" style="border-bottom: 1px solid #ccc;"></div>
-                                <div id="editor-text-area-2" style="height: 200px;"></div>
-                                <div id="content-view-2" class="editor-content-view"></div>
-                                <input style="display: none" name="features" id="editor-container2" value>
-            
-                            </div>
-                            <div id="confirm" class="confirm">
-                                <div><button type="reset" class="reset">重 置</button></div>
-                                <div><button type="submit" class="submit reset">提 交</button></div>
-                            </div>
-                        </form>
-                        <form id="scheduleupload" action="{{ url_for('guanyu.schedule_upload') }}"  method="post" class="format" style="display: none;">
-                            <div class="basic-info"><span>赛程基础信息</span> </div>
-                            <div id="warp" class="wrap">
-                                <div id="software-title"><span>比赛名称:</span></div>
-                                <div class="wrapInput"><input id="competition-name" name="competitionName" class="software-input" type="text"
-                                        placeholder="请输入比赛名称" maxlength="50" value></div>
-                            </div>
-                            <div id="warp" class="wrap">
-                                <div id="software-title"><span>比赛时间:</span></div>
-                                <div class="outer clearfix">
-                                    <div class="date date1 fl" id="from">
-                                        <!-- value="2022/12/12" -->
-                                        <input type="text" name="starttime" class="date-check" >
-                                    <div class="date-list" style="display: none;"><div class="header clearfix"><div class="header-left fl">&lt;</div><div class="fl date-sel"><select class="year"><option>1917</option><option>1918</option><option>1919</option><option>1920</option><option>1921</option><option>1922</option><option>1923</option><option>1924</option><option>1925</option><option>1926</option><option>1927</option><option>1928</option><option>1929</option><option>1930</option><option>1931</option><option>1932</option><option>1933</option><option>1934</option><option>1935</option><option>1936</option><option>1937</option><option>1938</option><option>1939</option><option>1940</option><option>1941</option><option>1942</option><option>1943</option><option>1944</option><option>1945</option><option>1946</option><option>1947</option><option>1948</option><option>1949</option><option>1950</option><option>1951</option><option>1952</option><option>1953</option><option>1954</option><option>1955</option><option>1956</option><option>1957</option><option>1958</option><option>1959</option><option>1960</option><option>1961</option><option>1962</option><option>1963</option><option>1964</option><option>1965</option><option>1966</option><option>1967</option><option>1968</option><option>1969</option><option>1970</option><option>1971</option><option>1972</option><option>1973</option><option>1974</option><option>1975</option><option>1976</option><option>1977</option><option>1978</option><option>1979</option><option>1980</option><option>1981</option><option>1982</option><option>1983</option><option>1984</option><option>1985</option><option>1986</option><option>1987</option><option>1988</option><option>1989</option><option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option><option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option><option>2000</option><option>2001</option><option>2002</option><option>2003</option><option>2004</option><option>2005</option><option>2006</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option><option>2033</option><option>2034</option><option>2035</option><option>2036</option><option>2037</option><option>2038</option><option>2039</option><option>2040</option><option>2041</option><option>2042</option><option>2043</option><option>2044</option><option>2045</option><option>2046</option><option>2047</option><option>2048</option><option>2049</option><option>2050</option><option>2051</option><option>2052</option><option>2053</option><option>2054</option><option>2055</option><option>2056</option><option>2057</option><option>2058</option><option>2059</option><option>2060</option><option>2061</option><option>2062</option><option>2063</option><option>2064</option><option>2065</option><option>2066</option><option>2067</option><option>2068</option><option>2069</option><option>2070</option><option>2071</option><option>2072</option><option>2073</option><option>2074</option><option>2075</option><option>2076</option><option>2077</option><option>2078</option><option>2079</option><option>2080</option><option>2081</option><option>2082</option><option>2083</option><option>2084</option><option>2085</option><option>2086</option><option>2087</option><option>2088</option><option>2089</option><option>2090</option><option>2091</option><option>2092</option><option>2093</option><option>2094</option><option>2095</option><option>2096</option><option>2097</option><option>2098</option><option>2099</option><option>2100</option><option>2101</option><option>2102</option><option>2103</option><option>2104</option><option>2105</option><option>2106</option><option>2107</option><option>2108</option><option>2109</option><option>2110</option><option>2111</option><option>2112</option><option>2113</option><option>2114</option><option>2115</option><option>2116</option><option>2117</option></select></div><div class="fl date-sel"><select class="month"><option value="1">1月</option><option value="2">2月</option><option value="3">3月</option><option value="4">4月</option><option value="5">5月</option><option value="6">6月</option><option value="7">7月</option><option value="8">8月</option><option value="9">9月</option><option value="10">10月</option><option value="11">11月</option><option value="12">12月</option></select></div><div class="header-right fl">&gt;</div><div class="fr today">今日</div></div><table><thead><tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr></thead><tbody><tr style="display: table-row;"><td class=""></td><td class=""></td><td class=""></td><td class="cursorHand">1</td><td class="cursorHand">2</td><td class="cursorHand">3</td><td class="cursorHand">4</td></tr><tr style="display: table-row;"><td class="cursorHand">5</td><td class="cursorHand">6</td><td class="cursorHand">7</td><td class="cursorHand">8</td><td class="cursorHand">9</td><td class="cursorHand">10</td><td class="cursorHand">11</td></tr><tr style="display: table-row;"><td class="cursorHand current act">12</td><td class="cursorHand">13</td><td class="cursorHand">14</td><td class="cursorHand">15</td><td class="cursorHand">16</td><td class="cursorHand">17</td><td class="cursorHand">18</td></tr><tr style="display: table-row;"><td class="cursorHand">19</td><td class="cursorHand">20</td><td class="cursorHand">21</td><td class="cursorHand">22</td><td class="cursorHand">23</td><td class="cursorHand">24</td><td class="cursorHand">25</td></tr><tr style="display: table-row;"><td class="cursorHand">26</td><td class="cursorHand">27</td><td class="cursorHand">28</td><td class="cursorHand">29</td><td class="cursorHand">30</td><td class="cursorHand">31</td><td></td></tr><tr style="display: none;"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
-                                    <div class="date fr" id="to">
-                                        <input type="text" name="endtime" class="date-check">
-                                    <div class="date-list" style="display: none;"><div class="header clearfix"><div class="header-left fl">&lt;</div><div class="fl date-sel"><select class="year"><option>1917</option><option>1918</option><option>1919</option><option>1920</option><option>1921</option><option>1922</option><option>1923</option><option>1924</option><option>1925</option><option>1926</option><option>1927</option><option>1928</option><option>1929</option><option>1930</option><option>1931</option><option>1932</option><option>1933</option><option>1934</option><option>1935</option><option>1936</option><option>1937</option><option>1938</option><option>1939</option><option>1940</option><option>1941</option><option>1942</option><option>1943</option><option>1944</option><option>1945</option><option>1946</option><option>1947</option><option>1948</option><option>1949</option><option>1950</option><option>1951</option><option>1952</option><option>1953</option><option>1954</option><option>1955</option><option>1956</option><option>1957</option><option>1958</option><option>1959</option><option>1960</option><option>1961</option><option>1962</option><option>1963</option><option>1964</option><option>1965</option><option>1966</option><option>1967</option><option>1968</option><option>1969</option><option>1970</option><option>1971</option><option>1972</option><option>1973</option><option>1974</option><option>1975</option><option>1976</option><option>1977</option><option>1978</option><option>1979</option><option>1980</option><option>1981</option><option>1982</option><option>1983</option><option>1984</option><option>1985</option><option>1986</option><option>1987</option><option>1988</option><option>1989</option><option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option><option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option><option>2000</option><option>2001</option><option>2002</option><option>2003</option><option>2004</option><option>2005</option><option>2006</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option><option>2033</option><option>2034</option><option>2035</option><option>2036</option><option>2037</option><option>2038</option><option>2039</option><option>2040</option><option>2041</option><option>2042</option><option>2043</option><option>2044</option><option>2045</option><option>2046</option><option>2047</option><option>2048</option><option>2049</option><option>2050</option><option>2051</option><option>2052</option><option>2053</option><option>2054</option><option>2055</option><option>2056</option><option>2057</option><option>2058</option><option>2059</option><option>2060</option><option>2061</option><option>2062</option><option>2063</option><option>2064</option><option>2065</option><option>2066</option><option>2067</option><option>2068</option><option>2069</option><option>2070</option><option>2071</option><option>2072</option><option>2073</option><option>2074</option><option>2075</option><option>2076</option><option>2077</option><option>2078</option><option>2079</option><option>2080</option><option>2081</option><option>2082</option><option>2083</option><option>2084</option><option>2085</option><option>2086</option><option>2087</option><option>2088</option><option>2089</option><option>2090</option><option>2091</option><option>2092</option><option>2093</option><option>2094</option><option>2095</option><option>2096</option><option>2097</option><option>2098</option><option>2099</option><option>2100</option><option>2101</option><option>2102</option><option>2103</option><option>2104</option><option>2105</option><option>2106</option><option>2107</option><option>2108</option><option>2109</option><option>2110</option><option>2111</option><option>2112</option><option>2113</option><option>2114</option><option>2115</option><option>2116</option><option>2117</option></select></div><div class="fl date-sel"><select class="month"><option value="1">1月</option><option value="2">2月</option><option value="3">3月</option><option value="4">4月</option><option value="5">5月</option><option value="6">6月</option><option value="7">7月</option><option value="8">8月</option><option value="9">9月</option><option value="10">10月</option><option value="11">11月</option><option value="12">12月</option></select></div><div class="header-right fl">&gt;</div><div class="fr today">今日</div></div><table><thead><tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr></thead><tbody><tr style="display: table-row;"><td></td><td></td><td></td><td class="cursorHand">1</td><td class="cursorHand">2</td><td class="cursorHand">3</td><td class="cursorHand">4</td></tr><tr style="display: table-row;"><td class="cursorHand">5</td><td class="cursorHand">6</td><td class="cursorHand">7</td><td class="cursorHand">8</td><td class="cursorHand">9</td><td class="cursorHand">10</td><td class="cursorHand">11</td></tr><tr style="display: table-row;"><td class="cursorHand act current">12</td><td class="cursorHand">13</td><td class="cursorHand">14</td><td class="cursorHand">15</td><td class="cursorHand">16</td><td class="cursorHand">17</td><td class="cursorHand">18</td></tr><tr style="display: table-row;"><td class="cursorHand">19</td><td class="cursorHand">20</td><td class="cursorHand">21</td><td class="cursorHand">22</td><td class="cursorHand">23</td><td class="cursorHand">24</td><td class="cursorHand">25</td></tr><tr style="display: table-row;"><td class="cursorHand">26</td><td class="cursorHand">27</td><td class="cursorHand">28</td><td class="cursorHand">29</td><td class="cursorHand">30</td><td class="cursorHand">31</td><td class=""></td></tr><tr style="display: none;"><td class=""></td><td class=""></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
-                                </div>
-                            </div>
-                            <div id="confirm" class="confirm">
-                                <div><button type="reset" class="reset">重 置</button></div>
-                                <div><button type="submit" class="submit reset">提 交</button></div>
-                            </div>
-                        </form>
-                        <!-- <form id="schedule_rule" action=" {{ url_for('guanyu.soft_upload') }}" method="post" class="format"  style="display: none;">
-                            <div class="basic-info"><span>比赛时间</span> </div>
-                            <div id="editor—wrapper">
-                                <div id="editor-toolbar-3" style="border-bottom: 1px solid #ccc;"></div>
-                                <div id="editor-text-area-3" style="height: 200px;"></div>
-                                <div id="content-view-3" class="editor-content-view"></div>
-                                <input style="display: none" name="install" id="editor-container3" value>
-                            </div>
-                            <div class="basic-info"><span>赛事规则</span> </div>
-                            <div id="editor—wrapper" name="feature">
-                                <div id="editor-toolbar-4" style="border-bottom: 1px solid #ccc;"></div>
-                                <div id="editor-text-area-4" style="height: 200px;"></div>
-                                <div id="content-view-4" class="editor-content-view"></div>
-                                <input style="display: none" name="features" id="editor-container4" value>
-            
-                            </div>
-                            <div id="confirm" class="confirm">
-                                <div><button type="reset" class="reset">重 置</button></div>
-                                <div><button type="submit" class="submit reset">提 交</button></div>
-                            </div>
-                        </form> -->
-                    </main>
+<body>
+    {% include 'banner.html' %}
+    <div class="tab">
+        <div class="box">
+            <ul class="menus">
+                <li class="bg">tab1</li>
+                <li>tab2</li>
+                <li>tab3</li>
+                <li>tab4</li>
+                <li>tab5</li>
+                <li>tab6</li>
+                <li>tab7</li>
+            </ul>
+            <div class="right">
+                <div class="scroll">
+                    <div class="tab_right">
+                        w我是1
+                        <!--            <iframe id="softiframe" class="tab_right" src="../templates/fankui/softupload.html" frameborder="0"-->
+                        <!--              scrolling="auto">-->
+                        <!--             -->
+                        <!--            </iframe>-->
+                    </div>
+                    <div class="tab_right">
+                        w我是2
+                        <!-- <img src="assets/a2.png" alt=""> -->
+                    </div>
+                    <div class="tab_right">
+                        w我是3
+                        <!-- <img src="assets/a3.png" alt=""> -->
+                    </div>
+                    <div class="tab_right">
+                        w我是4
+                        <!-- <img src="assets/a4.png" alt=""> -->
+                    </div>
+                    <div class="tab_right">
+                        <!-- <img src="assets/a5.png" alt=""> -->
+                    </div>
+                    <div class="tab_right">
+                        <!-- <img src="assets/a6.png" alt=""> -->
+                    </div>
+                    <div class="tab_right">
+                        <!-- <img src="assets/a7.png" alt=""> -->
+                    </div>
                 </div>
             </div>
         </div>
-		
-		<script type="text/javascript" src="../static/js/jquery-3.6.0.js"></script>
-		<script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
-		<script src="../../static/js/upload.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../static/js/double-data.js" type="text/javascript" charset="utf-8"></script>
-        <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+        <div class="clear"></div>
+    </div>
+    <script src="../../static/js/jquery-3.6.0.js"></script>
+
     <script>
-        const E = window.wangEditor
-        const installTextarea = document.getElementById('editor-container1')
-        const featureTextarea = document.getElementById('editor-container2')
-        const scheduleTextarea = document.getElementById('editor-container3')
-        const rulesTextarea = document.getElementById('editor-container4')
-
-        // 切换语言
-        const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
-        E.i18nChangeLanguage(LANG)
-
-        // 第一个编辑器
-        const editor1 = E.createEditor({
-            selector: '#editor-text-area-1',
-            config: {
-                placeholder: '这里输入安装方式...',
-                autoFocus: true,
-                MENU_CONF: {
-                    uploadImage: {
-                        fieldName: 'your-file-name1',
-                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
-                    }
-                },
-                onChange(editor) {
-                    installTextarea.value = editor.getHtml()
-                }
-            },
+        $('.tab .menus li').each(function () {
+            $('.tab .menus li').click(function () {
+                $('.tab .menus li').removeClass('bg');
+                $(this).addClass('bg');
+                var index = $(this).index();
+                $('.tab .scroll').css('margin-top', -index * 900 + 'px');
+            })
         })
-        const toolbar1 = E.createToolbar({
-            editor: editor1,
-            selector: '#editor-toolbar-1',
-            config: {}
-        })
-
-        // 第二个编辑器
-        const editor2 = E.createEditor({
-            selector: '#editor-text-area-2',
-            config: {
-                placeholder: '这里输入功能特色...',
-                autoFocus: true,
-                MENU_CONF: {
-                    uploadImage: {
-                        fieldName: 'your-file-name2',
-                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
-                    }
-                },
-                onChange(editor) {
-                    featureTextarea.value = editor.getHtml()
-                }
-            },
-            mode: 'simple'
-        })
-        const toolbar2 = E.createToolbar({
-            editor: editor2,
-            selector: '#editor-toolbar-2',
-            config: {}
-        })
-
-         // 第三个编辑器
-        //  const editor3 = E.createEditor({
-        //     selector: '#editor-text-area-3',
-        //     config: {
-        //         placeholder: '这里输入赛程安排...',
-        //         autoFocus: false,
-        //         MENU_CONF: {
-        //             uploadImage: {
-        //                 fieldName: 'your-file-name3',
-        //                 base64LimitSize: 10 * 1024 * 1024 
-        //             }
-        //         },
-        //         onChange(editor) {
-        //             scheduleTextarea.value = editor.getHtml()
-        //         }
-        //     },
-        //     mode: 'simple'
-        // })
-        // const toolbar3 = E.createToolbar({
-        //     editor: editor3,
-        //     selector: '#editor-toolbar-3',
-        //     config: {}
-        // })
-
-        //  // 第四个编辑器
-        //  const editor4 = E.createEditor({
-        //     selector: '#editor-text-area-4',
-        //     config: {
-        //         placeholder: '这里输入功能特色...',
-        //         autoFocus: false,
-        //         MENU_CONF: {
-        //             uploadImage: {
-        //                 fieldName: 'your-file-name2',
-        //                 base64LimitSize: 10 * 1024 * 1024 
-        //             }
-        //         },
-        //         onChange(editor) {
-        //             rulesTextarea.value = editor.getHtml()
-        //         }
-        //     },
-        //     mode: 'simple'
-        // })
-        // const toolbar4 = E.createToolbar({
-        //     editor: editor4,
-        //     selector: '#editor-toolbar-4',
-        //     config: {}
-        // })
     </script>
+    <!-- <script type="text/javascript" src="../assets/index.js"></script> -->
+    <!-- <script>
+    $('#softiframe').load(function () {
 
-	</body>
+      let cssLink = document.createElement("link");
+      cssLink.href = "style.css";
+      cssLink.rel = "stylesheet";
+      cssLink.type = "text/css";
+      $('#softiframe')
+        .contents().find("head")
+        .append($('<link rel="stylesheet" href=" ../static/css/jiaocheng/software-upload.css">'))
+        .append($('<link rel="stylesheet" href="../static/css/index/index.css">'))
+        .append($('<link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">'));
+       
+    });
+  </script> -->
+</body>
 
 </html>
