@@ -1,39 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    .box {
-      width: 200px;
-      display: table;
-      margin: 0 auto;
-    }
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <title>选项卡</title>
 
-    .one {
-      width: 100px;
-      background-color: pink;
-      display: table-cell
-    }
-
-    .two {
-      width: 100px;
-      background-color: red;
-      display: table-cell;
-    }
-  </style>
+  <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
+  <link rel="stylesheet" href="../static/css/global.css">
+  <link rel="stylesheet" href="../static/css/index/index.css">
+  <link rel="stylesheet" href="../static/css/jiaocheng/software-upload.css">
+  <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
 </head>
 
+<iframe src="" frameborder="0">
+
+</iframe>
+
 <body>
-  <div class="box">
-    <div class="one">1</div>
-    <div class="two">最新的 才不是最近好的怎么
-      办
-      的
-      呢
-      对不</div>
+  <div class="tab">
+    <div class="box">
+      <ul class="menus">
+        <li class="bg">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+        <li>tab4</li>
+        <li>tab5</li>
+        <li>tab6</li>
+        <li>tab7</li>
+      </ul>
+      <div class="right">
+        <div class="scroll">
+          <div class="tab_right">
+            <iframe id="softupload" class="tab_right" src="../templates/fankui/softupload.html" frameborder="0"
+              scrolling="auto">
+              <head>
+                <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
+                <link rel="stylesheet" href="../static/css/global.css">
+                <link rel="stylesheet" href="../static/css/index/index.css">
+                <link rel="stylesheet" href="../static/css/jiaocheng/software-upload.css">
+                <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+                <title>生活の真相资源网</title>
+              </head>
+            </iframe>
+          </div>
+          <div class="tab_right">
+            <img src="assets/a2.png" alt="">
+          </div>
+          <div class="tab_right">
+            <img src="assets/a3.png" alt="">
+          </div>
+          <div class="tab_right">
+            <img src="assets/a4.png" alt="">
+          </div>
+          <div class="tab_right">
+            <img src="assets/a5.png" alt="">
+          </div>
+          <div class="tab_right">
+            <img src="assets/a6.png" alt="">
+          </div>
+          <div class="tab_right">
+            <img src="assets/a7.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
   </div>
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="assets/index.js"></script>
+  <!-- <script>
+    $('#i1').load(function () {
+
+      let cssLink = document.createElement("link");
+      cssLink.href = "style.css";
+      cssLink.rel = "stylesheet";
+      cssLink.type = "text/css";
+      $('#i1')
+        .contents().find("head")
+        .append($('<link rel="stylesheet" type="text/css" href="style.css">')
+        );
+    });
+  </script> -->
+
+
 </body>
 
 </html>
