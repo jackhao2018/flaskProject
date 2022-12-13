@@ -1,33 +1,16 @@
 <head>
-    <style>
-        .dateinputer{
-            line-height:40px;
-            height:40px;
-            margin:10px 0;
-            border:1px solid #ccc;
-            cursor: pointer;
-            position:relative;
-            /*top:10px;*/
-            /*left:20px;*/
-            padding:0 6px;
-            font-size:12px !important;
-        }
-        .flex-div{
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-flow: column;
-            margin-left:30px;
-            margin-top:20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../static/css/fankui/competition.css">
 </head>
 
-<form action="{{ url_for('guanyu.soft_upload') }}" method="post" class="format">
-    <div class="flex-div">
-        <span>daterange 日期区间选择器</span>
+<form action="{{ url_for('guanyu.soft_upload') }}" method="post" class="competitionFormat">
+    <h1>比赛信息</h1>
+    <div id="competition-box-info">
+        <div id="competition-Title"><span>赛事名称:</span></div>
+        <div class="wrapInput"><input id="competitionName" name="competitionName" class="competitionName" type="text"
+                placeholder="  请输入赛事" maxlength="50" value></div>
+    </div>
+    <div class="competitionWrap">
         <div id='daterange' class="dateinputer">
-    
         </div>
     </div>
 </form>
