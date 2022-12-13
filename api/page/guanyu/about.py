@@ -127,6 +127,7 @@ def soft_upload():
 
         db.session.add(software_info)
 
+
         db.session.commit()
         return jsonify({"code": "200", "softwareInfo": data})
 
