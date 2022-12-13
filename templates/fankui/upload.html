@@ -7,9 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
     <link rel="stylesheet" href="../static/css/global.css">
     <link rel="stylesheet" href="../static/css/index/index.css">
-    <link rel="stylesheet" href="../static/css/jiaocheng/software-upload.css">
     <link rel="stylesheet" href="../../static/css/fankui/upload.css">
-    <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -17,13 +15,9 @@
     <div class="tab">
         <div class="box">
             <ul class="menus">
-                <li class="bg">tab1</li>
-                <li>tab2</li>
-                <li>tab3</li>
-                <li>tab4</li>
-                <li>tab5</li>
-                <li>tab6</li>
-                <li>tab7</li>
+                {% for menu in result.menu %}
+                <li class="bg">{{ menu['children_name'] }}</li>
+                {% endfor %}
             </ul>
             <div class="right">
                 <div class="scroll">
@@ -39,7 +33,7 @@
                         <!-- <img src="assets/a3.png" alt=""> -->
                     </div>
                     <div class="tab_right">
-                        w我是4
+                        {% include '/fankui/competition.html' %}
                         <!-- <img src="assets/a4.png" alt=""> -->
                     </div>
                     <div class="tab_right">
@@ -68,22 +62,6 @@
             })
         })
     </script>
-    <!-- <script type="text/javascript" src="../assets/index.js"></script> -->
-    <!-- <script>
-    $('#softiframe').load(function () {
-
-      let cssLink = document.createElement("link");
-      cssLink.href = "style.css";
-      cssLink.rel = "stylesheet";
-      cssLink.type = "text/css";
-      $('#softiframe')
-        .contents().find("head")
-        .append($('<link rel="stylesheet" href=" ../static/css/jiaocheng/software-upload.css">'))
-        .append($('<link rel="stylesheet" href="../static/css/index/index.css">'))
-        .append($('<link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">'));
-       
-    });
-  </script> -->
 </body>
 
 </html>

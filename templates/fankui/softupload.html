@@ -1,3 +1,8 @@
+<head>
+    <link rel="stylesheet" href="../static/css/jiaocheng/software-upload.css">
+    <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+</head>
+
 <form action=" {{ url_for('guanyu.soft_upload') }}" method="post" class="format">
     <div class="basic-info"><span>软件基础信息</span> </div>
     <div id="warp" class="wrap">
@@ -71,5 +76,85 @@
                     value></div>
         </div>
     </div>
+    <div class="basic-info"><span>安装教程</span> </div>
+    <div id="editor—wrapper">
+        <div id="editor-toolbar-1" style="border-bottom: 1px solid #ccc;"></div>
+        <div id="editor-text-area-1" style="height: 200px;"></div>
+        <div id="content-view-1" class="editor-content-view"></div>
+        <input style="display: none" name="install" id="editor-container1" value>
+    </div>
+    <div class="basic-info"><span>功能特色</span> </div>
+    <div id="editor—wrapper" name="feature">
+        <div id="editor-toolbar-2" style="border-bottom: 1px solid #ccc;"></div>
+        <div id="editor-text-area-2" style="height: 200px;"></div>
+        <div id="content-view-2" class="editor-content-view"></div>
+        <input style="display: none" name="features" id="editor-container2" value>
+
+    </div>
+    <div id="confirm" class="confirm">
+        <div><button type="reset" class="reset">重 置</button></div>
+        <div><button type="submit" class="submit reset">提 交</button></div>
+    </div>
 
 </form>
+
+<script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+<script src="../../static/js/jquery-3.6.0.js"></script>
+<script>
+    const E = window.wangEditor
+    const installTextarea = document.getElementById('editor-container1')
+    const featureTextarea = document.getElementById('editor-container2')
+
+    // 切换语言
+    const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
+    E.i18nChangeLanguage(LANG)
+
+    // 第一个编辑器
+    const editor1 = E.createEditor({
+        selector: '#editor-text-area-1',
+        config: {
+            placeholder: '这里输入安装方式...',
+            autoFocus: false,
+            MENU_CONF: {
+                uploadImage: {
+                    fieldName: 'your-file-name1',
+                    base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+                }
+            },
+            onChange(editor) {
+                installTextarea.value = editor.getHtml()
+            }
+        },
+        // html: '<p>editor1</p><p><br></p>'
+    })
+    const toolbar1 = E.createToolbar({
+        editor: editor1,
+        selector: '#editor-toolbar-1',
+        config: {}
+    })
+
+    // 第二个编辑器
+    const editor2 = E.createEditor({
+        selector: '#editor-text-area-2',
+        config: {
+            placeholder: '这里输入功能特色...',
+            autoFocus: false,
+            MENU_CONF: {
+                uploadImage: {
+                    fieldName: 'your-file-name2',
+                    base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+                }
+            },
+            onChange(editor) {
+                featureTextarea.value = editor.getHtml()
+            }
+        },
+        // html: '<p>editor2</p><p><br></p>',
+        mode: 'simple'
+    })
+    const toolbar2 = E.createToolbar({
+        editor: editor2,
+        selector: '#editor-toolbar-2',
+        config: {}
+    })
+</script>

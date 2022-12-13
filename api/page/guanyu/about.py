@@ -85,11 +85,29 @@ def feedbacks():
     else:
         return jsonify({'code': 500, 'msg': '用户名/反馈意见不能为空！'})
 
+def upload_conf():
+    # if request.method == 'GET':
+    menuinfo = UpdateModel.query.all()
+    menulist = []
+    childrenmunulist = []
+
+    for menu in menuinfo:
+        menulist.append(menu.to_dict())
+
+    childrenmunu = UpdateChildrenModel.query.all()
+
+    for children in childrenmunu:
+        childrenmunulist.append(children.to_dict())
+
+    return {'menuInfo': menulist, 'childrenmunulist': childrenmunulist}
+
 @bp.route("/upload")
 def upload():
 
     if request.method == 'GET':
-        return render_template('/fankui/upload.html')
+        menu = upload_conf()
+        print(f"这里是菜单信息：{menu['childrenmunulist']}")
+        return render_template('/fankui/upload.html', result={'menu': menu['childrenmunulist']})
 
 
 @bp.route("/software_upload", methods=['GET', 'POST'])
@@ -125,21 +143,7 @@ def schedule_upload():
         return jsonify({"code": "200", "scheduleInfo": data})
 
 
-@bp.route("/json")
-def upload_conf():
-    if request.method == 'GET':
-        menuinfo = UpdateModel.query.all()
-        menulist = []
-        childrenmunulist = []
+# @bp.route("/json")
 
-        for menu in menuinfo:
-            menulist.append(menu.to_dict())
-
-        childrenmunu = UpdateChildrenModel.query.all()
-
-        for children in childrenmunu:
-            childrenmunulist.append(children.to_dict())
-
-        return jsonify({'menuInfo': menulist, 'childrenmunulist': childrenmunulist})
 
 
