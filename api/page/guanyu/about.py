@@ -10,6 +10,7 @@ from forms.about import FeedbackForm
 from models.softwaremodels import SoftwareModel
 from models.updatemodels import UpdateModel, UpdateChildrenModel
 from models.schedulemodels import SchedulesModel
+from models.figureSkatingmodels import FigureSkatingModel
 
 bp = Blueprint("guanyu", __name__, url_prefix="/about")
 
@@ -109,6 +110,25 @@ def upload():
         print(f"这里是菜单信息：{menu['childrenmunulist']}")
         return render_template('/fankui/upload.html', result={'menu': menu['childrenmunulist']})
 
+@bp.route("/figure_skating", methods=['GET', 'POST'])
+def figure_skating():
+
+    if request.method == 'GET':
+        pass
+
+        # menu = upload_conf()
+        # print(f"这里是菜单信息：{menu['childrenmunulist']}")
+        # return render_template('/fankui/upload.html', result={'menu': menu['childrenmunulist']})
+
+    if request.method == 'POST':
+        data = request.form
+
+        figureskating = FigureSkatingModel(name=data['name'], rules=data['rules'])
+
+        db.session.add(figureskating)
+
+        db.session.commit()
+        return jsonify({"code": "200", "softwareInfo": data})
 
 @bp.route("/software_upload", methods=['GET', 'POST'])
 def soft_upload():

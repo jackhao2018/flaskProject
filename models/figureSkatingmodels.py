@@ -1,10 +1,10 @@
 from exts import db
-
+from sqlalchemy.dialects.mysql import LONGTEXT
 class FigureSkatingModel(db.Model):
     __tablename__ = "figureSkating"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(100), nullable=False)
-    rules = db.Column(db.Date)
+    name = db.Column(LONGTEXT)
+    rules = db.Column(LONGTEXT)
 
     @property
     def keys(self):

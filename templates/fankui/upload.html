@@ -30,11 +30,9 @@
                     </div>
                     <div class="tab_right">
                         {% include '/fankui/competition.html' %}
-                        <!-- <img src="assets/a3.png" alt=""> -->
                     </div>
                     <div class="tab_right">
-                        
-                        <!-- <img src="assets/a4.png" alt=""> -->
+                        {% include '/fankui/schedules.html' %}
                     </div>
                     <div class="tab_right">
                         <!-- <img src="assets/a5.png" alt=""> -->
@@ -51,7 +49,122 @@
         <div class="clear"></div>
     </div>
     <script src="../../static/js/jquery-3.6.0.js"></script>
-
+    <script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+    <script>
+        const F = window.wangEditor
+        const installTextarea = document.getElementById('editor-container1')
+        const featureTextarea = document.getElementById('editor-container2')
+    
+        // 切换语言
+        const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
+        F.i18nChangeLanguage(LANG)
+    
+        // 第一个编辑器
+        const editor1 = F.createEditor({
+            selector: '#editor-text-area-1',
+            config: {
+                placeholder: '这里输入安装方式...',
+                autoFocus: false,
+                MENU_CONF: {
+                    uploadImage: {
+                        fieldName: 'your-file-name1',
+                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+                    }
+                },
+                onChange(editor) {
+                    installTextarea.value = editor.getHtml()
+                }
+            },
+            // html: '<p>editor1</p><p><br></p>'
+        })
+        const toolbar1 = F.createToolbar({
+            editor: editor1,
+            selector: '#editor-toolbar-1',
+            config: {}
+        })
+    
+        // 第二个编辑器
+        const editor2 = F.createEditor({
+            selector: '#editor-text-area-2',
+            config: {
+                placeholder: '这里输入功能特色...',
+                autoFocus: false,
+                MENU_CONF: {
+                    uploadImage: {
+                        fieldName: 'your-file-name2',
+                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+                    }
+                },
+                onChange(editor) {
+                    featureTextarea.value = editor.getHtml()
+                }
+            },
+            // html: '<p>editor2</p><p><br></p>',
+            mode: 'simple'
+        })
+        const toolbar2 = F.createToolbar({
+            editor: editor2,
+            selector: '#editor-toolbar-2',
+            config: {}
+        })
+    
+        // const E = window.wangEditor
+        const installTextarea1 = document.getElementById('editor-container11')
+        const featureTextarea1 = document.getElementById('editor-container22')
+    
+        // 切换语言
+        // const LANG = location.href.indexOf('lang=en') > 0 ? 'en' : 'zh-CN'
+        // E.i18nChangeLanguage(LANG1)
+    
+        // 第一个编辑器
+        const editor11 = F.createEditor({
+            selector: '#editor-text-area-11',
+            config: {
+                placeholder: '这里输入安装方式...',
+                autoFocus: false,
+                MENU_CONF: {
+                    uploadImage: {
+                        fieldName: 'your-file-name1',
+                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+                    }
+                },
+                onChange(editor) {
+                    installTextarea1.value = editor.getHtml()
+                }
+            },
+            // html: '<p>editor1</p><p><br></p>'
+        })
+        const toolbar11 = F.createToolbar({
+            editor: editor11,
+            selector: '#editor-toolbar-11',
+            config: {}
+        })
+    
+        // 第二个编辑器
+        const editor22 = F.createEditor({
+            selector: '#editor-text-area-22',
+            config: {
+                placeholder: '这里输入功能特色...',
+                autoFocus: false,
+                MENU_CONF: {
+                    uploadImage: {
+                        fieldName: 'your-file-name2',
+                        base64LimitSize: 10 * 1024 * 1024 // 10M 以下插入 base64
+                    }
+                },
+                onChange(editor) {
+                    featureTextarea1.value = editor.getHtml()
+                }
+            },
+            // html: '<p>editor2</p><p><br></p>',
+            mode: 'simple'
+        })
+        const toolbar22 = F.createToolbar({
+            editor: editor22,
+            selector: '#editor-toolbar-22',
+            config: {}
+        })
+    </script>
     <script>
         $('.tab .menus li').each(function () {
             $('.tab .menus li').click(function () {

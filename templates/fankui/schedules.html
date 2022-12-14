@@ -1,0 +1,53 @@
+<head>
+    <link rel="stylesheet" href="../../static/css/jiaocheng/software-upload.css">
+    <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+    <style>
+        /* 富文本编辑器 */
+#editor—wrapper11,  #editor—wrapper22{
+    border: 1px solid #ccc;
+    z-index: 100;
+    width: 90%;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+#toolbar-container-11,  #toolbar-container-22{
+    border-bottom: 1px solid #ccc;
+}
+
+#editor-container11 {
+    height: 200px;
+}
+
+#editor-container22 {
+    height: 200px;
+}
+
+button, select{
+    text-transform: none;
+}
+
+    </style>
+</head>
+
+<form action=" {{ url_for('guanyu.figure_skating') }}" method="post" class="format">
+    <div class="basic-info"><span>赛程安排</span> </div>
+    <div id="editor—wrapper22">
+        <div id="editor-toolbar-11" style="border-bottom: 1px solid #ccc;"></div>
+        <div id="editor-text-area-11" style="height: 200px;"></div>
+        <div id="content-view-11" class="editor-content-view"></div>
+        <input style="display: none" name="name" id="editor-container11" value>
+    </div>
+    <div class="basic-info"><span>赛事规则</span> </div>
+    <div id="editor—wrapper22" name="feature">
+        <div id="editor-toolbar-22" style="border-bottom: 1px solid #ccc;"></div>
+        <div id="editor-text-area-22" style="height: 200px;"></div>
+        <div id="content-view-22" class="editor-content-view"></div>
+        <input style="display: none" name="rules" id="editor-container22" value>
+    </div>
+    <div id="confirm" class="confirm">
+        <div><button type="reset" class="reset">重 置</button></div>
+        <div><button type="submit" class="submit reset">提 交</button></div>
+    </div>
+</form>
