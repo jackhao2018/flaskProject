@@ -1,39 +1,55 @@
 <head>
     <link rel="stylesheet" href="../../static/css/fankui/competition.css">
 </head>
-
-<form action="{{ url_for('guanyu.soft_upload') }}" method="post" class="competitionFormat">
+<!-- //action="{{ url_for('guanyu.schedule_upload') }}" method="post"  -->
+<form action="{{ url_for('guanyu.schedule_upload') }}" class="competitionFormat" target="myiframe">
     <h1>比赛信息</h1>
     <div id="competition-box-info">
         <div id="competition-Title"><span>赛事名称:</span></div>
         <div class="wrapInput"><input id="competitionName" name="competitionName" class="competitionName" type="text"
-                placeholder="  请输入赛事" maxlength="50" value></div>
+                placeholder="  请输入赛事" maxlength="50" value ></div>
     </div>
+    <div id="competition-box-info">
+        <div id="competition-Title"><span>比赛时间:</span></div>
+    </div>
+    <input id="starttime" type="text" name="starttime" style="display: none;" value>
+    <input id="endtime" type="text" name="endtime" style="display: none;" value>
     <div class="competitionWrap">
-        <div id='daterange' class="dateinputer">
+        <div id='daterange' class="dateinputer" name="time">
         </div>
     </div>
+    <div id="confirm" class="confirm">
+        <div><button type="reset" class="reset">重 置</button></div>
+        <div><button type="submit" formmethod="post" class="submit reset">提 交</button></div>
+    </div>
 </form>
-<script src="../static/js/jquery-3.6.0.js"></script>
-<script src="../static/js/moment.js"></script>
-<script type="text/javascript" src="../static/js/xndatepicker.js"></script>
+<iframe id="myiframe" name="myiframe" style="display:none"></iframe>
+<script src="../../static/js/jquery-3.6.0.js"></script>
+<script src="../../static/js/moment.js"></script>
+<script type="text/javascript" src="../../static/js/xndatepicker.js"></script>
 <script type="text/javascript">
-    var daterange=new XNDatepicker($("#daterange"),{
-        // format:'YYYY-MM-DD',
-        type:'daterange',//year/month/date/multiple/ week/datetime/datetimerange/ daterange/monthrange/yearrange
-        multipleDates:[],//当为多选日期类型时的初始值
-        startTime:'',
+    var daterange = new XNDatepicker($("#daterange"), {
+        format:'YYYY-MM-DD',
+        type: 'daterange',//year/month/date/multiple/ week/datetime/datetimerange/ daterange/monthrange/yearrange
+        multipleDates: [],//当为多选日期类型时的初始值
+        startTime: '',
         // endTime:'2036-04-04',
         // minDate:'2019-04-04',
-        maxDate:'',
-        separator:' 到 ',
-        showType:'modal',
-        linkPanels:false,//面板联动
-        showClear:true,//是否显示清除按钮
-        autoConfirm:true,
-        showShortKeys:true,
-        autoFillDate:true,//自动变更element里面的值
-    },function(data){
-        console.log(data)
+        maxDate: '',
+        separator: ' 到 ',
+        showType: 'modal',
+        linkPanels: false,//面板联动
+        showClear: true,//是否显示清除按钮
+        autoConfirm: true,
+        showShortKeys: true,
+        autoFillDate: true,//自动变更element里面的值
+    }, function (data) {
+        // console.log(data)
+        // console.log( moment(data.startTime).format('YYYY-MM-DD'))
+        var starttime = moment(data.startTime).format('YYYY-MM-DD')
+        var endtime = moment(data.startTime).format('YYYY-MM-DD')
+        $("#starttime").attr("value", starttime)
+        $("#endtime").attr("value", endtime)
+        console.log('开始时间：' + data.startTime + '结束时间' + data.endTime)
     },)
 </script>

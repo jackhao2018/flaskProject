@@ -127,7 +127,6 @@ def soft_upload():
 
         db.session.add(software_info)
 
-
         db.session.commit()
         return jsonify({"code": "200", "softwareInfo": data})
 
@@ -135,16 +134,24 @@ def soft_upload():
 def schedule_upload():
 
     if request.method == 'POST':
-        data = request.form
+        import datetime
+        data = json.loads(json.dumps(request.form))
+
         schedule = SchedulesModel(title=data['competitionName'], mtime=data['starttime'], endtime=data['endtime'])
-
         db.session.add(schedule)
-
         db.session.commit()
         return jsonify({"code": "200", "scheduleInfo": data})
 
 
 # @bp.route("/json")
+if __name__ == '__main__':
+    timestamp = 1670947200000
+
+    # 转换成localtime
+    time_local = time.localtime(timestamp)
+    # 转换成新的时间格式(2016-05-05 20:28:54)
+    dt = time.strftime("%Y-%m-%d %H:%M:%S", time_local)
+    print(dt)
 
 
 
