@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer-min.css" />
-    <link rel="icon" type="image/x-icon" href="../static/img/weblogo.ico" />
-    <link rel="stylesheet" href="../static/css/index/index.css">
     <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/index/index.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/weblogo.ico" />
     <link rel="stylesheet" type="text/css" href="../static/css/timeline/style.css" />
     <link rel="stylesheet" type="text/css" href="../static/css/timeline/swiper-3.4.2.min.css" />
+    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer-min.css" />
     <title>生活の真相资源网</title>
 </head>
 <body>
@@ -19,6 +19,11 @@
         <main class="main">
             <div id="contain" class="contain">
                 <div class="prism-player" id="J_prismPlayer"></div>
+                <div id="Rwrap" class="Rwrap"><div id="tag" class="tags">
+                    <div>上</div>
+                    <div><span>我是标签信息</span></div>
+                    <div>下</div>
+                </div>
                 <div class="tabbox">
                     <div class="tab">
                         <a href="javascript:;" class="on">赛程</a>
@@ -36,7 +41,8 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div></div>
+                
             </div>
             <div class="product-section product-features">
                 <div class="product-title">花滑赛事·2022-2023赛季</div>
@@ -118,7 +124,7 @@
                 });
             });
 
-            var auto = 1;  //等于1则自动切换，其他任意数字则不自动切换
+            var auto = 0;  //等于1则自动切换，其他任意数字则不自动切换
             if (auto == 1) {
                 var number = 0;
                 var maxNumber = $('.tabbox .tab a').length;

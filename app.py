@@ -23,10 +23,6 @@ db.init_app(app)
 
 migrate = Migrate(app, db)
 
-# manager = Manager(app)
-
-# manager.add_command('db', MigrateCommand)
-
 
 app.register_blueprint(home_bp)
 app.register_blueprint(guanyu_bp)

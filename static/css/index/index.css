@@ -125,7 +125,34 @@ menuitem,
     background-color: #ffffff;
 }
 
-.search {
+.Rwrap{
+    display: flex;
+}
+
+.tags{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 180px;
+    overflow: hidden;
+    background-color: rgb(231, 180, 180);
+    border-radius: 10px 0px 0px 10px;
+}
+
+.tags div:first-child{
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
+.tags div:nth-child(3){
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
+/* .search {
     position: relative;
     height: 50px;
     width: 100%;
@@ -165,7 +192,7 @@ menuitem,
     align-items: center;
     justify-content: center;
     background-color: #40c5f1;
-}
+} */
 
 /* icon显示黑色*/
 .search-icon-box img {

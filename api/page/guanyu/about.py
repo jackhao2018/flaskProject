@@ -60,7 +60,6 @@ def about():
 
     return render_template('/fankui/home.html')
 
-
 @bp.route('feedback', methods=['POST'])
 def feedbacks():
     # print(f'这是请求过来的数据：{request.form}')
@@ -87,7 +86,7 @@ def feedbacks():
         return jsonify({'code': 500, 'msg': '用户名/反馈意见不能为空！'})
 
 def upload_conf():
-    # if request.method == 'GET':
+
     menuinfo = UpdateModel.query.all()
     menulist = []
     childrenmunulist = []
