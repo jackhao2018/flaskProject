@@ -1,5 +1,5 @@
 from models.schedulemodels import SchedulesModel
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, jsonify
 from models.figureSkatingmodels import FigureSkatingModel
 # import jieba
 # from flask import Blueprint,render_template,request,g,redirect,url_for,flash
@@ -7,6 +7,7 @@ from models.figureSkatingmodels import FigureSkatingModel
 # from config.base_config import BASE_DIR
 
 bp = Blueprint('home', __name__, url_prefix="/")
+
 
 # @bp.route('')
 # def world_cloud():
@@ -32,9 +33,15 @@ def index():
     for schedule in schedules:
         schedule_list.append(schedule.to_dict())
 
-    figureskating = FigureSkatingModel.query.order_by(FigureSkatingModel.id.desc()).first()
+    figureskate_list = []
+    figureskatings = FigureSkatingModel.query.order_by(FigureSkatingModel.id.desc()).all()
+    for figureskate in figureskatings:
+        figureskate_list.append(figureskate.to_dict())
 
-    return render_template('index.html', result={'schedule': figureskating['name'], 'rules': figureskating['rules'], 'schedule_list': schedule_list})
+    # print({'data': figureskate_list})
+    # return jsonify({'data': figureskate_list, 'schedule_list': schedule_list})
+
+    return render_template('index.html', result={'data': figureskate_list, 'schedule_list': schedule_list})
 
 # @bp.route('/aliyun')
 # def zhibo():
@@ -49,6 +56,3 @@ def index():
 #     # questions =QuestionModel.query.filter(or_(QuestionModel.title.contains(q),QuestionModel.content.contains(q))).order_by(db.text("-create_time"))
 #     # return render_template("index.html", data=q)
 #     return {f"你搜索的内容是：{q}"}
-
-
-

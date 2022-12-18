@@ -125,93 +125,41 @@ menuitem,
     background-color: #ffffff;
 }
 
+/* 赛事标签样式 */
+.tag-warp{
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 540px;
+    /* background-color: #666; */
+}
+
+.tag{
+    display: table-cell;
+    word-break:keep-all;
+    color: black;
+    /* word-wrap:break-word; */
+    text-align: center;
+    vertical-align:middle;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 21px;
+    background-color:#bfd7f0
+}
+
+/* #tags div:first-child div:first-child{
+    background-color: yellow;
+} */
+
+.tag:hover{
+    cursor:pointer;
+    /*光标呈现为指示链接的指针（一只手）*/
+  }
+
 .Rwrap{
     display: flex;
 }
-
-.tags{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 180px;
-    overflow: hidden;
-    background-color: rgb(231, 180, 180);
-    border-radius: 10px 0px 0px 10px;
-}
-
-.tags div:first-child, .tags div:nth-child(3){
-    display: flex;
-    width: 100%;
-    height: 20%;
-    /* 内容水平居中 */
-    justify-content:center; 
-    /* 内容垂直居中 */
-    align-items:center; 
-    /* background-color: black; */
-}
-
-.tags div:first-child img, .tags div:nth-child(3) img{
-    /* display: block; */
-    width: 60%;
-    height: 60%;
-}
-
-.tags div span{
-    display: table-cell;
-    writing-mode: vertical-lr;
-    word-break:keep-all;
-    text-align: center;
-    vertical-align:middle;
-    width: 30px;
-    font-size: 21px;
-    height: 120px;
-    overflow: hidden;
-    /* background-color:#384047 */
-}
-
-
-/* .search {
-    position: relative;
-    height: 50px;
-    width: 100%;
-}
-
-.search-box {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    height: 40px;
-    width: 400px;
-    border: none;
-    border-radius: 8px;
-    top: 10px;
-    right: 5%;
-    overflow: hidden;
-    background-color: #F2F3F4;
-}
-
-.put {
-    display: block;
-    height: 100%;
-    width: 90%;
-    border: none;
-    color: black;
-    outline: medium;
-    background-color: #F2F3F4;
-}
-
-.search-icon-box {
-    display: flex;
-    width: 10%;
-    height: 100%;
-    right: 0%;
-    border: none;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    background-color: #40c5f1;
-} */
 
 /* icon显示黑色*/
 .search-icon-box img {

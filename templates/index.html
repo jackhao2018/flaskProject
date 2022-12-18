@@ -13,36 +13,43 @@
     <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.13.2/skins/default/aliplayer-min.css" />
     <title>生活の真相资源网</title>
 </head>
+
 <body>
     <div id="root">
         {% include 'banner.html' %}
         <main class="main">
             <div id="contain" class="contain">
                 <div class="prism-player" id="J_prismPlayer"></div>
-                <div id="Rwrap" class="Rwrap"><div id="tag" class="tags">
-                    <div><img src="../static/img/common/up.png" alt="向上翻"></div>
-                    <div><span>我是标签信息asdf asdf </span></div>
-                    <div><img src="../static/img/common/down.png" alt="向下翻"></div>
+                <div id="Rwrap" class="Rwrap">
+                    <div id="tags" class="tag-warp">
+                        {% for tag in result.data %}
+                        <div id="wrap">
+                            <div id={{tag.tag}} class="tag" onclick="switch_tag(this)">
+                                <div>{{tag.tag}}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="tabbox">
+                        <div class="tab">
+                            <a href="javascript:;" class="on">赛程</a>
+                            <a href="javascript:;">赛事规则</a>
+                        </div>
+                        <div id="data" hidden="hidden">{{ result.data }}</div>
+                        <div id="schedules" hidden="hidden">{{ result.data[0].name }}</div>
+                        <div id="rules" hidden="hidden">{{ result.data[0].rules }}</div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <div id="schedule"></div>
+                                </li>
+                                <li>
+                                    <div id="rule"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="tabbox">
-                    <div class="tab">
-                        <a href="javascript:;" class="on">赛程</a>
-                        <a href="javascript:;">赛事规则</a>
-                    </div>
-                    <div id="schedules" hidden="hidden">{{ result.schedule }}</div>
-                    <div id="rules" hidden="hidden">{{ result.rules }}</div>
-                    <div class="content">
-                        <ul>
-                            <li>
-                                <div id="schedule"></div>
-                            </li>
-                            <li>
-                                <div id="rule"></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div></div>
-                
             </div>
             <div class="product-section product-features">
                 <div class="product-title">花滑赛事·2022-2023赛季</div>
@@ -151,11 +158,54 @@
     <script>
         $(function () {
             $("#schedule").html($("#schedules").text());
+            document.getElementById('青少年').style.cssText = "background:#E64E3F"
         });
         $(function () {
             $("#rule").html($("#rules").text());
         });
     </script>
+    <script>
+
+        function escapeHtml(str) {
+            var arrEntities = {
+                'lt': '<',
+                'gt': '>',
+                'nbsp': ' ',
+                'amp': '&',
+                'quot': '"'
+            };
+            return str.replace(/&(lt|gt|nbsp|amp|quot);/ig, function (all, t) {
+                return arrEntities[t];
+            });
+        }
+
+        const data = document.getElementById('data').innerHTML
+        jsondata = eval('(' + data + ')')
+        const switch_tag = function (event) {
+            for (var i = 0; i < jsondata.length; i++) {
+                if (event.id == '大奖赛' & jsondata[i].tag == '大奖赛') {
+                    document.getElementById("schedule").innerHTML = escapeHtml(jsondata[i].name);
+                    document.getElementById("rule").innerHTML = escapeHtml(jsondata[i].rules);
+                    document.getElementById(event.id).style.cssText = "background:#E64E3F";
+                    document.getElementById('花滑').removeAttribute('style')
+                    document.getElementById('青少年').removeAttribute('style')
+                } else if (event.id == '花滑' & jsondata[i].tag == '花滑 世锦赛') {
+                    document.getElementById('大奖赛').removeAttribute('style')
+                    document.getElementById('青少年').removeAttribute('style')
+                    document.getElementById("schedule").innerHTML = escapeHtml(jsondata[i].name);
+                    document.getElementById("rule").innerHTML = escapeHtml(jsondata[i].rules);
+                    document.getElementById(event.id).style.cssText = "background:#E64E3F";
+                } else if (event.id == '青少年' & jsondata[i].tag == '青少年 世锦赛') {
+                    document.getElementById('大奖赛').removeAttribute('style')
+                    document.getElementById('花滑').removeAttribute('style')
+                    document.getElementById("schedule").innerHTML = escapeHtml(jsondata[i].name);
+                    document.getElementById("rule").innerHTML = escapeHtml(jsondata[i].rules);
+                    document.getElementById(event.id).style.cssText = "background:#E64E3F";
+                }
+            }
+        }
+    </script>
+
 </body>
 
 </html>
