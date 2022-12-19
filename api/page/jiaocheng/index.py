@@ -18,8 +18,6 @@ def index():
         software_dict['url'] = software['softURL']
         software_list.append(software_dict)
 
-    print(software_list)
-
     return render_template('/jiaocheng/index.html', result={'softwarInfo': software_list, 'total': len(result)})
 
 @bp.route("/pr")
