@@ -4,7 +4,7 @@ from models.fansmodels import FansDetailsModel
 import json
 
 
-bp = Blueprint("yingyin", __name__, url_prefix="/media")
+bp = Blueprint("yingyin", __name__, url_prefix="/medias")
 
 @bp.route("/")
 def index():
