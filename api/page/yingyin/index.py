@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, url_for
 from models.mediamodels import MediaModel
+from models.fansmodels import FansDetailsModel
 import json
 
 
@@ -7,8 +8,14 @@ bp = Blueprint("yingyin", __name__, url_prefix="/media")
 
 @bp.route("/")
 def index():
+    fans_name_list = []
+    result = FansDetailsModel.query.all()
+    for fans in result:
+        fans = fans.to_dict()
+        fans_name_list.append(fans['fans_name'])
 
-    return render_template('/yingyin/home.html')
+    # print(fans_name_list)
+    return render_template('/test2.html', result={'fans_list': fans_name_list})
 
 @bp.route("/img_info")
 def get_img_info():
