@@ -1,223 +1,22 @@
 <html foxified="">
 
 <head>
-	<meta charset="utf-8">
-	<title>段落文字动画显示效果</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
 	<link rel="stylesheet" href="../static/css/wenzi.css" type="text/css">
-	<style>
-		::-webkit-scrollbar {
-			display: none;
-			/* Chrome Safari */
-		}
-
-		/*这盒子的样式自定义*/
-		#text {
-			overflow: scroll;
-			width: 90%;
-			height: 90%;
-			background: rgba(187, 236, 234, 0.2);
-			margin: 0 auto;
-			margin-top: 35px;
-			padding: 15px;
-			font-size: 25px;
-			line-height: 45px;
-			border-radius: 5px;
-			-webkit-box-shadow: 3px 3px 3px 4px rgba(105, 152, 211, 0.44);
-			-moz-box-shadow: 3px 3px 3px 4px rgba(105, 152, 211, 0.44);
-			box-shadow: 3px 3px 3px 4px rgba(105, 152, 211, 0.44);
-		}
-
-
-		body,
-		ul,
-		li,
-		ol,
-		dl,
-		dd,
-		dt,
-		p,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		form,
-		img {
-			margin: 0;
-			padding: 0;
-		}
-
-		body,
-		html {
-			font-size: 16px;
-			font-family: "å¾®è½¯é›…é»‘";
-			height: 100%;
-			width: 100%;
-			box-sizing: border-box;
-			background: #004872;
-			overflow: hidden;
-			background-size: 100% 100%;
-			color: #ffffff;
-		}
-
-		a {
-			color: #3e3e3e;
-			text-decoration: none;
-		}
-
-		.middle {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			-webkit-transform: translate(-50%, -50%);
-			-moz-transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
-			-o-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
-		}
-
-		img,
-		input,
-		button,
-		textarea {
-			border: none;
-			padding: 0;
-			margin: 0;
-			outline-style: none;
-		}
-
-		ul {
-			list-style: none;
-		}
-
-		input {
-			padding-top: 0;
-			padding-bottom: 0;
-			font-family: "SimSun", "å®‹ä½“";
-		}
-
-		/*åŽ»æŽ‰è¡Œå†…æ›¿æ¢å…ƒç´ ç©ºç™½ç¼éš™*/
-		img {
-			border: 0;
-			vertical-align: middle;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			text-decoration: none;
-			font-weight: normal;
-			font-size: 100%;
-		}
-
-		s,
-		i,
-		em,
-		u {
-			font-style: normal;
-			text-decoration: none;
-		}
-
-		.fl {
-			float: left;
-		}
-
-		.fr {
-			float: right;
-		}
-
-		/*æ¸…é™¤æµ®åŠ¨*/
-		.clearfix:before,
-		.clearfix:after {
-			content: "";
-			display: table;
-		}
-
-		.clearfix:after {
-			clear: both;
-		}
-
-		.clearfix {
-			*zoom: 1;
-			/*IE/7/6*/
-		}
-
-		#btnBox {
-			text-align: center;
-			margin-top: 30px;
-		}
-
-		#btnBox .speed {
-			display: flex;
-			width: 100%;
-			height: 100px;
-			color: #ff4747;
-			font-weight: bold;
-			justify-content: center;
-			align-items: center;
-			font-size: 96px;
-		}
-
-		#btnBox ul {
-			display: inline-block;
-		}
-
-		#btnBox ul li {
-			float: left;
-			padding: 14px 0;
-			background-color: rgba(93, 207, 255, 0.7);
-			width: 18%;
-			margin: 5px;
-			border-radius: 5px;
-			-webkit-box-shadow: 2px 2px 2px 2px rgba(64, 116, 153, 0.7);
-			-moz-box-shadow: 2px 2px 2px 2px rgba(57, 114, 148, 0.7);
-			box-shadow: 2px 2px 2px 2px rgba(59, 127, 157, 0.7);
-			cursor: pointer;
-		}
-
-		#btnBox ul .effF {
-			background-color: rgb(18, 131, 255);
-		}
-
-		.example {
-			color: #fff;
-			font-size: 14px;
-			margin-left: 20px;
-		}
-
-		#btnBox .speedF {
-			color: #c15404;
-		}
-
-		#btnBox .speedBtn {
-			position: absolute;
-			left: 50%;
-			-webkit-transform: translate(-50%, 0%);
-			-moz-transform: translate(-50%, 0%);
-			-ms-transform: translate(-50%, 0%);
-			-o-transform: translate(-50%, 0%);
-			transform: translate(-50%, 0%);
-		}
-
-		#btnBox .speedBtn i {
-			padding: 6px 10px;
-			cursor: pointer;
-		}
-
-		@media screen and (max-width: 1430px) {
-			#btnBox {
-				top: 14px;
-			}
-		}
-	</style>
+	<link rel="stylesheet" href="../static/css/fans.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/global.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/index/index.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/yingyin/home.css" type="text/css">
+    <title>生活の真相资源网</title>
 </head>
 
 <body>
-	<!--点击看效果 使用时可以忽略-->
+	<div id="root">
+		{% include 'banner.html' %}
+		<!--点击看效果 使用时可以忽略-->
 	<div id="btnBox" effext="effext">
 		<div class="speed">
 			<span>粉丝面板</span>
@@ -248,6 +47,8 @@
 	<!--插件必须的html-->
 	<div id="text">
 	</div>
+	</div>
+	
 	<script src="../static/js/jquery-3.6.0.js"></script>
 	<script src="../static/js/swiper-3.4.2.jquery.min.js"></script>
 	<script>
@@ -258,7 +59,10 @@
 				speed: 15, //显示速度  慢400 正常200 快60 极快15  数字可以自定义
 				conBox: "#text",
 			});
-			words = document.getElementById('fans-name').innerText
+			words1 = document.getElementById('fans-name').innerText
+			words = words1.replace(/'/g, "")
+			words = words.replace("[", "")
+			words = words.replace("]", "")
 			//演示效果点击事件,可忽略
 			if ($("#btnBox").attr("effext") === "effext") {
 				var speI = 15;
