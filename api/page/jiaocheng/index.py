@@ -14,9 +14,6 @@ def index():
 
     for software in result:
         software_list.append(software.to_dict())
-
-    # print(software_list)
-
     return render_template('/jiaocheng/index.html', result={'softwarInfo': software_list, 'total': len(result)})
 
 @bp.route("/pr/<softname>")
@@ -24,12 +21,10 @@ def prdownload(softname):
     result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
     return render_template('/jiaocheng/software-download.html', result={"downloadTP": "PR下载", 'data': result.to_dict()})
 
-@bp.route("/ps")
-def psdownload():
-    data = SoftwareModel.query.all()
-    result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'photoshop' + '%')).all()
-
-    return render_template('/jiaocheng/software-download.html', downloadTp={"type": "PS下载"})
+@bp.route("/ps/<softname>")
+def psdownload(softname):
+    result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
+    return render_template('/jiaocheng/software-download.html', result={"downloadTP": "PS下载", 'data': result.to_dict()})
 
 @bp.route("/ae")
 def aedownload():
