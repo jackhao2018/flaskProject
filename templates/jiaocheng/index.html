@@ -32,24 +32,27 @@
                     <li><a href=""> 字幕预设</a></li>
                 </ul> -->
             </div>
+            
              <div name="card-area" id="card-area" class="card-area">
-               <div id="card" name="card" class="card">
-                    <a href="{{ url_for('jiaocheng.prdownload') }}" class="imgwrap"><img src="{{result.softwarInfo[0].url}}" alt="卡片图片"
-                            class="card-img"></a>
+                 {% for soft in result.softwarInfo %}
+                 <div id="card" name="card" class="card">
+                    <a href="{{ url_for('jiaocheng.prdownload', softname= soft.softName) }}" class="imgwrap"><img src="{{soft.softURL}}" alt="卡片图片" class="card-img"></a>
                     <!-- <div id="son-tag" name="son-tag" class="son-tag">
                         <div id="point-1" class="point-1"></div>
                         <span>子标签1</span>
                         <div id="point-2" class="point-2"></div>
                         <span>子标签2</span>
                     </div> -->
-                    <a href="{{ url_for('jiaocheng.prdownload') }}">
-                        <div id="card-title" class="card-title" style="margin-top: 20px;">{{result.softwarInfo[0].name}}</div>
+                    <a href="{{ url_for('jiaocheng.prdownload', softname= soft.softName) }}">
+                        <div id="card-title" class="card-title" style="margin-top: 20px;">{{soft.softName}}</div>
                     </a>
                     <!-- <div id="preview" class="preview">
                         <img src="../../static/img/common/preview.png" alt="预览icon">
                         <span> 500</span>
                     </div> -->
                 </div>
+                 {% endfor %}
+               
                <!--  <div id="card" name="card" class="card">
                     <img src="..\..\static\img\ciyun.png" alt="卡片图片" class="card-img">
                     <div id="son-tag" name="son-tag" class="son-tag">
