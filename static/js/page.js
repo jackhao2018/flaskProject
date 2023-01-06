@@ -6,7 +6,7 @@ function Paging(options) {
         prevText: '上一页',
         nextText: '下一页',
         lastText: '尾页',
-        PageSize: 10,
+        PageSize: 12,
         PageNum: 5,
         container: document.getElementsByClassName('paging')[0]
     }

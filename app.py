@@ -29,8 +29,12 @@ app.register_blueprint(guanyu_bp)
 app.register_blueprint(jiaocheng_bp)
 app.register_blueprint(yingyin_bp)
 
+@app.template_test('start_with')
+def start_with(matchstr, suffix):
+    return matchstr.lower().startswith(suffix.lower())
 
-# 出现山下文报错时用到
+
+# 出现上下文报错时用到
 
 @app.route('/111')
 def hello_world():

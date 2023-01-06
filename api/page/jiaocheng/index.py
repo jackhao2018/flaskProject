@@ -8,9 +8,15 @@ bp = Blueprint("jiaocheng", __name__, url_prefix="/jiaocheng")
 
 @bp.route("/")
 def index():
-
-    result = SoftwareModel.query.all()
+    downtype = request.args.get('downtype')
     software_list = []
+    # print(downtype)
+    if downtype == 'pr':
+        result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'Premiere' + '%')).all()
+    elif downtype == 'ps':
+        result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'Photoshop' + '%')).all()
+    else:
+        result = SoftwareModel.query.all()
 
     for software in result:
         software_list.append(software.to_dict())

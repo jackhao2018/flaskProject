@@ -19,8 +19,8 @@
         <main id="main" class="main">
             <div name="line-box" id="line-box" class="line-box">
                 <ul id="filter-1" class="filter">
-                    <li><a name="PR下载" href="{{ url_for('jiaocheng.index') }}"> PR下载</a></li>
-                    <li><a name="PS下载" href="{{ url_for('jiaocheng.index') }}"> PS下载</a></li>
+                    <li><a name="PR下载" href="{{ url_for('jiaocheng.index', downtype='pr')}}"> PR下载</a></li>
+                    <li><a name="PS下载" href="{{ url_for('jiaocheng.index', downtype='ps') }}"> PS下载</a></li>
                     <!-- <li><a href="{{ url_for('jiaocheng.aedownload') }}"> AE下载</a></li>
                     <li><a href="{{ url_for('jiaocheng.c4ddownload') }}"> C4D下载</a></li> -->
                 </ul>
@@ -32,11 +32,13 @@
                     <li><a href=""> 字幕预设</a></li>
                 </ul> -->
             </div>
-            
-             <div name="card-area" id="card-area" class="card-area">
-                 {% for soft in result.softwarInfo %}
-                 <div id="card" name="card" class="card">
-                    <a href="{{ url_for('jiaocheng.prdownload', softname= soft.softName) }}" class="imgwrap"><img src="{{soft.softURL}}" alt="卡片图片" class="card-img"></a>
+
+            <div name="card-area" id="card-area" class="card-area">
+                {% for soft in result.softwarInfo %}
+                {% if soft.softName is start_with "adobe_pre" %}
+                <div id="card" name="card" class="card">
+                    <a href="{{ url_for('jiaocheng.prdownload', softname=soft.softName) }}" class="imgwrap"><img
+                            src="{{soft.softURL}}" alt="卡片图片" class="card-img"></a>
                     <!-- <div id="son-tag" name="son-tag" class="son-tag">
                         <div id="point-1" class="point-1"></div>
                         <span>子标签1</span>
@@ -51,35 +53,66 @@
                         <span> 500</span>
                     </div> -->
                 </div>
-                 {% endfor %}
-               
-               <!--  <div id="card" name="card" class="card">
-                    <img src="..\..\static\img\ciyun.png" alt="卡片图片" class="card-img">
-                    <div id="son-tag" name="son-tag" class="son-tag">
-                        <div id="point-1" class="point-1"></div>
-                        <span>子标签1</span>
-                        <div id="point-2" class="point-2"></div>
-                        <span>子标签2</span>
-                    </div>
-                    <div id="card-title" class="card-title">
-                        我士大夫撒旦富士达富士达范德萨开飞机的撒娇发士大夫静安寺发士大夫就爱上对方阿三酱豆腐深刻搭街坊撒酒疯喀什酱豆腐萨夫卡的说法</div>
-                    <div id="preview" class="preview">
-                        <img src="../../static/img/common/preview.png" alt="预览icon">
-                        <span> 500</span>
-                    </div>
+                {% elif soft.softName is start_with "adobe_photo" %}
+                <div id="card" name="card" class="card">
+                    <a href="{{ url_for('jiaocheng.psdownload', softname= soft.softName) }}" class="imgwrap"><img
+                            src="{{soft.softURL}}" alt="卡片图片" class="card-img"></a>
+                    <a href="{{ url_for('jiaocheng.psdownload', softname= soft.softName) }}">
+                        <div id="card-title" class="card-title" style="margin-top: 20px;">{{soft.softName}}</div>
+                    </a>
                 </div>
- -->
+                {% endif %}
+                {% endfor %}
             </div>
-            <div id="pagewrap"><div class="paging">
-            </div></div>
+            <div id="pagewrap">
+                <div class="paging">
+                </div>
+            </div>
         </main>
-        <div id="footer" class="footer">Copyright ©爱分享. | 本站内所有涉及的下载软件均收集于互联网，如果侵犯了你的权益，请联系我及时删除。 </div>    
+        <div id="footer" class="footer">Copyright ©爱分享. | 本站内所有涉及的下载软件均收集于互联网，如果侵犯了你的权益，请联系我及时删除。 </div>
     </div>
     <script src="../../static/js/page.js"></script>
     <script src="../../static/js/jquery-3.6.0.js"></script>
     <script src="../../static/js/navscript.js" type="text/javascript"></script>
     <script>
-        let paging = new Paging({ total: 1 });
+
+        // window.onload = function () {
+        //     const httpRequest = new XMLHttpRequest();
+        //     const Url = window.location.origin + '/about/fans';
+        //     httpRequest.open("GET", Url, true);
+        //     httpRequest.send();
+
+        //     httpRequest.onreadystatechange = function () {
+        //         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+        //             //获取到json字符串，还需解析
+        //             jsondata = eval('(' + httpRequest.responseText + ')');
+
+        //             var add_options;
+
+        //             for (var i = 0; i < jsondata.fans_name_list.length; i++) {
+        //                 add_options += '<option value="' + jsondata.fans_name_list[i].fans_name + '">' + jsondata.fans_name_list[i].fans_name + '</option>';
+        //             }
+        //             // $("datalist#batch_list").append(add_options);
+
+        //             //TODO: 获取粉丝关注时间的功能后面再做
+        //             // console.log('这是全局变量' + jsondata);
+
+        //             // var input_value = document.getElementById('#username')
+
+        //             // for (var i = 0; i < jsondata.fans_name_list.length; i++) {
+        //             //     if (jsondata.fans_name_list[i].fans_name == input_value.value) {
+        //             //         console.log('粉丝输入，显示粉丝相关信息')
+        //             //         document.getElementById("mtime").innerText = jsondata.fans_name_list[i].mtime;
+        //             //         document.getElementById("viptype").innerText = jsondata.fans_name_list[i].vip_type;
+        //             //         document.getElementById("sign").innerText = jsondata.fans_name_list[i].sign;
+        //             //     }
+        //             // }
+
+        //         }
+        //     }
+        // }
+
+        let paging = new Paging({ total: 5 });
     </script>
 </body>
 

@@ -12,7 +12,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 STATIC_FOLDER = "./static"
 
-#数据库的配置变量
+# 数据库的配置变量
 HOSTNAME = '110.41.6.160'
 PORT = '3306'
 DATABASE = 'Bzhan'
