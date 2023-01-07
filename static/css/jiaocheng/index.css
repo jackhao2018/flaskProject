@@ -72,18 +72,29 @@
 
 
 /* 超过1920显示器的显示样式 */
-@media (max-width: 2760px) {
+@media (max-width: 4000px) {
+    .card-area {
+        display: flex;
+        width: 80%;
+        min-height: 800px;
+        margin-left: 10%;
+        margin-top: 10px;
+        flex-direction: row;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
     .card {
         height: 350px;
-        flex: 0 0 18%;
-        position: relative;
-        border-radius: 5px;
+        flex: 0 0 10%;
         margin-left: 20px;
         margin-bottom: 20px;
         font-size: 14px;
+        position: relative;
+        border-radius: 5px;
         background-color: whitesmoke;
         -webkit-box-flex: 0;
-        overflow: hidden;
     }
 }
 
@@ -93,11 +104,11 @@
     .card-area {
         display: flex;
         width: 80%;
-        /* height: 500px; */
+        min-height: 500px;
         margin-left: 10%;
         margin-top: 10px;
         flex-direction: row;
-        align-content:flex-start;
+        align-content: flex-start;
         flex-wrap: wrap;
         overflow: hidden;
     }

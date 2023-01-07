@@ -15,6 +15,8 @@ def index():
         result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'Photoshop' + '%')).all()
     elif downtype == 'ae':
         result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'after' + '%')).all()
+    elif downtype == 'me':
+        result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'media' + '%')).all()
     else:
         result = SoftwareModel.query.all()
 
@@ -27,6 +29,7 @@ def prdownload(softname):
     result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
     return render_template('/jiaocheng/software-download.html', result={"downloadTP": "PR下载", 'data': result.to_dict()})
 
+
 @bp.route("/ps/<softname>")
 def psdownload(softname):
     result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
@@ -37,6 +40,13 @@ def psdownload(softname):
 def aedownload(softname):
     result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
     return render_template('/jiaocheng/software-download.html', result={"downloadTP": "AE下载", 'data': result.to_dict()})
+
+
+@bp.route("/me/<softname>")
+def medownload(softname):
+    result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
+    return render_template('/jiaocheng/software-download.html', result={"downloadTP": "ME下载", 'data': result.to_dict()})
+
 
 @bp.route("/c4d")
 def c4ddownload():
