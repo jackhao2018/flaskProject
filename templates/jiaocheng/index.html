@@ -14,26 +14,26 @@
 </head>
 
 <body>
-    <div id="root">
-        {% include 'banner.html' %}
-        <main id="main" class="main">
-            <div name="line-box" id="line-box" class="line-box">
-                <ul id="filter-1" class="filter">
-                    <li><a name="PR下载" href="{{ url_for('jiaocheng.index', downtype='pr')}}"> PR下载</a></li>
-                    <li><a name="PS下载" href="{{ url_for('jiaocheng.index', downtype='ps') }}"> PS下载</a></li>
-                    <!-- <li><a href="{{ url_for('jiaocheng.aedownload') }}"> AE下载</a></li>
-                    <li><a href="{{ url_for('jiaocheng.c4ddownload') }}"> C4D下载</a></li> -->
-                </ul>
-                <!-- <ul id="filter-2" class="filter">
-                    <li><a href=""> PR插件</a> </li>
-                    <li><a href=""> AE插件</a></li>
-                    <li><a href=""> PS插件</a></li>
-                    <li><a href=""> PR脚本</a></li>
-                    <li><a href=""> 字幕预设</a></li>
-                </ul> -->
-            </div>
+<div id="root">
+    {% include 'banner.html' %}
+    <main id="main" class="main">
+        <div name="line-box" id="line-box" class="line-box">
+            <ul id="filter-1" class="filter">
+                <li><a name="PR下载" href="{{ url_for('jiaocheng.index', downtype='pr') }}"> PR下载</a></li>
+                <li><a name="PS下载" href="{{ url_for('jiaocheng.index', downtype='ps') }}"> PS下载</a></li>
+                <li><a name="AE下载" href="{{ url_for('jiaocheng.index', downtype='ae') }}"> AE下载</a></li>
+                <!-- <li><a href="{{ url_for('jiaocheng.c4ddownload') }}"> C4D下载</a></li> -->
+            </ul>
+            <!-- <ul id="filter-2" class="filter">
+                <li><a href=""> PR插件</a> </li>
+                <li><a href=""> AE插件</a></li>
+                <li><a href=""> PS插件</a></li>
+                <li><a href=""> PR脚本</a></li>
+                <li><a href=""> 字幕预设</a></li>
+            </ul> -->
+        </div>
 
-            <div name="card-area" id="card-area" class="card-area">
+        <div name="card-area" id="card-area" class="card-area">
                 {% for soft in result.softwarInfo %}
                 {% if soft.softName is start_with "adobe_pre" %}
                 <div id="card" name="card" class="card">
@@ -54,20 +54,28 @@
                     </div> -->
                 </div>
                 {% elif soft.softName is start_with "adobe_photo" %}
-                <div id="card" name="card" class="card">
-                    <a href="{{ url_for('jiaocheng.psdownload', softname= soft.softName) }}" class="imgwrap"><img
-                            src="{{soft.softURL}}" alt="卡片图片" class="card-img"></a>
-                    <a href="{{ url_for('jiaocheng.psdownload', softname= soft.softName) }}">
-                        <div id="card-title" class="card-title" style="margin-top: 20px;">{{soft.softName}}</div>
-                    </a>
-                </div>
+                    <div id="card" name="card" class="card">
+                        <a href="{{ url_for('jiaocheng.psdownload', softname= soft.softName) }}" class="imgwrap"><img
+                                src="{{ soft.softURL }}" alt="卡片图片" class="card-img"></a>
+                        <a href="{{ url_for('jiaocheng.psdownload', softname= soft.softName) }}">
+                            <div id="card-title" class="card-title" style="margin-top: 20px;">{{ soft.softName }}</div>
+                        </a>
+                    </div>
+                {% elif soft.softName is start_with "adobe_after" %}
+                    <div id="card" name="card" class="card">
+                        <a href="{{ url_for('jiaocheng.aedownload', softname= soft.softName) }}" class="imgwrap"><img
+                                src="{{ soft.softURL }}" alt="卡片图片" class="card-img"></a>
+                        <a href="{{ url_for('jiaocheng.aedownload', softname= soft.softName) }}">
+                            <div id="card-title" class="card-title" style="margin-top: 20px;">{{ soft.softName }}</div>
+                        </a>
+                    </div>
                 {% endif %}
                 {% endfor %}
+        </div>
+        <div id="pagewrap">
+            <div class="paging">
             </div>
-            <div id="pagewrap">
-                <div class="paging">
-                </div>
-            </div>
+        </div>
         </main>
         <div id="footer" class="footer">Copyright ©爱分享. | 本站内所有涉及的下载软件均收集于互联网，如果侵犯了你的权益，请联系我及时删除。 </div>
     </div>
