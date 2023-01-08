@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico" />
+    <link rel="icon" type="image/x-icon" href="../../static/img/weblogo.ico"/>
     <link rel="stylesheet" href="../../static/css/global.css" type="text/css">
-    <!-- <link rel="stylesheet" href="../../static/css/nav.css" type="text/css"> -->
     <link rel="stylesheet" href="../../static/css/index/index.css" type="text/css">
     <link rel="stylesheet" href="../../static/css/jiaocheng/index.css" type="text/css">
     <title>生活の真相资源网</title>
@@ -19,10 +18,10 @@
     <main id="main" class="main">
         <div name="line-box" id="line-box" class="line-box">
             <ul id="filter-1" class="filter">
-                <li><a name="PR下载" href="{{ url_for('jiaocheng.index', downtype='pr') }}"> PR下载</a></li>
-                <li><a name="PS下载" href="{{ url_for('jiaocheng.index', downtype='ps') }}"> PS下载</a></li>
-                <li><a name="AE下载" href="{{ url_for('jiaocheng.index', downtype='ae') }}"> AE下载</a></li>
-                <li><a name="ME下载" href="{{ url_for('jiaocheng.index', downtype='me') }}"> ME下载</a></li>
+                <li><a name="PR下载" href="{{ url_for('jiaocheng.index', downtype='pr', page=1) }}"> PR下载</a></li>
+                <li><a name="PS下载" href="{{ url_for('jiaocheng.index', downtype='ps', page=1) }}"> PS下载</a></li>
+                <li><a name="AE下载" href="{{ url_for('jiaocheng.index', downtype='ae', page=1) }}"> AE下载</a></li>
+                <li><a name="ME下载" href="{{ url_for('jiaocheng.index', downtype='me', page=1) }}"> ME下载</a></li>
                 <!-- <li><a href="{{ url_for('jiaocheng.c4ddownload') }}"> C4D下载</a></li> -->
             </ul>
             <!-- <ul id="filter-2" class="filter">
@@ -35,28 +34,28 @@
         </div>
 
         <div name="card-area" id="card-area" class="card-area">
-                {% for soft in result.softwarInfo %}
-                {% if soft.softName is start_with "adobe_pre" %}
-                <div id="card" name="card" class="card">
-                    <a href="{{ url_for('jiaocheng.prdownload', softname=soft.softName) }}" class="imgwrap"><img
-                            src="{{soft.softURL}}" alt="卡片图片" class="card-img"></a>
-                    <!-- <div id="son-tag" name="son-tag" class="son-tag">
-                        <div id="point-1" class="point-1"></div>
-                        <span>子标签1</span>
-                        <div id="point-2" class="point-2"></div>
-                        <span>子标签2</span>
-                    </div> -->
-                    <a href="{{ url_for('jiaocheng.prdownload', softname= soft.softName) }}">
-                        <div id="card-title" class="card-title" style="margin-top: 20px;">{{soft.softName}}</div>
-                    </a>
-                    <!-- <div id="preview" class="preview">
-                        <img src="../../static/img/common/preview.png" alt="预览icon">
-                        <span> 500</span>
-                    </div> -->
-                </div>
+            {% for soft in pagedata %}
+                {% if soft.softName is start_with "Adobe_pre" %}
+                    <div id="card" name="card" class="card">
+                        <a href="{{ url_for('jiaocheng.prdownload', softname=soft.softName) }}" class="imgwrap"><img
+                                src="{{ soft.softURL }}" alt="卡片图片" class="card-img"></a>
+                        <!-- <div id="son-tag" name="son-tag" class="son-tag">
+                                 <div id="point-1" class="point-1"></div>
+                                 <span>子标签1</span>
+                                 <div id="point-2" class="point-2"></div>
+                                 <span>子标签2</span>
+                             </div> -->
+                        <a href="{{ url_for('jiaocheng.prdownload', softname= soft.softName) }}">
+                            <div id="card-title" class="card-title" style="margin-top: 20px;">{{ soft.softName }}</div>
+                        </a>
+                        <!-- <div id="preview" class="preview">
+                                 <img src="../../static/img/common/preview.png" alt="预览icon">
+                                 <span> 500</span>
+                             </div> -->
+                    </div>
                 {% elif soft.softName is start_with "adobe_photo" %}
                     <div id="card" name="card" class="card">
-                        <a href="{{ url_for('jiaocheng.psdownload', softname= soft.softName) }}" class="imgwrap"><img
+                        <a href="{{ url_for('jiaocheng.psdownload', softname=soft.softName) }}" class="imgwrap"><img
                                 src="{{ soft.softURL }}" alt="卡片图片" class="card-img"></a>
                         <a href="{{ url_for('jiaocheng.psdownload', softname= soft.softName) }}">
                             <div id="card-title" class="card-title" style="margin-top: 20px;">{{ soft.softName }}</div>
@@ -79,58 +78,46 @@
                         </a>
                     </div>
                 {% endif %}
-                {% endfor %}
+            {% endfor %}
         </div>
-        <div id="pagewrap">
-            <div class="paging">
+
+        {% if paginate %}
+            <div id="pagewrap">
+                <ul class="paging">
+                    <li><a href="{{ url_for('jiaocheng.index', page=1) }}">首页</a></li>
+                    {% if paginate.has_prev %}
+                        <li class="active"><a href="{{ url_for('jiaocheng.index', page=paginate.prev_num) }}">上一页</a></li>
+                    {% else %}
+                        <li class="disabled"><a href="">上一页</a></li>
+                    {% endif %}
+
+                    {% for v in paginate.iter_pages(1,1,3,1) %} <!--iter_pages 是一个迭代器 返回分页栏上的页码数 如果显示不下 返回None-->
+                        {% if v %}
+                            <!--iter_pages(left_edge=2,left_current=2,right_current=5,right_edge=2)里面默认参数，左边边缘显示2个，右边边缘显示2个，当前页码左边显示2个，当前页码右边显示5个-->
+                            {% if v==paginate.page %}
+                                <li class="active"><a href="#">{{ v }}</a></li> <!--显示当前页数-->
+                            {% else %}
+                                <li><a href="{{ url_for('jiaocheng.index', page=v) }}">{{ v }}</a></li> <!--显示除当前页数的其他页数-->
+                            {% endif %}
+                        {% else %}
+                            <li class="disabled"><a href="">&hellip;</a></li> <!--把显示None变成省略号-->
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if paginate.has_next %}
+                        <li class="active"><a href="{{ url_for('jiaocheng.index', page=paginate.next_num) }}">下一页</a></li>
+                    {% else %}
+                        <li class="disabled"><a href="">下一页</a></li>
+                    {% endif %}
+                    <li><a href="{{ url_for('jiaocheng.index', page=paginate.pages) }}">尾页</a></li>
+                </ul>
             </div>
-        </div>
-        </main>
-        <div id="footer" class="footer">Copyright ©爱分享. | 本站内所有涉及的下载软件均收集于互联网，如果侵犯了你的权益，请联系我及时删除。 </div>
-    </div>
-    <script src="../../static/js/page.js"></script>
-    <script src="../../static/js/jquery-3.6.0.js"></script>
-    <script src="../../static/js/navscript.js" type="text/javascript"></script>
-    <script>
-
-        // window.onload = function () {
-        //     const httpRequest = new XMLHttpRequest();
-        //     const Url = window.location.origin + '/about/fans';
-        //     httpRequest.open("GET", Url, true);
-        //     httpRequest.send();
-
-        //     httpRequest.onreadystatechange = function () {
-        //         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-        //             //获取到json字符串，还需解析
-        //             jsondata = eval('(' + httpRequest.responseText + ')');
-
-        //             var add_options;
-
-        //             for (var i = 0; i < jsondata.fans_name_list.length; i++) {
-        //                 add_options += '<option value="' + jsondata.fans_name_list[i].fans_name + '">' + jsondata.fans_name_list[i].fans_name + '</option>';
-        //             }
-        //             // $("datalist#batch_list").append(add_options);
-
-        //             //TODO: 获取粉丝关注时间的功能后面再做
-        //             // console.log('这是全局变量' + jsondata);
-
-        //             // var input_value = document.getElementById('#username')
-
-        //             // for (var i = 0; i < jsondata.fans_name_list.length; i++) {
-        //             //     if (jsondata.fans_name_list[i].fans_name == input_value.value) {
-        //             //         console.log('粉丝输入，显示粉丝相关信息')
-        //             //         document.getElementById("mtime").innerText = jsondata.fans_name_list[i].mtime;
-        //             //         document.getElementById("viptype").innerText = jsondata.fans_name_list[i].vip_type;
-        //             //         document.getElementById("sign").innerText = jsondata.fans_name_list[i].sign;
-        //             //     }
-        //             // }
-
-        //         }
-        //     }
-        // }
-
-        let paging = new Paging({ total: 5 });
-    </script>
+        {% endif %}
+    </main>
+    <div id="footer" class="footer">Copyright ©爱分享. | 本站内所有涉及的下载软件均收集于互联网，如果侵犯了你的权益，请联系我及时删除。</div>
+</div>
+<script src="../../static/js/jquery-3.6.0.js"></script>
+<script src="../../static/js/navscript.js" type="text/javascript"></script>
 </body>
 
 </html>

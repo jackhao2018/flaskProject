@@ -7,46 +7,47 @@ bp = Blueprint("jiaocheng", __name__, url_prefix="/jiaocheng")
 
 @bp.route("/")
 def index():
+    page = request.args.get('page')
     downtype = request.args.get('downtype')
+
+    if page is None:
+        page = 1
+
     software_list = []
     if downtype == 'pr':
-        result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'Premiere' + '%')).all()
+        data = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'Premiere' + '%')).paginate(page=int(page), per_page=12)
     elif downtype == 'ps':
-        result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'Photoshop' + '%')).all()
+        data = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'Photoshop' + '%')).paginate(page=int(page), per_page=12)
     elif downtype == 'ae':
-        result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'after' + '%')).all()
+        data = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'after' + '%')).paginate(page=int(page), per_page=12)
     elif downtype == 'me':
-        result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'media' + '%')).all()
+        data = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + 'media' + '%')).paginate(page=int(page), per_page=12)
     else:
-        result = SoftwareModel.query.all()
+        data = SoftwareModel.query.paginate(page=int(page), per_page=12)
 
-    for software in result:
+    for software in data.items:
         software_list.append(software.to_dict())
 
-    return render_template('/jiaocheng/index.html', result={'softwarInfo': software_list, 'total': len(result)})
+    return render_template('/jiaocheng/index.html', paginate=data, pagedata=software_list)
 @bp.route("/pr/<softname>")
 def prdownload(softname):
     result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
     return render_template('/jiaocheng/software-download.html', result={"downloadTP": "PR下载", 'data': result.to_dict()})
-
 
 @bp.route("/ps/<softname>")
 def psdownload(softname):
     result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
     return render_template('/jiaocheng/software-download.html', result={"downloadTP": "PS下载", 'data': result.to_dict()})
 
-
 @bp.route("/ae/<softname>")
 def aedownload(softname):
     result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
     return render_template('/jiaocheng/software-download.html', result={"downloadTP": "AE下载", 'data': result.to_dict()})
 
-
 @bp.route("/me/<softname>")
 def medownload(softname):
     result = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + softname + '%')).first()
     return render_template('/jiaocheng/software-download.html', result={"downloadTP": "ME下载", 'data': result.to_dict()})
-
 
 @bp.route("/c4d")
 def c4ddownload():
