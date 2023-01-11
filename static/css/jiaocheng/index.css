@@ -22,17 +22,23 @@
     border-bottom: 1px dashed #BBBBBB;
     position: relative;
     margin: 0;
-    padding: 15px 0px 15px 0px;
+    padding: 5px 0px 5px 0px;
     list-style: none;
 }
 
 .filter li {
     display: flex;
+    height: 40px;
     width: 100px;
     border-width: 1px;
     border-style: none solid none none;
     border-color: #BBBBBB;
     justify-content: center;
+    align-items: center;
+}
+
+.filter li:focus {
+    background-color: #66be7a;
 }
 
 .filter li a {
