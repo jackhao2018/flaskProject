@@ -31,8 +31,8 @@
     </div>
 
     <section class="webdesigntuts-workshop">
-        <form action="" method="" class="search-form">
-            <input type="search" placeholder="点击开始搜索">
+        <form action="{{ url_for('jiaocheng.search', page=1) }}" method="get" class="search-form">
+            <input type="search" name="text" placeholder="点击开始搜索">
             <button>Search</button>
         </form>
     </section>

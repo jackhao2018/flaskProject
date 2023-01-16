@@ -138,11 +138,10 @@ def soft_upload():
     if request.method == 'POST':
         data = request.form
         software_info = SoftwareModel(softName=data['softName'], softDesc=data['details'],softSize=data['softSize'],
-                                 softLanguage=data['softwareLanguage'], issue=data['issue'], copyright=data['copyright'], baiduLink=data['baiduLink'],
-                                 baiduLinkPwd=data['baiduLinkPwd'], aliyunLink=data['aliyunLink'],
-                                 aliyunLinkPwd=data['aliyunLinkPwd'], kuakeLink=data['kuakeLink'],
-                                 kuakeLinkPwd=data['kuakeLinkPwd'], install=data['install'], feature=data['features'],
-                                 mtime=datetime.datetime.now())
+                                      softLanguage=data['softwareLanguage'], issue=data['issue'], copyright=data['copyright'],
+                                      baiduLink=data['baiduLink'], baiduLinkPwd=data['baiduLinkPwd'], aliyunLink=data['aliyunLink'],
+                                      aliyunLinkPwd=data['aliyunLinkPwd'], kuakeLink=data['kuakeLink'], kuakeLinkPwd=data['kuakeLinkPwd'],
+                                      install=data['install'], feature=data['features'], mtime=datetime.datetime.now())
 
         db.session.add(software_info)
 

@@ -31,10 +31,18 @@ def index():
     return render_template('/jiaocheng/index.html', paginate=data, pagedata=software_list)
 
 
-@bp.route("/search/<text>")
+@bp.route("/search")
 def search():
-    pass
+    software_list = []
+    page = request.args.get('page')
+    text = request.args.get('text')
 
+    data = SoftwareModel.query.filter(SoftwareModel.softName.like('%' + text + '%')).paginate(page=page, per_page=12)
+
+    for software in data.items:
+        software_list.append(software.to_dict())
+
+    return render_template('/jiaocheng/index.html', paginate=data, pagedata=software_list)
 
 @bp.route("/pr/<softname>")
 def prdownload(softname):
