@@ -1,70 +1,74 @@
-<!doctype html>
-<html lang="zh">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>CSS3制作炫酷搜索框动画特效</title>
-    <link rel="stylesheet" type="text/css" href="css/search-form.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shell {
+            width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            /* column-count: 5;
+            column-gap: 15px; */
+        }
 
-    <!--[if IE]>
-    <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
-    <![endif]-->
+        .image {
+            position: absolute;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .image a {
+            color: black;
+        }
+    </style>
 </head>
+
 <body>
-<header class="htmleaf-header">
-    <h3>CSS3制作炫酷搜索框动画特效 <span>Create CSS3 Animated Search Box</span></h1>
-</header>
-<section class="container">
-    <form onsubmit="submitFn(this, event);">
-        <div class="search-wrapper">
-            <div class="input-holder">
-                <input type="text" class="search-input" placeholder="Type to search"/>
-                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-            </div>
-            <span class="close" onclick="searchToggle(this, event);"></span>
-            <div class="result-container">
-
-            </div>
-        </div>
-    </form>
-</section>
-
-<script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
-<script type="text/javascript">
-    function searchToggle(obj, evt) {
-        var container = $(obj).closest('.search-wrapper');
-
-        if (!container.hasClass('active')) {
-            container.addClass('active');
-            evt.preventDefault();
-        } else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
-            container.removeClass('active');
-            // clear input
-            container.find('.search-input').val('');
-            // clear and hide result container when we press close
-            container.find('.result-container').fadeOut(100, function () {
-                $(this).empty();
-            });
-        }
-    }
-
-    function submitFn(obj, evt) {
-        value = $(obj).find('.search-input').val().trim();
-
-        _html = "Yup yup! Your search text sounds like this: ";
-        if (!value.length) {
-            _html = "Yup yup! Add some text friend :D";
-        } else {
-            _html += "<b>" + value + "</b>";
-        }
-
-        $(obj).find('.result-container').html('<span>' + _html + '</span>');
-        $(obj).find('.result-container').fadeIn(100);
-
-        evt.preventDefault();
+    <div class="shell J_waterfall">
+        <div class="image"><img src="https://picsum.photos/id/1/200/300"><a class="title"
+                href="">莎莎生日图集莎莎生日图集莎莎生日图集莎莎生日图集莎莎生日图集莎莎生日图集</a></div>
+        <div class="image"><img src="https://picsum.photos/id/2/300/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/3/200/600"></div>
+        <div class="image"><img src="https://picsum.photos/id/4/300/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/5/300/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/6/500/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/7/600/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/8/200/500"></div>
+        <div class="image"><img src="https://picsum.photos/id/9/200/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/10/200/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/11/200/200"></div>
+        <div class="image"><img src="https://picsum.photos/id/12/200/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/13/600/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/14/200/500"></div>
+        <div class="image"><img src="https://picsum.photos/id/15/500/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/16/200/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/17/200/500"></div>
+        <div class="image"><img src="https://picsum.photos/id/18/200/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/19/500/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/1/200/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/2/200/500"></div>
+        <div class="image"><img src="https://picsum.photos/id/3/200/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/4/500/300"></div>
+        <div class="image"><img src="https://picsum.photos/id/5/200/300"></div>
+    </div>
+</body>
+<script src="../static/js/waterfall.js"></script>
+<script>
+    window.onload = function () {
+        // 创建一个实例化对象
+        new Waterfall({
+            el: 'J_waterfall',
+            column: 5,
+            gap: 25
+        })
     }
 </script>
-</body>
+
 </html>

@@ -14,8 +14,7 @@ def index():
         fans = fans.to_dict()
         fans_name_list.append(fans['fans_name'])
 
-    # print(fans_name_list)
-    return render_template('/test2.html', result={'fans_list': fans_name_list})
+    return render_template('/yingyin/home.html')
 
 @bp.route("/img_info")
 def get_img_info():

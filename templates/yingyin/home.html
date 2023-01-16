@@ -10,99 +10,74 @@
     <link rel="stylesheet" href="../../static/css/index/index.css" type="text/css">
     <link rel="stylesheet" href="../../static/css/yingyin/home.css" type="text/css">
     <title>生活の真相资源网</title>
+    <style>
+        .shell {
+            width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            /* column-count: 5;
+            column-gap: 15px; */
+        }
+
+        .image {
+            position: absolute;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .image a {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
     <div id="root">
         {% include 'banner.html' %}
-        <main id="main" class="main">
-            <div class="img-title"><img src="../../static/img/common/picture.png" alt="图片icon"
-                    style=" width: 32px; height:32px; margin-left: 5px;"><span>&nbsp; 图片</span>
-                <a href="./more.html">
-                    <span>更多</span><img src="../../static/img/common/more.png" alt="图片icon"
-                        style="display: inner-block; width: 32px; height:32px; margin-left: -10px">
-                </a>
-            </div>
-            <div id="img-content" class="img-content">
-                <a href="../yingyin/img-details.html">
-                    <div id="content" class="single-content">
-                        <img src="../../static/img/ciyun.png" alt="图片信息">
-                        <div>莎莎手绘集锦莎莎手绘集锦</div>
-                    </div>
-                </a>
-
-            </div>
-            <div class="mucis-title"><img src="../../static/img/common/music.png" alt="音频icon"
-                    style="display: inner-block; width: 32px; height:32px; margin-left: 5px;"><span>&nbsp; 音频</span>
-                <a href="./more.html">
-                    <span> 更多</span><img src="../../static/img/common/more.png" alt="图片icon"
-                        style="display: inner-block; width: 32px; height:32px; margin-left: -10px">
-                </a>
-            </div>
-            <div id="music-content" class="music-content">
-                <a href="../yingyin/audio-details.html">
-                    <div id="content" class="single-content">
-                        <img src="../../static/img/ciyun.png" alt="图片信息">
-                        <div>莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content" class="single-content">
-                        <img src="../../static/img/ciyun.png" alt="图片信息">
-                        <div>莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content" class="single-content">
-                        <img src="../../static/img/ciyun.png" alt="图片信息">
-                        <div>莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content" class="single-content">
-                        <img src="../../static/img/ciyun.png" alt="图片信息">
-                        <div>莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦莎莎手绘集锦</div>
-                    </div>
-                </a>
-
-            </div>
-            <div class="video-title"><img src="../../static/img/common/video.png" alt="视频icon"
-                    style="display: inner-block; width: 32px; height:32px; margin-left: 5px;"><span>&nbsp; 视频</span>
-                <a href="./more.html">
-                    <span> 更多</span><img src="../../static/img/common/more.png" alt="图片icon"
-                        style="display: inner-block; width: 32px; height:32px; margin-left: -10px;">
-                </a>
-            </div>
-            <div id="video-content" class="video-content">
-                <a href="../yingyin/video-details.html">
-                    <div id="content" class="single-content">
-                        <video src="../../static/vedio/点云工具3维图缩放优化.mp4"></video>
-                        <div>&nbsp;爱·死亡·机器人</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content" class="single-content">
-                        <video src="../../static/vedio/点云工具3维图缩放优化.mp4"></video>
-                        <div>&nbsp;博人传 第700集</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content" class="single-content">
-                        <video src="../../static/vedio/点云工具3维图缩放优化.mp4"></video>
-                        <div>&nbsp;斗破苍穹</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div id="content" class="single-content">
-                        <video src="../../static/vedio/点云工具3维图缩放优化.mp4"></video>
-                        <div>&nbsp;完美世界</div>
-                    </div>
-                </a>
-                <!-- <div id="TODO">以后要支持显示素材预览次数</div> -->
-            </div>
-        </main>
+        <div class="shell J_waterfall">
+            <div class="image"><img src="https://picsum.photos/id/1/200/300"><a class="title"
+                    href="">莎莎生日图集莎莎生日图集莎莎生日图集莎莎生日图集莎莎生日图集莎莎生日图集</a></div>
+            <div class="image"><img src="https://picsum.photos/id/2/300/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/3/200/600"></div>
+            <div class="image"><img src="https://picsum.photos/id/4/300/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/5/300/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/6/500/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/7/600/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/8/200/500"></div>
+            <div class="image"><img src="https://picsum.photos/id/9/200/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/10/200/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/11/200/200"></div>
+            <div class="image"><img src="https://picsum.photos/id/12/200/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/13/600/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/14/200/500"></div>
+            <div class="image"><img src="https://picsum.photos/id/15/500/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/16/200/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/17/200/500"></div>
+            <div class="image"><img src="https://picsum.photos/id/18/200/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/19/500/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/1/200/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/2/200/500"></div>
+            <div class="image"><img src="https://picsum.photos/id/3/200/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/4/500/300"></div>
+            <div class="image"><img src="https://picsum.photos/id/5/200/300"></div>
+        </div>
     </div>
-    <script type='text/javascript'>
+    
+    <script src="../../static/js/waterfall.js"></script>
+    <script>
+        window.onload = function () {
+            // 创建一个实例化对象
+            new Waterfall({
+                el: 'J_waterfall',
+                column: 5,
+                gap: 25
+            })
+        }
+    </script>
+    <!-- <script type='text/javascript'>
 
         window.onload = function () {
             const httpRequest = new XMLHttpRequest();
@@ -144,6 +119,6 @@
                 }
             }
         }
-    </script>
+    </script> -->
 </body>
 </html>
