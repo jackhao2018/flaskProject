@@ -23,3 +23,11 @@ def get_img_info():
     img_info_list = [dict(i) for i in result]
 
     return jsonify({"code": "200", "img_info_list": img_info_list})
+
+@bp.route("/upload")
+def media_upload():
+    """
+    上传媒体数据
+    :return:
+    """
+    return render_template('/yingyin/upload.html')

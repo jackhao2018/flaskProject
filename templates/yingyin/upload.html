@@ -12,13 +12,21 @@
 </head>
 
 <body>
-    <a href="../yingyin/more.html" class="reback-out" style="margin-top: 100px;">
+    {% include 'banner.html' %}
+    <a href="../yingyin/more.html" class="reback-out">
         <img src="../../static/img/common/reback.png" alt="返回箭头">
         <span>返回上一页</span>
     </a>
-    <form action="/api/test.py" method="post"></form>
+    <form action=" {{ url_for('yingyin.media_upload') }}" method="post"></form>
     <div id="main" class="main">
         <div id="content" class="content">
+            <div class="titleBox">
+                <div id="boxInfo">
+                    <div id="title"><span>标题:</span></div>
+                    <div class="wrapInput"><input id="title" name="title" class="title" type="text"
+                            placeholder="  请输入标题信息" maxlength="50" value></div>
+                </div>
+            </div>
             <div id="file-type" class="file-type">
                 <span>文件类型：</span>
                 <label><input id="img" type="radio" name="file-type" value="img" checked="checked" />&nbsp;图片</label>

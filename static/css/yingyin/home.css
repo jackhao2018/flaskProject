@@ -10,6 +10,46 @@
     /* background-image: -webkit-linear-gradient(left, #00bcd4, #ffffff00) */
 }
 
+.shell {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    /* column-count: 5;
+    column-gap: 15px; */
+}
+
+.image {
+    position: absolute;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.image a {
+    color: black;
+}
+
+.uploadWrap{
+    display: flex;
+    height: 40px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #00aeec; */
+}
+
+.click-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 16px;
+    right: 5%;
+    color: #FB7299;
+}
+
 .img-title a,
 .mucis-title a,
 .video-title a{

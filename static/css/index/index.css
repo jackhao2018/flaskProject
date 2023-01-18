@@ -27,7 +27,8 @@ input::placeholder {
 .logo {
     position: absolute;
     right: 10%;
-    top: 20%;
+    top: 40%;
+    width: 300px;
 }
 
 /* 导航样式 */
